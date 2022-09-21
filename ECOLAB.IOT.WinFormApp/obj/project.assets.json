@@ -878,11 +878,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\EcoCode\\ECOLAB\\ECOLAB.IOT\\ECOLAB.IOT.WinFormApp\\ECOLAB.IOT.WinFormApp.csproj",
+      "projectUniqueName": "C:\\GitHub\\ECOLAB.IOT\\ECOLAB.IOT.WinFormApp\\ECOLAB.IOT.WinFormApp.csproj",
       "projectName": "ECOLAB.IOT.WinFormApp",
-      "projectPath": "C:\\EcoCode\\ECOLAB\\ECOLAB.IOT\\ECOLAB.IOT.WinFormApp\\ECOLAB.IOT.WinFormApp.csproj",
+      "projectPath": "C:\\GitHub\\ECOLAB.IOT\\ECOLAB.IOT.WinFormApp\\ECOLAB.IOT.WinFormApp.csproj",
       "packagesPath": "C:\\Users\\zhang13\\.nuget\\packages\\",
-      "outputPath": "C:\\EcoCode\\ECOLAB\\ECOLAB.IOT\\ECOLAB.IOT.WinFormApp\\obj\\",
+      "outputPath": "C:\\GitHub\\ECOLAB.IOT\\ECOLAB.IOT.WinFormApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -904,11 +904,11 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
-            "C:\\EcoCode\\ECOLAB\\ECOLAB.IOT\\ECOLAB.IOT.Entity\\ECOLAB.IOT.Entity.csproj": {
-              "projectPath": "C:\\EcoCode\\ECOLAB\\ECOLAB.IOT\\ECOLAB.IOT.Entity\\ECOLAB.IOT.Entity.csproj"
+            "C:\\GitHub\\ECOLAB.IOT\\ECOLAB.IOT.Entity\\ECOLAB.IOT.Entity.csproj": {
+              "projectPath": "C:\\GitHub\\ECOLAB.IOT\\ECOLAB.IOT.Entity\\ECOLAB.IOT.Entity.csproj"
             },
-            "C:\\EcoCode\\ECOLAB\\ECOLAB.IOT\\ECOLAB.IOT.Service\\ECOLAB.IOT.Service.csproj": {
-              "projectPath": "C:\\EcoCode\\ECOLAB\\ECOLAB.IOT\\ECOLAB.IOT.Service\\ECOLAB.IOT.Service.csproj"
+            "C:\\GitHub\\ECOLAB.IOT\\ECOLAB.IOT.Service\\ECOLAB.IOT.Service.csproj": {
+              "projectPath": "C:\\GitHub\\ECOLAB.IOT\\ECOLAB.IOT.Service\\ECOLAB.IOT.Service.csproj"
             }
           }
         }

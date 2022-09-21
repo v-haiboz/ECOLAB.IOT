@@ -8,10 +8,11 @@
     public class CallerContext:CallerContextBase
     {
         public static EnvironmentVariable EnvironmentVariable => Resolve<EnvironmentVariable>();
+        public static SysAdmins SysAdmins => Resolve<SysAdmins>();
+
         public static IOptions<AppServiceOptions> AppServiceOptionsWrapper => Resolve<IOptions<AppServiceOptions>>();
         public static IECOLABIOTUserProvider ECOLABIOTUserProvider => Resolve<IECOLABIOTUserProvider>();
         public static IECOLABIOTUserService ECOLABIOTUserService => Resolve<IECOLABIOTUserService>();
-
-
+        
     }
 }

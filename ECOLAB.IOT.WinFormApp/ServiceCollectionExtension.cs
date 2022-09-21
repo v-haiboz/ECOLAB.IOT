@@ -5,9 +5,11 @@
     using ECOLAB.IOT.Service;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
+    using Sunny.UI.Win32;
+    using System.CodeDom;
 
     internal static class ServiceCollectionExtension
-    {   
+    {
         private static ServiceCollection services = new ServiceCollection();
         public static ServiceCollection GetCurrentServiceCollection()
         {
@@ -22,7 +24,7 @@
 
         public static ServiceCollection RegisterCurrentEnvironment(this ServiceCollection services, EnvironmentVariable env)
         {
-            services.AddSingleton<EnvironmentVariable>(env => (EnvironmentVariable)env);
+            services.AddSingleton(env);
             return services;
         }
 
@@ -30,7 +32,7 @@
         {
             //register configuration
             IConfigurationBuilder cfgBuilder = new ConfigurationBuilder()
-                .SetBasePath(Path.Combine(Directory.GetCurrentDirectory(),"Appsetting"))
+                .SetBasePath(Path.Combine(Directory.GetCurrentDirectory(), "Appsetting"))
                 .AddJsonFile($"appsetting_{env.Name}.json");
 
             IConfiguration configuration = cfgBuilder.Build();
@@ -46,7 +48,7 @@
 
         public static ServiceCollection RegisterCurrentSysAdmins(this ServiceCollection services, SysAdmins sysAdmins)
         {
-            services.AddScoped<SysAdmins>(sp => sysAdmins);
+            services.AddSingleton(sysAdmins);
             return services;
         }
 
@@ -62,7 +64,7 @@
             services.AddScoped<IECOLABIOTUserService, ECOLABIOTUserService>();
             return services;
         }
-        
+
         public static void Build(this ServiceCollection services)
         {
             var serviceProvider = services.BuildServiceProvider();

@@ -14,6 +14,7 @@ namespace ECOLAB.IOT.WinFormApp
 {
     public partial class Frm_Login : Form
     {
+
         public Frm_Login()
         {
             InitializeComponent();
@@ -69,8 +70,7 @@ namespace ECOLAB.IOT.WinFormApp
                 ServiceCollectionExtension.GetCurrentServiceCollection()
                     .RegisterCurrentEnvironment(environmentVariable)
                     .RegisterAppsetting(environmentVariable)
-                    .RegisterCurrentSysAdmins(objAdmins);
-
+                    .RegisterCurrentSysAdmins(objAdmins).Build();
                 this.DialogResult = DialogResult.OK;
 
             }

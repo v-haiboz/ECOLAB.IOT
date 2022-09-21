@@ -63,9 +63,9 @@ namespace ECOLAB.IOT.WinFormApp.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap Minimize_2 {
+        internal static System.Drawing.Bitmap account_Main {
             get {
-                object obj = ResourceManager.GetObject("Minimize-2", resourceCulture);
+                object obj = ResourceManager.GetObject("account-Main", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace ECOLAB.IOT.WinFormApp.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap 最小化 {
+        internal static System.Drawing.Bitmap account_profile_Main {
             get {
-                object obj = ResourceManager.GetObject("最小化", resourceCulture);
+                object obj = ResourceManager.GetObject("account_profile_Main", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +83,9 @@ namespace ECOLAB.IOT.WinFormApp.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap 电脑 {
+        internal static System.Drawing.Bitmap account_signout_Main {
             get {
-                object obj = ResourceManager.GetObject("电脑", resourceCulture);
+                object obj = ResourceManager.GetObject("account_signout_Main", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +93,9 @@ namespace ECOLAB.IOT.WinFormApp.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap 电脑__1_ {
+        internal static System.Drawing.Bitmap Close_Main {
             get {
-                object obj = ResourceManager.GetObject("电脑 (1)", resourceCulture);
+                object obj = ResourceManager.GetObject("Close_Main", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +103,9 @@ namespace ECOLAB.IOT.WinFormApp.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap 电脑__2_ {
+        internal static System.Drawing.Bitmap feature_device_Main {
             get {
-                object obj = ResourceManager.GetObject("电脑 (2)", resourceCulture);
+                object obj = ResourceManager.GetObject("feature_device_Main", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +113,109 @@ namespace ECOLAB.IOT.WinFormApp.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap 电脑__3_ {
+        internal static System.Drawing.Bitmap feature_file_Main {
             get {
-                object obj = ResourceManager.GetObject("电脑 (3)", resourceCulture);
+                object obj = ResourceManager.GetObject("feature_file_Main", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap feature_Main {
+            get {
+                object obj = ResourceManager.GetObject("feature_Main", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap fold_Main_Menu {
+            get {
+                object obj = ResourceManager.GetObject("fold_Main_Menu", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap help_Main {
+            get {
+                object obj = ResourceManager.GetObject("help_Main", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap Max_Main {
+            get {
+                object obj = ResourceManager.GetObject("Max_Main", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap Min_Login {
+            get {
+                object obj = ResourceManager.GetObject("Min_Login", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap Min_Main {
+            get {
+                object obj = ResourceManager.GetObject("Min_Main", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap narrow_Main {
+            get {
+                object obj = ResourceManager.GetObject("narrow_Main", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap open_Main_Menu {
+            get {
+                object obj = ResourceManager.GetObject("open_Main_Menu", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap setting_environment_Main {
+            get {
+                object obj = ResourceManager.GetObject("setting_environment_Main", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap setting_Main {
+            get {
+                object obj = ResourceManager.GetObject("setting_Main", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\EcoCode\\ECOLAB\\ECOLAB.IOT\\ECOLAB.IOT.Entity\\ECOLAB.IOT.Entity.csproj": {}
+    "C:\\GitHub\\ECOLAB.IOT\\ECOLAB.IOT.Entity\\ECOLAB.IOT.Entity.csproj": {}
   },
   "projects": {
-    "C:\\EcoCode\\ECOLAB\\ECOLAB.IOT\\ECOLAB.IOT.Entity\\ECOLAB.IOT.Entity.csproj": {
+    "C:\\GitHub\\ECOLAB.IOT\\ECOLAB.IOT.Entity\\ECOLAB.IOT.Entity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\EcoCode\\ECOLAB\\ECOLAB.IOT\\ECOLAB.IOT.Entity\\ECOLAB.IOT.Entity.csproj",
+        "projectUniqueName": "C:\\GitHub\\ECOLAB.IOT\\ECOLAB.IOT.Entity\\ECOLAB.IOT.Entity.csproj",
         "projectName": "ECOLAB.IOT.Entity",
-        "projectPath": "C:\\EcoCode\\ECOLAB\\ECOLAB.IOT\\ECOLAB.IOT.Entity\\ECOLAB.IOT.Entity.csproj",
+        "projectPath": "C:\\GitHub\\ECOLAB.IOT\\ECOLAB.IOT.Entity\\ECOLAB.IOT.Entity.csproj",
         "packagesPath": "C:\\Users\\zhang13\\.nuget\\packages\\",
-        "outputPath": "C:\\EcoCode\\ECOLAB\\ECOLAB.IOT\\ECOLAB.IOT.Entity\\obj\\",
+        "outputPath": "C:\\GitHub\\ECOLAB.IOT\\ECOLAB.IOT.Entity\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

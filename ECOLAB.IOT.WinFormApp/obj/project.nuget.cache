@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "mCCUHzUeU39kS369BHh13z68h/F5zEczE91yONKZQ9vrb/VQozMu9VOVfQgdKkPx9iBzmE9n720rqcvotToAfg==",
+  "dgSpecHash": "7C8aHRffnird5eO2/ZAUuNohD6nNd+QkH4emZg9FpqHPCNyKzqZf4Ma4e09WhNtA7m15p6h5qtRSa5ptWzKjqA==",
   "success": true,
-  "projectFilePath": "C:\\EcoCode\\ECOLAB\\ECOLAB.IOT\\ECOLAB.IOT.WinFormApp\\ECOLAB.IOT.WinFormApp.csproj",
+  "projectFilePath": "C:\\GitHub\\ECOLAB.IOT\\ECOLAB.IOT.WinFormApp\\ECOLAB.IOT.WinFormApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\zhang13\\.nuget\\packages\\microsoft.extensions.configuration\\6.0.1\\microsoft.extensions.configuration.6.0.1.nupkg.sha512",
     "C:\\Users\\zhang13\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\6.0.0\\microsoft.extensions.configuration.abstractions.6.0.0.nupkg.sha512",

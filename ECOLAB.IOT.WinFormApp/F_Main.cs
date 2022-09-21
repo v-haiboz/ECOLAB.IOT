@@ -1,5 +1,7 @@
 ﻿using ECOLAB.IOT.Common.Win32;
+using ECOLAB.IOT.Service;
 using ECOLAB.IOT.WinFormApp.ChildWinForm;
+using Sunny.UI;
 
 namespace ECOLAB.IOT.WinFormApp
 {
@@ -41,6 +43,10 @@ namespace ECOLAB.IOT.WinFormApp
             panel_SerialCOMSubMenu.Visible = false;
             panel_AccountSubMenu.Visible = false;
             panel_SettingSubMenu.Visible = false;
+
+            this.label_CurrentUser.Text = "Current User: "+ CallerContext.SysAdmins.UserName;
+            this.label_DateTime.Text = DateTime.Now.ToString();
+            this.label_Environment.Text =$"{label_Environment.Text}  ({CallerContext.EnvironmentVariable.Name.ToString()})";
         }
 
         private void HideSubMenu()
@@ -70,6 +76,8 @@ namespace ECOLAB.IOT.WinFormApp
             {
                 subMenu.Visible = false;
             }
+
+            ChangeSideMenu(200, Properties.Resources.fold_Main_Menu);
         }
 
         private void button_Account_Click(object sender, EventArgs e)
@@ -91,12 +99,12 @@ namespace ECOLAB.IOT.WinFormApp
         private void button_BurnSNAndPSK_Click(object sender, EventArgs e)
         {
             OpenChildForm(new BurnSNAndPSK());
-            ShowSubMenu(panel_SerialCOMSubMenu);
+            HideSubMenu();
         }
         #region  SerialCom Sub menu
-        private void button_EDM_Click(object sender, EventArgs e)
+        private void button_SerialCOM_Click(object sender, EventArgs e)
         {
-            HideSubMenu();
+            ShowSubMenu(panel_SerialCOMSubMenu);
         }
 
         private void button_BurnFile_Click(object sender, EventArgs e)
@@ -129,17 +137,7 @@ namespace ECOLAB.IOT.WinFormApp
             childForm.Show();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            if (this.panel_SideMenu.Width > 150)
-            {
-                this.panel_SideMenu.Width = 50;
-            }
-            else if(this.panel_SideMenu.Width<60)
-            {
-                this.panel_SideMenu.Width = 159;
-            }
-        }
+        
         private void MoveWinForm()
         {
             Win32SafeNativeMethods.ReleaseCapture();
@@ -173,15 +171,63 @@ namespace ECOLAB.IOT.WinFormApp
 
         private void pictureBox_Min_Click(object sender, EventArgs e)
         {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void pictureBox_Close_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+           
+              
+        private void pictureBox_Max_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+        //    if (this.WindowState == FormWindowState.Maximized)
+        //    {
+        //        pictureBox_Max.Image = Properties.Resources.Max_Main;
+        //        int DWidth = Screen.PrimaryScreen.WorkingArea.Width;
+        //        int DHeight = Screen.PrimaryScreen.WorkingArea.Height;
+        //        this.Width = Convert.ToInt32(DWidth * 0.5);
+        //        this.Height = Convert.ToInt32(DHeight * 0.5);
+        //    }
+        //    else
+        //    {
+        //        this.WindowState = FormWindowState.Maximized;
+        //        pictureBox_Max.Image = Properties.Resources.narrow_Main;
+        //    }
+        }
+
+        private void label_Exit_Click(object sender, EventArgs e)
+        {
             Application.Exit();
         }
 
-        private void button_Help_Click_1(object sender, EventArgs e)
+        private void pictureBox_MainMenu_Click(object sender, EventArgs e)
         {
+            ShowMainMenu();
             HideSubMenu();
         }
+       
+        private void ShowMainMenu()
+        {
+            if (this.panel_SideMenu.Width > 150)
+            {
+                ChangeSideMenu(50, Properties.Resources.open_Main_Menu);
+            }
+            else if (this.panel_SideMenu.Width < 60)
+            {
+                ChangeSideMenu(200, Properties.Resources.fold_Main_Menu);
+            }
+        }
 
-        private void pictureBox4_Click(object sender, EventArgs e)
+        private void ChangeSideMenu(int width, Bitmap bitmap)
+        {
+            this.panel_SideMenu.Width = width;
+            pictureBox_MainMenu.Image = bitmap;
+        }
+
+        private void label_Environment_Click(object sender, EventArgs e)
         {
 
         }

@@ -1,9 +1,9 @@
 users:
 - loginId: 0
   userName: UserProduct
-  pwd: 123P
+  pwd: 123
   role: 0
 - loginId: 1
   userName: UserInt
-  pwd: 123I
+  pwd: 123
   role: 0

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vlJ/Aw5X8CiDdFCHmGpQOmABB+Iaq8UlR4KYqJ0zCeCSPIZMcZo+0fcJlN5LecGEjmk0Ahatu891uI/AVDK4Ig==",
+  "dgSpecHash": "ZPAgRskihQfN8M+cLjqBAHU4WgyblhgNxr6Q6IgAIKSjuaEa7EeS4WQ10dlm6yc0aQCQTXFPNybh+NnJFccK/g==",
   "success": true,
-  "projectFilePath": "C:\\EcoCode\\ECOLAB\\ECOLAB.IOT\\ECOLAB.IOT.Provider\\ECOLAB.IOT.Provider.csproj",
+  "projectFilePath": "C:\\GitHub\\ECOLAB.IOT\\ECOLAB.IOT.Provider\\ECOLAB.IOT.Provider.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\zhang13\\.nuget\\packages\\yamldotnet\\12.0.0\\yamldotnet.12.0.0.nupkg.sha512"
   ],
