@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "vl8d03CIXssQ6uAdGcAQpykLeyZ1Lgly9ucuO/ndB6pry8KwVRTWkujntXBREyc02j+ONCaSO2FroZu+sC0f8Q==",
+  "success": true,
+  "projectFilePath": "C:\\EcoCode\\ECOLAB\\ECOLAB.IOT\\ECOLAB.IOT.Entity\\ECOLAB.IOT.Entity.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\zhang13\\.nuget\\packages\\yamldotnet\\12.0.0\\yamldotnet.12.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="UserData\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ECOLAB.IOT.Common\ECOLAB.IOT.Common.csproj" />
+    <ProjectReference Include="..\ECOLAB.IOT.Entity\ECOLAB.IOT.Entity.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="UserData\users.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
