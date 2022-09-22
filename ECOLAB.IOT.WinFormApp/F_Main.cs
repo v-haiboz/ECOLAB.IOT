@@ -1,7 +1,6 @@
 ﻿using ECOLAB.IOT.Common.Win32;
 using ECOLAB.IOT.Service;
 using ECOLAB.IOT.WinFormApp.ChildWinForm;
-using Sunny.UI;
 
 namespace ECOLAB.IOT.WinFormApp
 {
@@ -183,19 +182,7 @@ namespace ECOLAB.IOT.WinFormApp
         private void pictureBox_Max_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
-        //    if (this.WindowState == FormWindowState.Maximized)
-        //    {
-        //        pictureBox_Max.Image = Properties.Resources.Max_Main;
-        //        int DWidth = Screen.PrimaryScreen.WorkingArea.Width;
-        //        int DHeight = Screen.PrimaryScreen.WorkingArea.Height;
-        //        this.Width = Convert.ToInt32(DWidth * 0.5);
-        //        this.Height = Convert.ToInt32(DHeight * 0.5);
-        //    }
-        //    else
-        //    {
-        //        this.WindowState = FormWindowState.Maximized;
-        //        pictureBox_Max.Image = Properties.Resources.narrow_Main;
-        //    }
+
         }
 
         private void label_Exit_Click(object sender, EventArgs e)
@@ -230,6 +217,14 @@ namespace ECOLAB.IOT.WinFormApp
         private void label_Environment_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void F_Main_Load(object sender, EventArgs e)
+        {
+            int DWidth = Screen.PrimaryScreen.WorkingArea.Width;
+            int DHeight = Screen.PrimaryScreen.WorkingArea.Height;
+            this.Width = Convert.ToInt32(DWidth * 0.9);
+            this.Height = Convert.ToInt32(DHeight * 0.9);
         }
     }
 }

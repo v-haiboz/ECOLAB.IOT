@@ -5,7 +5,6 @@
     using ECOLAB.IOT.Service;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
-    using Sunny.UI.Win32;
     using System.CodeDom;
 
     internal static class ServiceCollectionExtension
@@ -54,14 +53,17 @@
 
         private static ServiceCollection RegisterProvider(this ServiceCollection services)
         {
-            //注册 FormMain 类
+            //Register Provider
             services.AddScoped<IECOLABIOTUserProvider, ECOLABIOTUserProvider>();
+            services.AddScoped<IECOLABIOTSerialPortProvider, ECOLABIOTSerialPortProvider>();
+            services.AddScoped<IECOLABIOTCOMSettingProvider, ECOLABIOTCOMSettingProvider>();
             return services;
         }
         private static ServiceCollection RegisterService(this ServiceCollection services)
         {
-            //注册 FormMain 类
+            //Register Service
             services.AddScoped<IECOLABIOTUserService, ECOLABIOTUserService>();
+            services.AddScoped<IECOLABIOTBurnSNAndPSKService, ECOLABIOTBurnSNAndPSKService>();
             return services;
         }
 

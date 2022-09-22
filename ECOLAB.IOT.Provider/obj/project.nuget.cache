@@ -1,9 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "ZPAgRskihQfN8M+cLjqBAHU4WgyblhgNxr6Q6IgAIKSjuaEa7EeS4WQ10dlm6yc0aQCQTXFPNybh+NnJFccK/g==",
+  "dgSpecHash": "SZOOdAanc6K9TQ6H8V3Mtrtu5OmOVmjS4Gm8fMs5NjHd3vZ0sDu7E2es8dRECp81XONBtWY7Tfp59oLRGQwOxg==",
   "success": true,
   "projectFilePath": "C:\\GitHub\\ECOLAB.IOT\\ECOLAB.IOT.Provider\\ECOLAB.IOT.Provider.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\zhang13\\.nuget\\packages\\runtime.linux-arm.runtime.native.system.io.ports\\6.0.0\\runtime.linux-arm.runtime.native.system.io.ports.6.0.0.nupkg.sha512",
+    "C:\\Users\\zhang13\\.nuget\\packages\\runtime.linux-arm64.runtime.native.system.io.ports\\6.0.0\\runtime.linux-arm64.runtime.native.system.io.ports.6.0.0.nupkg.sha512",
+    "C:\\Users\\zhang13\\.nuget\\packages\\runtime.linux-x64.runtime.native.system.io.ports\\6.0.0\\runtime.linux-x64.runtime.native.system.io.ports.6.0.0.nupkg.sha512",
+    "C:\\Users\\zhang13\\.nuget\\packages\\runtime.native.system.io.ports\\6.0.0\\runtime.native.system.io.ports.6.0.0.nupkg.sha512",
+    "C:\\Users\\zhang13\\.nuget\\packages\\runtime.osx-arm64.runtime.native.system.io.ports\\6.0.0\\runtime.osx-arm64.runtime.native.system.io.ports.6.0.0.nupkg.sha512",
+    "C:\\Users\\zhang13\\.nuget\\packages\\runtime.osx-x64.runtime.native.system.io.ports\\6.0.0\\runtime.osx-x64.runtime.native.system.io.ports.6.0.0.nupkg.sha512",
+    "C:\\Users\\zhang13\\.nuget\\packages\\system.io.ports\\6.0.0\\system.io.ports.6.0.0.nupkg.sha512",
     "C:\\Users\\zhang13\\.nuget\\packages\\yamldotnet\\12.0.0\\yamldotnet.12.0.0.nupkg.sha512"
   ],
   "logs": []

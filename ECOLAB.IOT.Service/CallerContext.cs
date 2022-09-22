@@ -11,8 +11,16 @@
         public static SysAdmins SysAdmins => Resolve<SysAdmins>();
 
         public static IOptions<AppServiceOptions> AppServiceOptionsWrapper => Resolve<IOptions<AppServiceOptions>>();
-        public static IECOLABIOTUserProvider ECOLABIOTUserProvider => Resolve<IECOLABIOTUserProvider>();
+
+
         public static IECOLABIOTUserService ECOLABIOTUserService => Resolve<IECOLABIOTUserService>();
-        
+        public static IECOLABIOTBurnSNAndPSKService ECOLABIOTBurnSNAndPSKService => Resolve<IECOLABIOTBurnSNAndPSKService>();
+
+
+        public static IECOLABIOTUserProvider ECOLABIOTUserProvider => Resolve<IECOLABIOTUserProvider>();
+        public static IECOLABIOTSerialPortProvider ECOLABIOTSerialPortProvider => Resolve<IECOLABIOTSerialPortProvider>();
+        public static IECOLABIOTCOMSettingProvider ECOLABIOTCOMSettingProvider => Resolve<IECOLABIOTCOMSettingProvider>();
+
+
     }
 }

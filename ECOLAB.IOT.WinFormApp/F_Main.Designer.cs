@@ -467,6 +467,7 @@
             this.Name = "F_Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "F_Main";
+            this.Load += new System.EventHandler(this.F_Main_Load);
             this.panel_ChildForm.ResumeLayout(false);
             this.panel_SideMenu.ResumeLayout(false);
             this.panel_SettingSubMenu.ResumeLayout(false);

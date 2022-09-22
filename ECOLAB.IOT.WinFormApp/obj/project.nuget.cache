@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "7C8aHRffnird5eO2/ZAUuNohD6nNd+QkH4emZg9FpqHPCNyKzqZf4Ma4e09WhNtA7m15p6h5qtRSa5ptWzKjqA==",
+  "dgSpecHash": "B7sRtuuKuowtToYBD4blhcs8yQNN8FEzusdjeW1quj/jIMD4oF1cdIiv5+Zbt3PLgZqTQE8Lw90FZ1Lxdh0h1Q==",
   "success": true,
   "projectFilePath": "C:\\GitHub\\ECOLAB.IOT\\ECOLAB.IOT.WinFormApp\\ECOLAB.IOT.WinFormApp.csproj",
   "expectedPackageFiles": [
@@ -17,8 +17,13 @@
     "C:\\Users\\zhang13\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",
     "C:\\Users\\zhang13\\.nuget\\packages\\microsoft.extensions.options.configurationextensions\\6.0.0\\microsoft.extensions.options.configurationextensions.6.0.0.nupkg.sha512",
     "C:\\Users\\zhang13\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
-    "C:\\Users\\zhang13\\.nuget\\packages\\sunnyui\\3.2.4\\sunnyui.3.2.4.nupkg.sha512",
-    "C:\\Users\\zhang13\\.nuget\\packages\\sunnyui.common\\3.2.0\\sunnyui.common.3.2.0.nupkg.sha512",
+    "C:\\Users\\zhang13\\.nuget\\packages\\runtime.linux-arm.runtime.native.system.io.ports\\6.0.0\\runtime.linux-arm.runtime.native.system.io.ports.6.0.0.nupkg.sha512",
+    "C:\\Users\\zhang13\\.nuget\\packages\\runtime.linux-arm64.runtime.native.system.io.ports\\6.0.0\\runtime.linux-arm64.runtime.native.system.io.ports.6.0.0.nupkg.sha512",
+    "C:\\Users\\zhang13\\.nuget\\packages\\runtime.linux-x64.runtime.native.system.io.ports\\6.0.0\\runtime.linux-x64.runtime.native.system.io.ports.6.0.0.nupkg.sha512",
+    "C:\\Users\\zhang13\\.nuget\\packages\\runtime.native.system.io.ports\\6.0.0\\runtime.native.system.io.ports.6.0.0.nupkg.sha512",
+    "C:\\Users\\zhang13\\.nuget\\packages\\runtime.osx-arm64.runtime.native.system.io.ports\\6.0.0\\runtime.osx-arm64.runtime.native.system.io.ports.6.0.0.nupkg.sha512",
+    "C:\\Users\\zhang13\\.nuget\\packages\\runtime.osx-x64.runtime.native.system.io.ports\\6.0.0\\runtime.osx-x64.runtime.native.system.io.ports.6.0.0.nupkg.sha512",
+    "C:\\Users\\zhang13\\.nuget\\packages\\system.io.ports\\6.0.0\\system.io.ports.6.0.0.nupkg.sha512",
     "C:\\Users\\zhang13\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
     "C:\\Users\\zhang13\\.nuget\\packages\\system.text.encodings.web\\6.0.0\\system.text.encodings.web.6.0.0.nupkg.sha512",
     "C:\\Users\\zhang13\\.nuget\\packages\\system.text.json\\6.0.0\\system.text.json.6.0.0.nupkg.sha512",
