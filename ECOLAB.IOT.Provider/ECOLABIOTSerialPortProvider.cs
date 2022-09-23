@@ -1,7 +1,6 @@
 ﻿namespace ECOLAB.IOT.Provider
 {
     using System.IO.Ports;
-    using System.Text;
 
     public interface IECOLABIOTSerialPortProvider
     {

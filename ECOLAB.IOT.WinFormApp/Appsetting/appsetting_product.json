@@ -1,6 +1,8 @@
 {
   "AppServiceOptions": {
-    "appKey": "appkey_product",
-    "appSecret": "appSecret_product"
+    "ClientId": "fc9994eb-6ee4-4831-be87-deabc4e2110d",
+    "ClientSecret": "sjk8Q~gta1B9OrHTZXS1mycxCLbj2vglYefpIaEI",
+    "TenantId": "c1eb5112-7946-4c9d-bc57-40040cfe3a91",
+    "KeyValutUri": "https://ecolab-iot-keyvalut-dome.vault.azure.net/"
   }
 }

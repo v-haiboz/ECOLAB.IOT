@@ -1,10 +1,14 @@
 ﻿namespace ECOLAB.IOT.WinFormApp
 {
+    using Azure.Identity;
+    using Azure.Security.KeyVault.Secrets;
     using ECOLAB.IOT.Entity;
     using ECOLAB.IOT.Provider;
     using ECOLAB.IOT.Service;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
+    using Microsoft.Extensions.Options;
+    using System;
     using System.CodeDom;
 
     internal static class ServiceCollectionExtension
@@ -43,7 +47,12 @@
             return services;
         }
 
-
+        public static ServiceCollection RegisterSecretClient(this ServiceCollection services, IOptions<AppServiceOptions> setting)
+        {
+            var cliectSecret = new SecretClient(new Uri(setting.Value.KeyValutUri), new ClientSecretCredential(setting.Value.TenantId, setting.Value.ClientId, setting.Value.ClientSecret));
+            services.AddSingleton(cliectSecret);
+            return services;
+        }
 
         public static ServiceCollection RegisterCurrentSysAdmins(this ServiceCollection services, SysAdmins sysAdmins)
         {
@@ -64,6 +73,7 @@
             //Register Service
             services.AddScoped<IECOLABIOTUserService, ECOLABIOTUserService>();
             services.AddScoped<IECOLABIOTBurnSNAndPSKService, ECOLABIOTBurnSNAndPSKService>();
+            services.AddScoped<IECOLABIOTSecretService, ECOLABIOTSecretService>();
             return services;
         }
 

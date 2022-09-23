@@ -71,6 +71,8 @@ namespace ECOLAB.IOT.WinFormApp
                     .RegisterCurrentEnvironment(environmentVariable)
                     .RegisterAppsetting(environmentVariable)
                     .RegisterCurrentSysAdmins(objAdmins).Build();
+                ServiceCollectionExtension.GetCurrentServiceCollection()
+                    .RegisterSecretClient(CallerContext.AppServiceOptionsWrapper).Build();
                 this.DialogResult = DialogResult.OK;
 
             }

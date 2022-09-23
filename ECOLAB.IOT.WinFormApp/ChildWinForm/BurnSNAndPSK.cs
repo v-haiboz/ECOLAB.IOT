@@ -131,7 +131,7 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             ValidateSN(this.textBox_SerialNumber.Text);
         }
 
-        private void button_GeneratePSK_Click(object sender, EventArgs e)
+        private  void button_GeneratePSK_Click(object sender, EventArgs e)
         {
             if (Validate())
             {
@@ -163,7 +163,12 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
 
         private void Travel()
         {
+            SetSecret("deomkey", "asdc");
+        }
 
+        private void SetSecret(string key,string value)
+        {
+            CallerContext.ECOLABIOTSecretService.SetSecret(key,value);
         }
         private void DisableOrEnableGeneratePSKButton()
         {
