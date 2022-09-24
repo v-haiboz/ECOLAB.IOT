@@ -9,22 +9,25 @@
     public class CallerContext:CallerContextBase
     {
         public static EnvironmentVariable EnvironmentVariable => Resolve<EnvironmentVariable>();
-        public static AppServiceOptions AppServiceOptions => Resolve<AppServiceOptions>();
+        public static AppServiceOption AppServiceOptions => Resolve<AppServiceOption>();
         
         public static SysAdmins SysAdmins => Resolve<SysAdmins>();
 
-        public static IOptions<AppServiceOptions> AppServiceOptionsWrapper => Resolve<IOptions<AppServiceOptions>>();
+        public static IOptions<AppServiceOption> AppServiceOptionsWrapper => Resolve<IOptions<AppServiceOption>>();
 
 
         public static IECOLABIOTUserService ECOLABIOTUserService => Resolve<IECOLABIOTUserService>();
         public static IECOLABIOTBurnSNAndPSKService ECOLABIOTBurnSNAndPSKService => Resolve<IECOLABIOTBurnSNAndPSKService>();
         public static IECOLABIOTSecretService ECOLABIOTSecretService => Resolve<IECOLABIOTSecretService>();
-        
+        public static IECOLABIOTEnvironmentService ECOLABIOTEnvironmentService => Resolve<IECOLABIOTEnvironmentService>();
+
+
 
         public static IECOLABIOTUserProvider ECOLABIOTUserProvider => Resolve<IECOLABIOTUserProvider>();
         public static IECOLABIOTSerialPortProvider ECOLABIOTSerialPortProvider => Resolve<IECOLABIOTSerialPortProvider>();
         public static IECOLABIOTCOMSettingProvider ECOLABIOTCOMSettingProvider => Resolve<IECOLABIOTCOMSettingProvider>();
         public static SecretClient ECOLABIOTSecretClient => Resolve<SecretClient>();
+        public static IECOLABIOTEnvironmentProvider ECOLABIOTEnvironmentProvider => Resolve<IECOLABIOTEnvironmentProvider>();
 
     }
 }

@@ -97,6 +97,7 @@
             // 
             // groupBox_Configuration
             // 
+            this.groupBox_Configuration.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.groupBox_Configuration.Controls.Add(this.pictureBox_Connection);
             this.groupBox_Configuration.Controls.Add(this.button_Reset);
             this.groupBox_Configuration.Controls.Add(this.comboBox_StopBit);
@@ -245,6 +246,7 @@
             // 
             // groupBox_Send
             // 
+            this.groupBox_Send.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.groupBox_Send.Controls.Add(this.textBox_SerialNumber);
             this.groupBox_Send.Controls.Add(this.label_SerualNubmer_Validate);
             this.groupBox_Send.Controls.Add(this.label_SerialNumber);
@@ -260,6 +262,7 @@
             // 
             // textBox_SerialNumber
             // 
+            this.textBox_SerialNumber.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox_SerialNumber.Location = new System.Drawing.Point(177, 95);
             this.textBox_SerialNumber.Multiline = true;
             this.textBox_SerialNumber.Name = "textBox_SerialNumber";

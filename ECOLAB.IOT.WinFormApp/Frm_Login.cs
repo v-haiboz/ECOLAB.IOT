@@ -1,14 +1,7 @@
 ﻿using ECOLAB.IOT.Entity;
 using ECOLAB.IOT.Service;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+using static Azure.Core.HttpHeader;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Header;
 
 namespace ECOLAB.IOT.WinFormApp
 {
@@ -22,7 +15,7 @@ namespace ECOLAB.IOT.WinFormApp
 
         private void Frm_Login_Load(object sender, EventArgs e)
         {
-            
+            Init();
         }
 
         private void button_Cancel_Click(object sender, EventArgs e)
@@ -61,23 +54,25 @@ namespace ECOLAB.IOT.WinFormApp
             }
             else
             {
-                var environmentVariable = new EnvironmentVariable();
-                if (this.radioButton_Product.Checked)
-                {
-                    environmentVariable.Name = EnvironmentName.PRODUCT;
-                }
-
+                var environmentVariable = CallerContext.ECOLABIOTEnvironmentService.GetEnvironmentVariableByName(comboBox_Env.Text); ;
                 ServiceCollectionExtension.GetCurrentServiceCollection()
                     .RegisterCurrentEnvironment(environmentVariable)
                     .RegisterAppsetting(environmentVariable)
                     .RegisterCurrentSysAdmins(objAdmins).Build();
                 ServiceCollectionExtension.GetCurrentServiceCollection()
-                    .RegisterSecretClient(CallerContext.AppServiceOptionsWrapper).Build();
+                    .RegisterSecretClient(CallerContext.AppServiceOptions).Build();
                 this.DialogResult = DialogResult.OK;
 
             }
         }
-
+        private void Init()
+        {
+            comboBox_Env.Items.Clear();
+            var items = CallerContext.ECOLABIOTEnvironmentService.GetEnvironmentVariables();
+            comboBox_Env.DataSource=items;
+            comboBox_Env.ValueMember = "FileName";
+            comboBox_Env.DisplayMember = "Name";
+        }
         private bool CheckValidate()
         {
             if (this.textBox_UserName.Text.Trim().Length == 0)
@@ -95,5 +90,6 @@ namespace ECOLAB.IOT.WinFormApp
 
             return true;
         }
+
     }
 }

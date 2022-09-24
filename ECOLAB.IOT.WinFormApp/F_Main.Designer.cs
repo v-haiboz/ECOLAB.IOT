@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel_ChildForm = new System.Windows.Forms.Panel();
+            this.panel_ChildHeader = new System.Windows.Forms.Panel();
+            this.label_ChildHeader_Menu = new System.Windows.Forms.Label();
             this.panel_SideMenu = new System.Windows.Forms.Panel();
             this.button_Help = new System.Windows.Forms.Button();
             this.panel_SettingSubMenu = new System.Windows.Forms.Panel();
@@ -55,6 +57,7 @@
             this.pictureBox_Min = new System.Windows.Forms.PictureBox();
             this.pictureBox_Max = new System.Windows.Forms.PictureBox();
             this.panel_ChildForm.SuspendLayout();
+            this.panel_ChildHeader.SuspendLayout();
             this.panel_SideMenu.SuspendLayout();
             this.panel_SettingSubMenu.SuspendLayout();
             this.panel_SerialCOMSubMenu.SuspendLayout();
@@ -70,6 +73,7 @@
             // 
             // panel_ChildForm
             // 
+            this.panel_ChildForm.Controls.Add(this.panel_ChildHeader);
             this.panel_ChildForm.Controls.Add(this.panel_SideMenu);
             this.panel_ChildForm.Controls.Add(this.panel_BottomToolTip);
             this.panel_ChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -78,6 +82,29 @@
             this.panel_ChildForm.Size = new System.Drawing.Size(1500, 756);
             this.panel_ChildForm.TabIndex = 1;
             this.panel_ChildForm.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel_ChildForm_MouseDown);
+            // 
+            // panel_ChildHeader
+            // 
+            this.panel_ChildHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(137)))), ((int)(((byte)(152)))));
+            this.panel_ChildHeader.Controls.Add(this.label_ChildHeader_Menu);
+            this.panel_ChildHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel_ChildHeader.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.panel_ChildHeader.ForeColor = System.Drawing.Color.White;
+            this.panel_ChildHeader.Location = new System.Drawing.Point(285, 0);
+            this.panel_ChildHeader.Name = "panel_ChildHeader";
+            this.panel_ChildHeader.Size = new System.Drawing.Size(1215, 45);
+            this.panel_ChildHeader.TabIndex = 6;
+            // 
+            // label_ChildHeader_Menu
+            // 
+            this.label_ChildHeader_Menu.AutoSize = true;
+            this.label_ChildHeader_Menu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label_ChildHeader_Menu.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label_ChildHeader_Menu.Location = new System.Drawing.Point(0, 0);
+            this.label_ChildHeader_Menu.Name = "label_ChildHeader_Menu";
+            this.label_ChildHeader_Menu.Padding = new System.Windows.Forms.Padding(20, 10, 0, 0);
+            this.label_ChildHeader_Menu.Size = new System.Drawing.Size(20, 34);
+            this.label_ChildHeader_Menu.TabIndex = 0;
             // 
             // panel_SideMenu
             // 
@@ -469,6 +496,8 @@
             this.Text = "F_Main";
             this.Load += new System.EventHandler(this.F_Main_Load);
             this.panel_ChildForm.ResumeLayout(false);
+            this.panel_ChildHeader.ResumeLayout(false);
+            this.panel_ChildHeader.PerformLayout();
             this.panel_SideMenu.ResumeLayout(false);
             this.panel_SettingSubMenu.ResumeLayout(false);
             this.panel_SerialCOMSubMenu.ResumeLayout(false);
@@ -514,5 +543,7 @@
         private Label label_DateTime;
         private Button button_Help;
         private Button button_SerialCOM_EDM;
+        private Panel panel_ChildHeader;
+        private Label label_ChildHeader_Menu;
     }
 }

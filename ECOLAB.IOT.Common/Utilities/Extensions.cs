@@ -1,5 +1,6 @@
 ﻿namespace ECOLAB.IOT.Common.Utilities
 {
+    using ECOLAB.IOT.Entity;
     using System;
     using System.Collections;
     using System.Runtime.CompilerServices;
@@ -35,6 +36,19 @@
             var type = (T)Enum.Parse(typeof(T), enumName);
 
             return type;
+        }
+
+        public static bool IsNull(this EnvironmentVariable environmentVariable)
+        {
+            if (environmentVariable == null
+                 || environmentVariable.AppServiceOption == null
+                 || string.IsNullOrEmpty(environmentVariable.FileName)
+                 || string.IsNullOrEmpty(environmentVariable.Name))
+            {
+                return true;
+            }
+
+            return false;
         }
     }
 }

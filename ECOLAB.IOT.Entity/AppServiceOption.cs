@@ -1,6 +1,6 @@
 ﻿namespace ECOLAB.IOT.Entity
 {
-    public class AppServiceOptions
+    public class AppServiceOption
     {
         public string ClientId { get; set; } = "";
         public string ClientSecret { get; set; } = "";

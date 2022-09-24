@@ -10,4 +10,8 @@
     <PackageReference Include="YamlDotNet" Version="12.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ECOLAB.IOT.Entity\ECOLAB.IOT.Entity.csproj" />
+  </ItemGroup>
+
 </Project>

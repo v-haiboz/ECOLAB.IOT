@@ -3,12 +3,9 @@
     using System;
     public class EnvironmentVariable
     {
-        public EnvironmentName Name { get; set; } = EnvironmentName.INT;
+        public string Name { get; set; } = "";
+        public string FileName { get; set; } = "";
+        public string FilePath { get; set; } = "";
+        public AppServiceOption AppServiceOption { get; set; } = null;
     }
-    public enum EnvironmentName
-    {
-        INT=1,
-        PRODUCT=2
-    }
-
 }

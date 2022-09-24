@@ -8,8 +8,8 @@
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Options;
+    using Newtonsoft.Json;
     using System;
-    using System.CodeDom;
 
     internal static class ServiceCollectionExtension
     {
@@ -34,22 +34,26 @@
         public static ServiceCollection RegisterAppsetting(this ServiceCollection services, EnvironmentVariable env)
         {
             //register configuration
-            IConfigurationBuilder cfgBuilder = new ConfigurationBuilder()
-                .SetBasePath(Path.Combine(Directory.GetCurrentDirectory(), "Appsetting"))
-                .AddJsonFile($"appsetting_{env.Name}.json");
+            //IConfigurationBuilder cfgBuilder = new ConfigurationBuilder()
+            //    .SetBasePath(Path.Combine(Directory.GetCurrentDirectory(), "Appsetting"))
+            //    .AddJsonFile(env.FileName);
 
-            IConfiguration configuration = cfgBuilder.Build();
-            services.AddSingleton<IConfiguration>(configuration);
+            //IConfiguration configuration = cfgBuilder.Build();
+            //services.AddSingleton<IConfiguration>(configuration);
 
-            services.AddOptions();
-            services.Configure<AppServiceOptions>(configuration.GetSection("AppServiceOptions"));
-
+            //services.AddOptions();
+            //services.Configure<AppServiceOption>(configuration.GetSection("AppServiceOptions"));
+            var filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Appsetting", env.FileName);
+            var json = File.ReadAllText(filePath);
+            var appServiceOption = JsonConvert.DeserializeObject<AppServiceOption>(json);
+            services.AddSingleton<AppServiceOption>(appServiceOption);
             return services;
         }
 
-        public static ServiceCollection RegisterSecretClient(this ServiceCollection services, IOptions<AppServiceOptions> setting)
+        public static ServiceCollection RegisterSecretClient(this ServiceCollection services, AppServiceOption appServiceOption)
         {
-            var cliectSecret = new SecretClient(new Uri(setting.Value.KeyValutUri), new ClientSecretCredential(setting.Value.TenantId, setting.Value.ClientId, setting.Value.ClientSecret));
+            var cliectSecret = new SecretClient(new Uri(appServiceOption.KeyValutUri)
+                , new ClientSecretCredential(appServiceOption.TenantId, appServiceOption.ClientId, appServiceOption.ClientSecret));
             services.AddSingleton(cliectSecret);
             return services;
         }
@@ -66,6 +70,7 @@
             services.AddScoped<IECOLABIOTUserProvider, ECOLABIOTUserProvider>();
             services.AddScoped<IECOLABIOTSerialPortProvider, ECOLABIOTSerialPortProvider>();
             services.AddScoped<IECOLABIOTCOMSettingProvider, ECOLABIOTCOMSettingProvider>();
+            services.AddScoped<IECOLABIOTEnvironmentProvider, ECOLABIOTEnvironmentProvider>();
             return services;
         }
         private static ServiceCollection RegisterService(this ServiceCollection services)
@@ -74,6 +79,7 @@
             services.AddScoped<IECOLABIOTUserService, ECOLABIOTUserService>();
             services.AddScoped<IECOLABIOTBurnSNAndPSKService, ECOLABIOTBurnSNAndPSKService>();
             services.AddScoped<IECOLABIOTSecretService, ECOLABIOTSecretService>();
+            services.AddScoped<IECOLABIOTEnvironmentService, ECOLABIOTEnvironmentService>();
             return services;
         }
 
