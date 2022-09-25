@@ -1,6 +1,8 @@
 ﻿using ECOLAB.IOT.Common.Win32;
 using ECOLAB.IOT.Service;
 using ECOLAB.IOT.WinFormApp.ChildWinForm;
+using System.Diagnostics;
+using System.Reflection.Emit;
 using System.Windows.Forms;
 
 namespace ECOLAB.IOT.WinFormApp
@@ -33,10 +35,15 @@ namespace ECOLAB.IOT.WinFormApp
                 Application.Exit();
             }
         }
+
         public F_Main()
         {
             InitializeComponent();
             CustomizeDesing();
+        }
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            label_DateTime.Text = $"{DateTime.Now.ToString()}";
         }
         private void CustomizeDesing()
         {
@@ -45,7 +52,6 @@ namespace ECOLAB.IOT.WinFormApp
             panel_SettingSubMenu.Visible = false;
 
             this.label_CurrentUser.Text = "Current User: " + CallerContext.SysAdmins.UserName;
-            this.label_DateTime.Text = DateTime.Now.ToString();
             this.label_Environment.Text = $"{label_Environment.Text}  ({CallerContext.EnvironmentVariable.Name.ToString()})";
         }
 
@@ -94,6 +100,8 @@ namespace ECOLAB.IOT.WinFormApp
 
         private void button_SignOut_Click(object sender, EventArgs e)
         {
+            Application.Exit();
+            Process.Start(Application.StartupPath+ "\\ECOLAB.IOT.WinFormApp.exe");
             ShowNavigationMenu(button_Account_SignOut.Name);
             HideSubMenu();
         }
@@ -235,6 +243,7 @@ namespace ECOLAB.IOT.WinFormApp
             int DHeight = Screen.PrimaryScreen.WorkingArea.Height;
             this.Width = Convert.ToInt32(DWidth * 0.9);
             this.Height = Convert.ToInt32(DHeight * 0.9);
+            this.timer1.Start();
         }
 
         private void ShowNavigationMenu(string controlName)

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel_ChildForm = new System.Windows.Forms.Panel();
             this.panel_ChildHeader = new System.Windows.Forms.Panel();
             this.label_ChildHeader_Menu = new System.Windows.Forms.Label();
@@ -56,6 +57,7 @@
             this.panel_Header = new System.Windows.Forms.Panel();
             this.pictureBox_Min = new System.Windows.Forms.PictureBox();
             this.pictureBox_Max = new System.Windows.Forms.PictureBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel_ChildForm.SuspendLayout();
             this.panel_ChildHeader.SuspendLayout();
             this.panel_SideMenu.SuspendLayout();
@@ -481,6 +483,10 @@
             this.pictureBox_Max.TabStop = false;
             this.pictureBox_Max.Click += new System.EventHandler(this.pictureBox_Max_Click);
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // F_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
@@ -545,5 +551,6 @@
         private Button button_SerialCOM_EDM;
         private Panel panel_ChildHeader;
         private Label label_ChildHeader_Menu;
+        private System.Windows.Forms.Timer timer1;
     }
 }

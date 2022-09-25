@@ -1,10 +1,18 @@
-﻿namespace ECOLAB.IOT.Common.Utilities
+﻿using System.Reflection.Metadata;
+using System.Text.RegularExpressions;
+
+namespace ECOLAB.IOT.Common.Utilities
 {
     public class Utilities
     {
         private static List<string> strings = new List<string>(){
         "DMC","CON","INT","CWT"
        };
+
+        private const string hex_reg = @"[0-9a-fA-F]";
+        private const string stringOrNumber = @"^[a-zA-Z0-9]*$";  
+        private const string url = @"^(https?|ftp|file|ws)://([\w-]+\.)+[\w-]+(/[\w- ./?%&=]*)?$";
+
         public static bool ValidateSN(string serial_num, out string message)
         {
             //return Regex.IsMatch(serial_num, @"^(DMC|CON|INT|CWT)[1-9]\d{8}$");
@@ -78,6 +86,51 @@
             }
             message = "";
             return true;
+        }
+
+        /// <summary>
+        /// Verify if it is a URL link
+        /// </summary>
+        /// <param name="str">Specify string</param>
+        /// <returns></returns>
+        public static bool IsURL(string str)
+        {
+            return IsMatch(url, str);
+        }
+
+        /// <summary>
+        /// Verify if it is a URL link
+        /// </summary>
+        /// <param name="str">Specify string</param>
+        /// <returns></returns>
+        public static bool IsStringOrNumber(string str)
+        {
+            return IsMatch(stringOrNumber, str);
+        }
+
+        /// <summary>
+        /// Verify if it is a GUID      
+        /// </summary>
+        /// <param name="str">Specify string</param>
+        /// <returns></returns>
+        public static bool IsGUID(string str)
+        {
+            string pattern = @"^(" + hex_reg + "{8}(-" + hex_reg + "{4}){3}-" + hex_reg + "{12})?$";
+            return IsMatch(pattern, str);
+        }
+
+        /// <summary>
+        /// Judge whether a string matches the specified expression (case sensitive).
+        /// </summary>
+        /// <param name="expression">regular expression</param>
+        /// <param name="str">String to match</param>
+        /// <returns></returns>
+        private static bool IsMatch(string expression, string str)
+        {
+            Regex reg = new Regex(expression);
+            if (string.IsNullOrEmpty(str))
+                return false;
+            return reg.IsMatch(str);
         }
     }
 }

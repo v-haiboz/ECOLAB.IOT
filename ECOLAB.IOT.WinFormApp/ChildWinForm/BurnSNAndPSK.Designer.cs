@@ -97,7 +97,7 @@
             // 
             // groupBox_Configuration
             // 
-            this.groupBox_Configuration.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.groupBox_Configuration.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.groupBox_Configuration.Controls.Add(this.pictureBox_Connection);
             this.groupBox_Configuration.Controls.Add(this.button_Reset);
             this.groupBox_Configuration.Controls.Add(this.comboBox_StopBit);
@@ -246,7 +246,7 @@
             // 
             // groupBox_Send
             // 
-            this.groupBox_Send.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.groupBox_Send.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.groupBox_Send.Controls.Add(this.textBox_SerialNumber);
             this.groupBox_Send.Controls.Add(this.label_SerualNubmer_Validate);
             this.groupBox_Send.Controls.Add(this.label_SerialNumber);

@@ -28,10 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer_Environment = new System.Windows.Forms.SplitContainer();
             this.dataGridView_Environment = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label_KeyValutUrl = new System.Windows.Forms.Label();
+            this.label_TenantId = new System.Windows.Forms.Label();
+            this.label_ClientSecret = new System.Windows.Forms.Label();
+            this.label_ClientId = new System.Windows.Forms.Label();
+            this.label_Name = new System.Windows.Forms.Label();
             this.button_Add = new System.Windows.Forms.Button();
             this.textBox_EnvironmentClientSecret = new System.Windows.Forms.TextBox();
             this.label_EnvironmentClientSecret = new System.Windows.Forms.Label();
@@ -73,14 +78,14 @@
             // 
             this.dataGridView_Environment.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView_Environment.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_Environment.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_Environment.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView_Environment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_Environment.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView_Environment.Location = new System.Drawing.Point(0, 0);
@@ -91,12 +96,15 @@
             this.dataGridView_Environment.TabIndex = 0;
             this.dataGridView_Environment.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Environment_CellClick);
             this.dataGridView_Environment.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Environment_CellContentClick);
-            this.dataGridView_Environment.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dataGridView_Environment_RowPrePaint);
-            this.dataGridView_Environment.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dataGridView_Environment_RowsAdded);
             // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.groupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.groupBox1.Controls.Add(this.label_KeyValutUrl);
+            this.groupBox1.Controls.Add(this.label_TenantId);
+            this.groupBox1.Controls.Add(this.label_ClientSecret);
+            this.groupBox1.Controls.Add(this.label_ClientId);
+            this.groupBox1.Controls.Add(this.label_Name);
             this.groupBox1.Controls.Add(this.button_Add);
             this.groupBox1.Controls.Add(this.textBox_EnvironmentClientSecret);
             this.groupBox1.Controls.Add(this.label_EnvironmentClientSecret);
@@ -116,15 +124,59 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Maintenance information";
             // 
+            // label_KeyValutUrl
+            // 
+            this.label_KeyValutUrl.AutoSize = true;
+            this.label_KeyValutUrl.ForeColor = System.Drawing.Color.Red;
+            this.label_KeyValutUrl.Location = new System.Drawing.Point(806, 138);
+            this.label_KeyValutUrl.Name = "label_KeyValutUrl";
+            this.label_KeyValutUrl.Size = new System.Drawing.Size(0, 24);
+            this.label_KeyValutUrl.TabIndex = 20;
+            // 
+            // label_TenantId
+            // 
+            this.label_TenantId.AutoSize = true;
+            this.label_TenantId.ForeColor = System.Drawing.Color.Red;
+            this.label_TenantId.Location = new System.Drawing.Point(806, 71);
+            this.label_TenantId.Name = "label_TenantId";
+            this.label_TenantId.Size = new System.Drawing.Size(0, 24);
+            this.label_TenantId.TabIndex = 19;
+            // 
+            // label_ClientSecret
+            // 
+            this.label_ClientSecret.AutoSize = true;
+            this.label_ClientSecret.ForeColor = System.Drawing.Color.Red;
+            this.label_ClientSecret.Location = new System.Drawing.Point(240, 203);
+            this.label_ClientSecret.Name = "label_ClientSecret";
+            this.label_ClientSecret.Size = new System.Drawing.Size(0, 24);
+            this.label_ClientSecret.TabIndex = 18;
+            // 
+            // label_ClientId
+            // 
+            this.label_ClientId.AutoSize = true;
+            this.label_ClientId.ForeColor = System.Drawing.Color.Red;
+            this.label_ClientId.Location = new System.Drawing.Point(240, 140);
+            this.label_ClientId.Name = "label_ClientId";
+            this.label_ClientId.Size = new System.Drawing.Size(0, 24);
+            this.label_ClientId.TabIndex = 17;
+            // 
+            // label_Name
+            // 
+            this.label_Name.AutoSize = true;
+            this.label_Name.ForeColor = System.Drawing.Color.Red;
+            this.label_Name.Location = new System.Drawing.Point(240, 74);
+            this.label_Name.Name = "label_Name";
+            this.label_Name.Size = new System.Drawing.Size(0, 24);
+            this.label_Name.TabIndex = 16;
+            // 
             // button_Add
             // 
-            this.button_Add.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.button_Add.Enabled = false;
+            this.button_Add.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.button_Add.FlatAppearance.BorderSize = 0;
             this.button_Add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_Add.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button_Add.ForeColor = System.Drawing.Color.White;
-            this.button_Add.Location = new System.Drawing.Point(665, 153);
+            this.button_Add.Location = new System.Drawing.Point(806, 168);
             this.button_Add.Name = "button_Add";
             this.button_Add.Size = new System.Drawing.Size(204, 34);
             this.button_Add.TabIndex = 15;
@@ -135,16 +187,18 @@
             // textBox_EnvironmentClientSecret
             // 
             this.textBox_EnvironmentClientSecret.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox_EnvironmentClientSecret.Location = new System.Drawing.Point(291, 153);
+            this.textBox_EnvironmentClientSecret.Location = new System.Drawing.Point(240, 169);
             this.textBox_EnvironmentClientSecret.Multiline = true;
             this.textBox_EnvironmentClientSecret.Name = "textBox_EnvironmentClientSecret";
-            this.textBox_EnvironmentClientSecret.Size = new System.Drawing.Size(183, 30);
+            this.textBox_EnvironmentClientSecret.Size = new System.Drawing.Size(398, 30);
             this.textBox_EnvironmentClientSecret.TabIndex = 14;
+            this.textBox_EnvironmentClientSecret.TextChanged += new System.EventHandler(this.textBox_EnvironmentClientSecret_TextChanged);
+            this.textBox_EnvironmentClientSecret.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_EnvironmentClientSecret_KeyPress);
             // 
             // label_EnvironmentClientSecret
             // 
             this.label_EnvironmentClientSecret.AutoSize = true;
-            this.label_EnvironmentClientSecret.Location = new System.Drawing.Point(148, 157);
+            this.label_EnvironmentClientSecret.Location = new System.Drawing.Point(97, 173);
             this.label_EnvironmentClientSecret.Name = "label_EnvironmentClientSecret";
             this.label_EnvironmentClientSecret.Size = new System.Drawing.Size(117, 24);
             this.label_EnvironmentClientSecret.TabIndex = 13;
@@ -153,16 +207,19 @@
             // textBox_EnvironmentKeyValutUrl
             // 
             this.textBox_EnvironmentKeyValutUrl.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox_EnvironmentKeyValutUrl.Location = new System.Drawing.Point(665, 108);
+            this.textBox_EnvironmentKeyValutUrl.ForeColor = System.Drawing.Color.Black;
+            this.textBox_EnvironmentKeyValutUrl.Location = new System.Drawing.Point(806, 105);
             this.textBox_EnvironmentKeyValutUrl.Multiline = true;
             this.textBox_EnvironmentKeyValutUrl.Name = "textBox_EnvironmentKeyValutUrl";
             this.textBox_EnvironmentKeyValutUrl.Size = new System.Drawing.Size(547, 30);
             this.textBox_EnvironmentKeyValutUrl.TabIndex = 9;
+            this.textBox_EnvironmentKeyValutUrl.TextChanged += new System.EventHandler(this.textBox_EnvironmentKeyValutUrl_TextChanged);
+            this.textBox_EnvironmentKeyValutUrl.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_EnvironmentKeyValutUrl_KeyPress);
             // 
             // label_EnvironmentKeyValutUrl
             // 
             this.label_EnvironmentKeyValutUrl.AutoSize = true;
-            this.label_EnvironmentKeyValutUrl.Location = new System.Drawing.Point(520, 108);
+            this.label_EnvironmentKeyValutUrl.Location = new System.Drawing.Point(661, 105);
             this.label_EnvironmentKeyValutUrl.Name = "label_EnvironmentKeyValutUrl";
             this.label_EnvironmentKeyValutUrl.Size = new System.Drawing.Size(115, 24);
             this.label_EnvironmentKeyValutUrl.TabIndex = 5;
@@ -171,25 +228,29 @@
             // textBox_EnvironmentClientId
             // 
             this.textBox_EnvironmentClientId.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox_EnvironmentClientId.Location = new System.Drawing.Point(291, 104);
+            this.textBox_EnvironmentClientId.Location = new System.Drawing.Point(240, 104);
             this.textBox_EnvironmentClientId.Multiline = true;
             this.textBox_EnvironmentClientId.Name = "textBox_EnvironmentClientId";
-            this.textBox_EnvironmentClientId.Size = new System.Drawing.Size(183, 30);
+            this.textBox_EnvironmentClientId.Size = new System.Drawing.Size(398, 30);
             this.textBox_EnvironmentClientId.TabIndex = 10;
+            this.textBox_EnvironmentClientId.TextChanged += new System.EventHandler(this.textBox_EnvironmentClientId_TextChanged);
+            this.textBox_EnvironmentClientId.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_EnvironmentClientId_KeyPress);
             // 
             // textBox_EnvironmentTenantId
             // 
             this.textBox_EnvironmentTenantId.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox_EnvironmentTenantId.Location = new System.Drawing.Point(665, 51);
+            this.textBox_EnvironmentTenantId.Location = new System.Drawing.Point(806, 38);
             this.textBox_EnvironmentTenantId.Multiline = true;
             this.textBox_EnvironmentTenantId.Name = "textBox_EnvironmentTenantId";
-            this.textBox_EnvironmentTenantId.Size = new System.Drawing.Size(204, 30);
+            this.textBox_EnvironmentTenantId.Size = new System.Drawing.Size(391, 30);
             this.textBox_EnvironmentTenantId.TabIndex = 11;
+            this.textBox_EnvironmentTenantId.TextChanged += new System.EventHandler(this.textBox_EnvironmentTenantId_TextChanged);
+            this.textBox_EnvironmentTenantId.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_EnvironmentTenantId_KeyPress);
             // 
             // label_EnvironmentClientId
             // 
             this.label_EnvironmentClientId.AutoSize = true;
-            this.label_EnvironmentClientId.Location = new System.Drawing.Point(184, 105);
+            this.label_EnvironmentClientId.Location = new System.Drawing.Point(133, 105);
             this.label_EnvironmentClientId.Name = "label_EnvironmentClientId";
             this.label_EnvironmentClientId.Size = new System.Drawing.Size(81, 24);
             this.label_EnvironmentClientId.TabIndex = 6;
@@ -198,7 +259,7 @@
             // label_EnvironmentTenantId
             // 
             this.label_EnvironmentTenantId.AutoSize = true;
-            this.label_EnvironmentTenantId.Location = new System.Drawing.Point(545, 57);
+            this.label_EnvironmentTenantId.Location = new System.Drawing.Point(686, 44);
             this.label_EnvironmentTenantId.Name = "label_EnvironmentTenantId";
             this.label_EnvironmentTenantId.Size = new System.Drawing.Size(90, 24);
             this.label_EnvironmentTenantId.TabIndex = 7;
@@ -207,16 +268,18 @@
             // textBox_EnvironmentName
             // 
             this.textBox_EnvironmentName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox_EnvironmentName.Location = new System.Drawing.Point(291, 51);
+            this.textBox_EnvironmentName.Location = new System.Drawing.Point(240, 38);
             this.textBox_EnvironmentName.Multiline = true;
             this.textBox_EnvironmentName.Name = "textBox_EnvironmentName";
-            this.textBox_EnvironmentName.Size = new System.Drawing.Size(183, 30);
+            this.textBox_EnvironmentName.Size = new System.Drawing.Size(398, 30);
             this.textBox_EnvironmentName.TabIndex = 12;
+            this.textBox_EnvironmentName.TextChanged += new System.EventHandler(this.textBox_EnvironmentName_TextChanged);
+            this.textBox_EnvironmentName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_EnvironmentName_KeyPress);
             // 
             // label_EnvironmentName
             // 
             this.label_EnvironmentName.AutoSize = true;
-            this.label_EnvironmentName.Location = new System.Drawing.Point(199, 51);
+            this.label_EnvironmentName.Location = new System.Drawing.Point(148, 38);
             this.label_EnvironmentName.Name = "label_EnvironmentName";
             this.label_EnvironmentName.Size = new System.Drawing.Size(66, 24);
             this.label_EnvironmentName.TabIndex = 8;
@@ -259,5 +322,10 @@
         private Label label_EnvironmentTenantId;
         private TextBox textBox_EnvironmentName;
         private Label label_EnvironmentName;
+        private Label label_KeyValutUrl;
+        private Label label_TenantId;
+        private Label label_ClientSecret;
+        private Label label_ClientId;
+        private Label label_Name;
     }
 }

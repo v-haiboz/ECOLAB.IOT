@@ -3,14 +3,13 @@ using ECOLAB.IOT.Entity;
 using ECOLAB.IOT.Service;
 using System.ComponentModel;
 using System.IO.Ports;
-using System.Linq;
 using System.Text;
 
 namespace ECOLAB.IOT.WinFormApp.ChildWinForm
 {
     public partial class BurnSNAndPSK : Form
     {
-        System.Threading.SynchronizationContext m_SyncContext = null;
+        SynchronizationContext m_SyncContext = null;
         SerialPort serialPort = null;
         private COMSetting setting = CallerContext.ECOLABIOTBurnSNAndPSKService.GetDefaultCOMSetting();
         public BurnSNAndPSK()

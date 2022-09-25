@@ -1,17 +1,8 @@
 ﻿using ECOLAB.IOT.Common;
+using ECOLAB.IOT.Common.Utilities;
 using ECOLAB.IOT.Entity;
 using ECOLAB.IOT.Service;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Reflection;
-using System.Reflection.Metadata.Ecma335;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ECOLAB.IOT.WinFormApp.ChildWinForm
@@ -26,6 +17,7 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
         private void BangDing()
         {
             dataGridView_Environment.Columns.Clear();
+
             this.dataGridView_Environment.DataSource = null;
             dataGridView_Environment.ClearSelection();
             var list = CallerContext.ECOLABIOTEnvironmentService.GetEnvironmentVariables();
@@ -38,20 +30,15 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
                 KeyValutUri = item.AppServiceOption.KeyValutUri
             }).ToList();
             this.dataGridView_Environment.DataSource = dataSource;
+
             dataGridView_Environment.Columns[0].Width = 100;
             dataGridView_Environment.Columns[1].Width = 150;
             dataGridView_Environment.Columns[2].Width = 150;
             dataGridView_Environment.Columns[3].Width = 150;
+            dataGridView_Environment.Columns[4].Width = 150;
             dataGridView_Environment.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             AddDeleteButton();
-        }
-
-        private void dataGridView_Environment_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
-        {
-            for (var i = 0; i < dataGridView_Environment.Rows.Count; i++)
-            {
-                dataGridView_Environment.Rows[i].DefaultCellStyle.BackColor = Color.DarkGray;
-            }
+                      
         }
 
         private void dataGridView_Environment_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -62,22 +49,48 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
 
         private void EnvironmentSetting_Load(object sender, EventArgs e)
         {
+            for (var i = 0; i < dataGridView_Environment.Rows.Count; i++)
+            {
+                dataGridView_Environment.Rows[i].DefaultCellStyle.BackColor = SystemColors.Info;
+            }
             dataGridView_Environment.ClearSelection();
         }
 
         private void AddDeleteButton()
         {
             DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
+            var btn_CellStyle = new DataGridViewCellStyle();
+            //btn.DefaultCellStyle.BackColor = Color.Red;
+            //btn_CellStyle.ForeColor = Color.Maroon;
+            btn_CellStyle.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btn.Name = "button_Delete";
             btn.HeaderText = "";
             btn.DefaultCellStyle.NullValue = "Delete";
             btn.FlatStyle = FlatStyle.System;
-            btn.DefaultCellStyle.BackColor = Color.Red;
+            //btn.DefaultCellStyle = btn_CellStyle;
+            btn.DefaultCellStyle.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            //btn.DefaultCellStyle.BackColor = Color.Red;
             dataGridView_Environment.Columns.Add(btn);
+            //this.dataGridView_Environment.Columns.Add("TEST", "kk");
 
-        }
-        private void dataGridView_Environment_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
-        {
+            //for (int i = 0; i < dataGridView_Environment.Rows.Count; i++)
+            //{
+            //    Button[] btn1 = new Button[2];
+            //    btn1[0] = new Button();
+            //    btn1[0].Text = "操作1";
+            //    btn1[0].BackColor = Color.DarkRed;
+            //    btn1[1] = new Button();
+            //    btn1[1].Text = "操作2";
+            //    this.dataGridView_Environment.Controls.Add(btn1[0]);
+            //   // this.dataGridView_Environment.Controls.Add(btn1[1]);
+            //    Rectangle rect = this.dataGridView_Environment.GetCellDisplayRectangle(5, i, false);
+            //    btn1[0].Size  = new Size(rect.Width, rect.Height);
+            //    btn1[0].Location = new Point(rect.Left, rect.Top);
+            //    //btn1[1].Location = new Point(rect.Left + btn1[0].Width, rect.Top);
+
+            //}
+
+
         }
 
         private void dataGridView_Environment_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -103,6 +116,11 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
 
         private void button_Add_Click(object sender, EventArgs e)
         {
+            if (!ValidateAll())
+            {
+                return;
+            }
+
             var bl = CallerContext.ECOLABIOTEnvironmentService.AddOrUpdateEnvironmentVariable(BuildObject());
 
             if (!bl)
@@ -133,6 +151,7 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
                 }
             };
         }
+
         private void DisableOrEnableGeneratePSKButton()
         {
             if (!string.IsNullOrEmpty(textBox_EnvironmentName.Text)
@@ -154,11 +173,187 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
 
         private void Clear()
         {
+            DisableValidateEvent();
             textBox_EnvironmentName.Text = "";
             textBox_EnvironmentClientId.Text = "";
             textBox_EnvironmentClientSecret.Text = "";
             textBox_EnvironmentTenantId.Text = "";
             textBox_EnvironmentKeyValutUrl.Text = "";
+            EnableValidateEvent();
+        }
+
+        private void EnableValidateEvent()
+        {
+            textBox_EnvironmentName.KeyPress += new KeyPressEventHandler(textBox_EnvironmentName_KeyPress);
+            textBox_EnvironmentName.TextChanged += new EventHandler(textBox_EnvironmentName_TextChanged);
+
+            textBox_EnvironmentClientId.KeyPress += new KeyPressEventHandler(textBox_EnvironmentClientId_KeyPress);
+            textBox_EnvironmentClientId.TextChanged += new EventHandler(textBox_EnvironmentClientId_TextChanged);
+
+            textBox_EnvironmentClientSecret.KeyPress += new KeyPressEventHandler(textBox_EnvironmentClientSecret_KeyPress);
+            textBox_EnvironmentClientSecret.TextChanged += new EventHandler(textBox_EnvironmentClientSecret_TextChanged);
+
+            textBox_EnvironmentTenantId.KeyPress += new KeyPressEventHandler(textBox_EnvironmentTenantId_KeyPress);
+            textBox_EnvironmentTenantId.TextChanged += new EventHandler(textBox_EnvironmentTenantId_TextChanged);
+
+            textBox_EnvironmentKeyValutUrl.KeyPress += new KeyPressEventHandler(textBox_EnvironmentKeyValutUrl_KeyPress);
+            textBox_EnvironmentKeyValutUrl.TextChanged += new EventHandler(textBox_EnvironmentKeyValutUrl_TextChanged);
+        }
+
+        private void DisableValidateEvent()
+        {
+            textBox_EnvironmentName.KeyPress -= new KeyPressEventHandler(textBox_EnvironmentName_KeyPress);
+            textBox_EnvironmentName.TextChanged -= new EventHandler(textBox_EnvironmentName_TextChanged);
+
+            textBox_EnvironmentClientId.KeyPress -= new KeyPressEventHandler(textBox_EnvironmentClientId_KeyPress);
+            textBox_EnvironmentClientId.TextChanged -= new EventHandler(textBox_EnvironmentClientId_TextChanged);
+
+            textBox_EnvironmentClientSecret.KeyPress -= new KeyPressEventHandler(textBox_EnvironmentClientSecret_KeyPress);
+            textBox_EnvironmentClientSecret.TextChanged -= new EventHandler(textBox_EnvironmentClientSecret_TextChanged);
+
+            textBox_EnvironmentTenantId.KeyPress -= new KeyPressEventHandler(textBox_EnvironmentTenantId_KeyPress);
+            textBox_EnvironmentTenantId.TextChanged -= new EventHandler(textBox_EnvironmentTenantId_TextChanged);
+
+            textBox_EnvironmentKeyValutUrl.KeyPress -= new KeyPressEventHandler(textBox_EnvironmentKeyValutUrl_KeyPress);
+            textBox_EnvironmentKeyValutUrl.TextChanged -= new EventHandler(textBox_EnvironmentKeyValutUrl_TextChanged);
+        }
+
+        private bool ValidateAll()
+        {
+            return ValidateName() & ValidateClientId() & ValidateClientSecret() & ValidateTenantId() & ValidateKeyValutUrl();
+        }
+
+        private bool ValidateName()
+        {
+            if (string.IsNullOrEmpty(textBox_EnvironmentName.Text))
+            {
+                label_Name.Text = "Name is required.";
+                return false;
+            }
+
+            if (!Utilities.IsStringOrNumber(textBox_EnvironmentName.Text))
+            {
+                label_Name.Text = "Name can only contain letters and numbers.";
+                return false;
+            }
+
+            label_Name.Text = "";
+            return true;
+        }
+
+        private bool ValidateClientId()
+        {
+            if (string.IsNullOrEmpty(textBox_EnvironmentClientId.Text))
+            {
+                label_ClientId.Text = "ClientId is required.";
+                return false;
+            }
+
+            if (!Utilities.IsGUID(textBox_EnvironmentClientId.Text))
+            {
+                label_ClientId.Text = "ClientId must be GUID.";
+                return false;
+            }
+
+            label_ClientId.Text = "";
+            return true;
+        }
+
+        private bool ValidateClientSecret()
+        {
+            if (string.IsNullOrEmpty(textBox_EnvironmentClientSecret.Text))
+            {
+                label_ClientSecret.Text = "ClientSecret is required.";
+                return false;
+            }
+
+            label_ClientSecret.Text = "";
+            return true;
+        }
+        private bool ValidateTenantId()
+        {
+            if (string.IsNullOrEmpty(textBox_EnvironmentTenantId.Text))
+            {
+                label_TenantId.Text = "TenantId is required.";
+                return false;
+            }
+
+            if (!Utilities.IsGUID(textBox_EnvironmentTenantId.Text))
+            {
+                label_TenantId.Text = "TenantId must be GUID.";
+                return false;
+            }
+
+            label_TenantId.Text = "";
+            return true;
+        }
+
+        private bool ValidateKeyValutUrl()
+        {
+            if (string.IsNullOrEmpty(textBox_EnvironmentKeyValutUrl.Text))
+            {
+                label_KeyValutUrl.Text = "KeyValutUrl is required.";
+                return false;
+            }
+
+            if (!Utilities.IsURL(textBox_EnvironmentKeyValutUrl.Text))
+            {
+                label_KeyValutUrl.Text = "KeyValutUrl must be a Url.";
+                return false;
+            }
+
+            label_KeyValutUrl.Text = "";
+            return true;
+        }
+
+        private void textBox_EnvironmentName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidateName();
+        }
+
+        private void textBox_EnvironmentName_TextChanged(object sender, EventArgs e)
+        {
+            ValidateName();
+        }
+
+        private void textBox_EnvironmentTenantId_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidateTenantId();
+        }
+
+        private void textBox_EnvironmentTenantId_TextChanged(object sender, EventArgs e)
+        {
+            ValidateTenantId();
+        }
+
+        private void textBox_EnvironmentClientId_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidateClientId();
+        }
+
+        private void textBox_EnvironmentClientId_TextChanged(object sender, EventArgs e)
+        {
+            ValidateClientId();
+        }
+
+        private void textBox_EnvironmentKeyValutUrl_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidateKeyValutUrl();
+        }
+
+        private void textBox_EnvironmentKeyValutUrl_TextChanged(object sender, EventArgs e)
+        {
+            ValidateKeyValutUrl();
+        }
+
+        private void textBox_EnvironmentClientSecret_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidateClientSecret();
+        }
+
+        private void textBox_EnvironmentClientSecret_TextChanged(object sender, EventArgs e)
+        {
+            ValidateClientSecret();
         }
     }
 }
