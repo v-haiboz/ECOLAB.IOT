@@ -1,6 +1,7 @@
 ﻿namespace ECOLAB.IOT.Common.Utilities
 {
     using ECOLAB.IOT.Entity;
+    using Newtonsoft.Json;
     using System;
     using System.Collections;
     using System.Runtime.CompilerServices;
@@ -49,6 +50,21 @@
             }
 
             return false;
+        }
+
+        public static string ToJson(this DeviceRegister deviceRegister)
+        {
+            if (deviceRegister == null)
+                return string.Empty;
+
+            var obj = new
+            {
+                DeviceAppId = $"{deviceRegister.DeviceType}{deviceRegister.SerialNumber}",
+                DeviceSerialNumber = deviceRegister.SerialNumber,
+                IsEnabled = deviceRegister.IsEnabled,
+                PlatformName = deviceRegister.PlatformName
+            };
+            return JsonConvert.SerializeObject(obj);
         }
     }
 }

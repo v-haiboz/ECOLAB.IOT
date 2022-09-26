@@ -5,9 +5,7 @@
     using ECOLAB.IOT.Entity;
     using ECOLAB.IOT.Provider;
     using ECOLAB.IOT.Service;
-    using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
-    using Microsoft.Extensions.Options;
     using Newtonsoft.Json;
     using System;
 
@@ -71,6 +69,7 @@
             services.AddScoped<IECOLABIOTSerialPortProvider, ECOLABIOTSerialPortProvider>();
             services.AddScoped<IECOLABIOTCOMSettingProvider, ECOLABIOTCOMSettingProvider>();
             services.AddScoped<IECOLABIOTEnvironmentProvider, ECOLABIOTEnvironmentProvider>();
+            services.AddScoped<IECOLABIOTRegisterDeviceProvider, ECOLABIOTRegisterDeviceProvider>();
             return services;
         }
         private static ServiceCollection RegisterService(this ServiceCollection services)
@@ -80,6 +79,7 @@
             services.AddScoped<IECOLABIOTBurnSNAndPSKService, ECOLABIOTBurnSNAndPSKService>();
             services.AddScoped<IECOLABIOTSecretService, ECOLABIOTSecretService>();
             services.AddScoped<IECOLABIOTEnvironmentService, ECOLABIOTEnvironmentService>();
+            services.AddScoped<IECOLABIOTRegisterDeviceService, ECOLABIOTRegisterDeviceService>();
             return services;
         }
 

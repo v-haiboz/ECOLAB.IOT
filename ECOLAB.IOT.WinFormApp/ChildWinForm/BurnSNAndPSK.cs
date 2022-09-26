@@ -32,20 +32,20 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             var keyChar = e.KeyChar.ToString();
             ValidateSN(this.textBox_SerialNumber.Text + keyChar);
         }
-                
+
         private void checkBox_ValidateSN_CheckedChanged(object sender, EventArgs e)
         {
             ValidateSN(this.textBox_SerialNumber.Text);
         }
 
-        private void button_GeneratePSK_Click(object sender, EventArgs e)
+        private async void button_GeneratePSK_Click(object sender, EventArgs e)
         {
             if (Validate())
             {
                 return;
             }
-           
-            Travel();
+
+           await Travel();
 
         }
 
@@ -54,7 +54,7 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             Open();
             DisableOrEnableGeneratePSKButton();
         }
-             
+
         private void button_Reset_Click(object sender, EventArgs e)
         {
             SettDefault();
@@ -78,7 +78,7 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
         {
             ValidateSN(this.textBox_SerialNumber.Text);
         }
-        
+
         #region init
         private void Init()
         {
@@ -236,7 +236,7 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
         }
         #endregion
         #region Burn Down sn and psk to IOTHub
-        private void Travel()
+        private async Task Travel()
         {
             this.button_GeneratePSK.Enabled = false;
             var sn = textBox_SerialNumber.Text;
@@ -255,6 +255,13 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
                     return;
                 }
 
+                var bl = await RegisterDevice(sn);
+                if (bl)
+                {
+                    MessageBox.Show("控制板已成功注册到云端, 祝贺你!", "Message");
+                }
+
+
                 richTextBox_Output.AppendText("\n\r Control board configuration succeed...");
 
             }
@@ -266,6 +273,20 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             {
                 this.button_GeneratePSK.Enabled = true;
             }
+        }
+        #endregion
+        #region Register Device
+        private async Task<bool> RegisterDevice(string sn)
+        {
+            var model = new DeviceRegister()
+            {
+                IsEnabled = "true",
+                DeviceType = CallerContext.AppServiceOptions.DeviceType,
+                PlatformName = CallerContext.AppServiceOptions.PlatformName,
+                SerialNumber = sn
+            };
+
+            return await CallerContext.ECOLABIOTRegisterDeviceService.RegisterDevice(model);
         }
         #endregion
         #region genereate psk, and then send to keyvalut.
@@ -337,7 +358,7 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
                     }
                     catch (Exception ex)
                     {
-                         MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                        MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
                     }
                 }), bytes);
             }
@@ -361,7 +382,7 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
 
                 if (!cache.Contains(sn) || !cache.Contains(psk))
                 {
-                    
+
                     return false;
                 }
             }

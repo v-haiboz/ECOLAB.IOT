@@ -3,7 +3,6 @@ using ECOLAB.IOT.Common.Utilities;
 using ECOLAB.IOT.Entity;
 using ECOLAB.IOT.Service;
 using System.Data;
-using System.Windows.Forms;
 
 namespace ECOLAB.IOT.WinFormApp.ChildWinForm
 {
@@ -27,15 +26,22 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
                 ClientId = item.AppServiceOption.ClientId,
                 ClientSecret = item.AppServiceOption.ClientSecret,
                 TenantId = item.AppServiceOption.TenantId,
-                KeyValutUri = item.AppServiceOption.KeyValutUri
+                KeyValutUri = item.AppServiceOption.KeyValutUri,
+                DeviceType= item.AppServiceOption.DeviceType,
+                PlatformName = item.AppServiceOption.PlatformName,
+                DeviceRegisterUri = item.AppServiceOption.DeviceRegisterUri
             }).ToList();
+
             this.dataGridView_Environment.DataSource = dataSource;
 
-            dataGridView_Environment.Columns[0].Width = 100;
-            dataGridView_Environment.Columns[1].Width = 150;
-            dataGridView_Environment.Columns[2].Width = 150;
-            dataGridView_Environment.Columns[3].Width = 150;
-            dataGridView_Environment.Columns[4].Width = 150;
+            dataGridView_Environment.Columns[0].Width = 60;
+            dataGridView_Environment.Columns[1].Width = 100;
+            dataGridView_Environment.Columns[2].Width = 100;
+            dataGridView_Environment.Columns[3].Width = 100;
+            dataGridView_Environment.Columns[4].Width = 100;
+            dataGridView_Environment.Columns[5].Width = 100;
+            dataGridView_Environment.Columns[6].Width = 100;
+            dataGridView_Environment.Columns[7].Width = 100;
             dataGridView_Environment.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             AddDeleteButton();
                       
@@ -179,6 +185,10 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             textBox_EnvironmentClientSecret.Text = "";
             textBox_EnvironmentTenantId.Text = "";
             textBox_EnvironmentKeyValutUrl.Text = "";
+            textBox_EnvironmentDeviceType.Text = "";
+            textBox_EnvironmentDeviceType.Text = "";
+            textBox_EnvironmentPlatformName.Text = "";
+            textBox_EnvironmentDeviceRegisterUrl.Text = "";
             EnableValidateEvent();
         }
 
@@ -198,6 +208,15 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
 
             textBox_EnvironmentKeyValutUrl.KeyPress += new KeyPressEventHandler(textBox_EnvironmentKeyValutUrl_KeyPress);
             textBox_EnvironmentKeyValutUrl.TextChanged += new EventHandler(textBox_EnvironmentKeyValutUrl_TextChanged);
+
+            textBox_EnvironmentDeviceType.KeyPress += new KeyPressEventHandler(textBox_EnvironmentDeviceType_KeyPress);
+            textBox_EnvironmentDeviceType.TextChanged += new EventHandler(textBox_EnvironmentKeyValutUrl_TextChanged);
+
+            textBox_EnvironmentPlatformName.KeyPress += new KeyPressEventHandler(textBox_EnvironmentPlatformName_KeyPress);
+            textBox_EnvironmentPlatformName.TextChanged += new EventHandler(textBox_EnvironmentPlatformName_TextChanged);
+
+            textBox_EnvironmentDeviceRegisterUrl.KeyPress += new KeyPressEventHandler(textBox_EnvironmentDeviceRegisterUrl_KeyPress);
+            textBox_EnvironmentDeviceRegisterUrl.TextChanged += new EventHandler(textBox_EnvironmentDeviceRegisterUrl_TextChanged);
         }
 
         private void DisableValidateEvent()
@@ -216,11 +235,27 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
 
             textBox_EnvironmentKeyValutUrl.KeyPress -= new KeyPressEventHandler(textBox_EnvironmentKeyValutUrl_KeyPress);
             textBox_EnvironmentKeyValutUrl.TextChanged -= new EventHandler(textBox_EnvironmentKeyValutUrl_TextChanged);
+
+            textBox_EnvironmentDeviceType.KeyPress -= new KeyPressEventHandler(textBox_EnvironmentDeviceType_KeyPress);
+            textBox_EnvironmentDeviceType.TextChanged -= new EventHandler(textBox_EnvironmentKeyValutUrl_TextChanged);
+
+            textBox_EnvironmentPlatformName.KeyPress -= new KeyPressEventHandler(textBox_EnvironmentPlatformName_KeyPress);
+            textBox_EnvironmentPlatformName.TextChanged -= new EventHandler(textBox_EnvironmentPlatformName_TextChanged);
+
+            textBox_EnvironmentDeviceRegisterUrl.KeyPress -= new KeyPressEventHandler(textBox_EnvironmentDeviceRegisterUrl_KeyPress);
+            textBox_EnvironmentDeviceRegisterUrl.TextChanged -= new EventHandler(textBox_EnvironmentDeviceRegisterUrl_TextChanged);
         }
 
         private bool ValidateAll()
         {
-            return ValidateName() & ValidateClientId() & ValidateClientSecret() & ValidateTenantId() & ValidateKeyValutUrl();
+            return ValidateName() 
+                & ValidateClientId() 
+                & ValidateClientSecret() 
+                & ValidateTenantId() 
+                & ValidateKeyValutUrl()
+                & ValidateDeviceType()
+                & ValidatePlatformName()
+                & Validate_DeviceRegisterUrl();
         }
 
         private bool ValidateName()
@@ -287,6 +322,29 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             label_TenantId.Text = "";
             return true;
         }
+        private bool ValidateDeviceType()
+        {
+            if (string.IsNullOrEmpty(textBox_EnvironmentDeviceType.Text))
+            {
+                label_DeviceType.Text = "DeviceType is required.";
+                return false;
+            }
+
+            label_DeviceType.Text = "";
+            return true;
+        }
+
+        private bool ValidatePlatformName()
+        {
+            if (string.IsNullOrEmpty(textBox_EnvironmentPlatformName.Text))
+            {
+                label_PlatformName.Text = "ClientSecret is required.";
+                return false;
+            }
+
+            label_PlatformName.Text = "";
+            return true;
+        }
 
         private bool ValidateKeyValutUrl()
         {
@@ -303,6 +361,24 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             }
 
             label_KeyValutUrl.Text = "";
+            return true;
+        }
+
+        private bool Validate_DeviceRegisterUrl()
+        {
+            if (string.IsNullOrEmpty(textBox_EnvironmentDeviceRegisterUrl.Text))
+            {
+                label_DeviceRegisterUrl.Text = "KeyValutUrl is required.";
+                return false;
+            }
+
+            if (!Utilities.IsURL(textBox_EnvironmentDeviceRegisterUrl.Text))
+            {
+                label_DeviceRegisterUrl.Text = "DeviceRegisterUrl must be a Url.";
+                return false;
+            }
+
+            label_DeviceRegisterUrl.Text = "";
             return true;
         }
 
@@ -354,6 +430,36 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
         private void textBox_EnvironmentClientSecret_TextChanged(object sender, EventArgs e)
         {
             ValidateClientSecret();
+        }
+
+        private void textBox_EnvironmentDeviceType_TextChanged(object sender, EventArgs e)
+        {
+            ValidateDeviceType();
+        }
+
+        private void textBox_EnvironmentDeviceType_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidateDeviceType();
+        }
+
+        private void textBox_EnvironmentPlatformName_TextChanged(object sender, EventArgs e)
+        {
+            ValidatePlatformName();
+        }
+
+        private void textBox_EnvironmentPlatformName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidatePlatformName();
+        }
+
+        private void textBox_EnvironmentDeviceRegisterUrl_TextChanged(object sender, EventArgs e)
+        {
+            Validate_DeviceRegisterUrl();
+        }
+
+        private void textBox_EnvironmentDeviceRegisterUrl_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validate_DeviceRegisterUrl();
         }
     }
 }

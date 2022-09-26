@@ -263,10 +263,10 @@
             // textBox_SerialNumber
             // 
             this.textBox_SerialNumber.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox_SerialNumber.Location = new System.Drawing.Point(177, 95);
+            this.textBox_SerialNumber.Location = new System.Drawing.Point(190, 102);
             this.textBox_SerialNumber.Multiline = true;
             this.textBox_SerialNumber.Name = "textBox_SerialNumber";
-            this.textBox_SerialNumber.Size = new System.Drawing.Size(340, 35);
+            this.textBox_SerialNumber.Size = new System.Drawing.Size(340, 28);
             this.textBox_SerialNumber.TabIndex = 10;
             this.textBox_SerialNumber.TextChanged += new System.EventHandler(this.textBox_SerialNumber_TextChanged);
             this.textBox_SerialNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_SerialNumber_KeyPress);
@@ -295,11 +295,11 @@
             this.checkBox_ValidateSN.AutoSize = true;
             this.checkBox_ValidateSN.Checked = true;
             this.checkBox_ValidateSN.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox_ValidateSN.Location = new System.Drawing.Point(177, 61);
+            this.checkBox_ValidateSN.Location = new System.Drawing.Point(190, 61);
             this.checkBox_ValidateSN.Name = "checkBox_ValidateSN";
-            this.checkBox_ValidateSN.Size = new System.Drawing.Size(180, 28);
+            this.checkBox_ValidateSN.Size = new System.Drawing.Size(190, 28);
             this.checkBox_ValidateSN.TabIndex = 12;
-            this.checkBox_ValidateSN.Text = "EnableVlidateSN";
+            this.checkBox_ValidateSN.Text = "EnableValidateSN";
             this.checkBox_ValidateSN.UseVisualStyleBackColor = true;
             this.checkBox_ValidateSN.CheckedChanged += new System.EventHandler(this.checkBox_ValidateSN_CheckedChanged);
             // 
