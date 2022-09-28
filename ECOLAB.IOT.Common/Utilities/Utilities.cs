@@ -1,4 +1,6 @@
 ﻿using System.Reflection.Metadata;
+using System.Security.Cryptography;
+using System.Text;
 using System.Text.RegularExpressions;
 
 namespace ECOLAB.IOT.Common.Utilities
@@ -131,6 +133,18 @@ namespace ECOLAB.IOT.Common.Utilities
             if (string.IsNullOrEmpty(str))
                 return false;
             return reg.IsMatch(str);
+        }
+
+        public static string RandomGenerateString(int length = 32)
+        {
+            var randomBytes = RandomNumberGenerator.GetBytes(length);
+            var strBuilder = new StringBuilder();
+            foreach(var randomByt in randomBytes)
+                {
+                strBuilder.Append(randomByt.ToString("X2"));
+            }
+
+            return strBuilder.ToString();
         }
     }
 }

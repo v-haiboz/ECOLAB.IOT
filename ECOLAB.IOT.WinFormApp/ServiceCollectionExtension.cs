@@ -8,6 +8,8 @@
     using Microsoft.Extensions.DependencyInjection;
     using Newtonsoft.Json;
     using System;
+    using System.Net;
+    using System.Security;
 
     internal static class ServiceCollectionExtension
     {
@@ -50,8 +52,12 @@
 
         public static ServiceCollection RegisterSecretClient(this ServiceCollection services, AppServiceOption appServiceOption)
         {
-            var cliectSecret = new SecretClient(new Uri(appServiceOption.KeyValutUri)
-                , new ClientSecretCredential(appServiceOption.TenantId, appServiceOption.ClientId, appServiceOption.ClientSecret));
+            var cliectSecret = new SecretClient(new Uri(appServiceOption.KeyValutUrl), 
+                new ClientSecretCredential(appServiceOption.TenantId, appServiceOption.ClientId, appServiceOption.ClientSecret, new TokenCredentialOptions
+                {
+                    AuthorityHost = AzureAuthorityHosts.AzureChina
+                }));
+
             services.AddSingleton(cliectSecret);
             return services;
         }

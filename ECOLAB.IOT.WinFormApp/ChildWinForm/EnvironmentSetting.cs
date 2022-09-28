@@ -26,10 +26,10 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
                 ClientId = item.AppServiceOption.ClientId,
                 ClientSecret = item.AppServiceOption.ClientSecret,
                 TenantId = item.AppServiceOption.TenantId,
-                KeyValutUri = item.AppServiceOption.KeyValutUri,
+                KeyValutUri = item.AppServiceOption.KeyValutUrl,
                 DeviceType= item.AppServiceOption.DeviceType,
                 PlatformName = item.AppServiceOption.PlatformName,
-                DeviceRegisterUri = item.AppServiceOption.DeviceRegisterUri
+                DeviceRegisterUri = item.AppServiceOption.DeviceRegisterUrl
             }).ToList();
 
             this.dataGridView_Environment.DataSource = dataSource;
@@ -153,7 +153,7 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
                     ClientId = textBox_EnvironmentClientId.Text,
                     ClientSecret = textBox_EnvironmentClientSecret.Text,
                     TenantId = textBox_EnvironmentTenantId.Text,
-                    KeyValutUri = textBox_EnvironmentKeyValutUrl.Text
+                    KeyValutUrl = textBox_EnvironmentKeyValutUrl.Text
                 }
             };
         }
@@ -210,7 +210,7 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             textBox_EnvironmentKeyValutUrl.TextChanged += new EventHandler(textBox_EnvironmentKeyValutUrl_TextChanged);
 
             textBox_EnvironmentDeviceType.KeyPress += new KeyPressEventHandler(textBox_EnvironmentDeviceType_KeyPress);
-            textBox_EnvironmentDeviceType.TextChanged += new EventHandler(textBox_EnvironmentKeyValutUrl_TextChanged);
+            textBox_EnvironmentDeviceType.TextChanged += new EventHandler(textBox_EnvironmentDeviceType_TextChanged);
 
             textBox_EnvironmentPlatformName.KeyPress += new KeyPressEventHandler(textBox_EnvironmentPlatformName_KeyPress);
             textBox_EnvironmentPlatformName.TextChanged += new EventHandler(textBox_EnvironmentPlatformName_TextChanged);
@@ -237,7 +237,7 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             textBox_EnvironmentKeyValutUrl.TextChanged -= new EventHandler(textBox_EnvironmentKeyValutUrl_TextChanged);
 
             textBox_EnvironmentDeviceType.KeyPress -= new KeyPressEventHandler(textBox_EnvironmentDeviceType_KeyPress);
-            textBox_EnvironmentDeviceType.TextChanged -= new EventHandler(textBox_EnvironmentKeyValutUrl_TextChanged);
+            textBox_EnvironmentDeviceType.TextChanged -= new EventHandler(textBox_EnvironmentDeviceType_TextChanged);
 
             textBox_EnvironmentPlatformName.KeyPress -= new KeyPressEventHandler(textBox_EnvironmentPlatformName_KeyPress);
             textBox_EnvironmentPlatformName.TextChanged -= new EventHandler(textBox_EnvironmentPlatformName_TextChanged);

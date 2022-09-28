@@ -7,11 +7,11 @@
 
         public string TenantId { get; set; } = "";
 
-        public string KeyValutUri { get; set; } = "";
+        public string KeyValutUrl { get; set; } = "";
         public string DeviceType { get; set; } = "";
 
         public string PlatformName { get; set; } = "";
 
-        public string DeviceRegisterUri { get; set; } = "";
+        public string DeviceRegisterUrl { get; set; } = "";
     }
 }

@@ -1,5 +1,6 @@
 ﻿namespace ECOLAB.IOT.Provider
 {
+    using ECOLAB.IOT.Common.Utilities;
     using ECOLAB.IOT.Entity;
     using Newtonsoft.Json;
     using System;
@@ -9,39 +10,30 @@
 
     public interface IECOLABIOTRegisterDeviceProvider
     {
-        public Task<bool> RegisterDevice(DeviceRegister deviceRegister, EnvironmentVariable environmentVariable);
+        public Task<string> RegisterDevice(DeviceRegister deviceRegister, EnvironmentVariable environmentVariable);
     }
 
     public class ECOLABIOTRegisterDeviceProvider : IECOLABIOTRegisterDeviceProvider
     {
-        public async Task<bool> RegisterDevice(DeviceRegister deviceRegister, EnvironmentVariable environmentVariable)
+
+        public async Task<string> RegisterDevice(DeviceRegister deviceRegister, EnvironmentVariable environmentVariable)
         {
-            await Post(deviceRegister, environmentVariable);
-            return true;
+            return await Post(deviceRegister, environmentVariable);
         }
 
-        private async Task<bool> Post(DeviceRegister deviceRegister, EnvironmentVariable environmentVariable)
+        private static HttpClient _httpClient = new HttpClient();
+        private async Task<string> Post(DeviceRegister deviceRegister, EnvironmentVariable environmentVariable)
         {
-            try
+            var url = environmentVariable.AppServiceOption.DeviceRegisterUrl;
+            using (var content = new StringContent(deviceRegister.ToJson(), System.Text.Encoding.UTF8, "application/json"))
             {
-                var httpClient = new HttpClient();
-                var url = environmentVariable.AppServiceOption.DeviceRegisterUri;
-                var response = await httpClient.PostAsync(url, new StringContent(
-                                JsonConvert.SerializeObject(deviceRegister),
-                                Encoding.UTF8,
-                                "application/json")).ConfigureAwait(false);
-
-                if (HttpStatusCode.OK== response.StatusCode)
-                {
-                    return true;
-                }
-
-                return false;
+                HttpResponseMessage result = await _httpClient.PostAsync(url, content);
+                string returnValue = await result.Content.ReadAsStringAsync();
+                if (result.StatusCode == HttpStatusCode.OK)
+                    return returnValue;
+                throw new Exception($"RegisterDevice=false: ({result.StatusCode}): {returnValue}");
             }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+
         }
     }
 }

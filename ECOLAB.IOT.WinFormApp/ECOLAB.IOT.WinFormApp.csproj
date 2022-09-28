@@ -40,7 +40,7 @@
 
   <ItemGroup>
     <None Update="Appsetting\appsetting_int.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Appsetting\appsetting_product.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

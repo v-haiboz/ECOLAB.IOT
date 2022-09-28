@@ -12,6 +12,7 @@
         public string[] GetParityBit();
         public string[] GetDataBit();
         public string[] GetStopBit();
+        public string[] GetTransportProtocol();
 
     }
     public class ECOLABIOTCOMSettingProvider : IECOLABIOTCOMSettingProvider
@@ -22,7 +23,8 @@
             DataBit = DataBits.Eight,
             Parity = Parity.None,
             PortName = "COM3",
-            StopBit = StopBits.One
+            StopBit = StopBits.One,
+            TransportProtocol= TransportProtocol.Ymodem
         };
         public COMSetting GetDefaultCOMSetting()
         { 
@@ -51,6 +53,11 @@
         public string[] GetStopBit()
         {
            return Enum.GetNames(typeof(StopBits));
+        }
+
+        public string[] GetTransportProtocol()
+        {
+             return Enum.GetNames(typeof(TransportProtocol));
         }
     }
 

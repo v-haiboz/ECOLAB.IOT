@@ -10,6 +10,12 @@
     <Compile Update="ChildWinForm\EnvironmentSetting.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="ChildWinForm\FormFileSend.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ChildWinForm\FormNormal.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Frm_Login.cs">
       <SubType>Form</SubType>
     </Compile>

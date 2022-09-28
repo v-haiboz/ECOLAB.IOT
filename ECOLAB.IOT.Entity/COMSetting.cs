@@ -9,6 +9,8 @@
         public DataBits DataBit { get; set; }
         public Parity Parity { get; set; }
         public StopBits StopBit { get; set; }
+
+        public TransportProtocol TransportProtocol { get; set; }
     }
     public enum BaudRates : int
     {
@@ -39,5 +41,14 @@
         Six = 6,
         Sevent = 7,
         Eight = 8
+    }
+
+    public enum TransportProtocol { 
+        //ASCII,
+        //Binary,
+        Xmodem=128,
+        Xmodem1k=1024,
+        Ymodem=128,
+        Ymodem1k=128,
     }
 }

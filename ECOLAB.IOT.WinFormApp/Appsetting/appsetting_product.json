@@ -1,9 +1,9 @@
 {
-  "ClientId": "fc9994eb-6ee4-4831-be87-deabc4e2110d",
-  "ClientSecret": "sjk8Q~gta1B9OrHTZXS1mycxCLbj2vglYefpIaEI",
-  "TenantId": "c1eb5112-7946-4c9d-bc57-40040cfe3a91",
-  "KeyValutUri": "https://ecolab-iot-keyvalut-dome.vault.azure.net/",
-  "DeviceType": "sjk8Q~gta1B9OrHTZXS1mycxCLbj2vglYefpIaEI",
-  "PlatformName": "c1eb5112-7946-4c9d-bc57-40040cfe3a91",
-  "DeviceRegisterUri": "https://ecolab-iot-keyvalut-dome.vault.azure.net/"
+  "ClientId": "bf87470b-3dbe-4c4d-85ba-82bdd6ab2937",
+  "ClientSecret": "0SnU5bbcc1ZBUoi1c39_1L.-Ews5vQ3i_~",
+  "TenantId": "f39ef5cf-dd34-4829-96dd-c89dea0ce41f",
+  "KeyValutUrl": "https://cn-ins-edmiot-keyvt-01-d.vault.azure.cn/",
+  "DeviceType": "DMC",
+  "PlatformName": "CN-INS-EDMIOT-IOTHUB-01-D",
+  "DeviceRegisterUrl": "https://cn-ins-edmiot-appservice-003-d.chinacloudsites.cn/api/Concierge/CreateSimAsync"
 }

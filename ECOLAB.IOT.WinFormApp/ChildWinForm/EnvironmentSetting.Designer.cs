@@ -246,7 +246,7 @@
             this.textBox_EnvironmentClientSecret.Location = new System.Drawing.Point(225, 169);
             this.textBox_EnvironmentClientSecret.Multiline = true;
             this.textBox_EnvironmentClientSecret.Name = "textBox_EnvironmentClientSecret";
-            this.textBox_EnvironmentClientSecret.Size = new System.Drawing.Size(398, 30);
+            this.textBox_EnvironmentClientSecret.Size = new System.Drawing.Size(416, 30);
             this.textBox_EnvironmentClientSecret.TabIndex = 14;
             this.textBox_EnvironmentClientSecret.TextChanged += new System.EventHandler(this.textBox_EnvironmentClientSecret_TextChanged);
             this.textBox_EnvironmentClientSecret.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_EnvironmentClientSecret_KeyPress);
@@ -307,7 +307,7 @@
             this.textBox_EnvironmentClientId.Location = new System.Drawing.Point(225, 104);
             this.textBox_EnvironmentClientId.Multiline = true;
             this.textBox_EnvironmentClientId.Name = "textBox_EnvironmentClientId";
-            this.textBox_EnvironmentClientId.Size = new System.Drawing.Size(398, 30);
+            this.textBox_EnvironmentClientId.Size = new System.Drawing.Size(416, 30);
             this.textBox_EnvironmentClientId.TabIndex = 10;
             this.textBox_EnvironmentClientId.TextChanged += new System.EventHandler(this.textBox_EnvironmentClientId_TextChanged);
             this.textBox_EnvironmentClientId.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_EnvironmentClientId_KeyPress);
@@ -327,7 +327,7 @@
             this.textBox_EnvironmentTenantId.Location = new System.Drawing.Point(225, 230);
             this.textBox_EnvironmentTenantId.Multiline = true;
             this.textBox_EnvironmentTenantId.Name = "textBox_EnvironmentTenantId";
-            this.textBox_EnvironmentTenantId.Size = new System.Drawing.Size(398, 30);
+            this.textBox_EnvironmentTenantId.Size = new System.Drawing.Size(416, 30);
             this.textBox_EnvironmentTenantId.TabIndex = 11;
             this.textBox_EnvironmentTenantId.TextChanged += new System.EventHandler(this.textBox_EnvironmentTenantId_TextChanged);
             this.textBox_EnvironmentTenantId.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_EnvironmentTenantId_KeyPress);
@@ -376,7 +376,7 @@
             this.textBox_EnvironmentName.Location = new System.Drawing.Point(225, 38);
             this.textBox_EnvironmentName.Multiline = true;
             this.textBox_EnvironmentName.Name = "textBox_EnvironmentName";
-            this.textBox_EnvironmentName.Size = new System.Drawing.Size(398, 30);
+            this.textBox_EnvironmentName.Size = new System.Drawing.Size(416, 30);
             this.textBox_EnvironmentName.TabIndex = 12;
             this.textBox_EnvironmentName.TextChanged += new System.EventHandler(this.textBox_EnvironmentName_TextChanged);
             this.textBox_EnvironmentName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_EnvironmentName_KeyPress);

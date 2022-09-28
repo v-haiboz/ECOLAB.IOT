@@ -10,6 +10,7 @@
         public string[] GetParityBit();
         public string[] GetDataBit();
         public string[] GetStopBit();
+        public string[] GetTransportProtocol();
     }
 
     public class ECOLABIOTBurnSNAndPSKService : IECOLABIOTBurnSNAndPSKService
@@ -33,13 +34,20 @@
         {
             return CallerContext.ECOLABIOTCOMSettingProvider.GetParityBit();
         }
+
         public string[] GetDataBit()
         {
             return CallerContext.ECOLABIOTCOMSettingProvider.GetDataBit();
         }
+
         public string[] GetStopBit()
         {
             return CallerContext.ECOLABIOTCOMSettingProvider.GetStopBit();
+        }
+
+        public string[] GetTransportProtocol()
+        {
+            return CallerContext.ECOLABIOTCOMSettingProvider.GetTransportProtocol();
         }
     }
 }

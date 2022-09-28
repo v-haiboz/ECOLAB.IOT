@@ -4,13 +4,25 @@
 
     public interface IECOLABIOTRegisterDeviceService
     {
-        public Task<bool> RegisterDevice(DeviceRegister deviceRegister);
+        public Task<TData<string>> RegisterDevice(DeviceRegister deviceRegister);
     }
     public class ECOLABIOTRegisterDeviceService : IECOLABIOTRegisterDeviceService
     {
-        public async Task<bool> RegisterDevice(DeviceRegister deviceRegister)
+        public async Task<TData<string>> RegisterDevice(DeviceRegister deviceRegister)
         {
-            return await CallerContext.ECOLABIOTRegisterDeviceProvider.RegisterDevice(deviceRegister, CallerContext.EnvironmentVariable);
+            var data = new TData<string>();
+            try
+            {
+                var result = await CallerContext.ECOLABIOTRegisterDeviceProvider.RegisterDevice(deviceRegister, CallerContext.EnvironmentVariable);
+                data.Result = result;
+            }
+            catch (Exception ex)
+            {
+                data.Status = Status.Fail;
+                data.Message = ex.Message;
+            }
+
+            return data;
         }
     }
 }
