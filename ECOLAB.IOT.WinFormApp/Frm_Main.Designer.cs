@@ -1,6 +1,9 @@
-﻿namespace ECOLAB.IOT.WinFormApp
+﻿using ECOLAB.IOT.Common.Win32;
+using ECOLAB.IOT.Service;
+
+namespace ECOLAB.IOT.WinFormApp
 {
-    partial class F_Main
+    partial class Frm_Main
     {
         /// <summary>
         /// Required designer variable.
@@ -38,7 +41,7 @@
             this.button_Setting_Environment = new System.Windows.Forms.Button();
             this.button_Setting = new System.Windows.Forms.Button();
             this.panel_SerialCOMSubMenu = new System.Windows.Forms.Panel();
-            this.button_SerialCOM_EDM = new System.Windows.Forms.Button();
+            this.button_SerialCOM_Burn = new System.Windows.Forms.Button();
             this.button_SerialCOM_GateWay = new System.Windows.Forms.Button();
             this.button_SerialCOM = new System.Windows.Forms.Button();
             this.panel_AccountSubMenu = new System.Windows.Forms.Panel();
@@ -195,7 +198,7 @@
             // panel_SerialCOMSubMenu
             // 
             this.panel_SerialCOMSubMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.panel_SerialCOMSubMenu.Controls.Add(this.button_SerialCOM_EDM);
+            this.panel_SerialCOMSubMenu.Controls.Add(this.button_SerialCOM_Burn);
             this.panel_SerialCOMSubMenu.Controls.Add(this.button_SerialCOM_GateWay);
             this.panel_SerialCOMSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_SerialCOMSubMenu.Location = new System.Drawing.Point(0, 249);
@@ -203,24 +206,24 @@
             this.panel_SerialCOMSubMenu.Size = new System.Drawing.Size(285, 91);
             this.panel_SerialCOMSubMenu.TabIndex = 4;
             // 
-            // button_SerialCOM_EDM
+            // button_SerialCOM_Burn
             // 
-            this.button_SerialCOM_EDM.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button_SerialCOM_EDM.FlatAppearance.BorderSize = 0;
-            this.button_SerialCOM_EDM.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_SerialCOM_EDM.ForeColor = System.Drawing.Color.White;
-            this.button_SerialCOM_EDM.Image = global::ECOLAB.IOT.WinFormApp.Properties.Resources.feature_device_Main;
-            this.button_SerialCOM_EDM.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_SerialCOM_EDM.Location = new System.Drawing.Point(0, 45);
-            this.button_SerialCOM_EDM.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
-            this.button_SerialCOM_EDM.Name = "button_SerialCOM_EDM";
-            this.button_SerialCOM_EDM.Padding = new System.Windows.Forms.Padding(45, 0, 0, 0);
-            this.button_SerialCOM_EDM.Size = new System.Drawing.Size(285, 45);
-            this.button_SerialCOM_EDM.TabIndex = 4;
-            this.button_SerialCOM_EDM.Text = "           BurnSNAndPSK";
-            this.button_SerialCOM_EDM.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_SerialCOM_EDM.UseVisualStyleBackColor = true;
-            this.button_SerialCOM_EDM.Click += new System.EventHandler(this.button_BurnSNAndPSK_Click);
+            this.button_SerialCOM_Burn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button_SerialCOM_Burn.FlatAppearance.BorderSize = 0;
+            this.button_SerialCOM_Burn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_SerialCOM_Burn.ForeColor = System.Drawing.Color.White;
+            this.button_SerialCOM_Burn.Image = global::ECOLAB.IOT.WinFormApp.Properties.Resources.feature_device_Main;
+            this.button_SerialCOM_Burn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_SerialCOM_Burn.Location = new System.Drawing.Point(0, 45);
+            this.button_SerialCOM_Burn.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
+            this.button_SerialCOM_Burn.Name = "button_SerialCOM_Burn";
+            this.button_SerialCOM_Burn.Padding = new System.Windows.Forms.Padding(45, 0, 0, 0);
+            this.button_SerialCOM_Burn.Size = new System.Drawing.Size(285, 45);
+            this.button_SerialCOM_Burn.TabIndex = 4;
+            this.button_SerialCOM_Burn.Text = "           Burn";
+            this.button_SerialCOM_Burn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_SerialCOM_Burn.UseVisualStyleBackColor = true;
+            this.button_SerialCOM_Burn.Click += new System.EventHandler(this.button_SerialCOM_Burn_Click);
             // 
             // button_SerialCOM_GateWay
             // 
@@ -239,6 +242,7 @@
             this.button_SerialCOM_GateWay.Text = "           BurnFile";
             this.button_SerialCOM_GateWay.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button_SerialCOM_GateWay.UseVisualStyleBackColor = true;
+            this.button_SerialCOM_GateWay.Visible = false;
             this.button_SerialCOM_GateWay.Click += new System.EventHandler(this.button_BurnFile_Click);
             // 
             // button_SerialCOM
@@ -487,7 +491,7 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // F_Main
+            // Frm_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -497,7 +501,7 @@
             this.Controls.Add(this.panel_Header);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MinimumSize = new System.Drawing.Size(1500, 800);
-            this.Name = "F_Main";
+            this.Name = "Frm_Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "F_Main";
             this.Load += new System.EventHandler(this.F_Main_Load);
@@ -521,8 +525,114 @@
             this.ResumeLayout(false);
 
         }
-
         #endregion
+
+        #region Custom
+        private void CustomizeDesing()
+        {
+            panel_SerialCOMSubMenu.Visible = false;
+            panel_AccountSubMenu.Visible = false;
+            panel_SettingSubMenu.Visible = false;
+
+            this.label_CurrentUser.Text = "Current User: " + CallerContext.SysAdmins.UserName;
+            this.label_Environment.Text = $"{label_Environment.Text}  ({CallerContext.EnvironmentVariable.Name.ToString()})";
+        }
+
+        private void OpenChildForm(Form childForm)
+        {
+            if (activeForm != null)
+            {
+                activeForm.Close();
+            }
+
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panel_ChildForm.Controls.Add(childForm);
+            panel_ChildForm.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        }
+        private void MoveWinForm()
+        {
+            Win32SafeNativeMethods.ReleaseCapture();
+            Win32SafeNativeMethods.SendMessage(this.Handle, Win32SafeNativeMethods.WM_SYSCOMMAND, Win32SafeNativeMethods.SC_MOVE + Win32SafeNativeMethods.HTCAPTION, 0);
+        }
+
+        private void ShowMainMenu()
+        {
+            if (this.panel_SideMenu.Width > 150)
+            {
+                ChangeSideMenu(50, Properties.Resources.open_Main_Menu);
+            }
+            else if (this.panel_SideMenu.Width < 60)
+            {
+                ChangeSideMenu(200, Properties.Resources.fold_Main_Menu);
+            }
+        }
+
+        private void ChangeSideMenu(int width, Bitmap bitmap)
+        {
+            this.panel_SideMenu.Width = width;
+            pictureBox_MainMenu.Image = bitmap;
+        }
+
+        private void ShowNavigationMenu(string controlName)
+        {
+            //button_Account_Profile
+
+            if (string.IsNullOrEmpty(controlName))
+                return;
+
+            var childText = "";
+            var parentText = "";
+            var strArray = controlName.Split("_");
+            var parentControlName = controlName;
+            var navigationMenuParentText = "";
+            if (strArray.Length > 2)
+            {
+                Control control = Controls.Find(controlName, true)[0];
+                childText = control.GetType().GetProperty("Text").GetValue(control, null).ToString().Trim();
+                parentControlName = $"{strArray[0]}_{strArray[1]}";
+            }
+
+            Control parentControl = Controls.Find(parentControlName, true)[0];
+            parentText = parentControl.GetType().GetProperty("Text").GetValue(parentControl, null).ToString().Trim();
+            label_ChildHeader_Menu.Text = string.IsNullOrEmpty(childText) ? $"Location: {parentText}" : $"Location: {parentText}->{childText}";
+        }
+        private void HideSubMenu()
+        {
+            if (panel_SerialCOMSubMenu.Visible == true)
+            {
+                panel_SerialCOMSubMenu.Visible = false;
+            }
+            if (panel_AccountSubMenu.Visible == true)
+            {
+                panel_AccountSubMenu.Visible = false;
+            }
+            if (panel_SettingSubMenu.Visible == true)
+            {
+                panel_SettingSubMenu.Visible = false;
+            }
+        }
+
+        private void ShowSubMenu(Panel subMenu)
+        {
+            if (subMenu.Visible == false)
+            {
+                HideSubMenu();
+                subMenu.Visible = true;
+            }
+            else
+            {
+                subMenu.Visible = false;
+            }
+
+            ChangeSideMenu(200, Properties.Resources.fold_Main_Menu);
+        }
+        #endregion
+
         private Panel panel_ChildForm;
         private Panel panel_SideMenu;
         private Panel panel_SettingSubMenu;
@@ -548,9 +658,10 @@
         private Label label_Exit;
         private Label label_DateTime;
         private Button button_Help;
-        private Button button_SerialCOM_EDM;
+        private Button button_SerialCOM_Burn;
         private Panel panel_ChildHeader;
         private Label label_ChildHeader_Menu;
         private System.Windows.Forms.Timer timer1;
+        private Form activeForm = null;
     }
 }

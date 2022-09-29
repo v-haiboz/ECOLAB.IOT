@@ -1,13 +1,9 @@
-﻿using ECOLAB.IOT.Common.Win32;
-using ECOLAB.IOT.Service;
-using ECOLAB.IOT.WinFormApp.ChildWinForm;
+﻿using ECOLAB.IOT.WinFormApp.ChildWinForm;
 using System.Diagnostics;
-using System.Reflection.Emit;
-using System.Windows.Forms;
 
 namespace ECOLAB.IOT.WinFormApp
 {
-    public partial class F_Main : Form
+    public partial class Frm_Main : Form
     {
         [STAThread]
         static void Main()
@@ -26,7 +22,7 @@ namespace ECOLAB.IOT.WinFormApp
             if (result == DialogResult.OK)//login sucessful
             {
                 //show main windows
-                F_Main obj = new F_Main();
+                Frm_Main obj = new Frm_Main();
                 Application.Run(obj);
 
             }
@@ -36,7 +32,7 @@ namespace ECOLAB.IOT.WinFormApp
             }
         }
 
-        public F_Main()
+        public Frm_Main()
         {
             InitializeComponent();
             CustomizeDesing();
@@ -44,46 +40,6 @@ namespace ECOLAB.IOT.WinFormApp
         private void timer1_Tick(object sender, EventArgs e)
         {
             label_DateTime.Text = $"{DateTime.Now.ToString()}";
-        }
-        private void CustomizeDesing()
-        {
-            panel_SerialCOMSubMenu.Visible = false;
-            panel_AccountSubMenu.Visible = false;
-            panel_SettingSubMenu.Visible = false;
-
-            this.label_CurrentUser.Text = "Current User: " + CallerContext.SysAdmins.UserName;
-            this.label_Environment.Text = $"{label_Environment.Text}  ({CallerContext.EnvironmentVariable.Name.ToString()})";
-        }
-
-        private void HideSubMenu()
-        {
-            if (panel_SerialCOMSubMenu.Visible == true)
-            {
-                panel_SerialCOMSubMenu.Visible = false;
-            }
-            if (panel_AccountSubMenu.Visible == true)
-            {
-                panel_AccountSubMenu.Visible = false;
-            }
-            if (panel_SettingSubMenu.Visible == true)
-            {
-                panel_SettingSubMenu.Visible = false;
-            }
-        }
-
-        private void ShowSubMenu(Panel subMenu)
-        {
-            if (subMenu.Visible == false)
-            {
-                HideSubMenu();
-                subMenu.Visible = true;
-            }
-            else
-            {
-                subMenu.Visible = false;
-            }
-
-            ChangeSideMenu(200, Properties.Resources.fold_Main_Menu);
         }
 
         private void button_Account_Click(object sender, EventArgs e)
@@ -107,13 +63,8 @@ namespace ECOLAB.IOT.WinFormApp
         }
         #endregion
 
-        private void button_BurnSNAndPSK_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new BurnSNAndPSK());
-            ShowNavigationMenu(button_SerialCOM_EDM.Name);
-            HideSubMenu();
-        }
-        #region  SerialCom Sub menu
+
+        #region  SerialCOM Sub menu
         private void button_SerialCOM_Click(object sender, EventArgs e)
         {
             //ShowNavigationMenu(button_SerialCOM.Name);
@@ -131,31 +82,6 @@ namespace ECOLAB.IOT.WinFormApp
         private void button_Help_Click(object sender, EventArgs e)
         {
             HideSubMenu();
-        }
-
-        private Form activeForm = null;
-        private void OpenChildForm(Form childForm)
-        {
-            if (activeForm != null)
-            {
-                activeForm.Close();
-            }
-
-            activeForm = childForm;
-            childForm.TopLevel = false;
-            childForm.FormBorderStyle = FormBorderStyle.None;
-            childForm.Dock = DockStyle.Fill;
-            panel_ChildForm.Controls.Add(childForm);
-            panel_ChildForm.Tag = childForm;
-            childForm.BringToFront();
-            childForm.Show();
-        }
-
-
-        private void MoveWinForm()
-        {
-            Win32SafeNativeMethods.ReleaseCapture();
-            Win32SafeNativeMethods.SendMessage(this.Handle, Win32SafeNativeMethods.WM_SYSCOMMAND, Win32SafeNativeMethods.SC_MOVE + Win32SafeNativeMethods.HTCAPTION, 0);
         }
 
         private void panel_ChildForm_MouseDown(object sender, MouseEventArgs e)
@@ -214,24 +140,6 @@ namespace ECOLAB.IOT.WinFormApp
             HideSubMenu();
         }
 
-        private void ShowMainMenu()
-        {
-            if (this.panel_SideMenu.Width > 150)
-            {
-                ChangeSideMenu(50, Properties.Resources.open_Main_Menu);
-            }
-            else if (this.panel_SideMenu.Width < 60)
-            {
-                ChangeSideMenu(200, Properties.Resources.fold_Main_Menu);
-            }
-        }
-
-        private void ChangeSideMenu(int width, Bitmap bitmap)
-        {
-            this.panel_SideMenu.Width = width;
-            pictureBox_MainMenu.Image = bitmap;
-        }
-
         private void label_Environment_Click(object sender, EventArgs e)
         {
 
@@ -246,28 +154,11 @@ namespace ECOLAB.IOT.WinFormApp
             this.timer1.Start();
         }
 
-        private void ShowNavigationMenu(string controlName)
+        private void button_SerialCOM_Burn_Click(object sender, EventArgs e)
         {
-            //button_Account_Profile
-            
-            if (string.IsNullOrEmpty(controlName))
-                return;
-
-            var childText = "";
-            var parentText = "";
-            var strArray = controlName.Split("_");
-            var parentControlName = controlName;
-            var navigationMenuParentText = "";
-            if (strArray.Length>2)
-            {
-                Control control = Controls.Find(controlName, true)[0];
-                childText = control.GetType().GetProperty("Text").GetValue(control, null).ToString().Trim();
-                parentControlName = $"{strArray[0]}_{strArray[1]}";
-            }
-
-            Control parentControl = Controls.Find(parentControlName, true)[0];
-            parentText = parentControl.GetType().GetProperty("Text").GetValue(parentControl, null).ToString().Trim();
-            label_ChildHeader_Menu.Text=string.IsNullOrEmpty(childText)? $"Location: {parentText}": $"Location: {parentText}->{childText}";
+            OpenChildForm(new Burn());
+            ShowNavigationMenu(button_SerialCOM_Burn.Name);
+            HideSubMenu();
         }
     }
 }

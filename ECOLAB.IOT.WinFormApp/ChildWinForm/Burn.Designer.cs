@@ -1,6 +1,10 @@
-﻿namespace ECOLAB.IOT.WinFormApp.ChildWinForm
+﻿using ECOLAB.IOT.Common.Utilities;
+using ECOLAB.IOT.Service;
+using System.IO.Ports;
+
+namespace ECOLAB.IOT.WinFormApp.ChildWinForm
 {
-    partial class BurnSNAndPSK
+    partial class Burn
     {
         /// <summary>
         /// Required designer variable.
@@ -34,7 +38,7 @@
             this.groupBox_Send = new System.Windows.Forms.GroupBox();
             this.panel_Setting = new System.Windows.Forms.Panel();
             this.groupBox_SendSetting = new System.Windows.Forms.GroupBox();
-            this.button_GeneratePSK = new System.Windows.Forms.Button();
+            this.button_BurnDown = new System.Windows.Forms.Button();
             this.radioButton_FileSendPattern = new System.Windows.Forms.RadioButton();
             this.radioButton_QueueSendPattern = new System.Windows.Forms.RadioButton();
             this.radioButton_CommonSendPattern = new System.Windows.Forms.RadioButton();
@@ -128,7 +132,7 @@
             // groupBox_SendSetting
             // 
             this.groupBox_SendSetting.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.groupBox_SendSetting.Controls.Add(this.button_GeneratePSK);
+            this.groupBox_SendSetting.Controls.Add(this.button_BurnDown);
             this.groupBox_SendSetting.Controls.Add(this.radioButton_FileSendPattern);
             this.groupBox_SendSetting.Controls.Add(this.radioButton_QueueSendPattern);
             this.groupBox_SendSetting.Controls.Add(this.radioButton_CommonSendPattern);
@@ -142,18 +146,18 @@
             // 
             // button_GeneratePSK
             // 
-            this.button_GeneratePSK.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.button_GeneratePSK.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button_GeneratePSK.Enabled = false;
-            this.button_GeneratePSK.FlatAppearance.BorderSize = 0;
-            this.button_GeneratePSK.ForeColor = System.Drawing.Color.White;
-            this.button_GeneratePSK.Location = new System.Drawing.Point(55, 202);
-            this.button_GeneratePSK.Name = "button_GeneratePSK";
-            this.button_GeneratePSK.Size = new System.Drawing.Size(297, 51);
-            this.button_GeneratePSK.TabIndex = 12;
-            this.button_GeneratePSK.Text = "Generate PSK";
-            this.button_GeneratePSK.UseVisualStyleBackColor = false;
-            this.button_GeneratePSK.Click += new System.EventHandler(this.button_GeneratePSK_Click);
+            this.button_BurnDown.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.button_BurnDown.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button_BurnDown.Enabled = false;
+            this.button_BurnDown.FlatAppearance.BorderSize = 0;
+            this.button_BurnDown.ForeColor = System.Drawing.Color.White;
+            this.button_BurnDown.Location = new System.Drawing.Point(55, 202);
+            this.button_BurnDown.Name = "button_GeneratePSK";
+            this.button_BurnDown.Size = new System.Drawing.Size(297, 51);
+            this.button_BurnDown.TabIndex = 12;
+            this.button_BurnDown.Text = "BurnDown";
+            this.button_BurnDown.UseVisualStyleBackColor = false;
+            this.button_BurnDown.Click += new System.EventHandler(this.button_BurnDown_Click);
             // 
             // radioButton_FileSendPattern
             // 
@@ -351,7 +355,7 @@
             this.Name = "BurnSNAndPSK";
             this.Text = "BurnSNAndPSK";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.BurnSNAndPSK_FormClosed);
-            this.Load += new System.EventHandler(this.BurnSNAndPSK_Load);
+            this.Load += new System.EventHandler(this.Burn_Load);
             this.groupBox_DeviceLog.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -365,9 +369,298 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Connection)).EndInit();
             this.ResumeLayout(false);
 
+
+
+            serialPort = new SerialPort();
+
+            currentContext = new Context()
+            {
+                SendModeType = SendModeType.Normal,
+                BurnState = BurnState.Disable,
+                PortalState = PortalState.Close
+            };
+
         }
 
         #endregion
+
+        #region  Custom
+        public enum SendModeType : int
+        {
+            Normal = 0,
+            File,
+            Queue
+        }
+
+        public enum BurnState : int
+        {
+            Disable = 0,
+            Enable = 1,
+        }
+
+        public enum PortalState : int
+        {
+            Close = 0,
+            Open = 1
+        }
+
+        private Context currentContext;
+        public Context CurrentContext
+        {
+            get
+            {
+                if (serialPort.IsOpen)
+                {
+                    currentContext.PortalState = PortalState.Open;
+                }
+                else
+                {
+                    currentContext.PortalState = PortalState.Close;
+                }
+
+                if (radioButton_CommonSendPattern.Checked)
+                {
+                    currentContext.SendModeType = SendModeType.Normal;
+                }
+                else if (radioButton_FileSendPattern.Checked)
+                {
+                    currentContext.SendModeType = SendModeType.File;
+                }
+
+                if (button_BurnDown.Enabled)
+                {
+                    currentContext.BurnState = BurnState.Enable;
+                }
+                else
+                {
+                    currentContext.BurnState = BurnState.Disable;
+                }
+
+                return currentContext;
+            }
+            set {
+                currentContext = value;
+            }
+        }
+
+        public class Context
+        {
+            public SendModeType SendModeType { get; set; }
+            public BurnState BurnState { get; set; }
+            public PortalState PortalState { get; set; }
+        }
+        #endregion
+
+        #region init
+        private void Init()
+        {
+
+            BandDingSerialPort();
+            BandDingBaudRate();
+            BandDingParityBit();
+            BandDingDataBit();
+            BandDingStopBit();
+            SetDefault();
+            BuildChildFrom();
+            AddChildForm(formNormal);
+        }
+
+        private void BuildChildFrom()
+        {
+            this.formNormal = new FormNormal();
+            this.formNormal.textBox_SerialNumber.KeyPress += new KeyPressEventHandler(this.textBox_SerialNumber_KeyPress);
+            this.formNormal.textBox_SerialNumber.TextChanged += new EventHandler(this.textBox_SerialNumber_TextChanged);
+            this.formNormal.checkBox_ValidateSN.CheckedChanged += new EventHandler(this.checkBox_ValidateSN_CheckedChanged);
+            this.formNormal.Hide();
+
+            this.formFileSend = new FormFileSend();
+            this.formFileSend.textBox_ChooseFile.KeyPress += new KeyPressEventHandler(this.textBox_ChooseFile_KeyPress);
+            this.formFileSend.textBox_ChooseFile.TextChanged += new EventHandler(this.textBox_ChooseFile_TextChanged);
+            this.formFileSend.Hide();
+        }
+
+        private void BandDingSerialPort()
+        {
+            var ports = CallerContext.ECOLABIOTBurnSNAndPSKService.GetPortNames();
+            this.comboBox_SerialPort.Items.AddRange(ports);
+        }
+
+        private void BandDingBaudRate()
+        {
+            var array = CallerContext.ECOLABIOTBurnSNAndPSKService.GetBaudRate();
+            this.comboBox_BaudRate.Items.AddRange(array);
+        }
+
+        private void BandDingParityBit()
+        {
+            var array = CallerContext.ECOLABIOTBurnSNAndPSKService.GetParityBit();
+            this.comboBox_ParityBit.Items.AddRange(array);
+        }
+        private void BandDingDataBit()
+        {
+            var array = CallerContext.ECOLABIOTBurnSNAndPSKService.GetDataBit();
+            this.comboBox_DataBit.Items.AddRange(array);
+        }
+        private void BandDingStopBit()
+        {
+            var array = CallerContext.ECOLABIOTBurnSNAndPSKService.GetStopBit();
+            this.comboBox_StopBit.Items.AddRange(array);
+        }
+
+        private void SetDefault()
+        {
+            comboBox_SerialPort.SelectedItem = setting.PortName;
+            comboBox_BaudRate.SelectedItem = Enum.GetName(setting.BaudRate);
+            comboBox_ParityBit.SelectedItem = Enum.GetName(setting.Parity);
+            comboBox_DataBit.SelectedItem = Enum.GetName(setting.DataBit);
+            comboBox_StopBit.SelectedItem = Enum.GetName(setting.StopBit);
+        }
+        #endregion
+
+        #region FormNormal_Validate
+        private bool FormNormal_ValidateSN(string sn)
+        {
+            var bl = true;
+            if (!formNormal.checkBox_ValidateSN.Checked)
+            {
+                formNormal.label_SerualNubmer_Validate.Text = "";
+                bl = true;
+            }
+            else if (string.IsNullOrEmpty(sn))
+            {
+                formNormal.label_SerualNubmer_Validate.Text = "SN is Empty, pls input SN";
+                bl = false;
+            }
+            else if (!Utilities.ValidateSN(sn, out string message))
+            {
+                formNormal.label_SerualNubmer_Validate.Text = $"SN format is incorrect.\r\n{message}";
+                bl = false;
+            }
+            else
+            {
+                formNormal.label_SerualNubmer_Validate.Text = "";
+            }
+
+            DisableOrEnableBurnDownButton();
+            return bl;
+        }
+        #endregion
+        #region FormFileSend_ValidateFile
+
+        private bool FormFileSend_ValidateFile(string filePath)
+        {
+            var bl = true;
+
+            if (string.IsNullOrEmpty(filePath))
+            {
+                formFileSend.label_ChooseFile_Validate.Text = "FilePath is Empty, pls input or choose file";
+                bl = false;
+            }
+            else if (!File.Exists(Path.GetFullPath(filePath)))
+            {
+                formFileSend.label_ChooseFile_Validate.Text = $"FilePath format is incorrect, or the related file doesn't exist.";
+                bl = false;
+            }
+            else
+            {
+                formFileSend.label_ChooseFile_Validate.Text = "";
+            }
+
+            DisableOrEnableBurnDownButton();
+            return bl;
+        }
+
+        #endregion
+
+        #region Burn Validate
+        private bool BurnDown_Validate()
+        {
+            if (FormNormal_ValidateSN(formNormal.textBox_SerialNumber.Text))
+            {
+                return false;
+            }
+            return true;
+        }
+
+        private void EnableOrDisableSetting(bool bl = false)
+        {
+            comboBox_SerialPort.Enabled = bl;
+            comboBox_BaudRate.Enabled = bl;
+            comboBox_ParityBit.Enabled = bl;
+            comboBox_DataBit.Enabled = bl;
+            comboBox_StopBit.Enabled = bl;
+            button_Reset.Enabled = bl;
+        }
+        private void DisableOrEnableBurnDownButton()
+        {
+            if (CurrentContext.PortalState==PortalState.Open
+                && (
+                    (CurrentContext.SendModeType == SendModeType.Normal
+                    && string.IsNullOrEmpty(formNormal.label_SerualNubmer_Validate.Text)
+                    && !string.IsNullOrEmpty(formNormal.textBox_SerialNumber.Text))
+                    ||
+                    (CurrentContext.SendModeType == SendModeType.File
+                    && string.IsNullOrEmpty(formFileSend.label_ChooseFile_Validate.Text)
+                    && !string.IsNullOrEmpty(formFileSend.textBox_ChooseFile.Text)
+                    )
+                   )
+               )
+            {
+                button_BurnDown.BackColor = Color.FromArgb(0, 192, 0);
+                button_BurnDown.Enabled = true;
+            }
+            else
+            {
+                button_BurnDown.BackColor = SystemColors.AppWorkspace;
+                button_BurnDown.Enabled = false;
+            }
+
+            //DisableOrEnableSendPattern();
+        }
+
+        private void ChangeSendStatusToDisable()
+        {
+            radioButton_CommonSendPattern.Enabled = false;
+            radioButton_FileSendPattern.Enabled = false;
+            formNormal.textBox_SerialNumber.Enabled = false;
+            formFileSend.textBox_ChooseFile.Enabled = false;
+            formFileSend.comboBox_TransportProtocol.Enabled = false;
+            button_BurnDown.BackColor = SystemColors.AppWorkspace;
+            button_BurnDown.Enabled = false;
+        }
+        private void ChangeSendStatusToEnable()
+        {
+            radioButton_CommonSendPattern.Enabled = true;
+            radioButton_FileSendPattern.Enabled = true;
+            formNormal.textBox_SerialNumber.Enabled = true;
+            formFileSend.textBox_ChooseFile.Enabled = true;
+            formFileSend.comboBox_TransportProtocol.Enabled = true;
+            button_BurnDown.BackColor = Color.FromArgb(0, 192, 0);
+            button_BurnDown.Enabled = true;
+        }
+        #endregion
+
+        #region BingChildForm
+        private Form activeForm = null;
+        private Form unActionedForm = null;
+        private void AddChildForm(Form childForm)
+        {
+            if (activeForm != null)
+            {
+                unActionedForm = activeForm;
+                unActionedForm.Hide();
+            }
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            groupBox_Send.Controls.Add(childForm);
+            groupBox_Send.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        }
+        #endregion
+
         private GroupBox groupBox_DeviceLog;
         private RichTextBox richTextBox_Output;
         private SplitContainer splitContainer1;
@@ -390,7 +683,10 @@
         private RadioButton radioButton_FileSendPattern;
         private RadioButton radioButton_QueueSendPattern;
         private RadioButton radioButton_CommonSendPattern;
-        private Button button_GeneratePSK;
+        private Button button_BurnDown;
         private GroupBox groupBox_Send;
+        private FormNormal formNormal;
+        private FormFileSend formFileSend;
+        private SerialPort serialPort = null;
     }
 }
