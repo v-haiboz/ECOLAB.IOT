@@ -57,7 +57,802 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="splitContainer_Environment.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="splitContainer_Environment.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="splitContainer_Environment.Orientation" type="System.Windows.Forms.Orientation, System.Windows.Forms">
+    <value>Horizontal</value>
+  </data>
+  <data name="dataGridView_Environment.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="dataGridView_Environment.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="dataGridView_Environment.RowHeadersWidth" type="System.Int32, mscorlib">
+    <value>62</value>
+  </data>
+  <data name="dataGridView_Environment.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1370, 312</value>
+  </data>
+  <data name="dataGridView_Environment.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;dataGridView_Environment.Name" xml:space="preserve">
+    <value>dataGridView_Environment</value>
+  </data>
+  <data name="&gt;&gt;dataGridView_Environment.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dataGridView_Environment.Parent" xml:space="preserve">
+    <value>splitContainer_Environment.Panel1</value>
+  </data>
+  <data name="&gt;&gt;dataGridView_Environment.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;splitContainer_Environment.Panel1.Name" xml:space="preserve">
+    <value>splitContainer_Environment.Panel1</value>
+  </data>
+  <data name="&gt;&gt;splitContainer_Environment.Panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;splitContainer_Environment.Panel1.Parent" xml:space="preserve">
+    <value>splitContainer_Environment</value>
+  </data>
+  <data name="&gt;&gt;splitContainer_Environment.Panel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="label_KeyValutUrl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_KeyValutUrl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>225, 330</value>
+  </data>
+  <data name="label_KeyValutUrl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 24</value>
+  </data>
+  <data name="label_KeyValutUrl.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="&gt;&gt;label_KeyValutUrl.Name" xml:space="preserve">
+    <value>label_KeyValutUrl</value>
+  </data>
+  <data name="&gt;&gt;label_KeyValutUrl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_KeyValutUrl.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;label_KeyValutUrl.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="label_TenantId.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_TenantId.Location" type="System.Drawing.Point, System.Drawing">
+    <value>225, 263</value>
+  </data>
+  <data name="label_TenantId.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 24</value>
+  </data>
+  <data name="label_TenantId.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="&gt;&gt;label_TenantId.Name" xml:space="preserve">
+    <value>label_TenantId</value>
+  </data>
+  <data name="&gt;&gt;label_TenantId.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_TenantId.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;label_TenantId.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="label_ClientSecret.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_ClientSecret.Location" type="System.Drawing.Point, System.Drawing">
+    <value>225, 203</value>
+  </data>
+  <data name="label_ClientSecret.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 24</value>
+  </data>
+  <data name="label_ClientSecret.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="&gt;&gt;label_ClientSecret.Name" xml:space="preserve">
+    <value>label_ClientSecret</value>
+  </data>
+  <data name="&gt;&gt;label_ClientSecret.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_ClientSecret.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;label_ClientSecret.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="label_DeviceRegisterUrl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_DeviceRegisterUrl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>860, 265</value>
+  </data>
+  <data name="label_DeviceRegisterUrl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 24</value>
+  </data>
+  <data name="label_DeviceRegisterUrl.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;label_DeviceRegisterUrl.Name" xml:space="preserve">
+    <value>label_DeviceRegisterUrl</value>
+  </data>
+  <data name="&gt;&gt;label_DeviceRegisterUrl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_DeviceRegisterUrl.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;label_DeviceRegisterUrl.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="label_PlatformName.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_PlatformName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>860, 140</value>
+  </data>
+  <data name="label_PlatformName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 24</value>
+  </data>
+  <data name="label_PlatformName.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;label_PlatformName.Name" xml:space="preserve">
+    <value>label_PlatformName</value>
+  </data>
+  <data name="&gt;&gt;label_PlatformName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_PlatformName.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;label_PlatformName.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="label_ClientId.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_ClientId.Location" type="System.Drawing.Point, System.Drawing">
+    <value>225, 140</value>
+  </data>
+  <data name="label_ClientId.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 24</value>
+  </data>
+  <data name="label_ClientId.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;label_ClientId.Name" xml:space="preserve">
+    <value>label_ClientId</value>
+  </data>
+  <data name="&gt;&gt;label_ClientId.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_ClientId.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;label_ClientId.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="label_DeviceType.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_DeviceType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>859, 74</value>
+  </data>
+  <data name="label_DeviceType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 24</value>
+  </data>
+  <data name="label_DeviceType.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;label_DeviceType.Name" xml:space="preserve">
+    <value>label_DeviceType</value>
+  </data>
+  <data name="&gt;&gt;label_DeviceType.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_DeviceType.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;label_DeviceType.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="label_Name.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_Name.Location" type="System.Drawing.Point, System.Drawing">
+    <value>225, 74</value>
+  </data>
+  <data name="label_Name.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 24</value>
+  </data>
+  <data name="label_Name.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;label_Name.Name" xml:space="preserve">
+    <value>label_Name</value>
+  </data>
+  <data name="&gt;&gt;label_Name.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_Name.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;label_Name.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="button_Clear.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="button_Clear.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 9pt</value>
+  </data>
+  <data name="button_Clear.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1096, 296</value>
+  </data>
+  <data name="button_Clear.Size" type="System.Drawing.Size, System.Drawing">
+    <value>204, 38</value>
+  </data>
+  <data name="button_Clear.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="button_Clear.Text" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="&gt;&gt;button_Clear.Name" xml:space="preserve">
+    <value>button_Clear</value>
+  </data>
+  <data name="&gt;&gt;button_Clear.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_Clear.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;button_Clear.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="button_Add.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="button_Add.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 9pt</value>
+  </data>
+  <data name="button_Add.Location" type="System.Drawing.Point, System.Drawing">
+    <value>850, 296</value>
+  </data>
+  <data name="button_Add.Size" type="System.Drawing.Size, System.Drawing">
+    <value>204, 38</value>
+  </data>
+  <data name="button_Add.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="button_Add.Text" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="&gt;&gt;button_Add.Name" xml:space="preserve">
+    <value>button_Add</value>
+  </data>
+  <data name="&gt;&gt;button_Add.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_Add.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;button_Add.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="textBox_EnvironmentDeviceRegisterUrl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>850, 167</value>
+  </data>
+  <data name="textBox_EnvironmentDeviceRegisterUrl.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="textBox_EnvironmentDeviceRegisterUrl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>508, 91</value>
+  </data>
+  <data name="textBox_EnvironmentDeviceRegisterUrl.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;textBox_EnvironmentDeviceRegisterUrl.Name" xml:space="preserve">
+    <value>textBox_EnvironmentDeviceRegisterUrl</value>
+  </data>
+  <data name="&gt;&gt;textBox_EnvironmentDeviceRegisterUrl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBox_EnvironmentDeviceRegisterUrl.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;textBox_EnvironmentDeviceRegisterUrl.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="textBox_EnvironmentClientSecret.Location" type="System.Drawing.Point, System.Drawing">
+    <value>225, 169</value>
+  </data>
+  <data name="textBox_EnvironmentClientSecret.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="textBox_EnvironmentClientSecret.Size" type="System.Drawing.Size, System.Drawing">
+    <value>416, 30</value>
+  </data>
+  <data name="textBox_EnvironmentClientSecret.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;textBox_EnvironmentClientSecret.Name" xml:space="preserve">
+    <value>textBox_EnvironmentClientSecret</value>
+  </data>
+  <data name="&gt;&gt;textBox_EnvironmentClientSecret.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBox_EnvironmentClientSecret.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;textBox_EnvironmentClientSecret.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="label_EnvironmentDeviceRegisterUrl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_EnvironmentDeviceRegisterUrl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>659, 175</value>
+  </data>
+  <data name="label_EnvironmentDeviceRegisterUrl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>167, 24</value>
+  </data>
+  <data name="label_EnvironmentDeviceRegisterUrl.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="label_EnvironmentDeviceRegisterUrl.Text" xml:space="preserve">
+    <value>DeviceRegisterUrl:</value>
+  </data>
+  <data name="&gt;&gt;label_EnvironmentDeviceRegisterUrl.Name" xml:space="preserve">
+    <value>label_EnvironmentDeviceRegisterUrl</value>
+  </data>
+  <data name="&gt;&gt;label_EnvironmentDeviceRegisterUrl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_EnvironmentDeviceRegisterUrl.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;label_EnvironmentDeviceRegisterUrl.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="label_EnvironmentClientSecret.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_EnvironmentClientSecret.Location" type="System.Drawing.Point, System.Drawing">
+    <value>82, 173</value>
+  </data>
+  <data name="label_EnvironmentClientSecret.Size" type="System.Drawing.Size, System.Drawing">
+    <value>117, 24</value>
+  </data>
+  <data name="label_EnvironmentClientSecret.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="label_EnvironmentClientSecret.Text" xml:space="preserve">
+    <value>ClientSecret:</value>
+  </data>
+  <data name="&gt;&gt;label_EnvironmentClientSecret.Name" xml:space="preserve">
+    <value>label_EnvironmentClientSecret</value>
+  </data>
+  <data name="&gt;&gt;label_EnvironmentClientSecret.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_EnvironmentClientSecret.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;label_EnvironmentClientSecret.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="textBox_EnvironmentKeyValutUrl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>225, 297</value>
+  </data>
+  <data name="textBox_EnvironmentKeyValutUrl.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="textBox_EnvironmentKeyValutUrl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>547, 30</value>
+  </data>
+  <data name="textBox_EnvironmentKeyValutUrl.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;textBox_EnvironmentKeyValutUrl.Name" xml:space="preserve">
+    <value>textBox_EnvironmentKeyValutUrl</value>
+  </data>
+  <data name="&gt;&gt;textBox_EnvironmentKeyValutUrl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBox_EnvironmentKeyValutUrl.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;textBox_EnvironmentKeyValutUrl.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="label_EnvironmentKeyValutUrl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_EnvironmentKeyValutUrl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>80, 297</value>
+  </data>
+  <data name="label_EnvironmentKeyValutUrl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>115, 24</value>
+  </data>
+  <data name="label_EnvironmentKeyValutUrl.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="label_EnvironmentKeyValutUrl.Text" xml:space="preserve">
+    <value>KeyValutUrl:</value>
+  </data>
+  <data name="&gt;&gt;label_EnvironmentKeyValutUrl.Name" xml:space="preserve">
+    <value>label_EnvironmentKeyValutUrl</value>
+  </data>
+  <data name="&gt;&gt;label_EnvironmentKeyValutUrl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_EnvironmentKeyValutUrl.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;label_EnvironmentKeyValutUrl.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="textBox_EnvironmentPlatformName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>850, 104</value>
+  </data>
+  <data name="textBox_EnvironmentPlatformName.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="textBox_EnvironmentPlatformName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>398, 30</value>
+  </data>
+  <data name="textBox_EnvironmentPlatformName.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;textBox_EnvironmentPlatformName.Name" xml:space="preserve">
+    <value>textBox_EnvironmentPlatformName</value>
+  </data>
+  <data name="&gt;&gt;textBox_EnvironmentPlatformName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBox_EnvironmentPlatformName.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;textBox_EnvironmentPlatformName.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="textBox_EnvironmentClientId.Location" type="System.Drawing.Point, System.Drawing">
+    <value>225, 104</value>
+  </data>
+  <data name="textBox_EnvironmentClientId.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="textBox_EnvironmentClientId.Size" type="System.Drawing.Size, System.Drawing">
+    <value>416, 30</value>
+  </data>
+  <data name="textBox_EnvironmentClientId.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;textBox_EnvironmentClientId.Name" xml:space="preserve">
+    <value>textBox_EnvironmentClientId</value>
+  </data>
+  <data name="&gt;&gt;textBox_EnvironmentClientId.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBox_EnvironmentClientId.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;textBox_EnvironmentClientId.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="label_EnvironmentPlatformName.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_EnvironmentPlatformName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>686, 110</value>
+  </data>
+  <data name="label_EnvironmentPlatformName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>140, 24</value>
+  </data>
+  <data name="label_EnvironmentPlatformName.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="label_EnvironmentPlatformName.Text" xml:space="preserve">
+    <value>PlatformName:</value>
+  </data>
+  <data name="&gt;&gt;label_EnvironmentPlatformName.Name" xml:space="preserve">
+    <value>label_EnvironmentPlatformName</value>
+  </data>
+  <data name="&gt;&gt;label_EnvironmentPlatformName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_EnvironmentPlatformName.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;label_EnvironmentPlatformName.ZOrder" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="textBox_EnvironmentTenantId.Location" type="System.Drawing.Point, System.Drawing">
+    <value>225, 230</value>
+  </data>
+  <data name="textBox_EnvironmentTenantId.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="textBox_EnvironmentTenantId.Size" type="System.Drawing.Size, System.Drawing">
+    <value>416, 30</value>
+  </data>
+  <data name="textBox_EnvironmentTenantId.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;textBox_EnvironmentTenantId.Name" xml:space="preserve">
+    <value>textBox_EnvironmentTenantId</value>
+  </data>
+  <data name="&gt;&gt;textBox_EnvironmentTenantId.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBox_EnvironmentTenantId.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;textBox_EnvironmentTenantId.ZOrder" xml:space="preserve">
+    <value>19</value>
+  </data>
+  <data name="label_EnvironmentClientId.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_EnvironmentClientId.Location" type="System.Drawing.Point, System.Drawing">
+    <value>118, 105</value>
+  </data>
+  <data name="label_EnvironmentClientId.Size" type="System.Drawing.Size, System.Drawing">
+    <value>81, 24</value>
+  </data>
+  <data name="label_EnvironmentClientId.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="label_EnvironmentClientId.Text" xml:space="preserve">
+    <value>ClientId:</value>
+  </data>
+  <data name="&gt;&gt;label_EnvironmentClientId.Name" xml:space="preserve">
+    <value>label_EnvironmentClientId</value>
+  </data>
+  <data name="&gt;&gt;label_EnvironmentClientId.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_EnvironmentClientId.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;label_EnvironmentClientId.ZOrder" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="textBox_EnvironmentDeviceType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>850, 38</value>
+  </data>
+  <data name="textBox_EnvironmentDeviceType.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="textBox_EnvironmentDeviceType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>398, 30</value>
+  </data>
+  <data name="textBox_EnvironmentDeviceType.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;textBox_EnvironmentDeviceType.Name" xml:space="preserve">
+    <value>textBox_EnvironmentDeviceType</value>
+  </data>
+  <data name="&gt;&gt;textBox_EnvironmentDeviceType.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBox_EnvironmentDeviceType.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;textBox_EnvironmentDeviceType.ZOrder" xml:space="preserve">
+    <value>21</value>
+  </data>
+  <data name="label_EnvironmentTenantId.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_EnvironmentTenantId.Location" type="System.Drawing.Point, System.Drawing">
+    <value>105, 236</value>
+  </data>
+  <data name="label_EnvironmentTenantId.Size" type="System.Drawing.Size, System.Drawing">
+    <value>90, 24</value>
+  </data>
+  <data name="label_EnvironmentTenantId.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="label_EnvironmentTenantId.Text" xml:space="preserve">
+    <value>TenantId:</value>
+  </data>
+  <data name="&gt;&gt;label_EnvironmentTenantId.Name" xml:space="preserve">
+    <value>label_EnvironmentTenantId</value>
+  </data>
+  <data name="&gt;&gt;label_EnvironmentTenantId.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_EnvironmentTenantId.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;label_EnvironmentTenantId.ZOrder" xml:space="preserve">
+    <value>22</value>
+  </data>
+  <data name="label_EnvironmentDeviceType.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_EnvironmentDeviceType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>713, 44</value>
+  </data>
+  <data name="label_EnvironmentDeviceType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>113, 24</value>
+  </data>
+  <data name="label_EnvironmentDeviceType.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="label_EnvironmentDeviceType.Text" xml:space="preserve">
+    <value>DeviceType:</value>
+  </data>
+  <data name="&gt;&gt;label_EnvironmentDeviceType.Name" xml:space="preserve">
+    <value>label_EnvironmentDeviceType</value>
+  </data>
+  <data name="&gt;&gt;label_EnvironmentDeviceType.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_EnvironmentDeviceType.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;label_EnvironmentDeviceType.ZOrder" xml:space="preserve">
+    <value>23</value>
+  </data>
+  <data name="textBox_EnvironmentName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>225, 38</value>
+  </data>
+  <data name="textBox_EnvironmentName.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="textBox_EnvironmentName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>416, 30</value>
+  </data>
+  <data name="textBox_EnvironmentName.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;textBox_EnvironmentName.Name" xml:space="preserve">
+    <value>textBox_EnvironmentName</value>
+  </data>
+  <data name="&gt;&gt;textBox_EnvironmentName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBox_EnvironmentName.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;textBox_EnvironmentName.ZOrder" xml:space="preserve">
+    <value>24</value>
+  </data>
+  <data name="label_EnvironmentName.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_EnvironmentName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>133, 38</value>
+  </data>
+  <data name="label_EnvironmentName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>66, 24</value>
+  </data>
+  <data name="label_EnvironmentName.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="label_EnvironmentName.Text" xml:space="preserve">
+    <value>Name:</value>
+  </data>
+  <data name="&gt;&gt;label_EnvironmentName.Name" xml:space="preserve">
+    <value>label_EnvironmentName</value>
+  </data>
+  <data name="&gt;&gt;label_EnvironmentName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_EnvironmentName.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;label_EnvironmentName.ZOrder" xml:space="preserve">
+    <value>25</value>
+  </data>
+  <data name="groupBox1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1370, 377</value>
+  </data>
+  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Maintenance information</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
+    <value>splitContainer_Environment.Panel2</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;splitContainer_Environment.Panel2.Name" xml:space="preserve">
+    <value>splitContainer_Environment.Panel2</value>
+  </data>
+  <data name="&gt;&gt;splitContainer_Environment.Panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;splitContainer_Environment.Panel2.Parent" xml:space="preserve">
+    <value>splitContainer_Environment</value>
+  </data>
+  <data name="&gt;&gt;splitContainer_Environment.Panel2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="splitContainer_Environment.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1370, 693</value>
+  </data>
+  <data name="splitContainer_Environment.SplitterDistance" type="System.Int32, mscorlib">
+    <value>312</value>
+  </data>
+  <data name="splitContainer_Environment.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;splitContainer_Environment.Name" xml:space="preserve">
+    <value>splitContainer_Environment</value>
+  </data>
+  <data name="&gt;&gt;splitContainer_Environment.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;splitContainer_Environment.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;splitContainer_Environment.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <metadata name="backgroundWorker1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>11, 24</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>1370, 693</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>EnvironmentSetting</value>
+  </data>
+  <data name="&gt;&gt;backgroundWorker1.Name" xml:space="preserve">
+    <value>backgroundWorker1</value>
+  </data>
+  <data name="&gt;&gt;backgroundWorker1.Type" xml:space="preserve">
+    <value>System.ComponentModel.BackgroundWorker, System.ComponentModel.EventBasedAsync, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>EnvironmentSetting</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

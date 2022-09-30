@@ -57,4 +57,153 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="linkLabel_ClearSerialNumber.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="linkLabel_ClearSerialNumber.Location" type="System.Drawing.Point, System.Drawing">
+    <value>831, 81</value>
+  </data>
+  <data name="linkLabel_ClearSerialNumber.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 24</value>
+  </data>
+  <data name="linkLabel_ClearSerialNumber.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="linkLabel_ClearSerialNumber.Text" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="&gt;&gt;linkLabel_ClearSerialNumber.Name" xml:space="preserve">
+    <value>linkLabel_ClearSerialNumber</value>
+  </data>
+  <data name="&gt;&gt;linkLabel_ClearSerialNumber.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;linkLabel_ClearSerialNumber.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;linkLabel_ClearSerialNumber.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="checkBox_ValidateSN.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBox_ValidateSN.Location" type="System.Drawing.Point, System.Drawing">
+    <value>325, 38</value>
+  </data>
+  <data name="checkBox_ValidateSN.Size" type="System.Drawing.Size, System.Drawing">
+    <value>190, 28</value>
+  </data>
+  <data name="checkBox_ValidateSN.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="checkBox_ValidateSN.Text" xml:space="preserve">
+    <value>EnableValidateSN</value>
+  </data>
+  <data name="&gt;&gt;checkBox_ValidateSN.Name" xml:space="preserve">
+    <value>checkBox_ValidateSN</value>
+  </data>
+  <data name="&gt;&gt;checkBox_ValidateSN.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBox_ValidateSN.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;checkBox_ValidateSN.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="textBox_SerialNumber.Location" type="System.Drawing.Point, System.Drawing">
+    <value>325, 81</value>
+  </data>
+  <data name="textBox_SerialNumber.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="textBox_SerialNumber.Size" type="System.Drawing.Size, System.Drawing">
+    <value>466, 28</value>
+  </data>
+  <data name="textBox_SerialNumber.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="&gt;&gt;textBox_SerialNumber.Name" xml:space="preserve">
+    <value>textBox_SerialNumber</value>
+  </data>
+  <data name="&gt;&gt;textBox_SerialNumber.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBox_SerialNumber.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;textBox_SerialNumber.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="label_SerualNubmer_Validate.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_SerualNubmer_Validate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>312, 112</value>
+  </data>
+  <data name="label_SerualNubmer_Validate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 24</value>
+  </data>
+  <data name="label_SerualNubmer_Validate.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="&gt;&gt;label_SerualNubmer_Validate.Name" xml:space="preserve">
+    <value>label_SerualNubmer_Validate</value>
+  </data>
+  <data name="&gt;&gt;label_SerualNubmer_Validate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_SerualNubmer_Validate.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label_SerualNubmer_Validate.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="label_SerialNumber.Location" type="System.Drawing.Point, System.Drawing">
+    <value>153, 81</value>
+  </data>
+  <data name="label_SerialNumber.Size" type="System.Drawing.Size, System.Drawing">
+    <value>138, 24</value>
+  </data>
+  <data name="label_SerialNumber.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="label_SerialNumber.Text" xml:space="preserve">
+    <value>Serial Number:</value>
+  </data>
+  <data name="label_SerialNumber.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;label_SerialNumber.Name" xml:space="preserve">
+    <value>label_SerialNumber</value>
+  </data>
+  <data name="&gt;&gt;label_SerialNumber.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_SerialNumber.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label_SerialNumber.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>11, 24</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>1033, 191</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>FormNormal</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>FormNormal</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

@@ -2,6 +2,7 @@
 using ECOLAB.IOT.Common.Utilities;
 using ECOLAB.IOT.Entity;
 using ECOLAB.IOT.Service;
+using System.ComponentModel;
 using System.Data;
 using System.Text.RegularExpressions;
 
@@ -9,6 +10,7 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
 {
     public partial class EnvironmentSetting : Form
     {
+        ComponentResourceManager res = new ComponentResourceManager(typeof(EnvironmentSetting));
         public EnvironmentSetting()
         {
             InitializeComponent();
@@ -25,12 +27,12 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             {
                 Name = item.Name,
                 ClientId = item.AppServiceOption.ClientId,
-                ClientSecret = !CallerContext.SysAdmin.IsSuper && item.Name.Trim() == "Product" ? ReplaceChar(item.AppServiceOption.ClientSecret) : item.AppServiceOption.ClientSecret,
+                ClientSecret = !CallerContext.SysAdmin.IsSuper ? ReplaceChar(item.AppServiceOption.ClientSecret) : item.AppServiceOption.ClientSecret,
                 TenantId = item.AppServiceOption.TenantId,
                 KeyValutUri = item.AppServiceOption.KeyValutUrl,
                 DeviceType = item.AppServiceOption.DeviceType,
                 PlatformName = item.AppServiceOption.PlatformName,
-                DeviceRegisterUri = !CallerContext.SysAdmin.IsSuper && item.Name.Trim() == "Product" ? ReplaceChar(item.AppServiceOption.DeviceRegisterUrl, @"^[a-zA-Z0-9][-a-zA-Z0-9]{0,62}(\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+$") : item.AppServiceOption.DeviceRegisterUrl
+                DeviceRegisterUri = item.AppServiceOption.DeviceRegisterUrl
             }).ToList();
 
             this.dataGridView_Environment.DataSource = dataSource;
@@ -87,7 +89,7 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             btn_CellStyle.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btn.Name = "button_Delete";
             btn.HeaderText = "";
-            btn.DefaultCellStyle.NullValue = "Delete";
+            btn.DefaultCellStyle.NullValue = $"{res.GetString("message_Delete")}";
             btn.FlatStyle = FlatStyle.System;
             btn.DefaultCellStyle.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             dataGridView_Environment.Columns.Add(btn);
@@ -101,7 +103,7 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
                     && dataGridView_Environment != null
                     && dataGridView_Environment[0, e.RowIndex].Value.ToString() == "Product")
                 {
-                    MessageBox.Show("The current user is not a super administrator. Only a super administrator can delete this row of data");
+                    MessageBox.Show($"{res.GetString("message_1")}");
                     return;
                 }
 
@@ -460,7 +462,7 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
                 && dataGridView_Environment != null
                 && dataGridView_Environment[0, e.RowIndex].Value.ToString() == "Product")
             {
-                MessageBox.Show("The current user is not a super administrator. Only a super administrator can modify this row of data");
+                MessageBox.Show($"{res.GetString("message_2")}");
                 return;
             }
 

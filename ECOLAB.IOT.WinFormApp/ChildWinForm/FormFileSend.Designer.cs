@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormFileSend));
             this.label_ChooseFile = new System.Windows.Forms.Label();
             this.textBox_ChooseFile = new System.Windows.Forms.TextBox();
             this.button_ChooseFile = new System.Windows.Forms.Button();
@@ -38,67 +39,46 @@
             // 
             // label_ChooseFile
             // 
-            this.label_ChooseFile.AutoSize = true;
-            this.label_ChooseFile.Location = new System.Drawing.Point(149, 99);
+            resources.ApplyResources(this.label_ChooseFile, "label_ChooseFile");
             this.label_ChooseFile.Name = "label_ChooseFile";
-            this.label_ChooseFile.Size = new System.Drawing.Size(112, 24);
-            this.label_ChooseFile.TabIndex = 0;
-            this.label_ChooseFile.Text = "Choose File:";
             // 
             // textBox_ChooseFile
             // 
             this.textBox_ChooseFile.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox_ChooseFile.Location = new System.Drawing.Point(297, 95);
-            this.textBox_ChooseFile.Multiline = true;
+            resources.ApplyResources(this.textBox_ChooseFile, "textBox_ChooseFile");
             this.textBox_ChooseFile.Name = "textBox_ChooseFile";
-            this.textBox_ChooseFile.Size = new System.Drawing.Size(494, 30);
-            this.textBox_ChooseFile.TabIndex = 1;
             // 
             // button_ChooseFile
             // 
             this.button_ChooseFile.BackColor = System.Drawing.SystemColors.Highlight;
             this.button_ChooseFile.FlatAppearance.BorderSize = 0;
-            this.button_ChooseFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_ChooseFile.Location = new System.Drawing.Point(826, 93);
+            resources.ApplyResources(this.button_ChooseFile, "button_ChooseFile");
             this.button_ChooseFile.Name = "button_ChooseFile";
-            this.button_ChooseFile.Size = new System.Drawing.Size(145, 34);
-            this.button_ChooseFile.TabIndex = 2;
-            this.button_ChooseFile.Text = "Choose ...";
             this.button_ChooseFile.UseVisualStyleBackColor = false;
             this.button_ChooseFile.Click += new System.EventHandler(this.button_ChooseFile_Click);
             // 
             // comboBox_TransportProtocol
             // 
             this.comboBox_TransportProtocol.FormattingEnabled = true;
-            this.comboBox_TransportProtocol.Location = new System.Drawing.Point(297, 42);
+            resources.ApplyResources(this.comboBox_TransportProtocol, "comboBox_TransportProtocol");
             this.comboBox_TransportProtocol.Name = "comboBox_TransportProtocol";
-            this.comboBox_TransportProtocol.Size = new System.Drawing.Size(182, 32);
-            this.comboBox_TransportProtocol.TabIndex = 4;
             // 
             // label_TransportProtocol
             // 
-            this.label_TransportProtocol.AutoSize = true;
-            this.label_TransportProtocol.Location = new System.Drawing.Point(86, 45);
+            resources.ApplyResources(this.label_TransportProtocol, "label_TransportProtocol");
             this.label_TransportProtocol.Name = "label_TransportProtocol";
-            this.label_TransportProtocol.Size = new System.Drawing.Size(174, 24);
-            this.label_TransportProtocol.TabIndex = 5;
-            this.label_TransportProtocol.Text = "Transport Protocol:";
             // 
             // label_ChooseFile_Validate
             // 
-            this.label_ChooseFile_Validate.AutoSize = true;
+            resources.ApplyResources(this.label_ChooseFile_Validate, "label_ChooseFile_Validate");
             this.label_ChooseFile_Validate.ForeColor = System.Drawing.Color.Red;
-            this.label_ChooseFile_Validate.Location = new System.Drawing.Point(297, 138);
             this.label_ChooseFile_Validate.Name = "label_ChooseFile_Validate";
-            this.label_ChooseFile_Validate.Size = new System.Drawing.Size(0, 24);
-            this.label_ChooseFile_Validate.TabIndex = 6;
             // 
             // FormFileSend
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1237, 199);
             this.Controls.Add(this.label_ChooseFile_Validate);
             this.Controls.Add(this.label_TransportProtocol);
             this.Controls.Add(this.comboBox_TransportProtocol);
@@ -107,7 +87,6 @@
             this.Controls.Add(this.label_ChooseFile);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormFileSend";
-            this.Text = "FormFileSend";
             this.Load += new System.EventHandler(this.FormFileSend_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

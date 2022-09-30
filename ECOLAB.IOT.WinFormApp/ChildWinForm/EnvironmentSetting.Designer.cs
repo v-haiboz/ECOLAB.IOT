@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EnvironmentSetting));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer_Environment = new System.Windows.Forms.SplitContainer();
             this.dataGridView_Environment = new System.Windows.Forms.DataGridView();
@@ -69,10 +70,8 @@
             // 
             // splitContainer_Environment
             // 
-            this.splitContainer_Environment.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer_Environment.Location = new System.Drawing.Point(0, 0);
+            resources.ApplyResources(this.splitContainer_Environment, "splitContainer_Environment");
             this.splitContainer_Environment.Name = "splitContainer_Environment";
-            this.splitContainer_Environment.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
             // splitContainer_Environment.Panel1
             // 
@@ -81,9 +80,6 @@
             // splitContainer_Environment.Panel2
             // 
             this.splitContainer_Environment.Panel2.Controls.Add(this.groupBox1);
-            this.splitContainer_Environment.Size = new System.Drawing.Size(1370, 693);
-            this.splitContainer_Environment.SplitterDistance = 312;
-            this.splitContainer_Environment.TabIndex = 0;
             // 
             // dataGridView_Environment
             // 
@@ -98,13 +94,9 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView_Environment.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView_Environment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_Environment.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView_Environment.Location = new System.Drawing.Point(0, 0);
+            resources.ApplyResources(this.dataGridView_Environment, "dataGridView_Environment");
             this.dataGridView_Environment.Name = "dataGridView_Environment";
-            this.dataGridView_Environment.RowHeadersWidth = 62;
             this.dataGridView_Environment.RowTemplate.Height = 32;
-            this.dataGridView_Environment.Size = new System.Drawing.Size(1370, 312);
-            this.dataGridView_Environment.TabIndex = 0;
             this.dataGridView_Environment.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Environment_CellClick);
             this.dataGridView_Environment.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Environment_CellContentClick);
             this.dataGridView_Environment.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Environment_CellDoubleClick);
@@ -138,98 +130,65 @@
             this.groupBox1.Controls.Add(this.label_EnvironmentDeviceType);
             this.groupBox1.Controls.Add(this.textBox_EnvironmentName);
             this.groupBox1.Controls.Add(this.label_EnvironmentName);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(0, 0);
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1370, 377);
-            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Maintenance information";
             // 
             // label_KeyValutUrl
             // 
-            this.label_KeyValutUrl.AutoSize = true;
+            resources.ApplyResources(this.label_KeyValutUrl, "label_KeyValutUrl");
             this.label_KeyValutUrl.ForeColor = System.Drawing.Color.Red;
-            this.label_KeyValutUrl.Location = new System.Drawing.Point(225, 330);
             this.label_KeyValutUrl.Name = "label_KeyValutUrl";
-            this.label_KeyValutUrl.Size = new System.Drawing.Size(0, 24);
-            this.label_KeyValutUrl.TabIndex = 20;
             // 
             // label_TenantId
             // 
-            this.label_TenantId.AutoSize = true;
+            resources.ApplyResources(this.label_TenantId, "label_TenantId");
             this.label_TenantId.ForeColor = System.Drawing.Color.Red;
-            this.label_TenantId.Location = new System.Drawing.Point(225, 263);
             this.label_TenantId.Name = "label_TenantId";
-            this.label_TenantId.Size = new System.Drawing.Size(0, 24);
-            this.label_TenantId.TabIndex = 19;
             // 
             // label_ClientSecret
             // 
-            this.label_ClientSecret.AutoSize = true;
+            resources.ApplyResources(this.label_ClientSecret, "label_ClientSecret");
             this.label_ClientSecret.ForeColor = System.Drawing.Color.Red;
-            this.label_ClientSecret.Location = new System.Drawing.Point(225, 203);
             this.label_ClientSecret.Name = "label_ClientSecret";
-            this.label_ClientSecret.Size = new System.Drawing.Size(0, 24);
-            this.label_ClientSecret.TabIndex = 18;
             // 
             // label_DeviceRegisterUrl
             // 
-            this.label_DeviceRegisterUrl.AutoSize = true;
+            resources.ApplyResources(this.label_DeviceRegisterUrl, "label_DeviceRegisterUrl");
             this.label_DeviceRegisterUrl.ForeColor = System.Drawing.Color.Red;
-            this.label_DeviceRegisterUrl.Location = new System.Drawing.Point(860, 265);
             this.label_DeviceRegisterUrl.Name = "label_DeviceRegisterUrl";
-            this.label_DeviceRegisterUrl.Size = new System.Drawing.Size(0, 24);
-            this.label_DeviceRegisterUrl.TabIndex = 17;
             // 
             // label_PlatformName
             // 
-            this.label_PlatformName.AutoSize = true;
+            resources.ApplyResources(this.label_PlatformName, "label_PlatformName");
             this.label_PlatformName.ForeColor = System.Drawing.Color.Red;
-            this.label_PlatformName.Location = new System.Drawing.Point(860, 140);
             this.label_PlatformName.Name = "label_PlatformName";
-            this.label_PlatformName.Size = new System.Drawing.Size(0, 24);
-            this.label_PlatformName.TabIndex = 17;
             // 
             // label_ClientId
             // 
-            this.label_ClientId.AutoSize = true;
+            resources.ApplyResources(this.label_ClientId, "label_ClientId");
             this.label_ClientId.ForeColor = System.Drawing.Color.Red;
-            this.label_ClientId.Location = new System.Drawing.Point(225, 140);
             this.label_ClientId.Name = "label_ClientId";
-            this.label_ClientId.Size = new System.Drawing.Size(0, 24);
-            this.label_ClientId.TabIndex = 17;
             // 
             // label_DeviceType
             // 
-            this.label_DeviceType.AutoSize = true;
+            resources.ApplyResources(this.label_DeviceType, "label_DeviceType");
             this.label_DeviceType.ForeColor = System.Drawing.Color.Red;
-            this.label_DeviceType.Location = new System.Drawing.Point(859, 74);
             this.label_DeviceType.Name = "label_DeviceType";
-            this.label_DeviceType.Size = new System.Drawing.Size(0, 24);
-            this.label_DeviceType.TabIndex = 16;
             // 
             // label_Name
             // 
-            this.label_Name.AutoSize = true;
+            resources.ApplyResources(this.label_Name, "label_Name");
             this.label_Name.ForeColor = System.Drawing.Color.Red;
-            this.label_Name.Location = new System.Drawing.Point(225, 74);
             this.label_Name.Name = "label_Name";
-            this.label_Name.Size = new System.Drawing.Size(0, 24);
-            this.label_Name.TabIndex = 16;
             // 
             // button_Clear
             // 
             this.button_Clear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.button_Clear.FlatAppearance.BorderSize = 0;
-            this.button_Clear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Clear.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            resources.ApplyResources(this.button_Clear, "button_Clear");
             this.button_Clear.ForeColor = System.Drawing.Color.White;
-            this.button_Clear.Location = new System.Drawing.Point(1096, 296);
             this.button_Clear.Name = "button_Clear";
-            this.button_Clear.Size = new System.Drawing.Size(204, 38);
-            this.button_Clear.TabIndex = 15;
-            this.button_Clear.Text = "Clear";
             this.button_Clear.UseVisualStyleBackColor = false;
             this.button_Clear.Click += new System.EventHandler(this.button_Clear_Click);
             // 
@@ -237,187 +196,124 @@
             // 
             this.button_Add.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.button_Add.FlatAppearance.BorderSize = 0;
-            this.button_Add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Add.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            resources.ApplyResources(this.button_Add, "button_Add");
             this.button_Add.ForeColor = System.Drawing.Color.White;
-            this.button_Add.Location = new System.Drawing.Point(850, 296);
             this.button_Add.Name = "button_Add";
-            this.button_Add.Size = new System.Drawing.Size(204, 38);
-            this.button_Add.TabIndex = 15;
-            this.button_Add.Text = "Add";
             this.button_Add.UseVisualStyleBackColor = false;
             this.button_Add.Click += new System.EventHandler(this.button_Add_Click);
             // 
             // textBox_EnvironmentDeviceRegisterUrl
             // 
             this.textBox_EnvironmentDeviceRegisterUrl.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox_EnvironmentDeviceRegisterUrl.Location = new System.Drawing.Point(850, 167);
-            this.textBox_EnvironmentDeviceRegisterUrl.Multiline = true;
+            resources.ApplyResources(this.textBox_EnvironmentDeviceRegisterUrl, "textBox_EnvironmentDeviceRegisterUrl");
             this.textBox_EnvironmentDeviceRegisterUrl.Name = "textBox_EnvironmentDeviceRegisterUrl";
-            this.textBox_EnvironmentDeviceRegisterUrl.Size = new System.Drawing.Size(508, 91);
-            this.textBox_EnvironmentDeviceRegisterUrl.TabIndex = 14;
             this.textBox_EnvironmentDeviceRegisterUrl.TextChanged += new System.EventHandler(this.textBox_EnvironmentDeviceRegisterUrl_TextChanged);
             this.textBox_EnvironmentDeviceRegisterUrl.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_EnvironmentDeviceRegisterUrl_KeyPress);
             // 
             // textBox_EnvironmentClientSecret
             // 
             this.textBox_EnvironmentClientSecret.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox_EnvironmentClientSecret.Location = new System.Drawing.Point(225, 169);
-            this.textBox_EnvironmentClientSecret.Multiline = true;
+            resources.ApplyResources(this.textBox_EnvironmentClientSecret, "textBox_EnvironmentClientSecret");
             this.textBox_EnvironmentClientSecret.Name = "textBox_EnvironmentClientSecret";
-            this.textBox_EnvironmentClientSecret.Size = new System.Drawing.Size(416, 30);
-            this.textBox_EnvironmentClientSecret.TabIndex = 14;
             this.textBox_EnvironmentClientSecret.TextChanged += new System.EventHandler(this.textBox_EnvironmentClientSecret_TextChanged);
             this.textBox_EnvironmentClientSecret.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_EnvironmentClientSecret_KeyPress);
             // 
             // label_EnvironmentDeviceRegisterUrl
             // 
-            this.label_EnvironmentDeviceRegisterUrl.AutoSize = true;
-            this.label_EnvironmentDeviceRegisterUrl.Location = new System.Drawing.Point(659, 175);
+            resources.ApplyResources(this.label_EnvironmentDeviceRegisterUrl, "label_EnvironmentDeviceRegisterUrl");
             this.label_EnvironmentDeviceRegisterUrl.Name = "label_EnvironmentDeviceRegisterUrl";
-            this.label_EnvironmentDeviceRegisterUrl.Size = new System.Drawing.Size(167, 24);
-            this.label_EnvironmentDeviceRegisterUrl.TabIndex = 13;
-            this.label_EnvironmentDeviceRegisterUrl.Text = "DeviceRegisterUrl:";
             // 
             // label_EnvironmentClientSecret
             // 
-            this.label_EnvironmentClientSecret.AutoSize = true;
-            this.label_EnvironmentClientSecret.Location = new System.Drawing.Point(82, 173);
+            resources.ApplyResources(this.label_EnvironmentClientSecret, "label_EnvironmentClientSecret");
             this.label_EnvironmentClientSecret.Name = "label_EnvironmentClientSecret";
-            this.label_EnvironmentClientSecret.Size = new System.Drawing.Size(117, 24);
-            this.label_EnvironmentClientSecret.TabIndex = 13;
-            this.label_EnvironmentClientSecret.Text = "ClientSecret:";
             // 
             // textBox_EnvironmentKeyValutUrl
             // 
             this.textBox_EnvironmentKeyValutUrl.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox_EnvironmentKeyValutUrl.ForeColor = System.Drawing.Color.Black;
-            this.textBox_EnvironmentKeyValutUrl.Location = new System.Drawing.Point(225, 297);
-            this.textBox_EnvironmentKeyValutUrl.Multiline = true;
+            resources.ApplyResources(this.textBox_EnvironmentKeyValutUrl, "textBox_EnvironmentKeyValutUrl");
             this.textBox_EnvironmentKeyValutUrl.Name = "textBox_EnvironmentKeyValutUrl";
-            this.textBox_EnvironmentKeyValutUrl.Size = new System.Drawing.Size(547, 30);
-            this.textBox_EnvironmentKeyValutUrl.TabIndex = 9;
             this.textBox_EnvironmentKeyValutUrl.TextChanged += new System.EventHandler(this.textBox_EnvironmentKeyValutUrl_TextChanged);
             this.textBox_EnvironmentKeyValutUrl.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_EnvironmentKeyValutUrl_KeyPress);
             // 
             // label_EnvironmentKeyValutUrl
             // 
-            this.label_EnvironmentKeyValutUrl.AutoSize = true;
-            this.label_EnvironmentKeyValutUrl.Location = new System.Drawing.Point(80, 297);
+            resources.ApplyResources(this.label_EnvironmentKeyValutUrl, "label_EnvironmentKeyValutUrl");
             this.label_EnvironmentKeyValutUrl.Name = "label_EnvironmentKeyValutUrl";
-            this.label_EnvironmentKeyValutUrl.Size = new System.Drawing.Size(115, 24);
-            this.label_EnvironmentKeyValutUrl.TabIndex = 5;
-            this.label_EnvironmentKeyValutUrl.Text = "KeyValutUrl:";
             // 
             // textBox_EnvironmentPlatformName
             // 
             this.textBox_EnvironmentPlatformName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox_EnvironmentPlatformName.Location = new System.Drawing.Point(850, 104);
-            this.textBox_EnvironmentPlatformName.Multiline = true;
+            resources.ApplyResources(this.textBox_EnvironmentPlatformName, "textBox_EnvironmentPlatformName");
             this.textBox_EnvironmentPlatformName.Name = "textBox_EnvironmentPlatformName";
-            this.textBox_EnvironmentPlatformName.Size = new System.Drawing.Size(398, 30);
-            this.textBox_EnvironmentPlatformName.TabIndex = 10;
             this.textBox_EnvironmentPlatformName.TextChanged += new System.EventHandler(this.textBox_EnvironmentPlatformName_TextChanged);
             this.textBox_EnvironmentPlatformName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_EnvironmentPlatformName_KeyPress);
             // 
             // textBox_EnvironmentClientId
             // 
             this.textBox_EnvironmentClientId.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox_EnvironmentClientId.Location = new System.Drawing.Point(225, 104);
-            this.textBox_EnvironmentClientId.Multiline = true;
+            resources.ApplyResources(this.textBox_EnvironmentClientId, "textBox_EnvironmentClientId");
             this.textBox_EnvironmentClientId.Name = "textBox_EnvironmentClientId";
-            this.textBox_EnvironmentClientId.Size = new System.Drawing.Size(416, 30);
-            this.textBox_EnvironmentClientId.TabIndex = 10;
             this.textBox_EnvironmentClientId.TextChanged += new System.EventHandler(this.textBox_EnvironmentClientId_TextChanged);
             this.textBox_EnvironmentClientId.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_EnvironmentClientId_KeyPress);
             // 
             // label_EnvironmentPlatformName
             // 
-            this.label_EnvironmentPlatformName.AutoSize = true;
-            this.label_EnvironmentPlatformName.Location = new System.Drawing.Point(686, 110);
+            resources.ApplyResources(this.label_EnvironmentPlatformName, "label_EnvironmentPlatformName");
             this.label_EnvironmentPlatformName.Name = "label_EnvironmentPlatformName";
-            this.label_EnvironmentPlatformName.Size = new System.Drawing.Size(140, 24);
-            this.label_EnvironmentPlatformName.TabIndex = 6;
-            this.label_EnvironmentPlatformName.Text = "PlatformName:";
             // 
             // textBox_EnvironmentTenantId
             // 
             this.textBox_EnvironmentTenantId.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox_EnvironmentTenantId.Location = new System.Drawing.Point(225, 230);
-            this.textBox_EnvironmentTenantId.Multiline = true;
+            resources.ApplyResources(this.textBox_EnvironmentTenantId, "textBox_EnvironmentTenantId");
             this.textBox_EnvironmentTenantId.Name = "textBox_EnvironmentTenantId";
-            this.textBox_EnvironmentTenantId.Size = new System.Drawing.Size(416, 30);
-            this.textBox_EnvironmentTenantId.TabIndex = 11;
             this.textBox_EnvironmentTenantId.TextChanged += new System.EventHandler(this.textBox_EnvironmentTenantId_TextChanged);
             this.textBox_EnvironmentTenantId.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_EnvironmentTenantId_KeyPress);
             // 
             // label_EnvironmentClientId
             // 
-            this.label_EnvironmentClientId.AutoSize = true;
-            this.label_EnvironmentClientId.Location = new System.Drawing.Point(118, 105);
+            resources.ApplyResources(this.label_EnvironmentClientId, "label_EnvironmentClientId");
             this.label_EnvironmentClientId.Name = "label_EnvironmentClientId";
-            this.label_EnvironmentClientId.Size = new System.Drawing.Size(81, 24);
-            this.label_EnvironmentClientId.TabIndex = 6;
-            this.label_EnvironmentClientId.Text = "ClientId:";
             // 
             // textBox_EnvironmentDeviceType
             // 
             this.textBox_EnvironmentDeviceType.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox_EnvironmentDeviceType.Location = new System.Drawing.Point(850, 38);
-            this.textBox_EnvironmentDeviceType.Multiline = true;
+            resources.ApplyResources(this.textBox_EnvironmentDeviceType, "textBox_EnvironmentDeviceType");
             this.textBox_EnvironmentDeviceType.Name = "textBox_EnvironmentDeviceType";
-            this.textBox_EnvironmentDeviceType.Size = new System.Drawing.Size(398, 30);
-            this.textBox_EnvironmentDeviceType.TabIndex = 12;
             this.textBox_EnvironmentDeviceType.TextChanged += new System.EventHandler(this.textBox_EnvironmentDeviceType_TextChanged);
             this.textBox_EnvironmentDeviceType.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_EnvironmentDeviceType_KeyPress);
             // 
             // label_EnvironmentTenantId
             // 
-            this.label_EnvironmentTenantId.AutoSize = true;
-            this.label_EnvironmentTenantId.Location = new System.Drawing.Point(105, 236);
+            resources.ApplyResources(this.label_EnvironmentTenantId, "label_EnvironmentTenantId");
             this.label_EnvironmentTenantId.Name = "label_EnvironmentTenantId";
-            this.label_EnvironmentTenantId.Size = new System.Drawing.Size(90, 24);
-            this.label_EnvironmentTenantId.TabIndex = 7;
-            this.label_EnvironmentTenantId.Text = "TenantId:";
             // 
             // label_EnvironmentDeviceType
             // 
-            this.label_EnvironmentDeviceType.AutoSize = true;
-            this.label_EnvironmentDeviceType.Location = new System.Drawing.Point(713, 44);
+            resources.ApplyResources(this.label_EnvironmentDeviceType, "label_EnvironmentDeviceType");
             this.label_EnvironmentDeviceType.Name = "label_EnvironmentDeviceType";
-            this.label_EnvironmentDeviceType.Size = new System.Drawing.Size(113, 24);
-            this.label_EnvironmentDeviceType.TabIndex = 8;
-            this.label_EnvironmentDeviceType.Text = "DeviceType:";
             // 
             // textBox_EnvironmentName
             // 
             this.textBox_EnvironmentName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox_EnvironmentName.Location = new System.Drawing.Point(225, 38);
-            this.textBox_EnvironmentName.Multiline = true;
+            resources.ApplyResources(this.textBox_EnvironmentName, "textBox_EnvironmentName");
             this.textBox_EnvironmentName.Name = "textBox_EnvironmentName";
-            this.textBox_EnvironmentName.Size = new System.Drawing.Size(416, 30);
-            this.textBox_EnvironmentName.TabIndex = 12;
             this.textBox_EnvironmentName.TextChanged += new System.EventHandler(this.textBox_EnvironmentName_TextChanged);
             this.textBox_EnvironmentName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_EnvironmentName_KeyPress);
             // 
             // label_EnvironmentName
             // 
-            this.label_EnvironmentName.AutoSize = true;
-            this.label_EnvironmentName.Location = new System.Drawing.Point(133, 38);
+            resources.ApplyResources(this.label_EnvironmentName, "label_EnvironmentName");
             this.label_EnvironmentName.Name = "label_EnvironmentName";
-            this.label_EnvironmentName.Size = new System.Drawing.Size(66, 24);
-            this.label_EnvironmentName.TabIndex = 8;
-            this.label_EnvironmentName.Text = "Name:";
             // 
             // EnvironmentSetting
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1370, 693);
             this.Controls.Add(this.splitContainer_Environment);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EnvironmentSetting";
-            this.Text = "EnvironmentSetting";
             this.Load += new System.EventHandler(this.EnvironmentSetting_Load);
             this.splitContainer_Environment.Panel1.ResumeLayout(false);
             this.splitContainer_Environment.Panel2.ResumeLayout(false);

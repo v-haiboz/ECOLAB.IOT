@@ -117,65 +117,79 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="account_profile_Main" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\account_profile_Main.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="button_BurnDown.Text" xml:space="preserve">
+    <value>烧制</value>
   </data>
-  <data name="Min_Login" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Min_Login.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="button_Connection.Text" xml:space="preserve">
+    <value>链接</value>
   </data>
-  <data name="Min_Main" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Min_Main.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="button_Connection_Disable" xml:space="preserve">
+    <value>断开</value>
   </data>
-  <data name="Max_Main" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Max_Main.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="button_Connection_Enable" xml:space="preserve">
+    <value>链接</value>
   </data>
-  <data name="help_Main" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\help_Main.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="button_Reset.Text" xml:space="preserve">
+    <value>重置</value>
   </data>
-  <data name="setting_environment_Main" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\setting_environment_Main.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="groupBox_Configuration.Text" xml:space="preserve">
+    <value>COM设置</value>
   </data>
-  <data name="feature_Main" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\feature_Main.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="groupBox_DeviceLog.Text" xml:space="preserve">
+    <value>接受区</value>
   </data>
-  <data name="setting_Main" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\setting_Main.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="groupBox_Send.Text" xml:space="preserve">
+    <value>发送区</value>
   </data>
-  <data name="open_Main_Menu" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\open_Main_Menu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="groupBox_SendSetting.Text" xml:space="preserve">
+    <value>发送设置</value>
   </data>
-  <data name="Close_Main" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Close_Main.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="label_BaudRate.Text" xml:space="preserve">
+    <value>波特率：</value>
   </data>
-  <data name="feature_device_Main" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\feature_device_Main.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="label_DataBit.Text" xml:space="preserve">
+    <value>数据位：</value>
   </data>
-  <data name="feature_file_Main" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\feature_file_Main.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="label_ParityBit.Text" xml:space="preserve">
+    <value>奇偶校验位：</value>
   </data>
-  <data name="breakoff_BurnSN" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\breakoff_BurnSN.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="label_SerialPort.Text" xml:space="preserve">
+    <value>串行端口：</value>
   </data>
-  <data name="account-Main" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\account-Main.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="label_StopBit.Text" xml:space="preserve">
+    <value>停止位：</value>
   </data>
-  <data name="fold_Main_Menu" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\fold_Main_Menu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="message" xml:space="preserve">
+    <value>消息</value>
   </data>
-  <data name="connection_BurnSN" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\connection_BurnSN.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="message_CommonSendPattern_failed" xml:space="preserve">
+    <value>控制板配置失败。。。</value>
   </data>
-  <data name="narrow_Main" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\narrow_Main.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="message_CommonSendPattern_suceess" xml:space="preserve">
+    <value>控制板已成功注册到云。祝贺!</value>
   </data>
-  <data name="account_signout_Main" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\account_signout_Main.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="message_CommonSendPattern_suceess1" xml:space="preserve">
+    <value>控制板配置成功。。。</value>
   </data>
-  <data name="ECOLAB2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ECOLAB2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="message_SetSecret_1" xml:space="preserve">
+    <value>此序列号的现有PSK，PSK=</value>
   </data>
-  <data name="ECOLAB1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ECOLAB1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="message_SetSecret_error" xml:space="preserve">
+    <value>共享密钥生成异常。</value>
+  </data>
+  <data name="message_SetupToIoTHub_1" xml:space="preserve">
+    <value>请按控制板上的“重置”键，然后立即单击“确定”</value>
+  </data>
+  <data name="message_SetupToIoTHub_2" xml:space="preserve">
+    <value>请注意！</value>
+  </data>
+  <data name="message_Travel_failed" xml:space="preserve">
+    <value>控制板配置失败。。。</value>
+  </data>
+  <data name="radioButton_CommonSendPattern.Text" xml:space="preserve">
+    <value>普通发送模式</value>
+  </data>
+  <data name="radioButton_FileSendPattern.Text" xml:space="preserve">
+    <value>文件发送模式</value>
   </data>
 </root>

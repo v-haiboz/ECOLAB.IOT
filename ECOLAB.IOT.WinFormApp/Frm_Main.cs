@@ -1,5 +1,7 @@
-﻿using ECOLAB.IOT.WinFormApp.ChildWinForm;
+﻿using ECOLAB.IOT.Service;
+using ECOLAB.IOT.WinFormApp.ChildWinForm;
 using System.Diagnostics;
+using System.Globalization;
 
 namespace ECOLAB.IOT.WinFormApp
 {
@@ -8,6 +10,7 @@ namespace ECOLAB.IOT.WinFormApp
         [STAThread]
         static void Main()
         {
+            Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("en-us");
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             Application.EnableVisualStyles();
@@ -34,8 +37,11 @@ namespace ECOLAB.IOT.WinFormApp
 
         public Frm_Main()
         {
+            Thread.CurrentThread.CurrentUICulture = CallerContext.currentCulture;
             InitializeComponent();
             CustomizeDesing();
+            SelectLanguate();
+
         }
         private void timer1_Tick(object sender, EventArgs e)
         {

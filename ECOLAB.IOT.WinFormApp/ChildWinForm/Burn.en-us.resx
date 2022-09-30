@@ -117,65 +117,79 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="account_profile_Main" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\account_profile_Main.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="button_BurnDown.Text" xml:space="preserve">
+    <value>BurnDown</value>
   </data>
-  <data name="Min_Login" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Min_Login.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="button_Connection.Text" xml:space="preserve">
+    <value>Connection</value>
   </data>
-  <data name="Min_Main" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Min_Main.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="button_Connection_Disable" xml:space="preserve">
+    <value>Disconnection</value>
   </data>
-  <data name="Max_Main" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Max_Main.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="button_Connection_Enable" xml:space="preserve">
+    <value>Connection</value>
   </data>
-  <data name="help_Main" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\help_Main.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="button_Reset.Text" xml:space="preserve">
+    <value>Reset</value>
   </data>
-  <data name="setting_environment_Main" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\setting_environment_Main.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="groupBox_Configuration.Text" xml:space="preserve">
+    <value>COMSetting</value>
   </data>
-  <data name="feature_Main" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\feature_Main.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="groupBox_DeviceLog.Text" xml:space="preserve">
+    <value>Receive Area</value>
   </data>
-  <data name="setting_Main" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\setting_Main.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="groupBox_Send.Text" xml:space="preserve">
+    <value>Send Area</value>
   </data>
-  <data name="open_Main_Menu" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\open_Main_Menu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="groupBox_SendSetting.Text" xml:space="preserve">
+    <value>SendSetting</value>
   </data>
-  <data name="Close_Main" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Close_Main.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="label_BaudRate.Text" xml:space="preserve">
+    <value>Baud Rate:</value>
   </data>
-  <data name="feature_device_Main" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\feature_device_Main.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="label_DataBit.Text" xml:space="preserve">
+    <value>Data Bit:</value>
   </data>
-  <data name="feature_file_Main" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\feature_file_Main.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="label_ParityBit.Text" xml:space="preserve">
+    <value>Parity Bit:</value>
   </data>
-  <data name="breakoff_BurnSN" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\breakoff_BurnSN.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="label_SerialPort.Text" xml:space="preserve">
+    <value>Serial Port:</value>
   </data>
-  <data name="account-Main" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\account-Main.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="label_StopBit.Text" xml:space="preserve">
+    <value>Stop Bit:</value>
   </data>
-  <data name="fold_Main_Menu" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\fold_Main_Menu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="message" xml:space="preserve">
+    <value>Message</value>
   </data>
-  <data name="connection_BurnSN" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\connection_BurnSN.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="message_CommonSendPattern_failed" xml:space="preserve">
+    <value>Control board configuration failed ...</value>
   </data>
-  <data name="narrow_Main" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\narrow_Main.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="message_CommonSendPattern_suceess" xml:space="preserve">
+    <value>The dashboard has successfully registered to the cloud. Congratulations!</value>
   </data>
-  <data name="account_signout_Main" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\account_signout_Main.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="message_CommonSendPattern_suceess1" xml:space="preserve">
+    <value>Control board configuration succeed...</value>
   </data>
-  <data name="ECOLAB2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ECOLAB2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="message_SetSecret_1" xml:space="preserve">
+    <value>Existing PSK for this serial number, PSK =</value>
   </data>
-  <data name="ECOLAB1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ECOLAB1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="message_SetSecret_error" xml:space="preserve">
+    <value>Shared secret key generation exception.</value>
+  </data>
+  <data name="message_SetupToIoTHub_1" xml:space="preserve">
+    <value>Please press the 'reset' key on the control board, and then click 'OK' immediately</value>
+  </data>
+  <data name="message_SetupToIoTHub_2" xml:space="preserve">
+    <value>Please note that!</value>
+  </data>
+  <data name="message_Travel_failed" xml:space="preserve">
+    <value>Control board configuration failed ...</value>
+  </data>
+  <data name="radioButton_CommonSendPattern.Text" xml:space="preserve">
+    <value>CommonSendPattern</value>
+  </data>
+  <data name="radioButton_FileSendPattern.Text" xml:space="preserve">
+    <value>FileSendPattern</value>
   </data>
 </root>

@@ -57,7 +57,962 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="label_ChildHeader_Menu.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="label_ChildHeader_Menu.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="label_ChildHeader_Menu.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 9pt</value>
+  </data>
+  <data name="label_ChildHeader_Menu.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="label_ChildHeader_Menu.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>20, 10, 0, 0</value>
+  </data>
+  <data name="label_ChildHeader_Menu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>20, 34</value>
+  </data>
+  <data name="label_ChildHeader_Menu.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;label_ChildHeader_Menu.Name" xml:space="preserve">
+    <value>label_ChildHeader_Menu</value>
+  </data>
+  <data name="&gt;&gt;label_ChildHeader_Menu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_ChildHeader_Menu.Parent" xml:space="preserve">
+    <value>panel_ChildHeader</value>
+  </data>
+  <data name="&gt;&gt;label_ChildHeader_Menu.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="panel_ChildHeader.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="panel_ChildHeader.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 10.5pt, style=Bold</value>
+  </data>
+  <data name="panel_ChildHeader.Location" type="System.Drawing.Point, System.Drawing">
+    <value>285, 0</value>
+  </data>
+  <data name="panel_ChildHeader.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1215, 45</value>
+  </data>
+  <data name="panel_ChildHeader.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;panel_ChildHeader.Name" xml:space="preserve">
+    <value>panel_ChildHeader</value>
+  </data>
+  <data name="&gt;&gt;panel_ChildHeader.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel_ChildHeader.Parent" xml:space="preserve">
+    <value>panel_ChildForm</value>
+  </data>
+  <data name="&gt;&gt;panel_ChildHeader.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="panel_SideMenu.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="button_Help.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="button_Help.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="button_Help.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="button_Help.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 434</value>
+  </data>
+  <data name="button_Help.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 10, 3, 10</value>
+  </data>
+  <data name="button_Help.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>10, 0, 0, 0</value>
+  </data>
+  <data name="button_Help.Size" type="System.Drawing.Size, System.Drawing">
+    <value>285, 45</value>
+  </data>
+  <data name="button_Help.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="button_Help.Text" xml:space="preserve">
+    <value>           Help</value>
+  </data>
+  <data name="button_Help.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;button_Help.Name" xml:space="preserve">
+    <value>button_Help</value>
+  </data>
+  <data name="&gt;&gt;button_Help.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_Help.Parent" xml:space="preserve">
+    <value>panel_SideMenu</value>
+  </data>
+  <data name="&gt;&gt;button_Help.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="button_Setting_Environment.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="button_Setting_Environment.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="button_Setting_Environment.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="button_Setting_Environment.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="button_Setting_Environment.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 10, 3, 10</value>
+  </data>
+  <data name="button_Setting_Environment.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>45, 0, 0, 0</value>
+  </data>
+  <data name="button_Setting_Environment.Size" type="System.Drawing.Size, System.Drawing">
+    <value>285, 49</value>
+  </data>
+  <data name="button_Setting_Environment.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="button_Setting_Environment.Text" xml:space="preserve">
+    <value>           Environment</value>
+  </data>
+  <data name="button_Setting_Environment.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;button_Setting_Environment.Name" xml:space="preserve">
+    <value>button_Setting_Environment</value>
+  </data>
+  <data name="&gt;&gt;button_Setting_Environment.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_Setting_Environment.Parent" xml:space="preserve">
+    <value>panel_SettingSubMenu</value>
+  </data>
+  <data name="&gt;&gt;button_Setting_Environment.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="panel_SettingSubMenu.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="panel_SettingSubMenu.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 385</value>
+  </data>
+  <data name="panel_SettingSubMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>285, 49</value>
+  </data>
+  <data name="panel_SettingSubMenu.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;panel_SettingSubMenu.Name" xml:space="preserve">
+    <value>panel_SettingSubMenu</value>
+  </data>
+  <data name="&gt;&gt;panel_SettingSubMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel_SettingSubMenu.Parent" xml:space="preserve">
+    <value>panel_SideMenu</value>
+  </data>
+  <data name="&gt;&gt;panel_SettingSubMenu.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="button_Setting.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="button_Setting.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="button_Setting.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="button_Setting.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 340</value>
+  </data>
+  <data name="button_Setting.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 10, 3, 10</value>
+  </data>
+  <data name="button_Setting.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>10, 0, 0, 0</value>
+  </data>
+  <data name="button_Setting.Size" type="System.Drawing.Size, System.Drawing">
+    <value>285, 45</value>
+  </data>
+  <data name="button_Setting.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="button_Setting.Text" xml:space="preserve">
+    <value>           Setting</value>
+  </data>
+  <data name="button_Setting.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;button_Setting.Name" xml:space="preserve">
+    <value>button_Setting</value>
+  </data>
+  <data name="&gt;&gt;button_Setting.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_Setting.Parent" xml:space="preserve">
+    <value>panel_SideMenu</value>
+  </data>
+  <data name="&gt;&gt;button_Setting.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="button_SerialCOM_GateWay.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="button_SerialCOM_GateWay.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="button_SerialCOM_GateWay.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="button_SerialCOM_GateWay.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 45</value>
+  </data>
+  <data name="button_SerialCOM_GateWay.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 10, 3, 10</value>
+  </data>
+  <data name="button_SerialCOM_GateWay.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>45, 0, 0, 0</value>
+  </data>
+  <data name="button_SerialCOM_GateWay.Size" type="System.Drawing.Size, System.Drawing">
+    <value>285, 45</value>
+  </data>
+  <data name="button_SerialCOM_GateWay.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="button_SerialCOM_GateWay.Text" xml:space="preserve">
+    <value>           Option</value>
+  </data>
+  <data name="button_SerialCOM_GateWay.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;button_SerialCOM_GateWay.Name" xml:space="preserve">
+    <value>button_SerialCOM_GateWay</value>
+  </data>
+  <data name="&gt;&gt;button_SerialCOM_GateWay.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_SerialCOM_GateWay.Parent" xml:space="preserve">
+    <value>panel_SerialCOMSubMenu</value>
+  </data>
+  <data name="&gt;&gt;button_SerialCOM_GateWay.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="button_SerialCOM_Burn.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="button_SerialCOM_Burn.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="button_SerialCOM_Burn.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="button_SerialCOM_Burn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="button_SerialCOM_Burn.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 10, 3, 10</value>
+  </data>
+  <data name="button_SerialCOM_Burn.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>45, 0, 0, 0</value>
+  </data>
+  <data name="button_SerialCOM_Burn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>285, 45</value>
+  </data>
+  <data name="button_SerialCOM_Burn.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="button_SerialCOM_Burn.Text" xml:space="preserve">
+    <value>           Burn</value>
+  </data>
+  <data name="button_SerialCOM_Burn.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;button_SerialCOM_Burn.Name" xml:space="preserve">
+    <value>button_SerialCOM_Burn</value>
+  </data>
+  <data name="&gt;&gt;button_SerialCOM_Burn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_SerialCOM_Burn.Parent" xml:space="preserve">
+    <value>panel_SerialCOMSubMenu</value>
+  </data>
+  <data name="&gt;&gt;button_SerialCOM_Burn.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="panel_SerialCOMSubMenu.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="panel_SerialCOMSubMenu.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 249</value>
+  </data>
+  <data name="panel_SerialCOMSubMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>285, 91</value>
+  </data>
+  <data name="panel_SerialCOMSubMenu.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;panel_SerialCOMSubMenu.Name" xml:space="preserve">
+    <value>panel_SerialCOMSubMenu</value>
+  </data>
+  <data name="&gt;&gt;panel_SerialCOMSubMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel_SerialCOMSubMenu.Parent" xml:space="preserve">
+    <value>panel_SideMenu</value>
+  </data>
+  <data name="&gt;&gt;panel_SerialCOMSubMenu.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="button_SerialCOM.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="button_SerialCOM.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="button_SerialCOM.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="button_SerialCOM.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 204</value>
+  </data>
+  <data name="button_SerialCOM.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 10, 3, 10</value>
+  </data>
+  <data name="button_SerialCOM.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>10, 0, 0, 0</value>
+  </data>
+  <data name="button_SerialCOM.Size" type="System.Drawing.Size, System.Drawing">
+    <value>285, 45</value>
+  </data>
+  <data name="button_SerialCOM.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="button_SerialCOM.Text" xml:space="preserve">
+    <value>           SerialCOM</value>
+  </data>
+  <data name="button_SerialCOM.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;button_SerialCOM.Name" xml:space="preserve">
+    <value>button_SerialCOM</value>
+  </data>
+  <data name="&gt;&gt;button_SerialCOM.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_SerialCOM.Parent" xml:space="preserve">
+    <value>panel_SideMenu</value>
+  </data>
+  <data name="&gt;&gt;button_SerialCOM.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="button_Account_SignOut.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="button_Account_SignOut.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="button_Account_SignOut.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="button_Account_SignOut.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 45</value>
+  </data>
+  <data name="button_Account_SignOut.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 10, 3, 10</value>
+  </data>
+  <data name="button_Account_SignOut.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>45, 0, 0, 0</value>
+  </data>
+  <data name="button_Account_SignOut.Size" type="System.Drawing.Size, System.Drawing">
+    <value>285, 45</value>
+  </data>
+  <data name="button_Account_SignOut.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="button_Account_SignOut.Text" xml:space="preserve">
+    <value>           SignOut</value>
+  </data>
+  <data name="button_Account_SignOut.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;button_Account_SignOut.Name" xml:space="preserve">
+    <value>button_Account_SignOut</value>
+  </data>
+  <data name="&gt;&gt;button_Account_SignOut.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_Account_SignOut.Parent" xml:space="preserve">
+    <value>panel_AccountSubMenu</value>
+  </data>
+  <data name="&gt;&gt;button_Account_SignOut.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="button_Account_Profile.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="button_Account_Profile.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="button_Account_Profile.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="button_Account_Profile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="button_Account_Profile.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 10, 3, 10</value>
+  </data>
+  <data name="button_Account_Profile.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>45, 0, 0, 0</value>
+  </data>
+  <data name="button_Account_Profile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>285, 45</value>
+  </data>
+  <data name="button_Account_Profile.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="button_Account_Profile.Text" xml:space="preserve">
+    <value>           Profile</value>
+  </data>
+  <data name="button_Account_Profile.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;button_Account_Profile.Name" xml:space="preserve">
+    <value>button_Account_Profile</value>
+  </data>
+  <data name="&gt;&gt;button_Account_Profile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_Account_Profile.Parent" xml:space="preserve">
+    <value>panel_AccountSubMenu</value>
+  </data>
+  <data name="&gt;&gt;button_Account_Profile.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="panel_AccountSubMenu.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="panel_AccountSubMenu.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 113</value>
+  </data>
+  <data name="panel_AccountSubMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>285, 91</value>
+  </data>
+  <data name="panel_AccountSubMenu.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;panel_AccountSubMenu.Name" xml:space="preserve">
+    <value>panel_AccountSubMenu</value>
+  </data>
+  <data name="&gt;&gt;panel_AccountSubMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel_AccountSubMenu.Parent" xml:space="preserve">
+    <value>panel_SideMenu</value>
+  </data>
+  <data name="&gt;&gt;panel_AccountSubMenu.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="button_Account.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="button_Account.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="button_Account.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="button_Account.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 68</value>
+  </data>
+  <data name="button_Account.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 10, 3, 10</value>
+  </data>
+  <data name="button_Account.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>10, 0, 0, 0</value>
+  </data>
+  <data name="button_Account.Size" type="System.Drawing.Size, System.Drawing">
+    <value>285, 45</value>
+  </data>
+  <data name="button_Account.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="button_Account.Text" xml:space="preserve">
+    <value>           Account</value>
+  </data>
+  <data name="button_Account.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;button_Account.Name" xml:space="preserve">
+    <value>button_Account</value>
+  </data>
+  <data name="&gt;&gt;button_Account.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_Account.Parent" xml:space="preserve">
+    <value>panel_SideMenu</value>
+  </data>
+  <data name="&gt;&gt;button_Account.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="label_Environment.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_Environment.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 9pt, style=Bold</value>
+  </data>
+  <data name="label_Environment.Location" type="System.Drawing.Point, System.Drawing">
+    <value>78, 20</value>
+  </data>
+  <data name="label_Environment.Size" type="System.Drawing.Size, System.Drawing">
+    <value>65, 25</value>
+  </data>
+  <data name="label_Environment.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="label_Environment.Text" xml:space="preserve">
+    <value>Menu</value>
+  </data>
+  <data name="&gt;&gt;label_Environment.Name" xml:space="preserve">
+    <value>label_Environment</value>
+  </data>
+  <data name="&gt;&gt;label_Environment.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_Environment.Parent" xml:space="preserve">
+    <value>panel_Log</value>
+  </data>
+  <data name="&gt;&gt;label_Environment.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="pictureBox_MainMenu.Location" type="System.Drawing.Point, System.Drawing">
+    <value>22, 12</value>
+  </data>
+  <data name="pictureBox_MainMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>38, 38</value>
+  </data>
+  <data name="pictureBox_MainMenu.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;pictureBox_MainMenu.Name" xml:space="preserve">
+    <value>pictureBox_MainMenu</value>
+  </data>
+  <data name="&gt;&gt;pictureBox_MainMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictureBox_MainMenu.Parent" xml:space="preserve">
+    <value>panel_Log</value>
+  </data>
+  <data name="&gt;&gt;pictureBox_MainMenu.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="panel_Log.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="panel_Log.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="panel_Log.Size" type="System.Drawing.Size, System.Drawing">
+    <value>285, 68</value>
+  </data>
+  <data name="panel_Log.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;panel_Log.Name" xml:space="preserve">
+    <value>panel_Log</value>
+  </data>
+  <data name="&gt;&gt;panel_Log.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel_Log.Parent" xml:space="preserve">
+    <value>panel_SideMenu</value>
+  </data>
+  <data name="&gt;&gt;panel_Log.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="panel_SideMenu.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="panel_SideMenu.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="panel_SideMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>285, 718</value>
+  </data>
+  <data name="panel_SideMenu.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;panel_SideMenu.Name" xml:space="preserve">
+    <value>panel_SideMenu</value>
+  </data>
+  <data name="&gt;&gt;panel_SideMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel_SideMenu.Parent" xml:space="preserve">
+    <value>panel_ChildForm</value>
+  </data>
+  <data name="&gt;&gt;panel_SideMenu.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="label_DateTime.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_DateTime.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="label_DateTime.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 9pt</value>
+  </data>
+  <data name="label_DateTime.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1296, 0</value>
+  </data>
+  <data name="label_DateTime.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 3, 50, 0</value>
+  </data>
+  <data name="label_DateTime.Size" type="System.Drawing.Size, System.Drawing">
+    <value>143, 27</value>
+  </data>
+  <data name="label_DateTime.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="label_DateTime.Text" xml:space="preserve">
+    <value>DateTime</value>
+  </data>
+  <data name="&gt;&gt;label_DateTime.Name" xml:space="preserve">
+    <value>label_DateTime</value>
+  </data>
+  <data name="&gt;&gt;label_DateTime.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_DateTime.Parent" xml:space="preserve">
+    <value>panel_BottomToolTip</value>
+  </data>
+  <data name="&gt;&gt;label_DateTime.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="label_Exit.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_Exit.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="label_Exit.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 9pt</value>
+  </data>
+  <data name="label_Exit.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1439, 0</value>
+  </data>
+  <data name="label_Exit.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 0, 20, 0</value>
+  </data>
+  <data name="label_Exit.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 3, 20, 0</value>
+  </data>
+  <data name="label_Exit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>61, 27</value>
+  </data>
+  <data name="label_Exit.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="label_Exit.Text" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="&gt;&gt;label_Exit.Name" xml:space="preserve">
+    <value>label_Exit</value>
+  </data>
+  <data name="&gt;&gt;label_Exit.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_Exit.Parent" xml:space="preserve">
+    <value>panel_BottomToolTip</value>
+  </data>
+  <data name="&gt;&gt;label_Exit.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="label_CurrentUser.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_CurrentUser.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="label_CurrentUser.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 9pt</value>
+  </data>
+  <data name="label_CurrentUser.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="label_CurrentUser.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 3, 0, 0</value>
+  </data>
+  <data name="label_CurrentUser.Size" type="System.Drawing.Size, System.Drawing">
+    <value>122, 27</value>
+  </data>
+  <data name="label_CurrentUser.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="label_CurrentUser.Text" xml:space="preserve">
+    <value>Current User:</value>
+  </data>
+  <data name="&gt;&gt;label_CurrentUser.Name" xml:space="preserve">
+    <value>label_CurrentUser</value>
+  </data>
+  <data name="&gt;&gt;label_CurrentUser.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_CurrentUser.Parent" xml:space="preserve">
+    <value>panel_BottomToolTip</value>
+  </data>
+  <data name="&gt;&gt;label_CurrentUser.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="panel_BottomToolTip.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="panel_BottomToolTip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 718</value>
+  </data>
+  <data name="panel_BottomToolTip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1500, 38</value>
+  </data>
+  <data name="panel_BottomToolTip.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;panel_BottomToolTip.Name" xml:space="preserve">
+    <value>panel_BottomToolTip</value>
+  </data>
+  <data name="&gt;&gt;panel_BottomToolTip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel_BottomToolTip.Parent" xml:space="preserve">
+    <value>panel_ChildForm</value>
+  </data>
+  <data name="&gt;&gt;panel_BottomToolTip.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="panel_ChildForm.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="panel_ChildForm.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 44</value>
+  </data>
+  <data name="panel_ChildForm.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1500, 756</value>
+  </data>
+  <data name="panel_ChildForm.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;panel_ChildForm.Name" xml:space="preserve">
+    <value>panel_ChildForm</value>
+  </data>
+  <data name="&gt;&gt;panel_ChildForm.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel_ChildForm.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panel_ChildForm.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="pictureBox_Close.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="pictureBox_Close.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1458, 0</value>
+  </data>
+  <data name="pictureBox_Close.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 8, 5, 8</value>
+  </data>
+  <data name="pictureBox_Close.Size" type="System.Drawing.Size, System.Drawing">
+    <value>42, 44</value>
+  </data>
+  <data name="pictureBox_Close.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
+  </data>
+  <data name="pictureBox_Close.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;pictureBox_Close.Name" xml:space="preserve">
+    <value>pictureBox_Close</value>
+  </data>
+  <data name="&gt;&gt;pictureBox_Close.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictureBox_Close.Parent" xml:space="preserve">
+    <value>panel_Header</value>
+  </data>
+  <data name="&gt;&gt;pictureBox_Close.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="label_CurrentMenu.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_CurrentMenu.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="label_CurrentMenu.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 10.5pt, style=Bold</value>
+  </data>
+  <data name="label_CurrentMenu.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="label_CurrentMenu.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 3, 0, 0</value>
+  </data>
+  <data name="label_CurrentMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>250, 31</value>
+  </data>
+  <data name="label_CurrentMenu.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="label_CurrentMenu.Text" xml:space="preserve">
+    <value>IOT Management Tool</value>
+  </data>
+  <data name="&gt;&gt;label_CurrentMenu.Name" xml:space="preserve">
+    <value>label_CurrentMenu</value>
+  </data>
+  <data name="&gt;&gt;label_CurrentMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_CurrentMenu.Parent" xml:space="preserve">
+    <value>panel_Header</value>
+  </data>
+  <data name="&gt;&gt;label_CurrentMenu.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="pictureBox_Min.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="pictureBox_Min.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1370, 0</value>
+  </data>
+  <data name="pictureBox_Min.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 8, 5, 8</value>
+  </data>
+  <data name="pictureBox_Min.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 44</value>
+  </data>
+  <data name="pictureBox_Min.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
+  </data>
+  <data name="pictureBox_Min.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;pictureBox_Min.Name" xml:space="preserve">
+    <value>pictureBox_Min</value>
+  </data>
+  <data name="&gt;&gt;pictureBox_Min.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictureBox_Min.Parent" xml:space="preserve">
+    <value>panel_Header</value>
+  </data>
+  <data name="&gt;&gt;pictureBox_Min.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="pictureBox_Max.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="pictureBox_Max.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1415, 0</value>
+  </data>
+  <data name="pictureBox_Max.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>8, 10, 8, 10</value>
+  </data>
+  <data name="pictureBox_Max.Size" type="System.Drawing.Size, System.Drawing">
+    <value>43, 44</value>
+  </data>
+  <data name="pictureBox_Max.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
+  </data>
+  <data name="pictureBox_Max.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;pictureBox_Max.Name" xml:space="preserve">
+    <value>pictureBox_Max</value>
+  </data>
+  <data name="&gt;&gt;pictureBox_Max.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictureBox_Max.Parent" xml:space="preserve">
+    <value>panel_Header</value>
+  </data>
+  <data name="&gt;&gt;pictureBox_Max.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="panel_Header.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="panel_Header.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="panel_Header.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1500, 44</value>
+  </data>
+  <data name="panel_Header.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;panel_Header.Name" xml:space="preserve">
+    <value>panel_Header</value>
+  </data>
+  <data name="&gt;&gt;panel_Header.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel_Header.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panel_Header.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>11, 24</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>1500, 800</value>
+  </data>
+  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>1500, 800</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>F_Main</value>
+  </data>
+  <data name="&gt;&gt;timer1.Name" xml:space="preserve">
+    <value>timer1</value>
+  </data>
+  <data name="&gt;&gt;timer1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Timer, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>Frm_Main</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

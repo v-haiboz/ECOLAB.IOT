@@ -1,5 +1,7 @@
 ﻿using ECOLAB.IOT.Entity;
 using ECOLAB.IOT.Service;
+using System.ComponentModel;
+using System.Globalization;
 using static Azure.Core.HttpHeader;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Header;
 
@@ -7,7 +9,7 @@ namespace ECOLAB.IOT.WinFormApp
 {
     public partial class Frm_Login : Form
     {
-
+        ComponentResourceManager res = new ComponentResourceManager(typeof(Frm_Login));
         public Frm_Login()
         {
             InitializeComponent();
@@ -15,14 +17,11 @@ namespace ECOLAB.IOT.WinFormApp
 
         private void Frm_Login_Load(object sender, EventArgs e)
         {
-            Init();
+            Init(); 
         }
 
         private void button_Cancel_Click(object sender, EventArgs e)
         {
-            //this.DialogResult = DialogResult.Cancel;
-            //this.Dispose();
-            //this.Close();
             Application.Exit();
         }
 
@@ -92,5 +91,67 @@ namespace ECOLAB.IOT.WinFormApp
             return true;
         }
 
+        private void radioButton_English_CheckedChanged(object sender, EventArgs e)
+        {
+            SelectLanguage();
+        }
+
+        private void radioButton_Chinese_CheckedChanged(object sender, EventArgs e)
+        {
+            SelectLanguage();
+        }
+
+        private void SelectLanguage()
+        {
+            if (radioButton_English.Checked)
+            {
+                Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("en-us");
+                CallerContext.currentCulture= CultureInfo.GetCultureInfo("en-us");
+                
+            }
+            if (radioButton_Chinese.Checked)
+            {
+                Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("zh-cn");
+                CallerContext.currentCulture = CultureInfo.GetCultureInfo("zh-cn");
+            }
+            ReloadText();
+           // ApplyResource();
+        }
+
+        private void ReloadText()
+        {
+            button_Cancel.Text = res.GetString("button_Cancel.Text");
+            button_Login.Text = res.GetString("button_Login.Text");
+            label_Header.Text = res.GetString("label_Header.Text");
+            label_Password.Text = res.GetString("label_Password.Text");
+            label_Username.Text = res.GetString("label_Username.Text");
+            radioButton_Chinese.Text  = res.GetString("radioButton_Chinese.Text"); 
+            radioButton_English.Text = res.GetString("radioButton_English.Text");
+        }
+        private void ApplyResource()
+        {
+            var size = this.Size;
+            ComponentResourceManager res = new ComponentResourceManager(typeof(Frm_Login));
+            foreach (Control ctl in Controls)
+            {
+                if (ctl is GroupBox)
+                {
+                    res.ApplyResources(ctl, ctl.Name);
+                    GroupBox g = ctl as GroupBox;
+                    foreach (Control item in g.Controls)
+                    {
+                        res.ApplyResources(item, item.Name);
+                    }
+                }
+                else
+                {
+                    res.ApplyResources(ctl, ctl.Name);
+                }
+            }
+            this.ResumeLayout(false);
+            this.PerformLayout();
+            res.ApplyResources(this, "$this");
+            this.Size = size;
+        }
     }
 }

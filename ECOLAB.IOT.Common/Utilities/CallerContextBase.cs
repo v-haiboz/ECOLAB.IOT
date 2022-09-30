@@ -1,6 +1,8 @@
 ﻿namespace ECOLAB.IOT.Common.Utilities
 {
     using System;
+    using System.Globalization;
+
     public class CallerContextBase
     {
         public static T Resolve<T>() where T : class
@@ -14,5 +16,7 @@
 
             set => AsyncLocal.Value = value;
         }
+
+        public static CultureInfo currentCulture= CultureInfo.GetCultureInfo("en-us");
     }
 }

@@ -10,6 +10,7 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
     public partial class Burn : Form
     {
         private COMSetting setting = CallerContext.ECOLABIOTBurnSNAndPSKService.GetDefaultCOMSetting();
+        ComponentResourceManager res = new ComponentResourceManager(typeof(Burn));
         public Burn()
         {
             InitializeComponent();
@@ -36,6 +37,8 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
         {
             try
             {
+                
+                
                 if (CurrentContext.PortalState== PortalState.Close)
                 {
                     string portName = comboBox_SerialPort.Text;
@@ -54,7 +57,7 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
                     EnableOrDisableSetting();
                     pictureBox_Connection.Image = Properties.Resources.connection_BurnSN;
                     button_Connection.BackColor = Color.DarkRed;
-                    button_Connection.Text = "Disconnection";
+                    button_Connection.Text = res.GetString("button_Connection_Disable");
                 }
                 else if (CurrentContext.PortalState == PortalState.Open)
                 {
@@ -62,7 +65,7 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
                     EnableOrDisableSetting(true);
                     pictureBox_Connection.Image = Properties.Resources.breakoff_BurnSN;
                     button_Connection.BackColor = SystemColors.Highlight;
-                    button_Connection.Text = "Connection";
+                    button_Connection.Text = res.GetString("button_Connection_Enable");
                 }
             }
             catch (Exception errror)
@@ -147,7 +150,7 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             }
             catch (Exception ex)
             {
-                richTextBox_Output.AppendText("\n\r Control board configuration succeed...");
+                richTextBox_Output.AppendText($"\n\r {res.GetString("message_Travel_failed")}");
             }
             finally
             {
@@ -173,21 +176,21 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
 
             if (!CheckDeviceConfig(sn, psk))
             {
-                richTextBox_Output.AppendText("\n\r Control board configuration failed...");
+                richTextBox_Output.AppendText($"\n\r {res.GetString("message_CommonSendPattern_failed")}");
                 return;
             }
 
             var result = await RegisterDevice(sn);
             if (result.Status == Status.OK)
             {
-                MessageBox.Show("The dashboard has successfully registered to the cloud. Congratulations!", "Message");
+                MessageBox.Show($"{res.GetString("message_CommonSendPattern_suceess")}", res.GetString("message"));
             }
             else
             {
-                MessageBox.Show(result.Message, "Message");
+                MessageBox.Show(result.Message, res.GetString("message"));
             }
 
-            richTextBox_Output.AppendText("\n\r Control board configuration succeed...");
+            richTextBox_Output.AppendText($"\n\r {res.GetString("message_CommonSendPattern_suceess1")}");
         }
 
         private void SendFilePattern()
@@ -221,7 +224,7 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
 
                 if (CallerContext.ECOLABIOTSecretService.ExistSecret(key))
                 {
-                    MessageBox.Show($"Existing PSK for this serial number, PSK ={key}");
+                    MessageBox.Show($"{res.GetString("message_SetSecret_1")}{key}");
                     return false;
                     //CallerContext.ECOLABIOTSecretService.DeleteSecret(key);
                 }
@@ -231,7 +234,7 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Shared secret key generation exception. {ex}");
+                MessageBox.Show($"{res.GetString("message_SetSecret_error")} {ex}");
                 return false;
             }
         }
@@ -242,8 +245,8 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             try
             {
                 MessageBoxButtons _btn = MessageBoxButtons.OK;
-                MessageBox.Show(this, "Please press the 'reset' key on the control board, and then click 'OK' immediately",
-                                "Please note that!", _btn);
+                MessageBox.Show(this, res.GetString("message_SetupToIoTHub_1"),
+                                res.GetString("message_SetupToIoTHub_2"), _btn);
                 Thread.Sleep(3000);
                 if (serialPort.IsOpen == false)
                 {
