@@ -38,13 +38,13 @@ namespace ECOLAB.IOT.WinFormApp
                 return;
             }
 
-            var objAdmins = new SysAdmins()
+            var objAdmin = new SysAdmin()
             {
                 UserName = this.textBox_UserName.Text.Trim(),
                 Pwd = this.textBox_PassWord.Text.Trim()
             };
 
-            var isexist = CallerContext.ECOLABIOTUserService.AdminLogin(objAdmins);
+            var isexist = CallerContext.ECOLABIOTUserService.AdminLogin(objAdmin);
             if (!isexist.HasValue || !isexist.Value)
             {
                 this.textBox_UserName.Text = "";
@@ -54,11 +54,12 @@ namespace ECOLAB.IOT.WinFormApp
             }
             else
             {
+                var currentUser = CallerContext.ECOLABIOTUserService.GetUser(objAdmin);
                 var environmentVariable = CallerContext.ECOLABIOTEnvironmentService.GetEnvironmentVariableByName(comboBox_Env.Text); ;
                 ServiceCollectionExtension.GetCurrentServiceCollection()
                     .RegisterCurrentEnvironment(environmentVariable)
                     .RegisterAppsetting(environmentVariable)
-                    .RegisterCurrentSysAdmins(objAdmins).Build();
+                    .RegisterCurrentSysAdmins(currentUser).Build();
                 ServiceCollectionExtension.GetCurrentServiceCollection()
                     .RegisterSecretClient(CallerContext.AppServiceOptions).Build();
                 this.DialogResult = DialogResult.OK;

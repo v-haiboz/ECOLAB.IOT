@@ -40,6 +40,7 @@
             this.label_ClientId = new System.Windows.Forms.Label();
             this.label_DeviceType = new System.Windows.Forms.Label();
             this.label_Name = new System.Windows.Forms.Label();
+            this.button_Clear = new System.Windows.Forms.Button();
             this.button_Add = new System.Windows.Forms.Button();
             this.textBox_EnvironmentDeviceRegisterUrl = new System.Windows.Forms.TextBox();
             this.textBox_EnvironmentClientSecret = new System.Windows.Forms.TextBox();
@@ -57,6 +58,7 @@
             this.label_EnvironmentDeviceType = new System.Windows.Forms.Label();
             this.textBox_EnvironmentName = new System.Windows.Forms.TextBox();
             this.label_EnvironmentName = new System.Windows.Forms.Label();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer_Environment)).BeginInit();
             this.splitContainer_Environment.Panel1.SuspendLayout();
             this.splitContainer_Environment.Panel2.SuspendLayout();
@@ -105,6 +107,7 @@
             this.dataGridView_Environment.TabIndex = 0;
             this.dataGridView_Environment.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Environment_CellClick);
             this.dataGridView_Environment.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Environment_CellContentClick);
+            this.dataGridView_Environment.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Environment_CellDoubleClick);
             // 
             // groupBox1
             // 
@@ -117,6 +120,7 @@
             this.groupBox1.Controls.Add(this.label_ClientId);
             this.groupBox1.Controls.Add(this.label_DeviceType);
             this.groupBox1.Controls.Add(this.label_Name);
+            this.groupBox1.Controls.Add(this.button_Clear);
             this.groupBox1.Controls.Add(this.button_Add);
             this.groupBox1.Controls.Add(this.textBox_EnvironmentDeviceRegisterUrl);
             this.groupBox1.Controls.Add(this.textBox_EnvironmentClientSecret);
@@ -173,7 +177,7 @@
             // 
             this.label_DeviceRegisterUrl.AutoSize = true;
             this.label_DeviceRegisterUrl.ForeColor = System.Drawing.Color.Red;
-            this.label_DeviceRegisterUrl.Location = new System.Drawing.Point(860, 203);
+            this.label_DeviceRegisterUrl.Location = new System.Drawing.Point(860, 265);
             this.label_DeviceRegisterUrl.Name = "label_DeviceRegisterUrl";
             this.label_DeviceRegisterUrl.Size = new System.Drawing.Size(0, 24);
             this.label_DeviceRegisterUrl.TabIndex = 17;
@@ -214,6 +218,21 @@
             this.label_Name.Size = new System.Drawing.Size(0, 24);
             this.label_Name.TabIndex = 16;
             // 
+            // button_Clear
+            // 
+            this.button_Clear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.button_Clear.FlatAppearance.BorderSize = 0;
+            this.button_Clear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Clear.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button_Clear.ForeColor = System.Drawing.Color.White;
+            this.button_Clear.Location = new System.Drawing.Point(1096, 296);
+            this.button_Clear.Name = "button_Clear";
+            this.button_Clear.Size = new System.Drawing.Size(204, 38);
+            this.button_Clear.TabIndex = 15;
+            this.button_Clear.Text = "Clear";
+            this.button_Clear.UseVisualStyleBackColor = false;
+            this.button_Clear.Click += new System.EventHandler(this.button_Clear_Click);
+            // 
             // button_Add
             // 
             this.button_Add.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
@@ -221,7 +240,7 @@
             this.button_Add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_Add.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button_Add.ForeColor = System.Drawing.Color.White;
-            this.button_Add.Location = new System.Drawing.Point(850, 289);
+            this.button_Add.Location = new System.Drawing.Point(850, 296);
             this.button_Add.Name = "button_Add";
             this.button_Add.Size = new System.Drawing.Size(204, 38);
             this.button_Add.TabIndex = 15;
@@ -232,10 +251,10 @@
             // textBox_EnvironmentDeviceRegisterUrl
             // 
             this.textBox_EnvironmentDeviceRegisterUrl.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox_EnvironmentDeviceRegisterUrl.Location = new System.Drawing.Point(850, 169);
+            this.textBox_EnvironmentDeviceRegisterUrl.Location = new System.Drawing.Point(850, 167);
             this.textBox_EnvironmentDeviceRegisterUrl.Multiline = true;
             this.textBox_EnvironmentDeviceRegisterUrl.Name = "textBox_EnvironmentDeviceRegisterUrl";
-            this.textBox_EnvironmentDeviceRegisterUrl.Size = new System.Drawing.Size(560, 30);
+            this.textBox_EnvironmentDeviceRegisterUrl.Size = new System.Drawing.Size(508, 91);
             this.textBox_EnvironmentDeviceRegisterUrl.TabIndex = 14;
             this.textBox_EnvironmentDeviceRegisterUrl.TextChanged += new System.EventHandler(this.textBox_EnvironmentDeviceRegisterUrl_TextChanged);
             this.textBox_EnvironmentDeviceRegisterUrl.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_EnvironmentDeviceRegisterUrl_KeyPress);
@@ -441,5 +460,7 @@
         private TextBox textBox_EnvironmentDeviceType;
         private Label label_EnvironmentDeviceType;
         private Label label_DeviceRegisterUrl;
+        private Button button_Clear;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

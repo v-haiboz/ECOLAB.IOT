@@ -11,9 +11,8 @@
         public static EnvironmentVariable EnvironmentVariable => Resolve<EnvironmentVariable>();
         public static AppServiceOption AppServiceOptions => Resolve<AppServiceOption>();
         
-        public static SysAdmins SysAdmins => Resolve<SysAdmins>();
+        public static SysAdmin SysAdmin => Resolve<SysAdmin>();
 
-        public static IOptions<AppServiceOption> AppServiceOptionsWrapper => Resolve<IOptions<AppServiceOption>>();
 
 
         public static IECOLABIOTUserService ECOLABIOTUserService => Resolve<IECOLABIOTUserService>();
@@ -21,7 +20,7 @@
         public static IECOLABIOTSecretService ECOLABIOTSecretService => Resolve<IECOLABIOTSecretService>();
         public static IECOLABIOTEnvironmentService ECOLABIOTEnvironmentService => Resolve<IECOLABIOTEnvironmentService>();
         public static IECOLABIOTRegisterDeviceService ECOLABIOTRegisterDeviceService => Resolve<IECOLABIOTRegisterDeviceService>();
-
+        
 
 
         public static IECOLABIOTUserProvider ECOLABIOTUserProvider => Resolve<IECOLABIOTUserProvider>();
@@ -30,6 +29,6 @@
         public static SecretClient ECOLABIOTSecretClient => Resolve<SecretClient>();
         public static IECOLABIOTEnvironmentProvider ECOLABIOTEnvironmentProvider => Resolve<IECOLABIOTEnvironmentProvider>();
         public static IECOLABIOTRegisterDeviceProvider ECOLABIOTRegisterDeviceProvider => Resolve<IECOLABIOTRegisterDeviceProvider>();
-
+        public static IECOLABIOTSecurityProvider ECOLABIOTSecurityProvider => Resolve<IECOLABIOTSecurityProvider>();
     }
 }

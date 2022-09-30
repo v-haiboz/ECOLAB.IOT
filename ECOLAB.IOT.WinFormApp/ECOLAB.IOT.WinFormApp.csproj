@@ -39,7 +39,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Appsetting\appsetting_int.json">
+    <None Update="Appsetting\appsetting_Dev.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Appsetting\appsetting_product.json">

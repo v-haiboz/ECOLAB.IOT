@@ -99,7 +99,7 @@
             this.textBox_UserName.PlaceholderText = "Admin";
             this.textBox_UserName.Size = new System.Drawing.Size(312, 40);
             this.textBox_UserName.TabIndex = 0;
-            this.textBox_UserName.Text = "UserProduct";
+            this.textBox_UserName.Text = "Admin";
             // 
             // panel2
             // 
@@ -130,7 +130,8 @@
             this.textBox_PassWord.PlaceholderText = "Password";
             this.textBox_PassWord.Size = new System.Drawing.Size(313, 40);
             this.textBox_PassWord.TabIndex = 1;
-            this.textBox_PassWord.Text = "123";
+            this.textBox_PassWord.Tag = "ECOLAB123|123123";
+            this.textBox_PassWord.Text = "ECOLAB123";
             // 
             // panel3
             // 

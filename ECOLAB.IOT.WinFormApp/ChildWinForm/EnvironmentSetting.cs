@@ -3,6 +3,7 @@ using ECOLAB.IOT.Common.Utilities;
 using ECOLAB.IOT.Entity;
 using ECOLAB.IOT.Service;
 using System.Data;
+using System.Text.RegularExpressions;
 
 namespace ECOLAB.IOT.WinFormApp.ChildWinForm
 {
@@ -15,21 +16,21 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
         }
         private void BangDing()
         {
-            dataGridView_Environment.Columns.Clear();
-
             this.dataGridView_Environment.DataSource = null;
+            dataGridView_Environment.Columns.Clear();
             dataGridView_Environment.ClearSelection();
             var list = CallerContext.ECOLABIOTEnvironmentService.GetEnvironmentVariables();
+
             var dataSource = list.Select(item => new
             {
                 Name = item.Name,
                 ClientId = item.AppServiceOption.ClientId,
-                ClientSecret = item.AppServiceOption.ClientSecret,
+                ClientSecret = !CallerContext.SysAdmin.IsSuper && item.Name.Trim() == "Product" ? ReplaceChar(item.AppServiceOption.ClientSecret) : item.AppServiceOption.ClientSecret,
                 TenantId = item.AppServiceOption.TenantId,
                 KeyValutUri = item.AppServiceOption.KeyValutUrl,
-                DeviceType= item.AppServiceOption.DeviceType,
+                DeviceType = item.AppServiceOption.DeviceType,
                 PlatformName = item.AppServiceOption.PlatformName,
-                DeviceRegisterUri = item.AppServiceOption.DeviceRegisterUrl
+                DeviceRegisterUri = !CallerContext.SysAdmin.IsSuper && item.Name.Trim() == "Product" ? ReplaceChar(item.AppServiceOption.DeviceRegisterUrl, @"^[a-zA-Z0-9][-a-zA-Z0-9]{0,62}(\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+$") : item.AppServiceOption.DeviceRegisterUrl
             }).ToList();
 
             this.dataGridView_Environment.DataSource = dataSource;
@@ -43,8 +44,24 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             dataGridView_Environment.Columns[6].Width = 100;
             dataGridView_Environment.Columns[7].Width = 100;
             dataGridView_Environment.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            AddDeleteButton();
-                      
+
+        }
+
+        private string ReplaceChar(string str, string patten = @".?", bool bl = true)
+        {
+            if (string.IsNullOrEmpty(str))
+                return str;
+
+            Regex reg = new Regex(patten);
+            str = reg.Replace(str, "*");
+            if (bl)
+            {
+                Random rd = new Random();
+                var index = rd.Next(str.Length - 5);
+                str = str.Remove(str.Length - index);
+            }
+
+            return str;
         }
 
         private void dataGridView_Environment_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -55,6 +72,7 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
 
         private void EnvironmentSetting_Load(object sender, EventArgs e)
         {
+            AddDeleteButton();
             for (var i = 0; i < dataGridView_Environment.Rows.Count; i++)
             {
                 dataGridView_Environment.Rows[i].DefaultCellStyle.BackColor = SystemColors.Info;
@@ -66,43 +84,27 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
         {
             DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
             var btn_CellStyle = new DataGridViewCellStyle();
-            //btn.DefaultCellStyle.BackColor = Color.Red;
-            //btn_CellStyle.ForeColor = Color.Maroon;
             btn_CellStyle.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btn.Name = "button_Delete";
             btn.HeaderText = "";
             btn.DefaultCellStyle.NullValue = "Delete";
             btn.FlatStyle = FlatStyle.System;
-            //btn.DefaultCellStyle = btn_CellStyle;
             btn.DefaultCellStyle.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            //btn.DefaultCellStyle.BackColor = Color.Red;
             dataGridView_Environment.Columns.Add(btn);
-            //this.dataGridView_Environment.Columns.Add("TEST", "kk");
-
-            //for (int i = 0; i < dataGridView_Environment.Rows.Count; i++)
-            //{
-            //    Button[] btn1 = new Button[2];
-            //    btn1[0] = new Button();
-            //    btn1[0].Text = "操作1";
-            //    btn1[0].BackColor = Color.DarkRed;
-            //    btn1[1] = new Button();
-            //    btn1[1].Text = "操作2";
-            //    this.dataGridView_Environment.Controls.Add(btn1[0]);
-            //   // this.dataGridView_Environment.Controls.Add(btn1[1]);
-            //    Rectangle rect = this.dataGridView_Environment.GetCellDisplayRectangle(5, i, false);
-            //    btn1[0].Size  = new Size(rect.Width, rect.Height);
-            //    btn1[0].Location = new Point(rect.Left, rect.Top);
-            //    //btn1[1].Location = new Point(rect.Left + btn1[0].Width, rect.Top);
-
-            //}
-
-
         }
 
         private void dataGridView_Environment_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dataGridView_Environment.Columns[e.ColumnIndex].Name == "button_Delete")
             {
+                if (!CallerContext.SysAdmin.IsSuper
+                    && dataGridView_Environment != null
+                    && dataGridView_Environment[0, e.RowIndex].Value.ToString() == "Product")
+                {
+                    MessageBox.Show("The current user is not a super administrator. Only a super administrator can delete this row of data");
+                    return;
+                }
+
                 var name = dataGridView_Environment["Name", e.RowIndex].Value.ToString();
                 var bl = CallerContext.ECOLABIOTEnvironmentService.RemoveEnvironmentVariable(new EnvironmentVariable()
                 {
@@ -138,6 +140,7 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             Clear();
             MessageBox.Show("Successful");
             BangDing();
+            AddDeleteButton();
         }
 
         private EnvironmentVariable BuildObject()
@@ -153,28 +156,12 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
                     ClientId = textBox_EnvironmentClientId.Text,
                     ClientSecret = textBox_EnvironmentClientSecret.Text,
                     TenantId = textBox_EnvironmentTenantId.Text,
-                    KeyValutUrl = textBox_EnvironmentKeyValutUrl.Text
+                    KeyValutUrl = textBox_EnvironmentKeyValutUrl.Text,
+                    DeviceType = textBox_EnvironmentDeviceType.Text,
+                    PlatformName = textBox_EnvironmentPlatformName.Text,
+                    DeviceRegisterUrl = textBox_EnvironmentDeviceRegisterUrl.Text
                 }
             };
-        }
-
-        private void DisableOrEnableGeneratePSKButton()
-        {
-            if (!string.IsNullOrEmpty(textBox_EnvironmentName.Text)
-                && !string.IsNullOrEmpty(textBox_EnvironmentClientId.Text)
-                && !string.IsNullOrEmpty(textBox_EnvironmentClientSecret.Text)
-                && !string.IsNullOrEmpty(textBox_EnvironmentTenantId.Text)
-                && !string.IsNullOrEmpty(textBox_EnvironmentKeyValutUrl.Text)
-                )
-            {
-                button_Add.BackColor = Color.FromArgb(0, 192, 0);
-                button_Add.Enabled = true;
-            }
-            else
-            {
-                button_Add.BackColor = SystemColors.AppWorkspace;
-                button_Add.Enabled = false;
-            }
         }
 
         private void Clear()
@@ -185,7 +172,6 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             textBox_EnvironmentClientSecret.Text = "";
             textBox_EnvironmentTenantId.Text = "";
             textBox_EnvironmentKeyValutUrl.Text = "";
-            textBox_EnvironmentDeviceType.Text = "";
             textBox_EnvironmentDeviceType.Text = "";
             textBox_EnvironmentPlatformName.Text = "";
             textBox_EnvironmentDeviceRegisterUrl.Text = "";
@@ -248,10 +234,10 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
 
         private bool ValidateAll()
         {
-            return ValidateName() 
-                & ValidateClientId() 
-                & ValidateClientSecret() 
-                & ValidateTenantId() 
+            return ValidateName()
+                & ValidateClientId()
+                & ValidateClientSecret()
+                & ValidateTenantId()
                 & ValidateKeyValutUrl()
                 & ValidateDeviceType()
                 & ValidatePlatformName()
@@ -263,6 +249,12 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             if (string.IsNullOrEmpty(textBox_EnvironmentName.Text))
             {
                 label_Name.Text = "Name is required.";
+                return false;
+            }
+
+            if (!CallerContext.SysAdmin.IsSuper && textBox_EnvironmentName.Text.Trim() == "Product")
+            {
+                label_Name.Text = "Only super administrator can add production configurations";
                 return false;
             }
 
@@ -368,7 +360,7 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
         {
             if (string.IsNullOrEmpty(textBox_EnvironmentDeviceRegisterUrl.Text))
             {
-                label_DeviceRegisterUrl.Text = "KeyValutUrl is required.";
+                label_DeviceRegisterUrl.Text = "DeviceRegisterUrl is required.";
                 return false;
             }
 
@@ -460,6 +452,33 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
         private void textBox_EnvironmentDeviceRegisterUrl_KeyPress(object sender, KeyPressEventArgs e)
         {
             Validate_DeviceRegisterUrl();
+        }
+
+        private void dataGridView_Environment_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (!CallerContext.SysAdmin.IsSuper
+                && dataGridView_Environment != null
+                && dataGridView_Environment[0, e.RowIndex].Value.ToString() == "Product")
+            {
+                MessageBox.Show("The current user is not a super administrator. Only a super administrator can modify this row of data");
+                return;
+            }
+
+            textBox_EnvironmentName.Text = dataGridView_Environment[0, e.RowIndex].Value.ToString();
+            textBox_EnvironmentClientId.Text = dataGridView_Environment[1, e.RowIndex].Value.ToString();
+            textBox_EnvironmentClientSecret.Text = dataGridView_Environment[2, e.RowIndex].Value.ToString();
+            textBox_EnvironmentTenantId.Text = dataGridView_Environment[3, e.RowIndex].Value.ToString();
+
+            textBox_EnvironmentKeyValutUrl.Text = dataGridView_Environment[4, e.RowIndex].Value.ToString();
+            textBox_EnvironmentDeviceType.Text = dataGridView_Environment[5, e.RowIndex].Value.ToString();
+            textBox_EnvironmentPlatformName.Text = dataGridView_Environment[6, e.RowIndex].Value.ToString();
+            textBox_EnvironmentDeviceRegisterUrl.Text = dataGridView_Environment[7, e.RowIndex].Value.ToString();
+
+        }
+
+        private void button_Clear_Click(object sender, EventArgs e)
+        {
+            Clear();
         }
     }
 }

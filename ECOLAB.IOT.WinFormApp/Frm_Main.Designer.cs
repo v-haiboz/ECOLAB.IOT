@@ -242,7 +242,6 @@ namespace ECOLAB.IOT.WinFormApp
             this.button_SerialCOM_GateWay.Text = "           BurnFile";
             this.button_SerialCOM_GateWay.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button_SerialCOM_GateWay.UseVisualStyleBackColor = true;
-            this.button_SerialCOM_GateWay.Visible = false;
             this.button_SerialCOM_GateWay.Click += new System.EventHandler(this.button_BurnFile_Click);
             // 
             // button_SerialCOM
@@ -534,7 +533,7 @@ namespace ECOLAB.IOT.WinFormApp
             panel_AccountSubMenu.Visible = false;
             panel_SettingSubMenu.Visible = false;
 
-            this.label_CurrentUser.Text = "Current User: " + CallerContext.SysAdmins.UserName;
+            this.label_CurrentUser.Text = "Current User: " + CallerContext.SysAdmin.UserName;
             this.label_Environment.Text = $"{label_Environment.Text}  ({CallerContext.EnvironmentVariable.Name.ToString()})";
         }
 

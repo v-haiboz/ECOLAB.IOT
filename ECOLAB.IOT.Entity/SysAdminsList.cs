@@ -1,12 +1,12 @@
 ﻿namespace ECOLAB.IOT.Entity
 {
     using YamlDotNet.Serialization;
-    public class SysAdminsList
+    public class SysAdminList
     {
         [YamlMember(Alias = "Users")]
-        public HashSet<SysAdmins>? List { get; set; }
+        public HashSet<SysAdmin>? List { get; set; }
     }
-    public class SysAdmins
+    public class SysAdmin
     {
         //Login ID
         [YamlMember(Alias = "LoginId")]
@@ -25,5 +25,19 @@
         /// </summary>
         [YamlMember(Alias = "Role")]
         public int Role { get; set; }
+
+        /// <summary>
+        /// IsSuper
+        /// </summary>
+        private bool isSuper = false;
+        [YamlMember(Alias = "IsSuper")]
+        public bool IsSuper {
+            get { 
+               return isSuper && UserName.StartsWith("Admin");
+            }
+            set {
+                isSuper = value;
+            }
+        }
     }
 }

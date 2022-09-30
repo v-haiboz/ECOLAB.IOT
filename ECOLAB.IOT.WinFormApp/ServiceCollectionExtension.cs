@@ -33,19 +33,10 @@
 
         public static ServiceCollection RegisterAppsetting(this ServiceCollection services, EnvironmentVariable env)
         {
-            //register configuration
-            //IConfigurationBuilder cfgBuilder = new ConfigurationBuilder()
-            //    .SetBasePath(Path.Combine(Directory.GetCurrentDirectory(), "Appsetting"))
-            //    .AddJsonFile(env.FileName);
-
-            //IConfiguration configuration = cfgBuilder.Build();
-            //services.AddSingleton<IConfiguration>(configuration);
-
-            //services.AddOptions();
-            //services.Configure<AppServiceOption>(configuration.GetSection("AppServiceOptions"));
             var filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Appsetting", env.FileName);
             var json = File.ReadAllText(filePath);
             var appServiceOption = JsonConvert.DeserializeObject<AppServiceOption>(json);
+            appServiceOption=CallerContext.ECOLABIOTEnvironmentService.DecryptAppServiceOption(appServiceOption);
             services.AddSingleton<AppServiceOption>(appServiceOption);
             return services;
         }
@@ -62,8 +53,9 @@
             return services;
         }
 
-        public static ServiceCollection RegisterCurrentSysAdmins(this ServiceCollection services, SysAdmins sysAdmins)
+        public static ServiceCollection RegisterCurrentSysAdmins(this ServiceCollection services, SysAdmin? sysAdmins)
         {
+            if(sysAdmins!=null)
             services.AddSingleton(sysAdmins);
             return services;
         }
@@ -76,6 +68,7 @@
             services.AddScoped<IECOLABIOTCOMSettingProvider, ECOLABIOTCOMSettingProvider>();
             services.AddScoped<IECOLABIOTEnvironmentProvider, ECOLABIOTEnvironmentProvider>();
             services.AddScoped<IECOLABIOTRegisterDeviceProvider, ECOLABIOTRegisterDeviceProvider>();
+            services.AddSingleton<IECOLABIOTSecurityProvider, ECOLABIOTSecurityProvider>();
             return services;
         }
         private static ServiceCollection RegisterService(this ServiceCollection services)

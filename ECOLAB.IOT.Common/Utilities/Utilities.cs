@@ -146,5 +146,13 @@ namespace ECOLAB.IOT.Common.Utilities
 
             return strBuilder.ToString();
         }
+
+        public static string HashCode(string str)
+        {
+            byte [] passwordAndSaltBytes=Encoding.UTF8.GetBytes(str);
+            byte[] hashBytes =new SHA256Managed().ComputeHash(passwordAndSaltBytes);
+            string hashString =Convert.ToBase64String(hashBytes);
+            return hashString;
+        }
     }
 }
