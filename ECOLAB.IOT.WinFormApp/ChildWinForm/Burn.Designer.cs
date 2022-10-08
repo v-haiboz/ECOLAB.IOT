@@ -546,6 +546,7 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             formFileSend.comboBox_TransportProtocol.Enabled = false;
             button_BurnDown.BackColor = SystemColors.AppWorkspace;
             button_BurnDown.Enabled = false;
+            this.richTextBox_Output.Text = "";
         }
         private void ChangeSendStatusToEnable()
         {

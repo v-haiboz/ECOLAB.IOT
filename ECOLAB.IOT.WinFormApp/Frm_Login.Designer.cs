@@ -125,8 +125,8 @@
             // comboBox_Env
             // 
             resources.ApplyResources(this.comboBox_Env, "comboBox_Env");
-            this.comboBox_Env.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(130)))), ((int)(((byte)(204)))));
-            this.comboBox_Env.ForeColor = System.Drawing.Color.White;
+            this.comboBox_Env.BackColor = System.Drawing.Color.Azure;
+            this.comboBox_Env.ForeColor = System.Drawing.Color.Black;
             this.comboBox_Env.FormattingEnabled = true;
             this.comboBox_Env.Name = "comboBox_Env";
             // 

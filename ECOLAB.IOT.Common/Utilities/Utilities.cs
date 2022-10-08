@@ -26,9 +26,9 @@ namespace ECOLAB.IOT.Common.Utilities
 
             var temp = serial_num.Substring(0, 3);
 
-            if (!strings.Any(item => string.Compare(item, temp) != -1))
+            if (!IsAllEnglishChar(temp))
             {
-                message = "{1-3} should be one of them(DMC|CON|INT|CWT).";
+                message = "{1-3} should be English letters";//;"{1-3} should be one of them(DMC|CON|INT|CWT).";
                 return false;
             }
             serial_num = serial_num.Substring(3);
@@ -89,7 +89,11 @@ namespace ECOLAB.IOT.Common.Utilities
             message = "";
             return true;
         }
-
+        public static bool IsAllEnglishChar(string strValue)
+        {
+            bool result = Regex.IsMatch(strValue, @"^[A-Za-z]+$");
+            return result;
+        }
         /// <summary>
         /// Verify if it is a URL link
         /// </summary>

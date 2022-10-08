@@ -21,7 +21,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WinFormApp", "WinFormApp", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ECOLAB.IOT.WinFormApp", "ECOLAB.IOT.WinFormApp\ECOLAB.IOT.WinFormApp.csproj", "{EBE1C53F-91AE-4A88-9763-F07580480F4F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECOLAB.IOT.Provider", "ECOLAB.IOT.Provider\ECOLAB.IOT.Provider.csproj", "{A324C507-F580-464A-9CB8-BBB70F39AB00}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ECOLAB.IOT.Provider", "ECOLAB.IOT.Provider\ECOLAB.IOT.Provider.csproj", "{A324C507-F580-464A-9CB8-BBB70F39AB00}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

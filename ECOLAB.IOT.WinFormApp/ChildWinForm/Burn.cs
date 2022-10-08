@@ -4,6 +4,7 @@ using ECOLAB.IOT.Service;
 using System.ComponentModel;
 using System.IO.Ports;
 using System.Text;
+using YamlDotNet.Core.Tokens;
 
 namespace ECOLAB.IOT.WinFormApp.ChildWinForm
 {
@@ -202,11 +203,18 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
 
         #region Register Device
         private async Task<TData<string>> RegisterDevice(string sn)
-        {
+        { 
+            // TO DO: we will  config it on page of application
+            var prefix = sn.Substring(0, 3).ToLowerInvariant();
+            if (prefix == "dmc" || prefix == "con")
+            {
+                prefix = "DMC";
+            }
+            
             var model = new DeviceRegister()
             {
                 IsEnabled = "true",
-                DeviceType = CallerContext.AppServiceOptions.DeviceType,
+                DeviceType = prefix,
                 PlatformName = CallerContext.AppServiceOptions.PlatformName,
                 SerialNumber = sn
             };
@@ -226,7 +234,6 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
                 {
                     MessageBox.Show($"{res.GetString("message_SetSecret_1")}{key}");
                     return false;
-                    //CallerContext.ECOLABIOTSecretService.DeleteSecret(key);
                 }
 
                 psk = CallerContext.ECOLABIOTSecretService.SetSecret(key, value);

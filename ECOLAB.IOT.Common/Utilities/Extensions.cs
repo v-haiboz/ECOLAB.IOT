@@ -59,7 +59,7 @@
 
             var obj = new
             {
-                DeviceAppId = $"{deviceRegister.DeviceType}{deviceRegister.SerialNumber}",
+                DeviceAppId = $"{deviceRegister.DeviceType}-{deviceRegister.SerialNumber}",
                 DeviceSerialNumber = deviceRegister.SerialNumber,
                 IsEnabled = deviceRegister.IsEnabled,
                 PlatformName = deviceRegister.PlatformName
