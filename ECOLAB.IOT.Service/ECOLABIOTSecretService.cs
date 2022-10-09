@@ -1,11 +1,6 @@
 ﻿namespace ECOLAB.IOT.Service
 {
     using Azure;
-    using Azure.Security.KeyVault.Secrets;
-    using Microsoft.Identity.Client;
-    using Microsoft.IdentityModel.Clients.ActiveDirectory;
-    using AuthenticationResult = Microsoft.IdentityModel.Clients.ActiveDirectory.AuthenticationResult;
-    using ClientCredential = Microsoft.IdentityModel.Clients.ActiveDirectory.ClientCredential;
 
     public interface IECOLABIOTSecretService
     {

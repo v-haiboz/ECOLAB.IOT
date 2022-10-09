@@ -2,11 +2,9 @@
 {
     using ECOLAB.IOT.Common.Utilities;
     using ECOLAB.IOT.Entity;
-    using Newtonsoft.Json;
     using System;
     using System.Net;
     using System.Net.Http;
-    using System.Text;
 
     public interface IECOLABIOTRegisterDeviceProvider
     {
@@ -33,7 +31,6 @@
                     return returnValue;
                 throw new Exception($"RegisterDevice=false: ({result.StatusCode}): {returnValue}");
             }
-
         }
     }
 }

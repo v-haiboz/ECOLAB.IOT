@@ -1,8 +1,6 @@
 ﻿namespace ECOLAB.IOT.Service
 {
     using ECOLAB.IOT.Entity;
-    using Newtonsoft.Json;
-    using System;
     using System.Collections.Generic;
 
     public interface IECOLABIOTEnvironmentService

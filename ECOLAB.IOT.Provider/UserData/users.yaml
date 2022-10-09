@@ -5,7 +5,7 @@ users:
   role: 0
   isSuper: true
 - loginId: 1
-  userName: UserInt
+  userName: User
   pwd: lsrjXOipsCRBeL8o5JZsLOG4OFcjqWprg4hYzdbKCh4=
   role: 0
   isSuper: false

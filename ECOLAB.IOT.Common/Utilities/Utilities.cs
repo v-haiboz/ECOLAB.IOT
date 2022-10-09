@@ -1,10 +1,9 @@
-﻿using System.Reflection.Metadata;
-using System.Security.Cryptography;
-using System.Text;
-using System.Text.RegularExpressions;
-
-namespace ECOLAB.IOT.Common.Utilities
+﻿namespace ECOLAB.IOT.Common.Utilities
 {
+    using System.Security.Cryptography;
+    using System.Text;
+    using System.Text.RegularExpressions;
+
     public class Utilities
     {
         private static List<string> strings = new List<string>(){
@@ -158,5 +157,7 @@ namespace ECOLAB.IOT.Common.Utilities
             string hashString =Convert.ToBase64String(hashBytes);
             return hashString;
         }
+
+        
     }
 }

@@ -4,7 +4,6 @@
     using ECOLAB.IOT.Common.Utilities;
     using ECOLAB.IOT.Entity;
     using ECOLAB.IOT.Provider;
-    using Microsoft.Extensions.Options;
 
     public class CallerContext:CallerContextBase
     {

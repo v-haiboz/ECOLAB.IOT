@@ -38,9 +38,9 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
         {
             try
             {
-                
-                
-                if (CurrentContext.PortalState== PortalState.Close)
+
+
+                if (CurrentContext.PortalState == PortalState.Close)
                 {
                     string portName = comboBox_SerialPort.Text;
                     var buadRate = comboBox_BaudRate.Text.GetEnumValue<BaudRates>();
@@ -203,18 +203,13 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
 
         #region Register Device
         private async Task<TData<string>> RegisterDevice(string sn)
-        { 
+        {
             // TO DO: we will  config it on page of application
-            var prefix = sn.Substring(0, 3).ToLowerInvariant();
-            if (prefix == "dmc" || prefix == "con")
-            {
-                prefix = "DMC";
-            }
-            
+            var prefix = sn.Substring(0, 3);
             var model = new DeviceRegister()
             {
                 IsEnabled = "true",
-                DeviceType = prefix,
+                DeviceType = CallerContext.AppServiceOptions.GetDeviceTypePrefix(prefix),
                 PlatformName = CallerContext.AppServiceOptions.PlatformName,
                 SerialNumber = sn
             };

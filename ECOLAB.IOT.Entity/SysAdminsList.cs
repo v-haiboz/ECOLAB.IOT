@@ -31,11 +31,14 @@
         /// </summary>
         private bool isSuper = false;
         [YamlMember(Alias = "IsSuper")]
-        public bool IsSuper {
-            get { 
-               return isSuper && UserName.StartsWith("Admin");
+        public bool IsSuper
+        {
+            get
+            {
+                return isSuper && UserName.StartsWith("Admin");
             }
-            set {
+            set
+            {
                 isSuper = value;
             }
         }

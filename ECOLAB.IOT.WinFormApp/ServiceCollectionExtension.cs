@@ -8,8 +8,6 @@
     using Microsoft.Extensions.DependencyInjection;
     using Newtonsoft.Json;
     using System;
-    using System.Net;
-    using System.Security;
 
     internal static class ServiceCollectionExtension
     {

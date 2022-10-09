@@ -1,10 +1,8 @@
 ﻿namespace ECOLAB.IOT.Provider
 {
-    using ECOLAB.IOT.Entity;
     using System;
     using System.Security.Cryptography;
     using System.Text;
-    using YamlDotNet.Core.Tokens;
 
     public interface IECOLABIOTSecurityProvider
     {

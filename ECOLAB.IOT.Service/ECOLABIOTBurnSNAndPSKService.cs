@@ -1,7 +1,6 @@
 ﻿namespace ECOLAB.IOT.Service
 {
     using ECOLAB.IOT.Entity;
-    using System;
     public interface IECOLABIOTBurnSNAndPSKService
     {
         public COMSetting GetDefaultCOMSetting();

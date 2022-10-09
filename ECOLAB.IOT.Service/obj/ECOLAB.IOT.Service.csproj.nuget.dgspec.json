@@ -300,10 +300,6 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
-            "Azure.Identity": {
-              "target": "Package",
-              "version": "[1.7.0, )"
-            },
             "Microsoft.Extensions.Options": {
               "target": "Package",
               "version": "[6.0.0, )"
@@ -311,10 +307,6 @@
             "Microsoft.Extensions.Options.ConfigurationExtensions": {
               "target": "Package",
               "version": "[6.0.0, )"
-            },
-            "Microsoft.IdentityModel.Clients.ActiveDirectory": {
-              "target": "Package",
-              "version": "[5.2.9, )"
             }
           },
           "imports": [

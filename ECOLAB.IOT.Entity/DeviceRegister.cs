@@ -1,6 +1,4 @@
-﻿
-
-namespace ECOLAB.IOT.Entity
+﻿namespace ECOLAB.IOT.Entity
 {
     using System;
 
