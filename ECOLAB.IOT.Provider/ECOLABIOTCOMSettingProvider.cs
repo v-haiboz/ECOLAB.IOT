@@ -84,12 +84,19 @@
 
         public string[] GetStopBit()
         {
-           return Enum.GetNames(typeof(StopBits));
+           return GetStopBits();
         }
 
         public string[] GetTransportProtocol()
         {
              return Enum.GetNames(typeof(TransportProtocol));
+        }
+
+        private string[] GetStopBits()
+        {
+            return new string[] {
+              "1","1.5","2"
+           };
         }
 
     }

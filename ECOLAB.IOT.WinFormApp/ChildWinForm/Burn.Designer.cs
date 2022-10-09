@@ -34,8 +34,6 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Burn));
-            System.Text.DecoderReplacementFallback decoderReplacementFallback1 = new System.Text.DecoderReplacementFallback();
-            System.Text.EncoderReplacementFallback encoderReplacementFallback1 = new System.Text.EncoderReplacementFallback();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.groupBox_DeviceLog = new System.Windows.Forms.GroupBox();
             this.richTextBox_Output = new System.Windows.Forms.RichTextBox();
@@ -47,6 +45,7 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             this.radioButton_QueueSendPattern = new System.Windows.Forms.RadioButton();
             this.radioButton_CommonSendPattern = new System.Windows.Forms.RadioButton();
             this.groupBox_Configuration = new System.Windows.Forms.GroupBox();
+            this.button_Memory = new System.Windows.Forms.Button();
             this.pictureBox_Connection = new System.Windows.Forms.PictureBox();
             this.button_Reset = new System.Windows.Forms.Button();
             this.comboBox_StopBit = new System.Windows.Forms.ComboBox();
@@ -61,7 +60,6 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             this.comboBox_SerialPort = new System.Windows.Forms.ComboBox();
             this.label_SerialPort = new System.Windows.Forms.Label();
             this.serialPort = new System.IO.Ports.SerialPort(this.components);
-            this.button_Memory = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -183,6 +181,13 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             this.groupBox_Configuration.Name = "groupBox_Configuration";
             this.groupBox_Configuration.TabStop = false;
             // 
+            // button_Memory
+            // 
+            resources.ApplyResources(this.button_Memory, "button_Memory");
+            this.button_Memory.Name = "button_Memory";
+            this.button_Memory.UseVisualStyleBackColor = true;
+            this.button_Memory.Click += new System.EventHandler(this.button_Memory_Click);
+            // 
             // pictureBox_Connection
             // 
             this.pictureBox_Connection.Image = global::ECOLAB.IOT.WinFormApp.Properties.Resources.breakoff_BurnSN;
@@ -280,13 +285,6 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             this.serialPort.StopBits = System.IO.Ports.StopBits.One;
             this.serialPort.WriteBufferSize = 2048;
             this.serialPort.WriteTimeout = -1;
-            // 
-            // button_Memory
-            // 
-            resources.ApplyResources(this.button_Memory, "button_Memory");
-            this.button_Memory.Name = "button_Memory";
-            this.button_Memory.UseVisualStyleBackColor = true;
-            this.button_Memory.Click += new System.EventHandler(this.button_Memory_Click);
             // 
             // Burn
             // 
@@ -443,7 +441,7 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             comboBox_BaudRate.SelectedItem = Enum.GetName(setting.BaudRate);
             comboBox_ParityBit.SelectedItem = Enum.GetName(setting.Parity);
             comboBox_DataBit.SelectedItem = ((int)setting.DataBit).ToString();
-            comboBox_StopBit.SelectedItem = Enum.GetName(setting.StopBit);
+            comboBox_StopBit.SelectedItem = setting.StopBit.ToStopBitName();
         }
         #endregion
 

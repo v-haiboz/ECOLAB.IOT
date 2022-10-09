@@ -130,7 +130,7 @@
     <value>Connection</value>
   </data>
   <data name="button_Memory.Text" xml:space="preserve">
-    <value>Memory</value>
+    <value>Save</value>
   </data>
   <data name="button_Reset.Text" xml:space="preserve">
     <value>Reset</value>

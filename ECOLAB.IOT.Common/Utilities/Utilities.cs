@@ -1,5 +1,6 @@
 ﻿namespace ECOLAB.IOT.Common.Utilities
 {
+    using System.IO.Ports;
     using System.Security.Cryptography;
     using System.Text;
     using System.Text.RegularExpressions;
@@ -158,6 +159,25 @@
             return hashString;
         }
 
-        
+        public static StopBits MappingStopBit(string stopBitStr)
+        {
+            if (!string.IsNullOrEmpty(stopBitStr))
+            {
+                if (stopBitStr == "1")
+                {
+                    return StopBits.One;
+                }
+                else if (stopBitStr == "1.5")
+                {
+                    return StopBits.OnePointFive;
+                }
+                else if (stopBitStr == "2")
+                {
+                    return StopBits.Two;
+                }
+            }
+
+            return StopBits.None;
+        }
     }
 }

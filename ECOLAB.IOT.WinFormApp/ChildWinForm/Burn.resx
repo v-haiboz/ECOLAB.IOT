@@ -370,7 +370,7 @@
     <value>21</value>
   </data>
   <data name="button_Memory.Text" xml:space="preserve">
-    <value>Memory</value>
+    <value>Save</value>
   </data>
   <data name="&gt;&gt;button_Memory.Name" xml:space="preserve">
     <value>button_Memory</value>

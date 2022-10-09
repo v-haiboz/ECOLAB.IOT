@@ -135,12 +135,12 @@ namespace ECOLAB.IOT.WinFormApp
         {
             if (this.WindowState == FormWindowState.Normal)
             {
-                pictureBox_Max.Image = Properties.Resources.Normal_Main;
+                pictureBox_Max.Image = Properties.Resources.Max_Main;
                 this.WindowState = FormWindowState.Maximized;
             }
             else if(this.WindowState == FormWindowState.Maximized)
             {
-                pictureBox_Max.Image = Properties.Resources.Max_Main;
+                pictureBox_Max.Image = Properties.Resources.Normal_Main;
                 this.WindowState = FormWindowState.Normal;
             }
         }

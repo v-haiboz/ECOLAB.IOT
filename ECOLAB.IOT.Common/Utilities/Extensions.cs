@@ -4,6 +4,8 @@
     using Newtonsoft.Json;
     using System;
     using System.Collections;
+    using System.IO.Ports;
+    using System.Runtime.InteropServices;
 
     public static class Extensions
     {
@@ -133,6 +135,26 @@
             }
 
             return dic;
+        }
+
+       
+        public static string ToStopBitName(this StopBits stopBits)
+        {
+
+            if (stopBits == StopBits.One)
+            {
+                return "1";
+            }
+            else if (stopBits == StopBits.OnePointFive)
+            {
+                return "1.5";
+            }
+            else if (stopBits == StopBits.Two)
+            {
+                return "2";
+            }
+
+            return null;
         }
     }
 }

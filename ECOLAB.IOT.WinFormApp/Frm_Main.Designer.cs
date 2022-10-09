@@ -38,17 +38,17 @@ namespace ECOLAB.IOT.WinFormApp
             this.panel_ChildHeader = new System.Windows.Forms.Panel();
             this.label_ChildHeader_Menu = new System.Windows.Forms.Label();
             this.panel_SideMenu = new System.Windows.Forms.Panel();
+            this.button_Account_Profile = new System.Windows.Forms.Button();
+            this.button_SerialCOM_GateWay = new System.Windows.Forms.Button();
             this.button_Help = new System.Windows.Forms.Button();
             this.panel_SettingSubMenu = new System.Windows.Forms.Panel();
             this.button_Setting_Environment = new System.Windows.Forms.Button();
             this.button_Setting = new System.Windows.Forms.Button();
             this.panel_SerialCOMSubMenu = new System.Windows.Forms.Panel();
-            this.button_SerialCOM_GateWay = new System.Windows.Forms.Button();
             this.button_SerialCOM_Burn = new System.Windows.Forms.Button();
             this.button_SerialCOM = new System.Windows.Forms.Button();
             this.panel_AccountSubMenu = new System.Windows.Forms.Panel();
             this.button_Account_SignOut = new System.Windows.Forms.Button();
-            this.button_Account_Profile = new System.Windows.Forms.Button();
             this.button_Account = new System.Windows.Forms.Button();
             this.panel_Log = new System.Windows.Forms.Panel();
             this.label_Environment = new System.Windows.Forms.Label();
@@ -104,6 +104,8 @@ namespace ECOLAB.IOT.WinFormApp
             // 
             resources.ApplyResources(this.panel_SideMenu, "panel_SideMenu");
             this.panel_SideMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(7)))), ((int)(((byte)(7)))));
+            this.panel_SideMenu.Controls.Add(this.button_Account_Profile);
+            this.panel_SideMenu.Controls.Add(this.button_SerialCOM_GateWay);
             this.panel_SideMenu.Controls.Add(this.button_Help);
             this.panel_SideMenu.Controls.Add(this.panel_SettingSubMenu);
             this.panel_SideMenu.Controls.Add(this.button_Setting);
@@ -113,6 +115,22 @@ namespace ECOLAB.IOT.WinFormApp
             this.panel_SideMenu.Controls.Add(this.button_Account);
             this.panel_SideMenu.Controls.Add(this.panel_Log);
             this.panel_SideMenu.Name = "panel_SideMenu";
+            // 
+            // button_Account_Profile
+            // 
+            resources.ApplyResources(this.button_Account_Profile, "button_Account_Profile");
+            this.button_Account_Profile.FlatAppearance.BorderSize = 0;
+            this.button_Account_Profile.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button_Account_Profile.Name = "button_Account_Profile";
+            this.button_Account_Profile.UseVisualStyleBackColor = true;
+            // 
+            // button_SerialCOM_GateWay
+            // 
+            resources.ApplyResources(this.button_SerialCOM_GateWay, "button_SerialCOM_GateWay");
+            this.button_SerialCOM_GateWay.FlatAppearance.BorderSize = 0;
+            this.button_SerialCOM_GateWay.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button_SerialCOM_GateWay.Name = "button_SerialCOM_GateWay";
+            this.button_SerialCOM_GateWay.UseVisualStyleBackColor = true;
             // 
             // button_Help
             // 
@@ -153,20 +171,9 @@ namespace ECOLAB.IOT.WinFormApp
             // panel_SerialCOMSubMenu
             // 
             this.panel_SerialCOMSubMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.panel_SerialCOMSubMenu.Controls.Add(this.button_SerialCOM_GateWay);
             this.panel_SerialCOMSubMenu.Controls.Add(this.button_SerialCOM_Burn);
             resources.ApplyResources(this.panel_SerialCOMSubMenu, "panel_SerialCOMSubMenu");
             this.panel_SerialCOMSubMenu.Name = "panel_SerialCOMSubMenu";
-            // 
-            // button_SerialCOM_GateWay
-            // 
-            resources.ApplyResources(this.button_SerialCOM_GateWay, "button_SerialCOM_GateWay");
-            this.button_SerialCOM_GateWay.FlatAppearance.BorderSize = 0;
-            this.button_SerialCOM_GateWay.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button_SerialCOM_GateWay.Image = global::ECOLAB.IOT.WinFormApp.Properties.Resources.feature_file_Main;
-            this.button_SerialCOM_GateWay.Name = "button_SerialCOM_GateWay";
-            this.button_SerialCOM_GateWay.UseVisualStyleBackColor = true;
-            this.button_SerialCOM_GateWay.Click += new System.EventHandler(this.button_BurnFile_Click);
             // 
             // button_SerialCOM_Burn
             // 
@@ -192,7 +199,6 @@ namespace ECOLAB.IOT.WinFormApp
             // 
             this.panel_AccountSubMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
             this.panel_AccountSubMenu.Controls.Add(this.button_Account_SignOut);
-            this.panel_AccountSubMenu.Controls.Add(this.button_Account_Profile);
             resources.ApplyResources(this.panel_AccountSubMenu, "panel_AccountSubMenu");
             this.panel_AccountSubMenu.Name = "panel_AccountSubMenu";
             // 
@@ -205,16 +211,6 @@ namespace ECOLAB.IOT.WinFormApp
             this.button_Account_SignOut.Name = "button_Account_SignOut";
             this.button_Account_SignOut.UseVisualStyleBackColor = true;
             this.button_Account_SignOut.Click += new System.EventHandler(this.button_SignOut_Click);
-            // 
-            // button_Account_Profile
-            // 
-            resources.ApplyResources(this.button_Account_Profile, "button_Account_Profile");
-            this.button_Account_Profile.FlatAppearance.BorderSize = 0;
-            this.button_Account_Profile.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button_Account_Profile.Image = global::ECOLAB.IOT.WinFormApp.Properties.Resources.account_profile_Main;
-            this.button_Account_Profile.Name = "button_Account_Profile";
-            this.button_Account_Profile.UseVisualStyleBackColor = true;
-            this.button_Account_Profile.Click += new System.EventHandler(this.button_Profile_Click);
             // 
             // button_Account
             // 
@@ -316,7 +312,7 @@ namespace ECOLAB.IOT.WinFormApp
             // 
             this.pictureBox_Max.Cursor = System.Windows.Forms.Cursors.Hand;
             resources.ApplyResources(this.pictureBox_Max, "pictureBox_Max");
-            this.pictureBox_Max.Image = global::ECOLAB.IOT.WinFormApp.Properties.Resources.Max_Main;
+            this.pictureBox_Max.Image = global::ECOLAB.IOT.WinFormApp.Properties.Resources.Normal_Main;
             this.pictureBox_Max.Name = "pictureBox_Max";
             this.pictureBox_Max.TabStop = false;
             this.pictureBox_Max.Click += new System.EventHandler(this.pictureBox_Max_Click);
@@ -482,11 +478,9 @@ namespace ECOLAB.IOT.WinFormApp
         private Button button_Setting_Environment;
         private Button button_Setting;
         private Panel panel_SerialCOMSubMenu;
-        private Button button_SerialCOM_GateWay;
         private Button button_SerialCOM;
         private Panel panel_AccountSubMenu;
         private Button button_Account_SignOut;
-        private Button button_Account_Profile;
         private Button button_Account;
         private Panel panel_Log;
         private Label label_Environment;
@@ -506,5 +500,7 @@ namespace ECOLAB.IOT.WinFormApp
         private Label label_ChildHeader_Menu;
         private System.Windows.Forms.Timer timer1;
         private Form activeForm = null;
+        private Button button_Account_Profile;
+        private Button button_SerialCOM_GateWay;
     }
 }

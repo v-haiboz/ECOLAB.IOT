@@ -123,6 +123,36 @@ namespace ECOLAB.IOT.WinFormApp.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap connection_BurnSN1 {
+            get {
+                object obj = ResourceManager.GetObject("connection_BurnSN1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap connection_BurnSN2 {
+            get {
+                object obj = ResourceManager.GetObject("connection_BurnSN2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap connection_BurnSN3 {
+            get {
+                object obj = ResourceManager.GetObject("connection_BurnSN3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap ECOLAB1 {
             get {
                 object obj = ResourceManager.GetObject("ECOLAB1", resourceCulture);

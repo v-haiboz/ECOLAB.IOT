@@ -44,9 +44,9 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
                     var buadRate = comboBox_BaudRate.Text.GetEnumValue<BaudRates>();
                     Parity parity = comboBox_ParityBit.Text.ToEnum<Parity>();
                     int dataBit = int.Parse(comboBox_DataBit.Text);
-                    StopBits stopBits = comboBox_StopBit.Text.ToEnum<StopBits>();
+                    StopBits stopBit = Utilities.MappingStopBit(comboBox_StopBit.Text);
 
-                    serialPort = new SerialPort(portName, buadRate, parity, dataBit, stopBits);
+                    serialPort = new SerialPort(portName, buadRate, parity, dataBit, stopBit);
                     if (serialPort.IsOpen)
                     {
                         serialPort.Close();
@@ -54,7 +54,7 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
                     serialPort.Open();
                     //serialPort.DataReceived += onDataReceived;
                     EnableOrDisableSetting();
-                    pictureBox_Connection.Image = Properties.Resources.connection_BurnSN;
+                    pictureBox_Connection.Image = Properties.Resources.connection_BurnSN3;
                     button_Connection.BackColor = Color.DarkRed;
                     button_Connection.Text = res.GetString("button_Connection_Disable");
                 }
@@ -319,7 +319,7 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             setting.BaudRate = (BaudRates)Enum.Parse(typeof(BaudRates), comboBox_BaudRate.Text);
             setting.Parity= (Parity)Enum.Parse(typeof(Parity), comboBox_ParityBit.Text);
             setting.DataBit =(DataBits)(int.Parse(comboBox_DataBit.Text));
-            setting.StopBit = (StopBits)Enum.Parse(typeof(StopBits), comboBox_StopBit.Text);
+            setting.StopBit =Utilities.MappingStopBit(comboBox_StopBit.Text);
             CallerContext.ECOLABIOTBurnSNAndPSKService.MemorySetting(setting);
             button_Memory.Enabled = true;
         }
