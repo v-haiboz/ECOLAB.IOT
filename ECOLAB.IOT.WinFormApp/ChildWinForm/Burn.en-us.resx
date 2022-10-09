@@ -129,6 +129,9 @@
   <data name="button_Connection_Enable" xml:space="preserve">
     <value>Connection</value>
   </data>
+  <data name="button_Memory.Text" xml:space="preserve">
+    <value>Memory</value>
+  </data>
   <data name="button_Reset.Text" xml:space="preserve">
     <value>Reset</value>
   </data>

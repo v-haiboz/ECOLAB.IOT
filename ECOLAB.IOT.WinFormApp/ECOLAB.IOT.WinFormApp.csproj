@@ -6,7 +6,13 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
+    <ApplicationIcon>ECOLINK.ico</ApplicationIcon>
+    <AssemblyName>Ecolink_SNPSK_tool</AssemblyName>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="ECOLINK.ico" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Azure.Identity" Version="1.7.0" />

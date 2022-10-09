@@ -38,14 +38,12 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
         {
             try
             {
-
-
                 if (CurrentContext.PortalState == PortalState.Close)
                 {
                     string portName = comboBox_SerialPort.Text;
                     var buadRate = comboBox_BaudRate.Text.GetEnumValue<BaudRates>();
                     Parity parity = comboBox_ParityBit.Text.ToEnum<Parity>();
-                    int dataBit = comboBox_DataBit.Text.GetEnumValue<DataBits>();
+                    int dataBit = int.Parse(comboBox_DataBit.Text);
                     StopBits stopBits = comboBox_StopBit.Text.ToEnum<StopBits>();
 
                     serialPort = new SerialPort(portName, buadRate, parity, dataBit, stopBits);
@@ -224,11 +222,12 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             psk = "";
             try
             {
-
                 if (CallerContext.ECOLABIOTSecretService.ExistSecret(key))
                 {
-                    MessageBox.Show($"{res.GetString("message_SetSecret_1")}{key}");
-                    return false;
+                    psk = CallerContext.ECOLABIOTSecretService.GetSecret(key);
+                    return true;
+                    //MessageBox.Show($"{res.GetString("message_SetSecret_1")}{key}");
+                    //return false;
                 }
 
                 psk = CallerContext.ECOLABIOTSecretService.SetSecret(key, value);
@@ -310,6 +309,19 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
                 serialPort.Close();
                 serialPort = null;
             }
+        }
+
+        private void button_Memory_Click(object sender, EventArgs e)
+        {
+            button_Memory.Enabled = false;
+            var setting = new COMSetting();
+            setting.PortName = comboBox_SerialPort.Text;
+            setting.BaudRate = (BaudRates)Enum.Parse(typeof(BaudRates), comboBox_BaudRate.Text);
+            setting.Parity= (Parity)Enum.Parse(typeof(Parity), comboBox_ParityBit.Text);
+            setting.DataBit =(DataBits)(int.Parse(comboBox_DataBit.Text));
+            setting.StopBit = (StopBits)Enum.Parse(typeof(StopBits), comboBox_StopBit.Text);
+            CallerContext.ECOLABIOTBurnSNAndPSKService.MemorySetting(setting);
+            button_Memory.Enabled = true;
         }
     }
 }

@@ -53,6 +53,7 @@
             this.button_ChooseFile.BackColor = System.Drawing.SystemColors.Highlight;
             this.button_ChooseFile.FlatAppearance.BorderSize = 0;
             resources.ApplyResources(this.button_ChooseFile, "button_ChooseFile");
+            this.button_ChooseFile.ForeColor = System.Drawing.Color.White;
             this.button_ChooseFile.Name = "button_ChooseFile";
             this.button_ChooseFile.UseVisualStyleBackColor = false;
             this.button_ChooseFile.Click += new System.EventHandler(this.button_ChooseFile_Click);

@@ -1,8 +1,11 @@
 ﻿namespace ECOLAB.IOT.Provider
 {
+    using ECOLAB.IOT.Common.Utilities;
     using ECOLAB.IOT.Entity;
     using System;
     using System.IO.Ports;
+    using System.Linq;
+    using System.Text;
 
     public interface IECOLABIOTCOMSettingProvider
     {
@@ -13,6 +16,7 @@
         public string[] GetDataBit();
         public string[] GetStopBit();
         public string[] GetTransportProtocol();
+        public bool MemorySetting(COMSetting setting);
 
     }
     public class ECOLABIOTCOMSettingProvider : IECOLABIOTCOMSettingProvider
@@ -26,10 +30,36 @@
             StopBit = StopBits.One,
             TransportProtocol= TransportProtocol.Ymodem
         };
+
         public COMSetting GetDefaultCOMSetting()
-        { 
-           return setting;
+        {
+            return YamlDotNetExtesions.deserializer.Deserialize<COMSetting>(File.ReadAllText("COMSetData/defaultsetting.yaml"));
+            //return setting;
         }
+
+        public bool MemorySetting(COMSetting setting)
+        {
+            var yaml=YamlDotNetExtesions.serializer.Serialize(setting);
+            var dirPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "COMSetData");
+            try
+            {
+                var filePath =Path.Combine(dirPath, "defaultsetting.yaml");
+                filePath = Path.GetFullPath(filePath);
+                if (File.Exists(filePath))
+                {
+                    File.Delete(filePath);
+                }
+
+                File.WriteAllText(filePath, yaml, Encoding.UTF8);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            return true;
+        }
+
         public string[] GetPortNames()
         {
             return SerialPort.GetPortNames();
@@ -47,7 +77,9 @@
 
         public string[] GetDataBit()
         {
-            return Enum.GetNames(typeof(DataBits));
+            var dataBits = (int[])Enum.GetValues(typeof(DataBits));
+            string[] arrStr = Array.ConvertAll<int, string>(dataBits, delegate (int input) { return input.ToString(); });
+            return arrStr;
         }
 
         public string[] GetStopBit()
@@ -59,6 +91,7 @@
         {
              return Enum.GetNames(typeof(TransportProtocol));
         }
+
     }
 
 }

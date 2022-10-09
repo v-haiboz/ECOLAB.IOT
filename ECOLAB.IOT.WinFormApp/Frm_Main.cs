@@ -41,7 +41,9 @@ namespace ECOLAB.IOT.WinFormApp
             InitializeComponent();
             CustomizeDesing();
             SelectLanguate();
-
+            OpenChildForm(new Burn());
+            ShowNavigationMenu(button_SerialCOM_Burn.Name);
+            HideSubMenu();
         }
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -63,7 +65,7 @@ namespace ECOLAB.IOT.WinFormApp
         private void button_SignOut_Click(object sender, EventArgs e)
         {
             Application.Exit();
-            Process.Start(Application.StartupPath+ "\\ECOLAB.IOT.WinFormApp.exe");
+            Process.Start(Application.StartupPath + "\\Ecolink_SNPSK_tool.exe");
             ShowNavigationMenu(button_Account_SignOut.Name);
             HideSubMenu();
         }
@@ -131,8 +133,16 @@ namespace ECOLAB.IOT.WinFormApp
 
         private void pictureBox_Max_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Maximized;
-
+            if (this.WindowState == FormWindowState.Normal)
+            {
+                pictureBox_Max.Image = Properties.Resources.Normal_Main;
+                this.WindowState = FormWindowState.Maximized;
+            }
+            else if(this.WindowState == FormWindowState.Maximized)
+            {
+                pictureBox_Max.Image = Properties.Resources.Max_Main;
+                this.WindowState = FormWindowState.Normal;
+            }
         }
 
         private void label_Exit_Click(object sender, EventArgs e)

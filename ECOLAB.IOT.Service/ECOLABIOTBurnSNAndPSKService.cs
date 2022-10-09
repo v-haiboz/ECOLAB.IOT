@@ -10,6 +10,8 @@
         public string[] GetDataBit();
         public string[] GetStopBit();
         public string[] GetTransportProtocol();
+
+        public bool MemorySetting(COMSetting setting);
     }
 
     public class ECOLABIOTBurnSNAndPSKService : IECOLABIOTBurnSNAndPSKService
@@ -47,6 +49,11 @@
         public string[] GetTransportProtocol()
         {
             return CallerContext.ECOLABIOTCOMSettingProvider.GetTransportProtocol();
+        }
+
+        public bool MemorySetting(COMSetting setting)
+        {
+            return CallerContext.ECOLABIOTCOMSettingProvider.MemorySetting(setting);
         }
     }
 }

@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="button_BurnDown.Text" xml:space="preserve">
-    <value>灼烧</value>
+    <value>烧制</value>
   </data>
   <data name="button_Connection.Text" xml:space="preserve">
     <value>链接</value>
@@ -128,6 +128,9 @@
   </data>
   <data name="button_Connection_Enable" xml:space="preserve">
     <value>链接</value>
+  </data>
+  <data name="button_Memory.Text" xml:space="preserve">
+    <value>记忆</value>
   </data>
   <data name="button_Reset.Text" xml:space="preserve">
     <value>重置</value>

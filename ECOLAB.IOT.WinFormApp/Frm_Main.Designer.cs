@@ -89,7 +89,7 @@ namespace ECOLAB.IOT.WinFormApp
             // 
             // panel_ChildHeader
             // 
-            this.panel_ChildHeader.BackColor = System.Drawing.Color.Teal;
+            this.panel_ChildHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(130)))), ((int)(((byte)(204)))));
             this.panel_ChildHeader.Controls.Add(this.label_ChildHeader_Menu);
             resources.ApplyResources(this.panel_ChildHeader, "panel_ChildHeader");
             this.panel_ChildHeader.ForeColor = System.Drawing.Color.White;
@@ -251,7 +251,7 @@ namespace ECOLAB.IOT.WinFormApp
             // 
             // panel_BottomToolTip
             // 
-            this.panel_BottomToolTip.BackColor = System.Drawing.Color.Purple;
+            this.panel_BottomToolTip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(130)))), ((int)(((byte)(204)))));
             this.panel_BottomToolTip.Controls.Add(this.label_DateTime);
             this.panel_BottomToolTip.Controls.Add(this.label_Exit);
             this.panel_BottomToolTip.Controls.Add(this.label_CurrentUser);
@@ -289,7 +289,7 @@ namespace ECOLAB.IOT.WinFormApp
             // label_CurrentMenu
             // 
             resources.ApplyResources(this.label_CurrentMenu, "label_CurrentMenu");
-            this.label_CurrentMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.label_CurrentMenu.ForeColor = System.Drawing.Color.White;
             this.label_CurrentMenu.Name = "label_CurrentMenu";
             // 
             // panel_Header
