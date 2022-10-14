@@ -1,10 +1,14 @@
 ﻿using ECOLAB.IOT.Common.Utilities;
 using ECOLAB.IOT.Entity;
 using ECOLAB.IOT.Service;
+using ECOLAB.IOT.Transmit;
+using ECOLAB.IOT.Transmit.FileTransmit;
+using ECOLAB.IOT.Transmit.SNAndPSKSend;
 using System.ComponentModel;
 using System.IO.Ports;
 using System.Text;
 using YamlDotNet.Core.Tokens;
+using static ECOLAB.IOT.Transmit.ITransmitUart;
 
 namespace ECOLAB.IOT.WinFormApp.ChildWinForm
 {
@@ -124,10 +128,10 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
 
         private async void button_BurnDown_Click(object sender, EventArgs e)
         {
-            if (BurnDown_Validate())
-            {
-                return;
-            }
+            //if (BurnDown_Validate())
+            //{
+            //    return;
+            //}
 
             await Travel();
         }
@@ -137,7 +141,7 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
         {
             try
             {
-                ChangeSendStatusToDisable();
+                //ChangeSendStatusToDisable();
                 if (CurrentContext.SendModeType == SendModeType.Normal)
                 {
                     await CommonSendPattern();
@@ -153,49 +157,108 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             }
             finally
             {
-                ChangeSendStatusToEnable();
+                //ChangeSendStatusToEnable();
             }
 
         }
         #endregion
 
         #region Send Pattern
+
         private async Task CommonSendPattern()
         {
             var sn = formNormal.textBox_SerialNumber.Text;
-            if (!SetSecret($"{sn}PSK", Utilities.RandomGenerateString(), out string psk))
-            {
-                return;
-            }
+            var snAndspk = new SNAndPSK(serialPort, sn, TransForm);
+            snAndspk.OutPutEvent += new OutPutEventHandler(snAndspkSend_OutPutEvent);
+            snAndspk.SendResultEvent += new EventHandler(snAndspkSend_SendCompletedEvent);
+            snAndspk.MessageBoxEvent += new MessageBoxEventHandler(snAndspkSend_MessageBoxEvent);
+            snAndspk.Send();
+        }
 
-            if (!SetupToIoTHub(sn, psk))
+        public string TransForm(string errormessageId)
+        {
+            return res.GetString(errormessageId);
+        }
+        private void snAndspkSend_OutPutEvent(object sender, TrackerReceiveData e)
+        {
+            var message = e.ReceiveMessage;
+            if (e.TransForm)
             {
-                return;
+                message = res.GetString(message);
             }
-
-            if (!CheckDeviceConfig(sn, psk))
+            richTextBox_Output.AppendText($"\n\r {message}");
+        }
+        private void snAndspkSend_MessageBoxEvent(object sender, TrackerMessageBox e)
+        {
+            var text = e.Text;
+            var caption = e.Caption;
+            if (e.MessageBoxButtons == ReceviedMessageBoxButtons.OK)
             {
-                richTextBox_Output.AppendText($"\n\r {res.GetString("message_CommonSendPattern_failed")}");
-                return;
+                MessageBoxButtons _btn = MessageBoxButtons.OK;
+                MessageBox.Show(this, text, caption, _btn);
             }
-
-            var result = await RegisterDevice(sn);
-            if (result.Status == Status.OK)
+            else if (e.MessageBoxButtons == ReceviedMessageBoxButtons.OKCancel)
             {
-                MessageBox.Show($"{res.GetString("message_CommonSendPattern_suceess")}", res.GetString("message"));
+                MessageBox.Show(text, caption, MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
             }
             else
             {
-                MessageBox.Show(result.Message, res.GetString("message"));
+                MessageBox.Show(text, caption);
             }
-
-            richTextBox_Output.AppendText($"\n\r {res.GetString("message_CommonSendPattern_suceess1")}");
         }
+        private void snAndspkSend_SendCompletedEvent(object sender, EventArgs e)
+        {
+            var bl = (bool)sender;
+            if (bl)
+            {
+                ChangeSendStatusToDisable();
+            }
+            else
+            {
+                ChangeSendStatusToEnable();
+            }
+        }
+
+
 
         private void SendFilePattern()
         {
+            if (formFileSend.comboBox_TransportProtocol.Text == Enum.GetName(TransportProtocol.Xmodem))
+            {
+                var xmodem = new YModem(serialPort, formFileSend.textBox_ChooseFile.Text);
+                xmodem.OutPutEvent += new OutPutEventHandler(fileSend_OutPutEvent);
+                xmodem.SendResultEvent += new EventHandler(fileSend_SendCompletedEvent);
+                xmodem.Send();
+            }
+            else if (formFileSend.comboBox_TransportProtocol.Text == Enum.GetName(TransportProtocol.Ymodem))
+            {
+                var ymodem = new YModem(serialPort, formFileSend.textBox_ChooseFile.Text);
+                ymodem.OutPutEvent += new OutPutEventHandler(fileSend_OutPutEvent);
+                ymodem.SendResultEvent += new EventHandler(fileSend_SendCompletedEvent);
+                ymodem.Send();
+            }
+        }
 
-
+        private void fileSend_OutPutEvent(object sender, TrackerReceiveData e)
+        {
+            var message = e.ReceiveMessage;
+            if (e.TransForm)
+            {
+                message = res.GetString(message);
+            }
+            richTextBox_Output.AppendText($"\n\r {message}");
+        }
+        private void fileSend_SendCompletedEvent(object sender, EventArgs e)
+        {
+            var bl = (bool)sender;
+            if (bl)
+            {
+                ChangeSendStatusToDisable();
+            }
+            else
+            {
+                ChangeSendStatusToEnable();
+            }
         }
         #endregion
 

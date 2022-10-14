@@ -28,6 +28,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "解决方案项", "解决�
 		ReadMe.md = ReadMe.md
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Transmit", "Transmit", "{0C706CB5-7A20-41F9-86E8-629105E94C81}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECOLAB.IOT.Transmit", "ECOLAB.IOT.Transmit\ECOLAB.IOT.Transmit.csproj", "{1399F3CB-A6E8-4096-A504-C844B71CA579}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -54,6 +58,10 @@ Global
 		{A324C507-F580-464A-9CB8-BBB70F39AB00}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A324C507-F580-464A-9CB8-BBB70F39AB00}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A324C507-F580-464A-9CB8-BBB70F39AB00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1399F3CB-A6E8-4096-A504-C844B71CA579}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1399F3CB-A6E8-4096-A504-C844B71CA579}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1399F3CB-A6E8-4096-A504-C844B71CA579}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1399F3CB-A6E8-4096-A504-C844B71CA579}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -64,6 +72,7 @@ Global
 		{D0EDABCE-0622-4350-BECE-632A2D6E9537} = {E25AA0D4-F3B3-44C9-8B01-03BB5F76D4F3}
 		{EBE1C53F-91AE-4A88-9763-F07580480F4F} = {7085756D-B3C1-472C-8995-0990AD47529E}
 		{A324C507-F580-464A-9CB8-BBB70F39AB00} = {D2B69625-2EF7-4295-9FEF-AFD3F40CAFC2}
+		{1399F3CB-A6E8-4096-A504-C844B71CA579} = {0C706CB5-7A20-41F9-86E8-629105E94C81}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {996A3356-273D-4005-A274-D56CFCC6A340}

@@ -21,7 +21,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ECOLAB.IOT.Entity\ECOLAB.IOT.Entity.csproj" />
-    <ProjectReference Include="..\ECOLAB.IOT.Service\ECOLAB.IOT.Service.csproj" />
+    <ProjectReference Include="..\ECOLAB.IOT.Transmit\ECOLAB.IOT.Transmit.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -46,9 +46,9 @@
     public enum TransportProtocol { 
         //ASCII,
         //Binary,
-        Xmodem=128,
+        Xmodem,
         //Xmodem1k=1024,
-        Ymodem=128,
+        Ymodem,
        // Ymodem1k=128,
     }
 }
