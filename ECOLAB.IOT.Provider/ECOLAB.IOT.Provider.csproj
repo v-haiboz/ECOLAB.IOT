@@ -27,6 +27,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="Appsetting\appsetting_Dev.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Appsetting\appsetting_Product.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Appsetting\devicetypemapping.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="COMSetData\defaultsetting.yaml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -34,5 +43,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties appsetting_4appsetting_3dev_1json__JsonSchema="https://beaujs.com/schema.json" /></VisualStudio></ProjectExtensions>
 
 </Project>

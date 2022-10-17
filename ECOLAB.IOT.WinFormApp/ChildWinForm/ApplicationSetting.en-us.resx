@@ -117,16 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="checkBox_EnableMappingPrefix.Text" xml:space="preserve">
-    <value>EnableMappingPrefix</value>
+  <data name="button_Add.Text" xml:space="preserve">
+    <value>Save</value>
   </data>
-  <data name="checkBox_ValidateSN.Text" xml:space="preserve">
-    <value>EnableValidateSN</value>
-  </data>
-  <data name="label_SerialNumber.Text" xml:space="preserve">
-    <value>Serial Number:</value>
-  </data>
-  <data name="linkLabel_ClearSerialNumber.Text" xml:space="preserve">
+  <data name="button_Clear.Text" xml:space="preserve">
     <value>Clear</value>
+  </data>
+  <data name="label_SourcePrefix.Text" xml:space="preserve">
+    <value>Source Prefix:</value>
+  </data>
+  <data name="label_TargetPrefix.Text" xml:space="preserve">
+    <value>Target Prefix:</value>
+  </data>
+  <data name="message1" xml:space="preserve">
+    <value>TargetPrefix and SourcePrefix can't be empty.</value>
+  </data>
+  <data name="message2" xml:space="preserve">
+    <value>Add up to 8 source prefixes</value>
+  </data>
+  <data name="message_Delete" xml:space="preserve">
+    <value>Delete</value>
   </data>
 </root>

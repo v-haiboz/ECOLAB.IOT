@@ -184,7 +184,7 @@
     <value>True</value>
   </data>
   <data name="label_DeviceRegisterUrl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>860, 265</value>
+    <value>860, 198</value>
   </data>
   <data name="label_DeviceRegisterUrl.Size" type="System.Drawing.Size, System.Drawing">
     <value>0, 24</value>
@@ -208,7 +208,7 @@
     <value>True</value>
   </data>
   <data name="label_PlatformName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>860, 140</value>
+    <value>860, 73</value>
   </data>
   <data name="label_PlatformName.Size" type="System.Drawing.Size, System.Drawing">
     <value>0, 24</value>
@@ -256,13 +256,16 @@
     <value>True</value>
   </data>
   <data name="label_DeviceType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>859, 74</value>
+    <value>264, 374</value>
   </data>
   <data name="label_DeviceType.Size" type="System.Drawing.Size, System.Drawing">
     <value>0, 24</value>
   </data>
   <data name="label_DeviceType.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
+  </data>
+  <data name="label_DeviceType.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="&gt;&gt;label_DeviceType.Name" xml:space="preserve">
     <value>label_DeviceType</value>
@@ -307,7 +310,7 @@
     <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="button_Clear.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1096, 296</value>
+    <value>1096, 225</value>
   </data>
   <data name="button_Clear.Size" type="System.Drawing.Size, System.Drawing">
     <value>204, 38</value>
@@ -337,7 +340,7 @@
     <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="button_Add.Location" type="System.Drawing.Point, System.Drawing">
-    <value>850, 296</value>
+    <value>850, 225</value>
   </data>
   <data name="button_Add.Size" type="System.Drawing.Size, System.Drawing">
     <value>204, 38</value>
@@ -346,7 +349,7 @@
     <value>15</value>
   </data>
   <data name="button_Add.Text" xml:space="preserve">
-    <value>Add</value>
+    <value>Save</value>
   </data>
   <data name="&gt;&gt;button_Add.Name" xml:space="preserve">
     <value>button_Add</value>
@@ -361,7 +364,7 @@
     <value>9</value>
   </data>
   <data name="textBox_EnvironmentDeviceRegisterUrl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>850, 167</value>
+    <value>850, 100</value>
   </data>
   <data name="textBox_EnvironmentDeviceRegisterUrl.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -412,7 +415,7 @@
     <value>True</value>
   </data>
   <data name="label_EnvironmentDeviceRegisterUrl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>659, 175</value>
+    <value>659, 108</value>
   </data>
   <data name="label_EnvironmentDeviceRegisterUrl.Size" type="System.Drawing.Size, System.Drawing">
     <value>167, 24</value>
@@ -514,7 +517,7 @@
     <value>15</value>
   </data>
   <data name="textBox_EnvironmentPlatformName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>850, 104</value>
+    <value>850, 37</value>
   </data>
   <data name="textBox_EnvironmentPlatformName.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -565,7 +568,7 @@
     <value>True</value>
   </data>
   <data name="label_EnvironmentPlatformName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>686, 110</value>
+    <value>686, 43</value>
   </data>
   <data name="label_EnvironmentPlatformName.Size" type="System.Drawing.Size, System.Drawing">
     <value>140, 24</value>
@@ -640,7 +643,7 @@
     <value>20</value>
   </data>
   <data name="textBox_EnvironmentDeviceType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>850, 38</value>
+    <value>1061, 344</value>
   </data>
   <data name="textBox_EnvironmentDeviceType.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -650,6 +653,9 @@
   </data>
   <data name="textBox_EnvironmentDeviceType.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
+  </data>
+  <data name="textBox_EnvironmentDeviceType.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="&gt;&gt;textBox_EnvironmentDeviceType.Name" xml:space="preserve">
     <value>textBox_EnvironmentDeviceType</value>
@@ -694,7 +700,7 @@
     <value>True</value>
   </data>
   <data name="label_EnvironmentDeviceType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>713, 44</value>
+    <value>894, 353</value>
   </data>
   <data name="label_EnvironmentDeviceType.Size" type="System.Drawing.Size, System.Drawing">
     <value>113, 24</value>
@@ -704,6 +710,9 @@
   </data>
   <data name="label_EnvironmentDeviceType.Text" xml:space="preserve">
     <value>DeviceType:</value>
+  </data>
+  <data name="label_EnvironmentDeviceType.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="&gt;&gt;label_EnvironmentDeviceType.Name" xml:space="preserve">
     <value>label_EnvironmentDeviceType</value>

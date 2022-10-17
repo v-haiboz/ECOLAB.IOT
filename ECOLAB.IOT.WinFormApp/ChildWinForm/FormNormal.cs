@@ -26,5 +26,10 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
         {
             textBox_SerialNumber.Text = "";
         }
+
+        private void checkBox_EnableMappingPrefix_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

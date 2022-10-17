@@ -42,6 +42,7 @@ namespace ECOLAB.IOT.WinFormApp
             this.button_SerialCOM_GateWay = new System.Windows.Forms.Button();
             this.button_Help = new System.Windows.Forms.Button();
             this.panel_SettingSubMenu = new System.Windows.Forms.Panel();
+            this.button_Setting_Application = new System.Windows.Forms.Button();
             this.button_Setting_Environment = new System.Windows.Forms.Button();
             this.button_Setting = new System.Windows.Forms.Button();
             this.panel_SerialCOMSubMenu = new System.Windows.Forms.Panel();
@@ -144,9 +145,20 @@ namespace ECOLAB.IOT.WinFormApp
             // panel_SettingSubMenu
             // 
             this.panel_SettingSubMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.panel_SettingSubMenu.Controls.Add(this.button_Setting_Application);
             this.panel_SettingSubMenu.Controls.Add(this.button_Setting_Environment);
             resources.ApplyResources(this.panel_SettingSubMenu, "panel_SettingSubMenu");
             this.panel_SettingSubMenu.Name = "panel_SettingSubMenu";
+            // 
+            // button_Setting_Application
+            // 
+            resources.ApplyResources(this.button_Setting_Application, "button_Setting_Application");
+            this.button_Setting_Application.FlatAppearance.BorderSize = 0;
+            this.button_Setting_Application.ForeColor = System.Drawing.Color.White;
+            this.button_Setting_Application.Image = global::ECOLAB.IOT.WinFormApp.Properties.Resources.setting_aaplication_Main1;
+            this.button_Setting_Application.Name = "button_Setting_Application";
+            this.button_Setting_Application.UseVisualStyleBackColor = true;
+            this.button_Setting_Application.Click += new System.EventHandler(this.button_Setting_Application_Click);
             // 
             // button_Setting_Environment
             // 
@@ -375,6 +387,7 @@ namespace ECOLAB.IOT.WinFormApp
             this.button_Account_SignOut.Text = $"           {res.GetString("button_Account_SignOut")}";
             this.button_Account_Profile.Text = $"           {res.GetString("button_Account_Profile")}";
             this.button_Account.Text = $"           {res.GetString("button_Account")}";
+            this.button_Setting_Application.Text = $"           {res.GetString("button_Setting_Application")}";
         }
         private void OpenChildForm(Form childForm)
         {
@@ -502,5 +515,6 @@ namespace ECOLAB.IOT.WinFormApp
         private Form activeForm = null;
         private Button button_Account_Profile;
         private Button button_SerialCOM_GateWay;
+        private Button button_Setting_Application;
     }
 }

@@ -84,13 +84,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;linkLabel_ClearSerialNumber.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="checkBox_ValidateSN.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="checkBox_ValidateSN.Location" type="System.Drawing.Point, System.Drawing">
-    <value>325, 38</value>
+    <value>339, 38</value>
   </data>
   <data name="checkBox_ValidateSN.Size" type="System.Drawing.Size, System.Drawing">
     <value>190, 28</value>
@@ -111,10 +111,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;checkBox_ValidateSN.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>4</value>
   </data>
   <data name="textBox_SerialNumber.Location" type="System.Drawing.Point, System.Drawing">
-    <value>325, 81</value>
+    <value>339, 81</value>
   </data>
   <data name="textBox_SerialNumber.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -135,13 +135,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;textBox_SerialNumber.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>5</value>
   </data>
   <data name="label_SerualNubmer_Validate.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="label_SerualNubmer_Validate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>312, 112</value>
+    <value>348, 112</value>
   </data>
   <data name="label_SerualNubmer_Validate.Size" type="System.Drawing.Size, System.Drawing">
     <value>0, 24</value>
@@ -159,10 +159,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label_SerualNubmer_Validate.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>6</value>
   </data>
   <data name="label_SerialNumber.Location" type="System.Drawing.Point, System.Drawing">
-    <value>153, 81</value>
+    <value>72, 81</value>
   </data>
   <data name="label_SerialNumber.Size" type="System.Drawing.Size, System.Drawing">
     <value>138, 24</value>
@@ -186,7 +186,86 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label_SerialNumber.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>7</value>
+  </data>
+  <data name="checkBox_EnableMappingPrefix.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="checkBox_EnableMappingPrefix.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="checkBox_EnableMappingPrefix.Location" type="System.Drawing.Point, System.Drawing">
+    <value>540, 38</value>
+  </data>
+  <data name="checkBox_EnableMappingPrefix.Size" type="System.Drawing.Size, System.Drawing">
+    <value>222, 28</value>
+  </data>
+  <data name="checkBox_EnableMappingPrefix.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="checkBox_EnableMappingPrefix.Text" xml:space="preserve">
+    <value>EnableMappingPrefix</value>
+  </data>
+  <data name="&gt;&gt;checkBox_EnableMappingPrefix.Name" xml:space="preserve">
+    <value>checkBox_EnableMappingPrefix</value>
+  </data>
+  <data name="&gt;&gt;checkBox_EnableMappingPrefix.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBox_EnableMappingPrefix.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;checkBox_EnableMappingPrefix.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>317, 83</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>18, 24</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="label_SNPrefix.Location" type="System.Drawing.Point, System.Drawing">
+    <value>220, 80</value>
+  </data>
+  <data name="label_SNPrefix.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 31</value>
+  </data>
+  <data name="label_SNPrefix.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="&gt;&gt;label_SNPrefix.Name" xml:space="preserve">
+    <value>label_SNPrefix</value>
+  </data>
+  <data name="&gt;&gt;label_SNPrefix.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_SNPrefix.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label_SNPrefix.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

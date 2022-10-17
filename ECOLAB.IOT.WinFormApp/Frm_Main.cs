@@ -79,12 +79,12 @@ namespace ECOLAB.IOT.WinFormApp
             ShowSubMenu(panel_SerialCOMSubMenu);
         }
 
-        private void button_BurnFile_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new BurnFile());
-            ShowNavigationMenu(button_SerialCOM_GateWay.Name);
-            HideSubMenu();
-        }
+        //private void button_BurnFile_Click(object sender, EventArgs e)
+        //{
+        //    OpenChildForm(new BurnFile());
+        //    ShowNavigationMenu(button_SerialCOM_GateWay.Name);
+        //    HideSubMenu();
+        //}
         #endregion
 
         private void button_Help_Click(object sender, EventArgs e)
@@ -174,6 +174,13 @@ namespace ECOLAB.IOT.WinFormApp
         {
             OpenChildForm(new Burn());
             ShowNavigationMenu(button_SerialCOM_Burn.Name);
+            HideSubMenu();
+        }
+
+        private void button_Setting_Application_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new ApplicationSetting());
+            ShowNavigationMenu(button_Setting_Application.Name);
             HideSubMenu();
         }
     }

@@ -10,11 +10,22 @@
 
     public class SNAndPSK : ITransmitUart
     {
-        public SNAndPSK(SerialPort serialPort, string sn, Func<string, string> transform)
+        public SNAndPSK(SerialPort serialPort, string sn,string prefix, Func<string, string> transform)
         {
             this.serialPort = serialPort;
             this.sn = sn;
+            this.prefix = prefix;
             this.TransForm = transform;
+
+        }
+        private string prefix;
+        private string Prefix
+        {
+            get { return prefix; }
+            set
+            {
+                prefix = value;
+            }
         }
         private SerialPort serialPort;
         public SerialPort SerialPort
@@ -76,7 +87,7 @@
                     return;
                 }
 
-                var result = RegisterDevice(sn).Result;
+                var result = RegisterDevice(sn,prefix).Result;
                 if (result.Status == Status.OK)
                 {
                     if (MessageBoxEvent != null && TransForm != null)
@@ -110,19 +121,18 @@
             }
             finally
             {
-                SendResultEvent(false,null);
+                SendResultEvent(false, null);
             }
         }
 
         #region Register Device
-        private async Task<TData<string>> RegisterDevice(string sn)
+        private async Task<TData<string>> RegisterDevice(string sn,string prefix)
         {
             // TO DO: we will  config it on page of application
-            var prefix = sn.Substring(0, 3);
             var model = new DeviceRegister()
             {
                 IsEnabled = "true",
-                DeviceType = CallerContext.AppServiceOptions.GetDeviceTypePrefix(prefix),
+                DeviceType = prefix,
                 PlatformName = CallerContext.AppServiceOptions.PlatformName,
                 SerialNumber = sn
             };

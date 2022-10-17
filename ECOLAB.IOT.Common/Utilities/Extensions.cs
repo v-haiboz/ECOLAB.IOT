@@ -85,13 +85,15 @@
         /// </summary>
         /// <param name="appServiceOption"></param>
         /// <returns>Prefix</returns>
-        public static string GetDeviceTypePrefix(this AppServiceOption appServiceOption, string sourcePrefix)
+        public static string GetDeviceTypePrefix(this DeviceTypMapping deviceTypMapping, string sourcePrefix,bool isEnableValidate=true)
         {
-            var dic = GetDeviceTypePrefixs(appServiceOption);
-
-            if (dic.TryGetValue(sourcePrefix, out string? targetPrefix))
+            var dic = GetDeviceTypePrefixs(deviceTypMapping);
+            if (isEnableValidate)
             {
-                return targetPrefix;
+                if (dic.TryGetValue(sourcePrefix, out string? targetPrefix))
+                {
+                    return targetPrefix;
+                }
             }
 
             if (sourcePrefix == "DMC" || sourcePrefix == "CON")
@@ -102,40 +104,23 @@
             return sourcePrefix;
         }
 
-        private static IDictionary<string, string> GetDeviceTypePrefixs(AppServiceOption appServiceOption)
+        private static IDictionary<string, string> GetDeviceTypePrefixs(DeviceTypMapping deviceTypMapping)
         {
             var dic = new Dictionary<string, string>();
-            if (appServiceOption == null || string.IsNullOrEmpty(appServiceOption.DeviceType))
+            if (deviceTypMapping == null)
                 return dic;
 
-            var list = appServiceOption.DeviceType.Split(',');
-            if (list.Count() == 0)
+            foreach (var item in deviceTypMapping.List)
             {
-                return dic;
-            }
-
-            foreach (var item in list)
-            {
-                if (item.SubStringCount("=") == 1)
+                foreach (var child in item.SourceNameList)
                 {
-                    var keyValue = item.Split("=");
-                    if (keyValue.Length == 2)
-                    {
-                        var keys = keyValue[0];
-                        var value = keyValue[1];
-                        if (!string.IsNullOrEmpty(keys) && !string.IsNullOrEmpty(value))
-                        {
-                            foreach (var key in keys.Split("|"))
-                            {
-                                dic.Add(key, value);
-                            }
-                        }
-                    }
+                    dic[child] = item.TargetName;
                 }
             }
 
             return dic;
         }
+
 
        
         public static string ToStopBitName(this StopBits stopBits)
@@ -155,6 +140,24 @@
             }
 
             return null;
+        }
+
+        public static List<DeviceTypeMappingDisplay> ToDeviceTypeMappingDisplay(this DeviceTypMapping deviceTypMapping)
+        {
+            if (deviceTypMapping == null)
+                return null;
+
+
+            var list = new List<DeviceTypeMappingDisplay>();
+            foreach (var item in deviceTypMapping.List)
+            {
+                var deviceTypeMappingDisplay = new DeviceTypeMappingDisplay();
+                deviceTypeMappingDisplay.TargetPrefix = item.TargetName;
+                deviceTypeMappingDisplay.SourcePrefixs = string.Join(";", item.SourceNameList);
+                list.Add(deviceTypeMappingDisplay);
+            }
+
+            return list;
         }
     }
 }

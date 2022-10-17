@@ -60,7 +60,6 @@
             environmentVariable.AppServiceOption.ClientSecret = securityProvider.AESEncrypt(environmentVariable.AppServiceOption.ClientSecret);
             environmentVariable.AppServiceOption.TenantId = securityProvider.AESEncrypt(environmentVariable.AppServiceOption.TenantId);
             environmentVariable.AppServiceOption.KeyValutUrl = securityProvider.AESEncrypt(environmentVariable.AppServiceOption.KeyValutUrl);
-            environmentVariable.AppServiceOption.DeviceType = securityProvider.AESEncrypt(environmentVariable.AppServiceOption.DeviceType);
             environmentVariable.AppServiceOption.PlatformName = securityProvider.AESEncrypt(environmentVariable.AppServiceOption.PlatformName);
             environmentVariable.AppServiceOption.DeviceRegisterUrl = securityProvider.AESEncrypt(environmentVariable.AppServiceOption.DeviceRegisterUrl);
 
@@ -87,7 +86,6 @@
                 appServiceOption.ClientSecret = securityProvider.AESDecrypt(appServiceOption.ClientSecret);
                 appServiceOption.TenantId = securityProvider.AESDecrypt(appServiceOption.TenantId);
                 appServiceOption.KeyValutUrl = securityProvider.AESDecrypt(appServiceOption.KeyValutUrl);
-                appServiceOption.DeviceType = securityProvider.AESDecrypt(appServiceOption.DeviceType);
                 appServiceOption.PlatformName = securityProvider.AESDecrypt(appServiceOption.PlatformName);
                 appServiceOption.DeviceRegisterUrl = securityProvider.AESDecrypt(appServiceOption.DeviceRegisterUrl);
             }

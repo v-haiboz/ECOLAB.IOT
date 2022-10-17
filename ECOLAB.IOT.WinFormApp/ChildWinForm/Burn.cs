@@ -110,6 +110,11 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             FormNormal_ValidateSN(formNormal.textBox_SerialNumber.Text);
         }
 
+        private void checkBox_EnableMappingPrefix_Click(object sender, EventArgs e)
+        {
+            FormNormal_ValidateSN(formNormal.textBox_SerialNumber.Text);
+        }
+
         private void textBox_ChooseFile_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 8)
@@ -168,7 +173,7 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
         private async Task CommonSendPattern()
         {
             var sn = formNormal.textBox_SerialNumber.Text;
-            var snAndspk = new SNAndPSK(serialPort, sn, TransForm);
+            var snAndspk = new SNAndPSK(serialPort, sn,formNormal.label_SNPrefix.Text, TransForm);
             snAndspk.OutPutEvent += new OutPutEventHandler(snAndspkSend_OutPutEvent);
             snAndspk.SendResultEvent += new EventHandler(snAndspkSend_SendCompletedEvent);
             snAndspk.MessageBoxEvent += new MessageBoxEventHandler(snAndspkSend_MessageBoxEvent);
@@ -262,23 +267,6 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
         }
         #endregion
 
-        #region Register Device
-        private async Task<TData<string>> RegisterDevice(string sn)
-        {
-            // TO DO: we will  config it on page of application
-            var prefix = sn.Substring(0, 3);
-            var model = new DeviceRegister()
-            {
-                IsEnabled = "true",
-                DeviceType = CallerContext.AppServiceOptions.GetDeviceTypePrefix(prefix),
-                PlatformName = CallerContext.AppServiceOptions.PlatformName,
-                SerialNumber = sn
-            };
-
-            var result = await CallerContext.ECOLABIOTRegisterDeviceService.RegisterDevice(model);
-            return result;
-        }
-        #endregion
         #region genereate psk, and then send to keyvalut.
         private bool SetSecret(string key, string value, out string psk)
         {
@@ -380,9 +368,9 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             var setting = new COMSetting();
             setting.PortName = comboBox_SerialPort.Text;
             setting.BaudRate = (BaudRates)Enum.Parse(typeof(BaudRates), comboBox_BaudRate.Text);
-            setting.Parity= (Parity)Enum.Parse(typeof(Parity), comboBox_ParityBit.Text);
-            setting.DataBit =(DataBits)(int.Parse(comboBox_DataBit.Text));
-            setting.StopBit =Utilities.MappingStopBit(comboBox_StopBit.Text);
+            setting.Parity = (Parity)Enum.Parse(typeof(Parity), comboBox_ParityBit.Text);
+            setting.DataBit = (DataBits)(int.Parse(comboBox_DataBit.Text));
+            setting.StopBit = Utilities.MappingStopBit(comboBox_StopBit.Text);
             CallerContext.ECOLABIOTBurnSNAndPSKService.MemorySetting(setting);
             button_Memory.Enabled = true;
         }

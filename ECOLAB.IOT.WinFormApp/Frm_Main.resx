@@ -137,7 +137,7 @@
     <value>NoControl</value>
   </data>
   <data name="button_Account_Profile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 441</value>
+    <value>0, 486</value>
   </data>
   <data name="button_Account_Profile.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 10, 3, 10</value>
@@ -185,7 +185,7 @@
     <value>NoControl</value>
   </data>
   <data name="button_SerialCOM_GateWay.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 396</value>
+    <value>0, 441</value>
   </data>
   <data name="button_SerialCOM_GateWay.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 10, 3, 10</value>
@@ -230,7 +230,7 @@
     <value>MiddleLeft</value>
   </data>
   <data name="button_Help.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 351</value>
+    <value>0, 396</value>
   </data>
   <data name="button_Help.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 10, 3, 10</value>
@@ -262,8 +262,53 @@
   <data name="&gt;&gt;button_Help.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="button_Setting_Application.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="button_Setting_Application.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="button_Setting_Application.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="button_Setting_Application.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="button_Setting_Application.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 50</value>
+  </data>
+  <data name="button_Setting_Application.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 10, 3, 10</value>
+  </data>
+  <data name="button_Setting_Application.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>45, 0, 0, 0</value>
+  </data>
+  <data name="button_Setting_Application.Size" type="System.Drawing.Size, System.Drawing">
+    <value>285, 44</value>
+  </data>
+  <data name="button_Setting_Application.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="button_Setting_Application.Text" xml:space="preserve">
+    <value>           Application</value>
+  </data>
+  <data name="button_Setting_Application.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;button_Setting_Application.Name" xml:space="preserve">
+    <value>button_Setting_Application</value>
+  </data>
+  <data name="&gt;&gt;button_Setting_Application.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_Setting_Application.Parent" xml:space="preserve">
+    <value>panel_SettingSubMenu</value>
+  </data>
+  <data name="&gt;&gt;button_Setting_Application.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="button_Setting_Environment.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+    <value>Top</value>
   </data>
   <data name="button_Setting_Environment.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -281,7 +326,7 @@
     <value>45, 0, 0, 0</value>
   </data>
   <data name="button_Setting_Environment.Size" type="System.Drawing.Size, System.Drawing">
-    <value>285, 49</value>
+    <value>285, 50</value>
   </data>
   <data name="button_Setting_Environment.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -302,7 +347,7 @@
     <value>panel_SettingSubMenu</value>
   </data>
   <data name="&gt;&gt;button_Setting_Environment.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="panel_SettingSubMenu.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -311,7 +356,7 @@
     <value>0, 302</value>
   </data>
   <data name="panel_SettingSubMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>285, 49</value>
+    <value>285, 94</value>
   </data>
   <data name="panel_SettingSubMenu.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>

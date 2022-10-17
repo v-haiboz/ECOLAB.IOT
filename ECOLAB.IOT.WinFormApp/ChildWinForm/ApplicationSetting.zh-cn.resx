@@ -117,16 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="checkBox_EnableMappingPrefix.Text" xml:space="preserve">
-    <value>EnableMappingPrefix</value>
+  <data name="button_Add.Text" xml:space="preserve">
+    <value>保存</value>
   </data>
-  <data name="checkBox_ValidateSN.Text" xml:space="preserve">
-    <value>EnableValidateSN</value>
+  <data name="button_Clear.Text" xml:space="preserve">
+    <value>清空</value>
   </data>
-  <data name="label_SerialNumber.Text" xml:space="preserve">
-    <value>Serial Number:</value>
+  <data name="label_SourcePrefix.Text" xml:space="preserve">
+    <value>源前缀:</value>
   </data>
-  <data name="linkLabel_ClearSerialNumber.Text" xml:space="preserve">
-    <value>Clear</value>
+  <data name="label_TargetPrefix.Text" xml:space="preserve">
+    <value>目标前缀:</value>
+  </data>
+  <data name="message1" xml:space="preserve">
+    <value>源前缀和目标前缀不能为空。</value>
+  </data>
+  <data name="message2" xml:space="preserve">
+    <value>最多添加8个源前缀。</value>
+  </data>
+  <data name="message_Delete" xml:space="preserve">
+    <value>删除</value>
   </data>
 </root>

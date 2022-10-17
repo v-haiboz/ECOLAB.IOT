@@ -34,6 +34,9 @@
             this.textBox_SerialNumber = new System.Windows.Forms.TextBox();
             this.label_SerualNubmer_Validate = new System.Windows.Forms.Label();
             this.label_SerialNumber = new System.Windows.Forms.Label();
+            this.checkBox_EnableMappingPrefix = new System.Windows.Forms.CheckBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label_SNPrefix = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // linkLabel_ClearSerialNumber
@@ -68,12 +71,36 @@
             resources.ApplyResources(this.label_SerialNumber, "label_SerialNumber");
             this.label_SerialNumber.Name = "label_SerialNumber";
             // 
+            // checkBox_EnableMappingPrefix
+            // 
+            resources.ApplyResources(this.checkBox_EnableMappingPrefix, "checkBox_EnableMappingPrefix");
+            this.checkBox_EnableMappingPrefix.Checked = true;
+            this.checkBox_EnableMappingPrefix.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox_EnableMappingPrefix.Name = "checkBox_EnableMappingPrefix";
+            this.checkBox_EnableMappingPrefix.UseVisualStyleBackColor = true;
+            this.checkBox_EnableMappingPrefix.Click += new System.EventHandler(this.checkBox_EnableMappingPrefix_Click);
+            // 
+            // label1
+            // 
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.Name = "label1";
+            // 
+            // label_SNPrefix
+            // 
+            this.label_SNPrefix.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.label_SNPrefix.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            resources.ApplyResources(this.label_SNPrefix, "label_SNPrefix");
+            this.label_SNPrefix.Name = "label_SNPrefix";
+            // 
             // FormNormal
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.Controls.Add(this.label_SNPrefix);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.linkLabel_ClearSerialNumber);
+            this.Controls.Add(this.checkBox_EnableMappingPrefix);
             this.Controls.Add(this.checkBox_ValidateSN);
             this.Controls.Add(this.textBox_SerialNumber);
             this.Controls.Add(this.label_SerualNubmer_Validate);
@@ -93,5 +120,8 @@
         public TextBox textBox_SerialNumber;
         public Label label_SerualNubmer_Validate;
         public Label label_SerialNumber;
+        public CheckBox checkBox_EnableMappingPrefix;
+        private Label label1;
+        public Label label_SNPrefix;
     }
 }

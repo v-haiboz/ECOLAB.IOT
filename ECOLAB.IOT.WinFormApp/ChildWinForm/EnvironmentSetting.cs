@@ -29,24 +29,29 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
                 ClientId = item.AppServiceOption.ClientId,
                 ClientSecret = !CallerContext.SysAdmin.IsSuper ? ReplaceChar(item.AppServiceOption.ClientSecret) : item.AppServiceOption.ClientSecret,
                 TenantId = item.AppServiceOption.TenantId,
-                KeyValutUri = item.AppServiceOption.KeyValutUrl,
-                DeviceType = item.AppServiceOption.DeviceType,
+                KeyValutUrl = item.AppServiceOption.KeyValutUrl,
+                //DeviceType = item.AppServiceOption.DeviceType,
                 PlatformName = item.AppServiceOption.PlatformName,
-                DeviceRegisterUri = item.AppServiceOption.DeviceRegisterUrl
+                DeviceRegisterUrl = item.AppServiceOption.DeviceRegisterUrl
             }).ToList();
 
             this.dataGridView_Environment.DataSource = dataSource;
+            if (dataGridView_Environment.DataSource != null)
+            {
+                dataGridView_Environment.Columns["Name"].Width = 60;
+                dataGridView_Environment.Columns["ClientId"].Width = 100;
+                dataGridView_Environment.Columns["ClientSecret"].Width = 100;
+                dataGridView_Environment.Columns["TenantId"].Width = 100;
+                dataGridView_Environment.Columns["KeyValutUrl"].Width = 100;
+                dataGridView_Environment.Columns["PlatformName"].Width = 100;
+                dataGridView_Environment.Columns["DeviceRegisterUrl"].Width = 100;
+                dataGridView_Environment.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            }
 
-            dataGridView_Environment.Columns[0].Width = 60;
-            dataGridView_Environment.Columns[1].Width = 100;
-            dataGridView_Environment.Columns[2].Width = 100;
-            dataGridView_Environment.Columns[3].Width = 100;
-            dataGridView_Environment.Columns[4].Width = 100;
-            dataGridView_Environment.Columns[5].Width = 100;
-            dataGridView_Environment.Columns[6].Width = 100;
-            dataGridView_Environment.Columns[7].Width = 100;
-            dataGridView_Environment.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-
+            for (var i = 0; i < dataGridView_Environment.Rows.Count; i++)
+            {
+                dataGridView_Environment.Rows[i].DefaultCellStyle.BackColor = SystemColors.Info;
+            }
         }
 
         private string ReplaceChar(string str, string patten = @".?", bool bl = true)
@@ -84,6 +89,11 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
 
         private void AddDeleteButton()
         {
+            if (dataGridView_Environment.DataSource == null)
+            {
+                return;
+            }
+            
             DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
             var btn_CellStyle = new DataGridViewCellStyle();
             btn_CellStyle.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
@@ -121,6 +131,7 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
 
                 MessageBox.Show("Successful");
                 BangDing();
+                AddDeleteButton();
             }
         }
 
@@ -159,7 +170,7 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
                     ClientSecret = textBox_EnvironmentClientSecret.Text,
                     TenantId = textBox_EnvironmentTenantId.Text,
                     KeyValutUrl = textBox_EnvironmentKeyValutUrl.Text,
-                    DeviceType = textBox_EnvironmentDeviceType.Text,
+                    //DeviceType = textBox_EnvironmentDeviceType.Text,
                     PlatformName = textBox_EnvironmentPlatformName.Text,
                     DeviceRegisterUrl = textBox_EnvironmentDeviceRegisterUrl.Text
                 }
@@ -197,8 +208,8 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             textBox_EnvironmentKeyValutUrl.KeyPress += new KeyPressEventHandler(textBox_EnvironmentKeyValutUrl_KeyPress);
             textBox_EnvironmentKeyValutUrl.TextChanged += new EventHandler(textBox_EnvironmentKeyValutUrl_TextChanged);
 
-            textBox_EnvironmentDeviceType.KeyPress += new KeyPressEventHandler(textBox_EnvironmentDeviceType_KeyPress);
-            textBox_EnvironmentDeviceType.TextChanged += new EventHandler(textBox_EnvironmentDeviceType_TextChanged);
+            //textBox_EnvironmentDeviceType.KeyPress += new KeyPressEventHandler(textBox_EnvironmentDeviceType_KeyPress);
+            //textBox_EnvironmentDeviceType.TextChanged += new EventHandler(textBox_EnvironmentDeviceType_TextChanged);
 
             textBox_EnvironmentPlatformName.KeyPress += new KeyPressEventHandler(textBox_EnvironmentPlatformName_KeyPress);
             textBox_EnvironmentPlatformName.TextChanged += new EventHandler(textBox_EnvironmentPlatformName_TextChanged);
@@ -224,8 +235,8 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             textBox_EnvironmentKeyValutUrl.KeyPress -= new KeyPressEventHandler(textBox_EnvironmentKeyValutUrl_KeyPress);
             textBox_EnvironmentKeyValutUrl.TextChanged -= new EventHandler(textBox_EnvironmentKeyValutUrl_TextChanged);
 
-            textBox_EnvironmentDeviceType.KeyPress -= new KeyPressEventHandler(textBox_EnvironmentDeviceType_KeyPress);
-            textBox_EnvironmentDeviceType.TextChanged -= new EventHandler(textBox_EnvironmentDeviceType_TextChanged);
+            //textBox_EnvironmentDeviceType.KeyPress -= new KeyPressEventHandler(textBox_EnvironmentDeviceType_KeyPress);
+            //textBox_EnvironmentDeviceType.TextChanged -= new EventHandler(textBox_EnvironmentDeviceType_TextChanged);
 
             textBox_EnvironmentPlatformName.KeyPress -= new KeyPressEventHandler(textBox_EnvironmentPlatformName_KeyPress);
             textBox_EnvironmentPlatformName.TextChanged -= new EventHandler(textBox_EnvironmentPlatformName_TextChanged);
@@ -241,7 +252,7 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
                 & ValidateClientSecret()
                 & ValidateTenantId()
                 & ValidateKeyValutUrl()
-                & ValidateDeviceType()
+                //& ValidateDeviceType()
                 & ValidatePlatformName()
                 & Validate_DeviceRegisterUrl();
         }
@@ -466,15 +477,15 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
                 return;
             }
 
-            textBox_EnvironmentName.Text = dataGridView_Environment[0, e.RowIndex].Value.ToString();
-            textBox_EnvironmentClientId.Text = dataGridView_Environment[1, e.RowIndex].Value.ToString();
-            textBox_EnvironmentClientSecret.Text = dataGridView_Environment[2, e.RowIndex].Value.ToString();
-            textBox_EnvironmentTenantId.Text = dataGridView_Environment[3, e.RowIndex].Value.ToString();
+            textBox_EnvironmentName.Text = dataGridView_Environment["Name", e.RowIndex].Value.ToString();
+            textBox_EnvironmentClientId.Text = dataGridView_Environment["ClientId", e.RowIndex].Value.ToString();
+            textBox_EnvironmentClientSecret.Text = dataGridView_Environment["ClientSecret", e.RowIndex].Value.ToString();
+            textBox_EnvironmentTenantId.Text = dataGridView_Environment["TenantId", e.RowIndex].Value.ToString();
 
-            textBox_EnvironmentKeyValutUrl.Text = dataGridView_Environment[4, e.RowIndex].Value.ToString();
-            textBox_EnvironmentDeviceType.Text = dataGridView_Environment[5, e.RowIndex].Value.ToString();
-            textBox_EnvironmentPlatformName.Text = dataGridView_Environment[6, e.RowIndex].Value.ToString();
-            textBox_EnvironmentDeviceRegisterUrl.Text = dataGridView_Environment[7, e.RowIndex].Value.ToString();
+            textBox_EnvironmentKeyValutUrl.Text = dataGridView_Environment["KeyValutUrl", e.RowIndex].Value.ToString();
+            //textBox_EnvironmentDeviceType.Text = dataGridView_Environment[5, e.RowIndex].Value.ToString();
+            textBox_EnvironmentPlatformName.Text = dataGridView_Environment["PlatformName", e.RowIndex].Value.ToString();
+            textBox_EnvironmentDeviceRegisterUrl.Text = dataGridView_Environment["DeviceRegisterUrl", e.RowIndex].Value.ToString();
 
         }
 

@@ -399,6 +399,7 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             this.formNormal.textBox_SerialNumber.KeyPress += new KeyPressEventHandler(this.textBox_SerialNumber_KeyPress);
             this.formNormal.textBox_SerialNumber.TextChanged += new EventHandler(this.textBox_SerialNumber_TextChanged);
             this.formNormal.checkBox_ValidateSN.CheckedChanged += new EventHandler(this.checkBox_ValidateSN_CheckedChanged);
+            this.formNormal.checkBox_EnableMappingPrefix.CheckedChanged += new EventHandler(this.checkBox_EnableMappingPrefix_Click);
             this.formNormal.Hide();
 
             this.formFileSend = new FormFileSend();
@@ -468,9 +469,25 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             {
                 formNormal.label_SerualNubmer_Validate.Text = "";
             }
-
+            GeneratePrefix();
             DisableOrEnableBurnDownButton();
             return bl;
+        }
+
+        private void GeneratePrefix()
+        {
+            var sn = formNormal.textBox_SerialNumber.Text;
+            if (string.IsNullOrEmpty(sn))
+            {
+                formNormal.label_SNPrefix.Text = "";
+                return;
+            }
+            if (sn.Length >= 3)
+            {
+                var prefix = sn.Substring(0, 3);
+                prefix = CallerContext.ECOLABIOTDeviceTypeService.GetDeviceTypeMapping().GetDeviceTypePrefix(prefix, formNormal.checkBox_EnableMappingPrefix.Checked);
+                formNormal.label_SNPrefix.Text = prefix;
+            }
         }
         #endregion
         #region FormFileSend_ValidateFile

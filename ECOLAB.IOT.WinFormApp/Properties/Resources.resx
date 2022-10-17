@@ -130,9 +130,6 @@
   <data name="Min_Main" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Min_Main.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Close_Main" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Close_Main.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Max_Main" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Max_Main.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -157,8 +154,11 @@
   <data name="open_Main_Menu" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\open_Main_Menu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="account_signout_Main" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\account_signout_Main.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Close_Main" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Close_Main.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="connection_BurnSN3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\connection_BurnSN3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="feature_device_Main" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\feature_device_Main.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -175,8 +175,8 @@
   <data name="account-Main" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\account-Main.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="feature_file_Main" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\feature_file_Main.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="account_signout_Main" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\account_signout_Main.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="narrow_Main" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\narrow_Main.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -184,10 +184,16 @@
   <data name="fold_Main_Menu" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fold_Main_Menu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="setting_application_Main" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\setting_application_Main.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="connection_BurnSN" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\connection_BurnSN.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="connection_BurnSN3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\connection_BurnSN3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="feature_file_Main" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\feature_file_Main.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="setting_aaplication_Main1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\setting_aaplication_Main1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

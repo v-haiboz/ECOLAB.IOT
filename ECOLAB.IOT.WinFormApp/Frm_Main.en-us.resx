@@ -141,6 +141,9 @@
   <data name="button_Setting" xml:space="preserve">
     <value>Setting</value>
   </data>
+  <data name="button_Setting_Application" xml:space="preserve">
+    <value>Application</value>
+  </data>
   <data name="button_Setting_Environment" xml:space="preserve">
     <value>Environment</value>
   </data>

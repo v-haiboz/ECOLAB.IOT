@@ -38,7 +38,7 @@
             var list = new List<EnvironmentVariable>();
             var dirPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Appsetting");
 
-            foreach (var filePath in Directory.GetFiles(dirPath))
+            foreach (var filePath in Directory.GetFiles(dirPath,"*.json"))
             {
 
                 var fileName = Path.GetFileName(filePath);
