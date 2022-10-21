@@ -1,0 +1,15 @@
+C:\GitHub\ECOLAB.IOT\ECOLAB.IOT.Common\bin\Debug\net6.0\ECOLAB.IOT.Common.deps.json
+C:\GitHub\ECOLAB.IOT\ECOLAB.IOT.Common\bin\Debug\net6.0\ECOLAB.IOT.Common.dll
+C:\GitHub\ECOLAB.IOT\ECOLAB.IOT.Common\bin\Debug\net6.0\ECOLAB.IOT.Common.pdb
+C:\GitHub\ECOLAB.IOT\ECOLAB.IOT.Common\bin\Debug\net6.0\ECOLAB.IOT.Entity.dll
+C:\GitHub\ECOLAB.IOT\ECOLAB.IOT.Common\bin\Debug\net6.0\ECOLAB.IOT.Entity.pdb
+C:\GitHub\ECOLAB.IOT\ECOLAB.IOT.Common\obj\Debug\net6.0\ECOLAB.IOT.Common.csproj.AssemblyReference.cache
+C:\GitHub\ECOLAB.IOT\ECOLAB.IOT.Common\obj\Debug\net6.0\ECOLAB.IOT.Common.GeneratedMSBuildEditorConfig.editorconfig
+C:\GitHub\ECOLAB.IOT\ECOLAB.IOT.Common\obj\Debug\net6.0\ECOLAB.IOT.Common.AssemblyInfoInputs.cache
+C:\GitHub\ECOLAB.IOT\ECOLAB.IOT.Common\obj\Debug\net6.0\ECOLAB.IOT.Common.AssemblyInfo.cs
+C:\GitHub\ECOLAB.IOT\ECOLAB.IOT.Common\obj\Debug\net6.0\ECOLAB.IOT.Common.csproj.CoreCompileInputs.cache
+C:\GitHub\ECOLAB.IOT\ECOLAB.IOT.Common\obj\Debug\net6.0\ECOLAB.IOT.Common.csproj.CopyComplete
+C:\GitHub\ECOLAB.IOT\ECOLAB.IOT.Common\obj\Debug\net6.0\ECOLAB.IOT.Common.dll
+C:\GitHub\ECOLAB.IOT\ECOLAB.IOT.Common\obj\Debug\net6.0\refint\ECOLAB.IOT.Common.dll
+C:\GitHub\ECOLAB.IOT\ECOLAB.IOT.Common\obj\Debug\net6.0\ECOLAB.IOT.Common.pdb
+C:\GitHub\ECOLAB.IOT\ECOLAB.IOT.Common\obj\Debug\net6.0\ref\ECOLAB.IOT.Common.dll

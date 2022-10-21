@@ -1,5 +1,6 @@
 ﻿using ECOLAB.IOT.Entity;
 using ECOLAB.IOT.Service;
+using ECOLAB.IOT.WinFormApp.ChildWinForm;
 using System.ComponentModel;
 using System.Globalization;
 using static Azure.Core.HttpHeader;
@@ -17,7 +18,9 @@ namespace ECOLAB.IOT.WinFormApp
 
         private void Frm_Login_Load(object sender, EventArgs e)
         {
-            Init(); 
+            Init();
+            var accountLogin = new AccountLogin(this);
+            OpenChildForm(accountLogin, null);
         }
 
         private void button_Cancel_Click(object sender, EventArgs e)
@@ -27,69 +30,66 @@ namespace ECOLAB.IOT.WinFormApp
 
         private void pictureBox_Min_Click(object sender, EventArgs e)
         {
-            this.WindowState=FormWindowState.Minimized;
+            this.WindowState = FormWindowState.Minimized;
         }
 
         private void button_Login_Click(object sender, EventArgs e)
         {
-            if (!CheckValidate())
-            {
-                return;
-            }
+            //if (!CheckValidate())
+            //{
+            //    return;
+            //}
 
-            var objAdmin = new SysAdmin()
-            {
-                UserName = this.textBox_UserName.Text.Trim(),
-                Pwd = this.textBox_PassWord.Text.Trim()
-            };
+            //var objAdmin = new SysAdmin()
+            //{
+            //    UserName = this.textBox_UserName.Text.Trim(),
+            //    Pwd = this.textBox_PassWord.Text.Trim()
+            //};
 
-            var isexist = CallerContext.ECOLABIOTUserService.AdminLogin(objAdmin);
-            if (!isexist.HasValue || !isexist.Value)
-            {
-                this.textBox_UserName.Text = "";
-                this.textBox_PassWord.Text = "";
-                MessageBox.Show("用户名或密码错误！", "登录提示");
+            //var isexist = CallerContext.ECOLABIOTUserService.AdminLogin(objAdmin);
+            //if (!isexist.HasValue || !isexist.Value)
+            //{
+            //    this.textBox_UserName.Text = "";
+            //    this.textBox_PassWord.Text = "";
+            //    MessageBox.Show("用户名或密码错误！", "登录提示");
 
-            }
-            else
-            {
-                var currentUser = CallerContext.ECOLABIOTUserService.GetUser(objAdmin);
-                var environmentVariable = CallerContext.ECOLABIOTEnvironmentService.GetEnvironmentVariableByName(comboBox_Env.Text); ;
-                ServiceCollectionExtension.GetCurrentServiceCollection()
-                    .RegisterCurrentEnvironment(environmentVariable)
-                    .RegisterAppsetting(environmentVariable)
-                    .RegisterCurrentSysAdmins(currentUser).Build();
-                ServiceCollectionExtension.GetCurrentServiceCollection()
-                    .RegisterSecretClient(CallerContext.AppServiceOptions).Build();
-                this.DialogResult = DialogResult.OK;
+            //}
+            //else
+            //{
+            //    var currentUser = CallerContext.ECOLABIOTUserService.GetUser(objAdmin);
+            //    var environmentVariable = CallerContext.ECOLABIOTEnvironmentService.GetEnvironmentVariableByName(comboBox_Env.Text);
+            //    ServiceCollectionExtension.GetCurrentServiceCollection()
+            //        .RegisterCurrentEnvironment(environmentVariable)
+            //        .RegisterAppsetting(environmentVariable)
+            //        .RegisterCurrentSysAdmins(currentUser).Build();
+            //    ServiceCollectionExtension.GetCurrentServiceCollection()
+            //        .RegisterSecretClient(CallerContext.AppServiceOptions).Build();
+            //    this.DialogResult = DialogResult.OK;
 
-            }
+            //}
+        }
+
+        public void Login(SysAdmin sysAdmin, EventArgs e)
+        {
+            var currentUser = CallerContext.ECOLABIOTUserService.GetUser(sysAdmin);
+            var environmentVariable = CallerContext.ECOLABIOTEnvironmentService.GetEnvironmentVariableByName(comboBox_Env.Text);
+            ServiceCollectionExtension.GetCurrentServiceCollection()
+                .RegisterCurrentEnvironment(environmentVariable)
+                .RegisterAppsetting(environmentVariable)
+                .RegisterCurrentSysAdmins(currentUser).Build();
+            ServiceCollectionExtension.GetCurrentServiceCollection()
+                .RegisterSecretClient(CallerContext.AppServiceOptions).Build();
+            this.DialogResult = DialogResult.OK;
         }
         private void Init()
         {
             comboBox_Env.Items.Clear();
             var items = CallerContext.ECOLABIOTEnvironmentService.GetEnvironmentVariables();
-            comboBox_Env.DataSource=items;
+            comboBox_Env.DataSource = items;
             comboBox_Env.ValueMember = "FileName";
             comboBox_Env.DisplayMember = "Name";
         }
-        private bool CheckValidate()
-        {
-            if (this.textBox_UserName.Text.Trim().Length == 0)
-            {
-                MessageBox.Show("请填写用户名！", "登录提示");
-                this.textBox_UserName.Focus();
-                return false;
-            }
-            if (this.textBox_PassWord.Text.Trim().Length == 0)
-            {
-                MessageBox.Show("请输入密码！", "登录提示");
-                this.textBox_PassWord.Focus();
-                return false;
-            }
 
-            return true;
-        }
 
         private void radioButton_English_CheckedChanged(object sender, EventArgs e)
         {
@@ -106,8 +106,8 @@ namespace ECOLAB.IOT.WinFormApp
             if (radioButton_English.Checked)
             {
                 Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("en-us");
-                CallerContext.currentCulture= CultureInfo.GetCultureInfo("en-us");
-                
+                CallerContext.currentCulture = CultureInfo.GetCultureInfo("en-us");
+
             }
             if (radioButton_Chinese.Checked)
             {
@@ -115,18 +115,22 @@ namespace ECOLAB.IOT.WinFormApp
                 CallerContext.currentCulture = CultureInfo.GetCultureInfo("zh-cn");
             }
             ReloadText();
-           // ApplyResource();
+            // ApplyResource();
         }
 
         private void ReloadText()
         {
-            button_Cancel.Text = res.GetString("button_Cancel.Text");
-            button_Login.Text = res.GetString("button_Login.Text");
             label_Header.Text = res.GetString("label_Header.Text");
-            label_Password.Text = res.GetString("label_Password.Text");
-            label_Username.Text = res.GetString("label_Username.Text");
-            radioButton_Chinese.Text  = res.GetString("radioButton_Chinese.Text"); 
+            radioButton_Chinese.Text = res.GetString("radioButton_Chinese.Text");
             radioButton_English.Text = res.GetString("radioButton_English.Text");
+            if (activeForm is DMPAccountLogin)
+            {
+                var dmpAccountLogin = activeForm as DMPAccountLogin;
+                dmpAccountLogin.button_Cancel.Text = res.GetString("button_Cancel.Text");
+                dmpAccountLogin.button_Login.Text = res.GetString("button_Login.Text");
+                dmpAccountLogin.label_Password.Text = res.GetString("label_Password.Text");
+                dmpAccountLogin.label_Username.Text = res.GetString("label_Username.Text");
+            }
         }
         private void ApplyResource()
         {
@@ -152,6 +156,25 @@ namespace ECOLAB.IOT.WinFormApp
             this.PerformLayout();
             res.ApplyResources(this, "$this");
             this.Size = size;
+        }
+
+        private Form activeForm = null;
+        public void OpenChildForm(object form, EventArgs e)
+        {
+            var childForm = (Form)form;
+            if (activeForm != null)
+            {
+                activeForm.Close();
+            }
+
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panel_Login.Controls.Add(childForm);
+            panel_Login.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
         }
     }
 }
