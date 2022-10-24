@@ -118,7 +118,13 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="button_Cancel.Text" xml:space="preserve">
-    <value>取消</value>
+    <value>返回</value>
+  </data>
+  <data name="button_DMPAccountLogin.Text" xml:space="preserve">
+    <value>DMP 账号登录</value>
+  </data>
+  <data name="button_ECOLABAcountLogin.Text" xml:space="preserve">
+    <value>ECO 一键登录</value>
   </data>
   <data name="button_Login.Text" xml:space="preserve">
     <value>登录</value>

@@ -45,11 +45,11 @@
             this.button_Cancel.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button_Cancel.ForeColor = System.Drawing.Color.White;
             this.button_Cancel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button_Cancel.Location = new System.Drawing.Point(176, 238);
+            this.button_Cancel.Location = new System.Drawing.Point(179, 217);
             this.button_Cancel.Name = "button_Cancel";
             this.button_Cancel.Size = new System.Drawing.Size(150, 40);
             this.button_Cancel.TabIndex = 13;
-            this.button_Cancel.Text = "Cancel";
+            this.button_Cancel.Text = "Back";
             this.button_Cancel.UseVisualStyleBackColor = false;
             this.button_Cancel.Click += new System.EventHandler(this.button_Cancel_Click);
             // 
@@ -60,7 +60,7 @@
             this.button_Login.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button_Login.ForeColor = System.Drawing.Color.White;
             this.button_Login.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button_Login.Location = new System.Drawing.Point(4, 238);
+            this.button_Login.Location = new System.Drawing.Point(7, 217);
             this.button_Login.Name = "button_Login";
             this.button_Login.Size = new System.Drawing.Size(139, 40);
             this.button_Login.TabIndex = 10;
@@ -71,7 +71,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Black;
-            this.panel3.Location = new System.Drawing.Point(10, 183);
+            this.panel3.Location = new System.Drawing.Point(12, 187);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(315, 2);
             this.panel3.TabIndex = 11;
@@ -79,7 +79,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Black;
-            this.panel2.Location = new System.Drawing.Point(12, 89);
+            this.panel2.Location = new System.Drawing.Point(14, 93);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(315, 2);
             this.panel2.TabIndex = 12;
@@ -88,7 +88,7 @@
             // 
             this.textBox_PassWord.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox_PassWord.Font = new System.Drawing.Font("微软雅黑 Light", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox_PassWord.Location = new System.Drawing.Point(8, 141);
+            this.textBox_PassWord.Location = new System.Drawing.Point(10, 145);
             this.textBox_PassWord.Multiline = true;
             this.textBox_PassWord.Name = "textBox_PassWord";
             this.textBox_PassWord.PasswordChar = '*';
@@ -102,7 +102,7 @@
             // 
             this.textBox_UserName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox_UserName.Font = new System.Drawing.Font("微软雅黑 Light", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox_UserName.Location = new System.Drawing.Point(9, 47);
+            this.textBox_UserName.Location = new System.Drawing.Point(11, 51);
             this.textBox_UserName.Multiline = true;
             this.textBox_UserName.Name = "textBox_UserName";
             this.textBox_UserName.PlaceholderText = "Admin";
@@ -115,7 +115,7 @@
             this.label_Password.AutoSize = true;
             this.label_Password.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label_Password.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label_Password.Location = new System.Drawing.Point(4, 102);
+            this.label_Password.Location = new System.Drawing.Point(6, 106);
             this.label_Password.Name = "label_Password";
             this.label_Password.Size = new System.Drawing.Size(108, 28);
             this.label_Password.TabIndex = 8;
@@ -126,7 +126,7 @@
             this.label_Username.AutoSize = true;
             this.label_Username.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label_Username.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label_Username.Location = new System.Drawing.Point(3, 9);
+            this.label_Username.Location = new System.Drawing.Point(5, 13);
             this.label_Username.Name = "label_Username";
             this.label_Username.Size = new System.Drawing.Size(115, 28);
             this.label_Username.TabIndex = 9;

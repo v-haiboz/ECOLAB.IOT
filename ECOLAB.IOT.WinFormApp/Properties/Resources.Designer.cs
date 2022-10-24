@@ -103,9 +103,59 @@ namespace ECOLAB.IOT.WinFormApp.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap close_Login {
+            get {
+                object obj = ResourceManager.GetObject("close_Login", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap Close_Main {
             get {
                 object obj = ResourceManager.GetObject("Close_Main", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap close0_Login {
+            get {
+                object obj = ResourceManager.GetObject("close0_Login", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap close0_Login1 {
+            get {
+                object obj = ResourceManager.GetObject("close0_Login1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap close1_Login {
+            get {
+                object obj = ResourceManager.GetObject("close1_Login", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap close2_Login {
+            get {
+                object obj = ResourceManager.GetObject("close2_Login", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -246,6 +296,36 @@ namespace ECOLAB.IOT.WinFormApp.Properties {
         internal static System.Drawing.Bitmap Min_Main {
             get {
                 object obj = ResourceManager.GetObject("Min_Main", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mini_Login {
+            get {
+                object obj = ResourceManager.GetObject("mini_Login", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mini0_Login {
+            get {
+                object obj = ResourceManager.GetObject("mini0_Login", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mini0_Login1 {
+            get {
+                object obj = ResourceManager.GetObject("mini0_Login1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -30,7 +30,7 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
 
         private void button_ECOLABAcountLogin_Click(object sender, EventArgs e)
         {
-            Frm_Login.OpenChildForm(new ECOLABAccountLogin(), null);
+            
         }
     }
 }

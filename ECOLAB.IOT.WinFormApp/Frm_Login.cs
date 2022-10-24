@@ -115,7 +115,6 @@ namespace ECOLAB.IOT.WinFormApp
                 CallerContext.currentCulture = CultureInfo.GetCultureInfo("zh-cn");
             }
             ReloadText();
-            // ApplyResource();
         }
 
         private void ReloadText()
@@ -126,36 +125,23 @@ namespace ECOLAB.IOT.WinFormApp
             if (activeForm is DMPAccountLogin)
             {
                 var dmpAccountLogin = activeForm as DMPAccountLogin;
-                dmpAccountLogin.button_Cancel.Text = res.GetString("button_Cancel.Text");
-                dmpAccountLogin.button_Login.Text = res.GetString("button_Login.Text");
-                dmpAccountLogin.label_Password.Text = res.GetString("label_Password.Text");
-                dmpAccountLogin.label_Username.Text = res.GetString("label_Username.Text");
+                if (dmpAccountLogin != null)
+                {
+                    dmpAccountLogin.button_Cancel.Text = res.GetString("button_Cancel.Text");
+                    dmpAccountLogin.button_Login.Text = res.GetString("button_Login.Text");
+                    dmpAccountLogin.label_Password.Text = res.GetString("label_Password.Text");
+                    dmpAccountLogin.label_Username.Text = res.GetString("label_Username.Text");
+                }
             }
-        }
-        private void ApplyResource()
-        {
-            var size = this.Size;
-            ComponentResourceManager res = new ComponentResourceManager(typeof(Frm_Login));
-            foreach (Control ctl in Controls)
+            else if (activeForm is AccountLogin)
             {
-                if (ctl is GroupBox)
+                var acccoutLogin = activeForm as AccountLogin;
+                if (acccoutLogin != null)
                 {
-                    res.ApplyResources(ctl, ctl.Name);
-                    GroupBox g = ctl as GroupBox;
-                    foreach (Control item in g.Controls)
-                    {
-                        res.ApplyResources(item, item.Name);
-                    }
-                }
-                else
-                {
-                    res.ApplyResources(ctl, ctl.Name);
+                    acccoutLogin.button_DMPAccountLogin.Text = res.GetString("button_DMPAccountLogin.Text");
+                    acccoutLogin.button_ECOLABAcountLogin.Text = res.GetString("button_ECOLABAcountLogin.Text");
                 }
             }
-            this.ResumeLayout(false);
-            this.PerformLayout();
-            res.ApplyResources(this, "$this");
-            this.Size = size;
         }
 
         private Form activeForm = null;
@@ -174,7 +160,13 @@ namespace ECOLAB.IOT.WinFormApp
             panel_Login.Controls.Add(childForm);
             panel_Login.Tag = childForm;
             childForm.BringToFront();
+            SelectLanguage();
             childForm.Show();
+        }
+
+        private void pictureBox_Close_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

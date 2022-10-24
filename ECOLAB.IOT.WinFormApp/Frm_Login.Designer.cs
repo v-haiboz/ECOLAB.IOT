@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Login));
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox_Min = new System.Windows.Forms.PictureBox();
+            this.pictureBox_Close = new System.Windows.Forms.PictureBox();
             this.label_Header = new System.Windows.Forms.Label();
             this.comboBox_Env = new System.Windows.Forms.ComboBox();
             this.radioButton_Chinese = new System.Windows.Forms.RadioButton();
@@ -39,23 +40,35 @@
             this.panel_Login = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Min)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Close)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(130)))), ((int)(((byte)(204)))));
             this.panel1.Controls.Add(this.pictureBox_Min);
+            this.panel1.Controls.Add(this.pictureBox_Close);
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
             // pictureBox_Min
             // 
-            resources.ApplyResources(this.pictureBox_Min, "pictureBox_Min");
             this.pictureBox_Min.Cursor = System.Windows.Forms.Cursors.Hand;
+            resources.ApplyResources(this.pictureBox_Min, "pictureBox_Min");
+            this.pictureBox_Min.Image = global::ECOLAB.IOT.WinFormApp.Properties.Resources.mini0_Login;
             this.pictureBox_Min.Name = "pictureBox_Min";
             this.pictureBox_Min.TabStop = false;
             this.pictureBox_Min.Click += new System.EventHandler(this.pictureBox_Min_Click);
+            // 
+            // pictureBox_Close
+            // 
+            this.pictureBox_Close.Cursor = System.Windows.Forms.Cursors.Hand;
+            resources.ApplyResources(this.pictureBox_Close, "pictureBox_Close");
+            this.pictureBox_Close.Image = global::ECOLAB.IOT.WinFormApp.Properties.Resources.close0_Login;
+            this.pictureBox_Close.Name = "pictureBox_Close";
+            this.pictureBox_Close.TabStop = false;
+            this.pictureBox_Close.Click += new System.EventHandler(this.pictureBox_Close_Click);
             // 
             // label_Header
             // 
@@ -64,8 +77,8 @@
             // 
             // comboBox_Env
             // 
-            resources.ApplyResources(this.comboBox_Env, "comboBox_Env");
             this.comboBox_Env.BackColor = System.Drawing.Color.Azure;
+            resources.ApplyResources(this.comboBox_Env, "comboBox_Env");
             this.comboBox_Env.ForeColor = System.Drawing.Color.Black;
             this.comboBox_Env.FormattingEnabled = true;
             this.comboBox_Env.Name = "comboBox_Env";
@@ -90,8 +103,8 @@
             // 
             // pictureBox1
             // 
-            resources.ApplyResources(this.pictureBox1, "pictureBox1");
             this.pictureBox1.Image = global::ECOLAB.IOT.WinFormApp.Properties.Resources.ECOLAB2;
+            resources.ApplyResources(this.pictureBox1, "pictureBox1");
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.TabStop = false;
             // 
@@ -117,6 +130,7 @@
             this.Load += new System.EventHandler(this.Frm_Login_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Min)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Close)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -133,5 +147,6 @@
         private RadioButton radioButton_English;
         private PictureBox pictureBox1;
         private Panel panel_Login;
+        private PictureBox pictureBox_Close;
     }
 }

@@ -13,9 +13,6 @@
     <Compile Update="ChildWinForm\DMPAccountLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="ChildWinForm\ECOLABAccountLogin.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="ChildWinForm\EnvironmentSetting.cs">
       <SubType>Form</SubType>
     </Compile>
