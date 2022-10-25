@@ -1,5 +1,6 @@
 ﻿using ECOLAB.IOT.Service;
 using ECOLAB.IOT.WinFormApp.ChildWinForm;
+using Microsoft.Identity.Client;
 using System.Diagnostics;
 using System.Globalization;
 
@@ -19,11 +20,15 @@ namespace ECOLAB.IOT.WinFormApp
 
             ServiceCollectionExtension.GetCurrentServiceCollection()
                 .ConfigureService().Build();
+            ServiceCollectionExtension.GetCurrentServiceCollection()
+                .RegisterPublicClientApplication(InitializeAuth())
+                .Build();
 
             DialogResult result = objFrm.ShowDialog();
 
             if (result == DialogResult.OK)//login sucessful
             {
+                var aa = CallerContext.EnvironmentVariable;
                 //show main windows
                 Frm_Main obj = new Frm_Main();
                 Application.Run(obj);
@@ -64,10 +69,29 @@ namespace ECOLAB.IOT.WinFormApp
 
         private void button_SignOut_Click(object sender, EventArgs e)
         {
+            //Logout().ConfigureAwait(false);
             Application.Exit();
             Process.Start(Application.StartupPath + "\\Ecolink_SNPSK_tool.exe");
             ShowNavigationMenu(button_Account_SignOut.Name);
             HideSubMenu();
+           
+        }
+
+        private async Task Logout()
+        {
+           // await CallerContext.PublicClientApplication.RemoveAsync(CallerContext.SysAdmin.UserName).ConfigureAwait(false);
+            var accounts = await CallerContext.PublicClientApplication.GetAccountsAsync().ConfigureAwait(false);
+            if (accounts.Any())
+            {
+                try
+                {
+                    await CallerContext.PublicClientApplication.RemoveAsync(accounts.FirstOrDefault()).ConfigureAwait(false);
+                }
+                catch (MsalException ex)
+                {
+                    throw new Exception($"Error signing-out user: {ex.Message}");
+                }
+            }
         }
         #endregion
 
@@ -183,5 +207,27 @@ namespace ECOLAB.IOT.WinFormApp
             ShowNavigationMenu(button_Setting_Application.Name);
             HideSubMenu();
         }
+
+        private void button_Setting_AAD_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new AADSetting());
+            ShowNavigationMenu(button_Setting_AAD.Name);
+            HideSubMenu();
+        }
+
+        private static IPublicClientApplication InitializeAuth()
+        {
+            var setting = CallerContext.ECOLABIOTADDSettingService.GetAADSetting();
+            //Net Framework. Support pop-up window:embedded web brower.
+            var clientApp = PublicClientApplicationBuilder.Create(setting.ClientId)
+                    .WithDefaultRedirectUri()
+                    //.WithRedirectUri(AADSetting.Instance)
+                    .WithAuthority(AzureCloudInstance.AzureChina, setting.TenantId)
+                    .Build();
+
+            TokenCacheHelper.EnableSerialization(clientApp.UserTokenCache);
+            return clientApp;
+        }
+
     }
 }

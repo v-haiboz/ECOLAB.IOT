@@ -33,50 +33,14 @@ namespace ECOLAB.IOT.WinFormApp
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void button_Login_Click(object sender, EventArgs e)
-        {
-            //if (!CheckValidate())
-            //{
-            //    return;
-            //}
-
-            //var objAdmin = new SysAdmin()
-            //{
-            //    UserName = this.textBox_UserName.Text.Trim(),
-            //    Pwd = this.textBox_PassWord.Text.Trim()
-            //};
-
-            //var isexist = CallerContext.ECOLABIOTUserService.AdminLogin(objAdmin);
-            //if (!isexist.HasValue || !isexist.Value)
-            //{
-            //    this.textBox_UserName.Text = "";
-            //    this.textBox_PassWord.Text = "";
-            //    MessageBox.Show("用户名或密码错误！", "登录提示");
-
-            //}
-            //else
-            //{
-            //    var currentUser = CallerContext.ECOLABIOTUserService.GetUser(objAdmin);
-            //    var environmentVariable = CallerContext.ECOLABIOTEnvironmentService.GetEnvironmentVariableByName(comboBox_Env.Text);
-            //    ServiceCollectionExtension.GetCurrentServiceCollection()
-            //        .RegisterCurrentEnvironment(environmentVariable)
-            //        .RegisterAppsetting(environmentVariable)
-            //        .RegisterCurrentSysAdmins(currentUser).Build();
-            //    ServiceCollectionExtension.GetCurrentServiceCollection()
-            //        .RegisterSecretClient(CallerContext.AppServiceOptions).Build();
-            //    this.DialogResult = DialogResult.OK;
-
-            //}
-        }
 
         public void Login(SysAdmin sysAdmin, EventArgs e)
         {
-            var currentUser = CallerContext.ECOLABIOTUserService.GetUser(sysAdmin);
             var environmentVariable = CallerContext.ECOLABIOTEnvironmentService.GetEnvironmentVariableByName(comboBox_Env.Text);
             ServiceCollectionExtension.GetCurrentServiceCollection()
                 .RegisterCurrentEnvironment(environmentVariable)
                 .RegisterAppsetting(environmentVariable)
-                .RegisterCurrentSysAdmins(currentUser).Build();
+                .RegisterCurrentSysAdmins(sysAdmin).Build();
             ServiceCollectionExtension.GetCurrentServiceCollection()
                 .RegisterSecretClient(CallerContext.AppServiceOptions).Build();
             this.DialogResult = DialogResult.OK;

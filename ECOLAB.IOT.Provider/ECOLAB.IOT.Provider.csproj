@@ -27,6 +27,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="Appsetting\addsetting.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Appsetting\appsetting_Dev.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

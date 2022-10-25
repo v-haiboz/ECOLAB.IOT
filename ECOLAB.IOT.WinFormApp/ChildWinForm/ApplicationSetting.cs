@@ -215,6 +215,7 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             btn.FlatStyle = FlatStyle.System;
             btn.DefaultCellStyle.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             dataGridView1.Columns.Add(btn);
+            dataGridView1.Columns["button_Delete"].FillWeight = 30;
         }
         private void DataBind()
         {
@@ -225,8 +226,9 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             this.dataGridView1.DataSource = deviceTypeList.ToDeviceTypeMappingDisplay();
             if (dataGridView1.DataSource != null)
             {
-                dataGridView1.Columns["TargetPrefix"].Width = 100;
-                dataGridView1.Columns["SourcePrefixs"].Width = 300;
+                dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dataGridView1.Columns["TargetPrefix"].FillWeight = 100;
+                //dataGridView1.Columns["SourcePrefixs"].FillWeight = 300;
                 dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             }
 

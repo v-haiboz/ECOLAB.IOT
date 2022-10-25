@@ -160,8 +160,8 @@
         public Button button_Login;
         private Panel panel3;
         private Panel panel2;
-        private TextBox textBox_PassWord;
-        private TextBox textBox_UserName;
+        public TextBox textBox_PassWord;
+        public TextBox textBox_UserName;
         public Label label_Password;
         public Label label_Username;
     }

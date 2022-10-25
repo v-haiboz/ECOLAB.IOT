@@ -6,6 +6,7 @@
     using ECOLAB.IOT.Provider;
     using ECOLAB.IOT.Service;
     using Microsoft.Extensions.DependencyInjection;
+    using Microsoft.Identity.Client;
     using Newtonsoft.Json;
     using System;
 
@@ -58,6 +59,15 @@
             return services;
         }
 
+        public static ServiceCollection RegisterPublicClientApplication(this ServiceCollection services, IPublicClientApplication publicClientApplication)
+        {
+            if (publicClientApplication != null)
+                services.AddSingleton(publicClientApplication);
+            return services;
+        }
+
+
+
         private static ServiceCollection RegisterProvider(this ServiceCollection services)
         {
             //Register Provider
@@ -68,6 +78,7 @@
             services.AddScoped<IECOLABIOTRegisterDeviceProvider, ECOLABIOTRegisterDeviceProvider>();
             services.AddSingleton<IECOLABIOTSecurityProvider, ECOLABIOTSecurityProvider>();
             services.AddSingleton<IECOLABIOTDeviceTypeProvider, ECOLABIOTDeviceTypeProvider>();
+            services.AddSingleton<IECOLABIOTAADSettingProvider, ECOLABIOTAADSettingProvider>();
             return services;
         }
         private static ServiceCollection RegisterService(this ServiceCollection services)
@@ -79,6 +90,7 @@
             services.AddScoped<IECOLABIOTEnvironmentService, ECOLABIOTEnvironmentService>();
             services.AddScoped<IECOLABIOTRegisterDeviceService, ECOLABIOTRegisterDeviceService>();
             services.AddScoped<IECOLABIOTDeviceTypeService, ECOLABIOTDeviceTypeService>();
+            services.AddScoped<IECOLABIOTADDSettingService, ECOLABIOTADDSettingService>();
             return services;
         }
 

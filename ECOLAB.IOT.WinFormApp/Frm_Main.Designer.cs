@@ -42,6 +42,7 @@ namespace ECOLAB.IOT.WinFormApp
             this.button_SerialCOM_GateWay = new System.Windows.Forms.Button();
             this.button_Help = new System.Windows.Forms.Button();
             this.panel_SettingSubMenu = new System.Windows.Forms.Panel();
+            this.button_Setting_AAD = new System.Windows.Forms.Button();
             this.button_Setting_Application = new System.Windows.Forms.Button();
             this.button_Setting_Environment = new System.Windows.Forms.Button();
             this.button_Setting = new System.Windows.Forms.Button();
@@ -145,10 +146,21 @@ namespace ECOLAB.IOT.WinFormApp
             // panel_SettingSubMenu
             // 
             this.panel_SettingSubMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.panel_SettingSubMenu.Controls.Add(this.button_Setting_AAD);
             this.panel_SettingSubMenu.Controls.Add(this.button_Setting_Application);
             this.panel_SettingSubMenu.Controls.Add(this.button_Setting_Environment);
             resources.ApplyResources(this.panel_SettingSubMenu, "panel_SettingSubMenu");
             this.panel_SettingSubMenu.Name = "panel_SettingSubMenu";
+            // 
+            // button_Setting_AAD
+            // 
+            resources.ApplyResources(this.button_Setting_AAD, "button_Setting_AAD");
+            this.button_Setting_AAD.FlatAppearance.BorderSize = 0;
+            this.button_Setting_AAD.ForeColor = System.Drawing.Color.White;
+            this.button_Setting_AAD.Image = global::ECOLAB.IOT.WinFormApp.Properties.Resources.setting_ADD_Main;
+            this.button_Setting_AAD.Name = "button_Setting_AAD";
+            this.button_Setting_AAD.UseVisualStyleBackColor = true;
+            this.button_Setting_AAD.Click += new System.EventHandler(this.button_Setting_AAD_Click);
             // 
             // button_Setting_Application
             // 
@@ -516,5 +528,6 @@ namespace ECOLAB.IOT.WinFormApp
         private Button button_Account_Profile;
         private Button button_SerialCOM_GateWay;
         private Button button_Setting_Application;
+        private Button button_Setting_AAD;
     }
 }
