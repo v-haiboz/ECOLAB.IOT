@@ -383,7 +383,8 @@ namespace ECOLAB.IOT.WinFormApp
             panel_SerialCOMSubMenu.Visible = false;
             panel_AccountSubMenu.Visible = false;
             panel_SettingSubMenu.Visible = false;
-
+            var services=ServiceCollectionExtension.GetCurrentServiceCollection();
+            services.Build();
             this.label_CurrentUser.Text = "Current User: " + CallerContext.SysAdmin.UserName;
             this.label_Environment.Text = $"{label_Environment.Text}  ({CallerContext.EnvironmentVariable.Name.ToString()})";
         }

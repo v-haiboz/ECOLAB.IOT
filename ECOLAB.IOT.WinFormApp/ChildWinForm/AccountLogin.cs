@@ -36,11 +36,11 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
         }
         private static bool loggeIn = false;
         private static readonly string[] scopes = { "user.read" };
-        private void button_ECOLABAcountLogin_Click(object sender, EventArgs e)
+        private async void button_ECOLABAcountLogin_Click(object sender, EventArgs e)
         {
             if (!loggeIn)
             {
-                var authResult = Login().Result;
+                var authResult = await Login();
                 Frm_Login.Login(new SysAdmin()
                 {
                     UserName = authResult.Account.Username,
@@ -84,12 +84,6 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             }
 
             return authResult;
-        }
-        private string GetCurrentPrincipal()
-        {
-            var currentUser = WindowsIdentity.GetCurrent();
-            return currentUser.Name;
-
         }
     }
 }

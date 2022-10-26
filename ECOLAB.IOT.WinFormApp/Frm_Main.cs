@@ -92,7 +92,6 @@ namespace ECOLAB.IOT.WinFormApp
 
         private async Task Logout()
         {
-           // await CallerContext.PublicClientApplication.RemoveAsync(CallerContext.SysAdmin.UserName).ConfigureAwait(false);
             var accounts = await CallerContext.PublicClientApplication.GetAccountsAsync().ConfigureAwait(false);
             if (accounts.Any())
             {
