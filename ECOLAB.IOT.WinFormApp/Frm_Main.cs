@@ -1,4 +1,5 @@
-﻿using ECOLAB.IOT.Service;
+﻿using ECOLAB.IOT.Common.Win32;
+using ECOLAB.IOT.Service;
 using ECOLAB.IOT.WinFormApp.ChildWinForm;
 using Microsoft.Identity.Client;
 using System.Diagnostics;
@@ -11,6 +12,18 @@ namespace ECOLAB.IOT.WinFormApp
         [STAThread]
         static void Main()
         {
+            Process cur = Process.GetCurrentProcess();
+            foreach (Process p in Process.GetProcesses())
+            {
+                if (p.Id == cur.Id) continue;
+                if (p.ProcessName == cur.ProcessName)
+                {
+                    Win32SafeNativeMethods.SetForegroundWindow(p.MainWindowHandle);
+                    Win32SafeNativeMethods.SendMessage(p.MainWindowHandle, Win32SafeNativeMethods.WM_SYSCOMMAND, Win32SafeNativeMethods.SC_RESTORE, 0);
+                    return;
+                }
+            }
+
             Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("en-us");
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.

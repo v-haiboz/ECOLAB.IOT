@@ -96,6 +96,7 @@
             this.dataGridView_Environment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             resources.ApplyResources(this.dataGridView_Environment, "dataGridView_Environment");
             this.dataGridView_Environment.Name = "dataGridView_Environment";
+            this.dataGridView_Environment.ReadOnly = true;
             this.dataGridView_Environment.RowTemplate.Height = 32;
             this.dataGridView_Environment.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Environment_CellClick);
             this.dataGridView_Environment.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Environment_CellContentClick);

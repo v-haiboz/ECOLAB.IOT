@@ -51,6 +51,7 @@
             this.panel1.Controls.Add(this.pictureBox_Close);
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             // 
             // pictureBox_Min
             // 

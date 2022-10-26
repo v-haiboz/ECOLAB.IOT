@@ -45,7 +45,8 @@
             var cliectSecret = new SecretClient(new Uri(appServiceOption.KeyValutUrl), 
                 new ClientSecretCredential(appServiceOption.TenantId, appServiceOption.ClientId, appServiceOption.ClientSecret, new TokenCredentialOptions
                 {
-                    AuthorityHost = AzureAuthorityHosts.AzureChina
+                    AuthorityHost = AzureAuthorityHosts.AzureChina,
+                     
                 }));
 
             services.AddSingleton(cliectSecret);

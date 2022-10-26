@@ -227,7 +227,7 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             if (dataGridView1.DataSource != null)
             {
                 dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                dataGridView1.Columns["TargetPrefix"].FillWeight = 100;
+                dataGridView1.Columns["TargetPrefix"].FillWeight = 50;
                 //dataGridView1.Columns["SourcePrefixs"].FillWeight = 300;
                 dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             }

@@ -1,4 +1,5 @@
-﻿using ECOLAB.IOT.Entity;
+﻿using ECOLAB.IOT.Common.Win32;
+using ECOLAB.IOT.Entity;
 using ECOLAB.IOT.Service;
 using ECOLAB.IOT.WinFormApp.ChildWinForm;
 using System.ComponentModel;
@@ -64,7 +65,11 @@ namespace ECOLAB.IOT.WinFormApp
         {
             SelectLanguage();
         }
-
+        private void MoveWinForm()
+        {
+            Win32SafeNativeMethods.ReleaseCapture();
+            Win32SafeNativeMethods.SendMessage(this.Handle, Win32SafeNativeMethods.WM_SYSCOMMAND, Win32SafeNativeMethods.SC_MOVE + Win32SafeNativeMethods.HTCAPTION, 0);
+        }
         private void SelectLanguage()
         {
             if (radioButton_English.Checked)
@@ -131,6 +136,11 @@ namespace ECOLAB.IOT.WinFormApp
         private void pictureBox_Close_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            MoveWinForm();
         }
     }
 }

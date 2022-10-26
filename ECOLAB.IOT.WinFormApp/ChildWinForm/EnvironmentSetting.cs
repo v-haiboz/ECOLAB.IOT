@@ -5,6 +5,7 @@ using ECOLAB.IOT.Service;
 using System.ComponentModel;
 using System.Data;
 using System.Text.RegularExpressions;
+using System.Windows.Forms;
 
 namespace ECOLAB.IOT.WinFormApp.ChildWinForm
 {
@@ -38,13 +39,14 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             this.dataGridView_Environment.DataSource = dataSource;
             if (dataGridView_Environment.DataSource != null)
             {
-                dataGridView_Environment.Columns["Name"].Width = 60;
-                dataGridView_Environment.Columns["ClientId"].Width = 100;
-                dataGridView_Environment.Columns["ClientSecret"].Width = 100;
-                dataGridView_Environment.Columns["TenantId"].Width = 100;
-                dataGridView_Environment.Columns["KeyValutUrl"].Width = 100;
-                dataGridView_Environment.Columns["PlatformName"].Width = 100;
-                dataGridView_Environment.Columns["DeviceRegisterUrl"].Width = 100;
+                dataGridView_Environment.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dataGridView_Environment.Columns["Name"].FillWeight = 60;
+                //dataGridView_Environment.Columns["ClientId"].Width = 100;
+                //dataGridView_Environment.Columns["ClientSecret"].Width = 100;
+                //dataGridView_Environment.Columns["TenantId"].Width = 100;
+                //dataGridView_Environment.Columns["KeyValutUrl"].Width = 100;
+                //dataGridView_Environment.Columns["PlatformName"].Width = 100;
+                //dataGridView_Environment.Columns["DeviceRegisterUrl"].Width = 100;
                 dataGridView_Environment.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             }
 
@@ -103,6 +105,7 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             btn.FlatStyle = FlatStyle.System;
             btn.DefaultCellStyle.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             dataGridView_Environment.Columns.Add(btn);
+            dataGridView_Environment.Columns["button_Delete"].FillWeight=50;
         }
 
         private void dataGridView_Environment_CellContentClick(object sender, DataGridViewCellEventArgs e)

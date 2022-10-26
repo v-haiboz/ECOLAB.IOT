@@ -13,15 +13,28 @@
 
     public class ECOLABIOTRegisterDeviceProvider : IECOLABIOTRegisterDeviceProvider
     {
+        private static HttpClient _httpClient;
+        static ECOLABIOTRegisterDeviceProvider()
+        {
+            var handler = new HttpClientHandler();
+            handler.ClientCertificateOptions = ClientCertificateOption.Manual;
+            handler.ServerCertificateCustomValidationCallback =
+                (httpRequestMessage, cert, cetChain, policyErrors) =>
+                {
+                    return true;
+                };
+
+            _httpClient = new HttpClient(handler);
+        }
 
         public async Task<string> RegisterDevice(DeviceRegister deviceRegister, EnvironmentVariable environmentVariable)
         {
             return await Post(deviceRegister, environmentVariable);
         }
 
-        private static HttpClient _httpClient = new HttpClient();
         private async Task<string> Post(DeviceRegister deviceRegister, EnvironmentVariable environmentVariable)
         {
+
             var url = environmentVariable.AppServiceOption.DeviceRegisterUrl;
             using (var content = new StringContent(deviceRegister.ToJson(), System.Text.Encoding.UTF8, "application/json"))
             {

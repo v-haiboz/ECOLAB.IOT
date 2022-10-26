@@ -45,6 +45,16 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
 
         private void EnableOrDisableControl(bool bl = true)
         {
+            if (CallerContext.SysAdmin.IsSuper)
+            {
+                button_Save.Visible = true;
+                button_Modify.Visible = true;
+            }
+            else
+            {
+                button_Save.Visible = false;
+                button_Modify.Visible = false; ;
+            }
             textBox_ClientId.Enabled = bl;
             textBox_TentId.Enabled = bl;
             richTextBox_Instance.Enabled = bl;
@@ -71,8 +81,8 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
         private bool ValidateAll()
         {
             return ValidateClientId()
-                    & ValidateTenantId()
-                    & ValidateInstanceUrl();
+                   & ValidateTenantId()
+                   & ValidateInstanceUrl();
         }
 
         private bool ValidateClientId()
