@@ -29,7 +29,7 @@
 
         public async Task<string> RegisterDevice(DeviceRegister deviceRegister, EnvironmentVariable environmentVariable)
         {
-            return await Post(deviceRegister, environmentVariable);
+            return await Post(deviceRegister, environmentVariable).ConfigureAwait(false);
         }
 
         private async Task<string> Post(DeviceRegister deviceRegister, EnvironmentVariable environmentVariable)
@@ -38,8 +38,8 @@
             var url = environmentVariable.AppServiceOption.DeviceRegisterUrl;
             using (var content = new StringContent(deviceRegister.ToJson(), System.Text.Encoding.UTF8, "application/json"))
             {
-                HttpResponseMessage result = await _httpClient.PostAsync(url, content);
-                string returnValue = await result.Content.ReadAsStringAsync();
+                HttpResponseMessage result = await _httpClient.PostAsync(url, content).ConfigureAwait(false);
+                string returnValue = await result.Content.ReadAsStringAsync().ConfigureAwait(false);
                 if (result.StatusCode == HttpStatusCode.OK)
                     return returnValue;
                 throw new Exception($"RegisterDevice=false: ({result.StatusCode}): {returnValue}");

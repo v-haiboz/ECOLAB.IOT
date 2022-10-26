@@ -57,29 +57,67 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="label_ChildHeader_Menu.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;panel_ChildHeader.Name" xml:space="preserve">
+    <value>panel_ChildHeader</value>
+  </data>
+  <data name="&gt;&gt;panel_ChildHeader.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel_ChildHeader.Parent" xml:space="preserve">
+    <value>panel_ChildForm</value>
+  </data>
+  <data name="&gt;&gt;panel_ChildHeader.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;panel_SideMenu.Name" xml:space="preserve">
+    <value>panel_SideMenu</value>
+  </data>
+  <data name="&gt;&gt;panel_SideMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel_SideMenu.Parent" xml:space="preserve">
+    <value>panel_ChildForm</value>
+  </data>
+  <data name="&gt;&gt;panel_SideMenu.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;panel_BottomToolTip.Name" xml:space="preserve">
+    <value>panel_BottomToolTip</value>
+  </data>
+  <data name="&gt;&gt;panel_BottomToolTip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel_BottomToolTip.Parent" xml:space="preserve">
+    <value>panel_ChildForm</value>
+  </data>
+  <data name="&gt;&gt;panel_BottomToolTip.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="label_ChildHeader_Menu.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
+  <data name="panel_ChildForm.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="label_ChildHeader_Menu.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft YaHei UI, 9pt</value>
+  <data name="panel_ChildForm.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 44</value>
   </data>
-  <data name="label_ChildHeader_Menu.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
+  <data name="panel_ChildForm.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1500, 756</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="label_ChildHeader_Menu.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>20, 10, 0, 0</value>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="panel_ChildForm.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
-  <data name="label_ChildHeader_Menu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>20, 34</value>
+  <data name="&gt;&gt;panel_ChildForm.Name" xml:space="preserve">
+    <value>panel_ChildForm</value>
   </data>
-  <data name="label_ChildHeader_Menu.TabIndex" type="System.Int32, mscorlib">
+  <data name="&gt;&gt;panel_ChildForm.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel_ChildForm.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panel_ChildForm.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="&gt;&gt;label_ChildHeader_Menu.Name" xml:space="preserve">
@@ -121,8 +159,186 @@
   <data name="&gt;&gt;panel_ChildHeader.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="label_ChildHeader_Menu.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_ChildHeader_Menu.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="label_ChildHeader_Menu.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 9pt</value>
+  </data>
+  <data name="label_ChildHeader_Menu.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="label_ChildHeader_Menu.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>20, 10, 0, 0</value>
+  </data>
+  <data name="label_ChildHeader_Menu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>20, 34</value>
+  </data>
+  <data name="label_ChildHeader_Menu.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;label_ChildHeader_Menu.Name" xml:space="preserve">
+    <value>label_ChildHeader_Menu</value>
+  </data>
+  <data name="&gt;&gt;label_ChildHeader_Menu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_ChildHeader_Menu.Parent" xml:space="preserve">
+    <value>panel_ChildHeader</value>
+  </data>
+  <data name="&gt;&gt;label_ChildHeader_Menu.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="panel_SideMenu.AutoScroll" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="&gt;&gt;button_Account_Profile.Name" xml:space="preserve">
+    <value>button_Account_Profile</value>
+  </data>
+  <data name="&gt;&gt;button_Account_Profile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_Account_Profile.Parent" xml:space="preserve">
+    <value>panel_SideMenu</value>
+  </data>
+  <data name="&gt;&gt;button_Account_Profile.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;button_SerialCOM_GateWay.Name" xml:space="preserve">
+    <value>button_SerialCOM_GateWay</value>
+  </data>
+  <data name="&gt;&gt;button_SerialCOM_GateWay.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_SerialCOM_GateWay.Parent" xml:space="preserve">
+    <value>panel_SideMenu</value>
+  </data>
+  <data name="&gt;&gt;button_SerialCOM_GateWay.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;button_Help.Name" xml:space="preserve">
+    <value>button_Help</value>
+  </data>
+  <data name="&gt;&gt;button_Help.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_Help.Parent" xml:space="preserve">
+    <value>panel_SideMenu</value>
+  </data>
+  <data name="&gt;&gt;button_Help.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;panel_SettingSubMenu.Name" xml:space="preserve">
+    <value>panel_SettingSubMenu</value>
+  </data>
+  <data name="&gt;&gt;panel_SettingSubMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel_SettingSubMenu.Parent" xml:space="preserve">
+    <value>panel_SideMenu</value>
+  </data>
+  <data name="&gt;&gt;panel_SettingSubMenu.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;button_Setting.Name" xml:space="preserve">
+    <value>button_Setting</value>
+  </data>
+  <data name="&gt;&gt;button_Setting.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_Setting.Parent" xml:space="preserve">
+    <value>panel_SideMenu</value>
+  </data>
+  <data name="&gt;&gt;button_Setting.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;panel_SerialCOMSubMenu.Name" xml:space="preserve">
+    <value>panel_SerialCOMSubMenu</value>
+  </data>
+  <data name="&gt;&gt;panel_SerialCOMSubMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel_SerialCOMSubMenu.Parent" xml:space="preserve">
+    <value>panel_SideMenu</value>
+  </data>
+  <data name="&gt;&gt;panel_SerialCOMSubMenu.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;button_SerialCOM.Name" xml:space="preserve">
+    <value>button_SerialCOM</value>
+  </data>
+  <data name="&gt;&gt;button_SerialCOM.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_SerialCOM.Parent" xml:space="preserve">
+    <value>panel_SideMenu</value>
+  </data>
+  <data name="&gt;&gt;button_SerialCOM.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;panel_AccountSubMenu.Name" xml:space="preserve">
+    <value>panel_AccountSubMenu</value>
+  </data>
+  <data name="&gt;&gt;panel_AccountSubMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel_AccountSubMenu.Parent" xml:space="preserve">
+    <value>panel_SideMenu</value>
+  </data>
+  <data name="&gt;&gt;panel_AccountSubMenu.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;button_Account.Name" xml:space="preserve">
+    <value>button_Account</value>
+  </data>
+  <data name="&gt;&gt;button_Account.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_Account.Parent" xml:space="preserve">
+    <value>panel_SideMenu</value>
+  </data>
+  <data name="&gt;&gt;button_Account.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;panel_Log.Name" xml:space="preserve">
+    <value>panel_Log</value>
+  </data>
+  <data name="&gt;&gt;panel_Log.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel_Log.Parent" xml:space="preserve">
+    <value>panel_SideMenu</value>
+  </data>
+  <data name="&gt;&gt;panel_Log.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="panel_SideMenu.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="panel_SideMenu.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="panel_SideMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>285, 718</value>
+  </data>
+  <data name="panel_SideMenu.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;panel_SideMenu.Name" xml:space="preserve">
+    <value>panel_SideMenu</value>
+  </data>
+  <data name="&gt;&gt;panel_SideMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel_SideMenu.Parent" xml:space="preserve">
+    <value>panel_ChildForm</value>
+  </data>
+  <data name="&gt;&gt;panel_SideMenu.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="button_Account_Profile.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -262,6 +478,66 @@
   <data name="&gt;&gt;button_Help.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="&gt;&gt;button_Setting_AAD.Name" xml:space="preserve">
+    <value>button_Setting_AAD</value>
+  </data>
+  <data name="&gt;&gt;button_Setting_AAD.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_Setting_AAD.Parent" xml:space="preserve">
+    <value>panel_SettingSubMenu</value>
+  </data>
+  <data name="&gt;&gt;button_Setting_AAD.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;button_Setting_Application.Name" xml:space="preserve">
+    <value>button_Setting_Application</value>
+  </data>
+  <data name="&gt;&gt;button_Setting_Application.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_Setting_Application.Parent" xml:space="preserve">
+    <value>panel_SettingSubMenu</value>
+  </data>
+  <data name="&gt;&gt;button_Setting_Application.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;button_Setting_Environment.Name" xml:space="preserve">
+    <value>button_Setting_Environment</value>
+  </data>
+  <data name="&gt;&gt;button_Setting_Environment.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_Setting_Environment.Parent" xml:space="preserve">
+    <value>panel_SettingSubMenu</value>
+  </data>
+  <data name="&gt;&gt;button_Setting_Environment.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="panel_SettingSubMenu.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="panel_SettingSubMenu.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 302</value>
+  </data>
+  <data name="panel_SettingSubMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>285, 139</value>
+  </data>
+  <data name="panel_SettingSubMenu.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;panel_SettingSubMenu.Name" xml:space="preserve">
+    <value>panel_SettingSubMenu</value>
+  </data>
+  <data name="&gt;&gt;panel_SettingSubMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel_SettingSubMenu.Parent" xml:space="preserve">
+    <value>panel_SideMenu</value>
+  </data>
+  <data name="&gt;&gt;panel_SettingSubMenu.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
   <data name="button_Setting_AAD.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
@@ -394,30 +670,6 @@
   <data name="&gt;&gt;button_Setting_Environment.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="panel_SettingSubMenu.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="panel_SettingSubMenu.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 302</value>
-  </data>
-  <data name="panel_SettingSubMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>285, 139</value>
-  </data>
-  <data name="panel_SettingSubMenu.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;panel_SettingSubMenu.Name" xml:space="preserve">
-    <value>panel_SettingSubMenu</value>
-  </data>
-  <data name="&gt;&gt;panel_SettingSubMenu.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel_SettingSubMenu.Parent" xml:space="preserve">
-    <value>panel_SideMenu</value>
-  </data>
-  <data name="&gt;&gt;panel_SettingSubMenu.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
   <data name="button_Setting.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
@@ -459,6 +711,42 @@
   </data>
   <data name="&gt;&gt;button_Setting.ZOrder" xml:space="preserve">
     <value>4</value>
+  </data>
+  <data name="&gt;&gt;button_SerialCOM_Burn.Name" xml:space="preserve">
+    <value>button_SerialCOM_Burn</value>
+  </data>
+  <data name="&gt;&gt;button_SerialCOM_Burn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_SerialCOM_Burn.Parent" xml:space="preserve">
+    <value>panel_SerialCOMSubMenu</value>
+  </data>
+  <data name="&gt;&gt;button_SerialCOM_Burn.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="panel_SerialCOMSubMenu.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="panel_SerialCOMSubMenu.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 208</value>
+  </data>
+  <data name="panel_SerialCOMSubMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>285, 49</value>
+  </data>
+  <data name="panel_SerialCOMSubMenu.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;panel_SerialCOMSubMenu.Name" xml:space="preserve">
+    <value>panel_SerialCOMSubMenu</value>
+  </data>
+  <data name="&gt;&gt;panel_SerialCOMSubMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel_SerialCOMSubMenu.Parent" xml:space="preserve">
+    <value>panel_SideMenu</value>
+  </data>
+  <data name="&gt;&gt;panel_SerialCOMSubMenu.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
   <data name="button_SerialCOM_Burn.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -502,30 +790,6 @@
   <data name="&gt;&gt;button_SerialCOM_Burn.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="panel_SerialCOMSubMenu.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="panel_SerialCOMSubMenu.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 208</value>
-  </data>
-  <data name="panel_SerialCOMSubMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>285, 49</value>
-  </data>
-  <data name="panel_SerialCOMSubMenu.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;panel_SerialCOMSubMenu.Name" xml:space="preserve">
-    <value>panel_SerialCOMSubMenu</value>
-  </data>
-  <data name="&gt;&gt;panel_SerialCOMSubMenu.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel_SerialCOMSubMenu.Parent" xml:space="preserve">
-    <value>panel_SideMenu</value>
-  </data>
-  <data name="&gt;&gt;panel_SerialCOMSubMenu.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
   <data name="button_SerialCOM.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
@@ -567,6 +831,42 @@
   </data>
   <data name="&gt;&gt;button_SerialCOM.ZOrder" xml:space="preserve">
     <value>6</value>
+  </data>
+  <data name="&gt;&gt;button_Account_SignOut.Name" xml:space="preserve">
+    <value>button_Account_SignOut</value>
+  </data>
+  <data name="&gt;&gt;button_Account_SignOut.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_Account_SignOut.Parent" xml:space="preserve">
+    <value>panel_AccountSubMenu</value>
+  </data>
+  <data name="&gt;&gt;button_Account_SignOut.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="panel_AccountSubMenu.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="panel_AccountSubMenu.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 113</value>
+  </data>
+  <data name="panel_AccountSubMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>285, 50</value>
+  </data>
+  <data name="panel_AccountSubMenu.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;panel_AccountSubMenu.Name" xml:space="preserve">
+    <value>panel_AccountSubMenu</value>
+  </data>
+  <data name="&gt;&gt;panel_AccountSubMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel_AccountSubMenu.Parent" xml:space="preserve">
+    <value>panel_SideMenu</value>
+  </data>
+  <data name="&gt;&gt;panel_AccountSubMenu.ZOrder" xml:space="preserve">
+    <value>7</value>
   </data>
   <data name="button_Account_SignOut.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -610,30 +910,6 @@
   <data name="&gt;&gt;button_Account_SignOut.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="panel_AccountSubMenu.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="panel_AccountSubMenu.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 113</value>
-  </data>
-  <data name="panel_AccountSubMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>285, 50</value>
-  </data>
-  <data name="panel_AccountSubMenu.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;panel_AccountSubMenu.Name" xml:space="preserve">
-    <value>panel_AccountSubMenu</value>
-  </data>
-  <data name="&gt;&gt;panel_AccountSubMenu.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel_AccountSubMenu.Parent" xml:space="preserve">
-    <value>panel_SideMenu</value>
-  </data>
-  <data name="&gt;&gt;panel_AccountSubMenu.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
   <data name="button_Account.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
@@ -675,6 +951,54 @@
   </data>
   <data name="&gt;&gt;button_Account.ZOrder" xml:space="preserve">
     <value>8</value>
+  </data>
+  <data name="&gt;&gt;label_Environment.Name" xml:space="preserve">
+    <value>label_Environment</value>
+  </data>
+  <data name="&gt;&gt;label_Environment.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_Environment.Parent" xml:space="preserve">
+    <value>panel_Log</value>
+  </data>
+  <data name="&gt;&gt;label_Environment.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;pictureBox_MainMenu.Name" xml:space="preserve">
+    <value>pictureBox_MainMenu</value>
+  </data>
+  <data name="&gt;&gt;pictureBox_MainMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictureBox_MainMenu.Parent" xml:space="preserve">
+    <value>panel_Log</value>
+  </data>
+  <data name="&gt;&gt;pictureBox_MainMenu.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="panel_Log.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="panel_Log.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="panel_Log.Size" type="System.Drawing.Size, System.Drawing">
+    <value>285, 68</value>
+  </data>
+  <data name="panel_Log.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;panel_Log.Name" xml:space="preserve">
+    <value>panel_Log</value>
+  </data>
+  <data name="&gt;&gt;panel_Log.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel_Log.Parent" xml:space="preserve">
+    <value>panel_SideMenu</value>
+  </data>
+  <data name="&gt;&gt;panel_Log.ZOrder" xml:space="preserve">
+    <value>9</value>
   </data>
   <data name="label_Environment.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -727,53 +1051,65 @@
   <data name="&gt;&gt;pictureBox_MainMenu.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="panel_Log.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
+  <data name="&gt;&gt;label_DateTime.Name" xml:space="preserve">
+    <value>label_DateTime</value>
   </data>
-  <data name="panel_Log.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
+  <data name="&gt;&gt;label_DateTime.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="panel_Log.Size" type="System.Drawing.Size, System.Drawing">
-    <value>285, 68</value>
+  <data name="&gt;&gt;label_DateTime.Parent" xml:space="preserve">
+    <value>panel_BottomToolTip</value>
   </data>
-  <data name="panel_Log.TabIndex" type="System.Int32, mscorlib">
+  <data name="&gt;&gt;label_DateTime.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;label_Exit.Name" xml:space="preserve">
+    <value>label_Exit</value>
+  </data>
+  <data name="&gt;&gt;label_Exit.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_Exit.Parent" xml:space="preserve">
+    <value>panel_BottomToolTip</value>
+  </data>
+  <data name="&gt;&gt;label_Exit.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;panel_Log.Name" xml:space="preserve">
-    <value>panel_Log</value>
+  <data name="&gt;&gt;label_CurrentUser.Name" xml:space="preserve">
+    <value>label_CurrentUser</value>
   </data>
-  <data name="&gt;&gt;panel_Log.Type" xml:space="preserve">
+  <data name="&gt;&gt;label_CurrentUser.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_CurrentUser.Parent" xml:space="preserve">
+    <value>panel_BottomToolTip</value>
+  </data>
+  <data name="&gt;&gt;label_CurrentUser.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="panel_BottomToolTip.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="panel_BottomToolTip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 718</value>
+  </data>
+  <data name="panel_BottomToolTip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1500, 38</value>
+  </data>
+  <data name="panel_BottomToolTip.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;panel_BottomToolTip.Name" xml:space="preserve">
+    <value>panel_BottomToolTip</value>
+  </data>
+  <data name="&gt;&gt;panel_BottomToolTip.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;panel_Log.Parent" xml:space="preserve">
-    <value>panel_SideMenu</value>
-  </data>
-  <data name="&gt;&gt;panel_Log.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="panel_SideMenu.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <data name="panel_SideMenu.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="panel_SideMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>285, 718</value>
-  </data>
-  <data name="panel_SideMenu.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;panel_SideMenu.Name" xml:space="preserve">
-    <value>panel_SideMenu</value>
-  </data>
-  <data name="&gt;&gt;panel_SideMenu.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel_SideMenu.Parent" xml:space="preserve">
+  <data name="&gt;&gt;panel_BottomToolTip.Parent" xml:space="preserve">
     <value>panel_ChildForm</value>
   </data>
-  <data name="&gt;&gt;panel_SideMenu.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="&gt;&gt;panel_BottomToolTip.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="label_DateTime.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -886,54 +1222,6 @@
   <data name="&gt;&gt;label_CurrentUser.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="panel_BottomToolTip.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="panel_BottomToolTip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 718</value>
-  </data>
-  <data name="panel_BottomToolTip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1500, 38</value>
-  </data>
-  <data name="panel_BottomToolTip.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;panel_BottomToolTip.Name" xml:space="preserve">
-    <value>panel_BottomToolTip</value>
-  </data>
-  <data name="&gt;&gt;panel_BottomToolTip.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel_BottomToolTip.Parent" xml:space="preserve">
-    <value>panel_ChildForm</value>
-  </data>
-  <data name="&gt;&gt;panel_BottomToolTip.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="panel_ChildForm.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="panel_ChildForm.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 44</value>
-  </data>
-  <data name="panel_ChildForm.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1500, 756</value>
-  </data>
-  <data name="panel_ChildForm.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;panel_ChildForm.Name" xml:space="preserve">
-    <value>panel_ChildForm</value>
-  </data>
-  <data name="&gt;&gt;panel_ChildForm.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel_ChildForm.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;panel_ChildForm.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="pictureBox_Close.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Right</value>
   </data>
@@ -1000,6 +1288,54 @@
   <data name="&gt;&gt;label_CurrentMenu.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="&gt;&gt;pictureBox_Min.Name" xml:space="preserve">
+    <value>pictureBox_Min</value>
+  </data>
+  <data name="&gt;&gt;pictureBox_Min.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictureBox_Min.Parent" xml:space="preserve">
+    <value>panel_Header</value>
+  </data>
+  <data name="&gt;&gt;pictureBox_Min.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;pictureBox_Max.Name" xml:space="preserve">
+    <value>pictureBox_Max</value>
+  </data>
+  <data name="&gt;&gt;pictureBox_Max.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictureBox_Max.Parent" xml:space="preserve">
+    <value>panel_Header</value>
+  </data>
+  <data name="&gt;&gt;pictureBox_Max.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="panel_Header.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="panel_Header.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="panel_Header.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1500, 44</value>
+  </data>
+  <data name="panel_Header.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;panel_Header.Name" xml:space="preserve">
+    <value>panel_Header</value>
+  </data>
+  <data name="&gt;&gt;panel_Header.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel_Header.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panel_Header.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="pictureBox_Min.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Right</value>
   </data>
@@ -1058,30 +1394,6 @@
     <value>panel_Header</value>
   </data>
   <data name="&gt;&gt;pictureBox_Max.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="panel_Header.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="panel_Header.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="panel_Header.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1500, 44</value>
-  </data>
-  <data name="panel_Header.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;panel_Header.Name" xml:space="preserve">
-    <value>panel_Header</value>
-  </data>
-  <data name="&gt;&gt;panel_Header.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel_Header.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;panel_Header.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">

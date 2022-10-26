@@ -137,7 +137,7 @@
                 SerialNumber = sn
             };
 
-            var result = await CallerContext.ECOLABIOTRegisterDeviceService.RegisterDevice(model);
+            var result = await CallerContext.ECOLABIOTRegisterDeviceService.RegisterDevice(model).ConfigureAwait(false);
             return result;
         }
         #endregion
