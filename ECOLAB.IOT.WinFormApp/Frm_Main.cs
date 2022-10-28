@@ -1,6 +1,7 @@
 ﻿using ECOLAB.IOT.Common.Win32;
 using ECOLAB.IOT.Service;
 using ECOLAB.IOT.WinFormApp.ChildWinForm;
+using Markdig;
 using Microsoft.Identity.Client;
 using System.Diagnostics;
 using System.Globalization;
@@ -76,7 +77,7 @@ namespace ECOLAB.IOT.WinFormApp
         #region Account sub menu
         private void button_Profile_Click(object sender, EventArgs e)
         {
-            ShowNavigationMenu(button_Account_Profile.Name);
+            ShowNavigationMenu(button_Help_Instruction.Name);
             HideSubMenu();
         }
 
@@ -125,7 +126,7 @@ namespace ECOLAB.IOT.WinFormApp
 
         private void button_Help_Click(object sender, EventArgs e)
         {
-            HideSubMenu();
+            ShowSubMenu(panel_Help);
         }
 
         private void panel_ChildForm_MouseDown(object sender, MouseEventArgs e)
@@ -240,6 +241,37 @@ namespace ECOLAB.IOT.WinFormApp
             TokenCacheHelper.EnableSerialization(clientApp.UserTokenCache);
             return clientApp;
         }
+        private void button_Help_Instruction_Click(object sender, EventArgs e)
+        {
+            string path = @"Help/Instruction.md";
+            var pipeline = new MarkdownPipelineBuilder().UseAdvancedExtensions().Build();
+            string mdHtml = Markdown.ToHtml(File.ReadAllText(path), pipeline);
+            var document = Markdown.Parse(path);
+            //var TEST = Aspose.Html.Converters.Converter.ConvertMarkdown(path);
 
+            //// Invoke the ConvertHTML method to convert the HTML to PDF.
+            //Aspose.Html.Converters.Converter.ConvertHTML(TEST, new Aspose.Html.Saving.PdfSaveOptions(), "Help/output.pdf");
+
+            try
+            {
+                var webBrowser = new WebBrowser()
+                {
+                    Dock = DockStyle.Fill,
+                    DocumentText = mdHtml,
+
+                };
+                webBrowser.Document.Body.Style = "zoom:0.3";
+                panel_ChildForm.Controls.Remove(activeForm);
+                panel_ChildForm.Controls.Add(webBrowser);
+                panel_ChildForm.Tag = webBrowser;
+                //panel_ChildForm.Controls.Add(webBrowser);
+            }
+            catch (Exception ex)
+            { 
+            
+            }
+            
+        }
+        
     }
 }

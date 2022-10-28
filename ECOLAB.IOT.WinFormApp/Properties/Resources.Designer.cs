@@ -263,9 +263,29 @@ namespace ECOLAB.IOT.WinFormApp.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap help_instruction_Main {
+            get {
+                object obj = ResourceManager.GetObject("help_instruction_Main", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap help_Main {
             get {
                 object obj = ResourceManager.GetObject("help_Main", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap help_troubleshooting_Main {
+            get {
+                object obj = ResourceManager.GetObject("help_troubleshooting_Main", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

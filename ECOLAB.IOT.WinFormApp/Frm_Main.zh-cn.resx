@@ -129,6 +129,12 @@
   <data name="button_Help" xml:space="preserve">
     <value>帮助</value>
   </data>
+  <data name="button_Help_Instruction.Text" xml:space="preserve">
+    <value>操作指南</value>
+  </data>
+  <data name="button_Help_Troubleshooting.Text" xml:space="preserve">
+    <value>roubleshooting</value>
+  </data>
   <data name="button_SerialCOM" xml:space="preserve">
     <value>串口</value>
   </data>

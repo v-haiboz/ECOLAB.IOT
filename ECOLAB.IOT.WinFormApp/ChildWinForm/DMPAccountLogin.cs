@@ -44,6 +44,7 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
                 return;
             }
 
+            objAdmin = CallerContext.ECOLABIOTUserService.GetUser(objAdmin);
             if (Frm_Login != null)
             {
                 Frm_Login.Login(objAdmin, null);

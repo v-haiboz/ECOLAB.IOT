@@ -38,8 +38,9 @@ namespace ECOLAB.IOT.WinFormApp
             this.panel_ChildHeader = new System.Windows.Forms.Panel();
             this.label_ChildHeader_Menu = new System.Windows.Forms.Label();
             this.panel_SideMenu = new System.Windows.Forms.Panel();
-            this.button_Account_Profile = new System.Windows.Forms.Button();
-            this.button_SerialCOM_GateWay = new System.Windows.Forms.Button();
+            this.panel_Help = new System.Windows.Forms.Panel();
+            this.button_Help_Troubleshooting = new System.Windows.Forms.Button();
+            this.button_Help_Instruction = new System.Windows.Forms.Button();
             this.button_Help = new System.Windows.Forms.Button();
             this.panel_SettingSubMenu = new System.Windows.Forms.Panel();
             this.button_Setting_AAD = new System.Windows.Forms.Button();
@@ -68,6 +69,7 @@ namespace ECOLAB.IOT.WinFormApp
             this.panel_ChildForm.SuspendLayout();
             this.panel_ChildHeader.SuspendLayout();
             this.panel_SideMenu.SuspendLayout();
+            this.panel_Help.SuspendLayout();
             this.panel_SettingSubMenu.SuspendLayout();
             this.panel_SerialCOMSubMenu.SuspendLayout();
             this.panel_AccountSubMenu.SuspendLayout();
@@ -82,10 +84,10 @@ namespace ECOLAB.IOT.WinFormApp
             // 
             // panel_ChildForm
             // 
+            resources.ApplyResources(this.panel_ChildForm, "panel_ChildForm");
             this.panel_ChildForm.Controls.Add(this.panel_ChildHeader);
             this.panel_ChildForm.Controls.Add(this.panel_SideMenu);
             this.panel_ChildForm.Controls.Add(this.panel_BottomToolTip);
-            resources.ApplyResources(this.panel_ChildForm, "panel_ChildForm");
             this.panel_ChildForm.Name = "panel_ChildForm";
             this.panel_ChildForm.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel_ChildForm_MouseDown);
             // 
@@ -106,8 +108,7 @@ namespace ECOLAB.IOT.WinFormApp
             // 
             resources.ApplyResources(this.panel_SideMenu, "panel_SideMenu");
             this.panel_SideMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(7)))), ((int)(((byte)(7)))));
-            this.panel_SideMenu.Controls.Add(this.button_Account_Profile);
-            this.panel_SideMenu.Controls.Add(this.button_SerialCOM_GateWay);
+            this.panel_SideMenu.Controls.Add(this.panel_Help);
             this.panel_SideMenu.Controls.Add(this.button_Help);
             this.panel_SideMenu.Controls.Add(this.panel_SettingSubMenu);
             this.panel_SideMenu.Controls.Add(this.button_Setting);
@@ -118,21 +119,33 @@ namespace ECOLAB.IOT.WinFormApp
             this.panel_SideMenu.Controls.Add(this.panel_Log);
             this.panel_SideMenu.Name = "panel_SideMenu";
             // 
-            // button_Account_Profile
+            // panel_Help
             // 
-            resources.ApplyResources(this.button_Account_Profile, "button_Account_Profile");
-            this.button_Account_Profile.FlatAppearance.BorderSize = 0;
-            this.button_Account_Profile.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button_Account_Profile.Name = "button_Account_Profile";
-            this.button_Account_Profile.UseVisualStyleBackColor = true;
+            this.panel_Help.Controls.Add(this.button_Help_Troubleshooting);
+            this.panel_Help.Controls.Add(this.button_Help_Instruction);
+            resources.ApplyResources(this.panel_Help, "panel_Help");
+            this.panel_Help.Name = "panel_Help";
             // 
-            // button_SerialCOM_GateWay
+            // button_Help_Troubleshooting
             // 
-            resources.ApplyResources(this.button_SerialCOM_GateWay, "button_SerialCOM_GateWay");
-            this.button_SerialCOM_GateWay.FlatAppearance.BorderSize = 0;
-            this.button_SerialCOM_GateWay.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button_SerialCOM_GateWay.Name = "button_SerialCOM_GateWay";
-            this.button_SerialCOM_GateWay.UseVisualStyleBackColor = true;
+            this.button_Help_Troubleshooting.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            resources.ApplyResources(this.button_Help_Troubleshooting, "button_Help_Troubleshooting");
+            this.button_Help_Troubleshooting.FlatAppearance.BorderSize = 0;
+            this.button_Help_Troubleshooting.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button_Help_Troubleshooting.Image = global::ECOLAB.IOT.WinFormApp.Properties.Resources.help_troubleshooting_Main;
+            this.button_Help_Troubleshooting.Name = "button_Help_Troubleshooting";
+            this.button_Help_Troubleshooting.UseVisualStyleBackColor = false;
+            // 
+            // button_Help_Instruction
+            // 
+            this.button_Help_Instruction.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            resources.ApplyResources(this.button_Help_Instruction, "button_Help_Instruction");
+            this.button_Help_Instruction.FlatAppearance.BorderSize = 0;
+            this.button_Help_Instruction.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button_Help_Instruction.Image = global::ECOLAB.IOT.WinFormApp.Properties.Resources.help_instruction_Main;
+            this.button_Help_Instruction.Name = "button_Help_Instruction";
+            this.button_Help_Instruction.UseVisualStyleBackColor = false;
+            this.button_Help_Instruction.Click += new System.EventHandler(this.button_Help_Instruction_Click);
             // 
             // button_Help
             // 
@@ -142,6 +155,7 @@ namespace ECOLAB.IOT.WinFormApp
             this.button_Help.Image = global::ECOLAB.IOT.WinFormApp.Properties.Resources.help_Main;
             this.button_Help.Name = "button_Help";
             this.button_Help.UseVisualStyleBackColor = true;
+            this.button_Help.Click += new System.EventHandler(this.button_Help_Click);
             // 
             // panel_SettingSubMenu
             // 
@@ -359,6 +373,7 @@ namespace ECOLAB.IOT.WinFormApp
             this.panel_ChildHeader.ResumeLayout(false);
             this.panel_ChildHeader.PerformLayout();
             this.panel_SideMenu.ResumeLayout(false);
+            this.panel_Help.ResumeLayout(false);
             this.panel_SettingSubMenu.ResumeLayout(false);
             this.panel_SerialCOMSubMenu.ResumeLayout(false);
             this.panel_AccountSubMenu.ResumeLayout(false);
@@ -395,10 +410,10 @@ namespace ECOLAB.IOT.WinFormApp
             this.button_Setting_Environment.Text = $"           {res.GetString("button_Setting_Environment")}";
             this.button_Setting.Text = $"           {res.GetString("button_Setting")}";
             this.button_SerialCOM_Burn.Text = $"           {res.GetString("button_SerialCOM_Burn")}";
-            this.button_SerialCOM_GateWay.Text = $"           {res.GetString("button_SerialCOM_GateWay")}";
+            this.button_Help_Troubleshooting.Text = $"           {res.GetString("button_SerialCOM_GateWay")}";
             this.button_SerialCOM.Text = $"           {res.GetString("button_SerialCOM")}";
             this.button_Account_SignOut.Text = $"           {res.GetString("button_Account_SignOut")}";
-            this.button_Account_Profile.Text = $"           {res.GetString("button_Account_Profile")}";
+            this.button_Help_Instruction.Text = $"           {res.GetString("button_Account_Profile")}";
             this.button_Account.Text = $"           {res.GetString("button_Account")}";
             this.button_Setting_Application.Text = $"           {res.GetString("button_Setting_Application")}";
         }
@@ -468,17 +483,21 @@ namespace ECOLAB.IOT.WinFormApp
         }
         private void HideSubMenu()
         {
-            if (panel_SerialCOMSubMenu.Visible == true)
+            if (panel_SerialCOMSubMenu.Visible)
             {
                 panel_SerialCOMSubMenu.Visible = false;
             }
-            if (panel_AccountSubMenu.Visible == true)
+            if (panel_AccountSubMenu.Visible)
             {
                 panel_AccountSubMenu.Visible = false;
             }
-            if (panel_SettingSubMenu.Visible == true)
+            if (panel_SettingSubMenu.Visible)
             {
                 panel_SettingSubMenu.Visible = false;
+            }
+            if (panel_Help.Visible)
+            {
+                panel_Help.Visible = false;
             }
         }
 
@@ -526,9 +545,10 @@ namespace ECOLAB.IOT.WinFormApp
         private Label label_ChildHeader_Menu;
         private System.Windows.Forms.Timer timer1;
         private Form activeForm = null;
-        private Button button_Account_Profile;
-        private Button button_SerialCOM_GateWay;
+        private Button button_Help_Instruction;
+        private Button button_Help_Troubleshooting;
         private Button button_Setting_Application;
         private Button button_Setting_AAD;
+        private Panel panel_Help;
     }
 }
