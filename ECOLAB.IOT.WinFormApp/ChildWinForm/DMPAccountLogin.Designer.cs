@@ -96,7 +96,6 @@
             this.textBox_PassWord.Size = new System.Drawing.Size(313, 40);
             this.textBox_PassWord.TabIndex = 7;
             this.textBox_PassWord.Tag = "ECOLAB123|123123";
-            this.textBox_PassWord.Text = "123123";
             // 
             // textBox_UserName
             // 

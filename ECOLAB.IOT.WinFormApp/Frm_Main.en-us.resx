@@ -120,20 +120,17 @@
   <data name="button_Account" xml:space="preserve">
     <value>Account</value>
   </data>
-  <data name="button_Account_Profile" xml:space="preserve">
-    <value>Profile</value>
-  </data>
   <data name="button_Account_SignOut" xml:space="preserve">
     <value>SignOut</value>
   </data>
   <data name="button_Help" xml:space="preserve">
     <value>Help</value>
   </data>
-  <data name="button_Help_Instruction.Text" xml:space="preserve">
+  <data name="button_Help_Instruction" xml:space="preserve">
     <value>Instruction</value>
   </data>
-  <data name="button_Help_Troubleshooting.Text" xml:space="preserve">
-    <value>故障排除</value>
+  <data name="button_Help_Troubleshooting" xml:space="preserve">
+    <value>Troubleshooting</value>
   </data>
   <data name="button_SerialCOM" xml:space="preserve">
     <value>SerialCOM</value>
@@ -141,14 +138,11 @@
   <data name="button_SerialCOM_Burn" xml:space="preserve">
     <value>Burn</value>
   </data>
-  <data name="button_SerialCOM_GateWay" xml:space="preserve">
-    <value>Option</value>
-  </data>
   <data name="button_Setting" xml:space="preserve">
     <value>Setting</value>
   </data>
   <data name="button_Setting_Application" xml:space="preserve">
-    <value>Application</value>
+    <value>Application ID</value>
   </data>
   <data name="button_Setting_Environment" xml:space="preserve">
     <value>Environment</value>

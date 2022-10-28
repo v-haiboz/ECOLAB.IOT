@@ -25,7 +25,7 @@
     <Compile Update="ChildWinForm\FormNormal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="ChildWinForm\Help.cs">
+    <Compile Update="ChildWinForm\Instruction.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Frm_Login.cs">

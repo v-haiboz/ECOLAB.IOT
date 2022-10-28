@@ -124,7 +124,7 @@
     <value>2</value>
   </data>
   <data name="button_ChooseFile.Text" xml:space="preserve">
-    <value>Choose ...</value>
+    <value>Choose</value>
   </data>
   <data name="&gt;&gt;button_ChooseFile.Name" xml:space="preserve">
     <value>button_ChooseFile</value>

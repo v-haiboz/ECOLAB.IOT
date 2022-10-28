@@ -120,20 +120,17 @@
   <data name="button_Account" xml:space="preserve">
     <value>账号</value>
   </data>
-  <data name="button_Account_Profile" xml:space="preserve">
-    <value>简介</value>
-  </data>
   <data name="button_Account_SignOut" xml:space="preserve">
     <value>注销</value>
   </data>
   <data name="button_Help" xml:space="preserve">
     <value>帮助</value>
   </data>
-  <data name="button_Help_Instruction.Text" xml:space="preserve">
+  <data name="button_Help_Instruction" xml:space="preserve">
     <value>操作指南</value>
   </data>
-  <data name="button_Help_Troubleshooting.Text" xml:space="preserve">
-    <value>roubleshooting</value>
+  <data name="button_Help_Troubleshooting" xml:space="preserve">
+    <value>故障排除</value>
   </data>
   <data name="button_SerialCOM" xml:space="preserve">
     <value>串口</value>
@@ -141,14 +138,11 @@
   <data name="button_SerialCOM_Burn" xml:space="preserve">
     <value>烧制</value>
   </data>
-  <data name="button_SerialCOM_GateWay" xml:space="preserve">
-    <value>可选</value>
-  </data>
   <data name="button_Setting" xml:space="preserve">
     <value>配置</value>
   </data>
   <data name="button_Setting_Application" xml:space="preserve">
-    <value>应用</value>
+    <value>应用ID管理</value>
   </data>
   <data name="button_Setting_Environment" xml:space="preserve">
     <value>环境</value>

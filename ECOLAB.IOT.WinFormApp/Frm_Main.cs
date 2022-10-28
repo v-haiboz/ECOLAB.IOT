@@ -1,4 +1,6 @@
-﻿using ECOLAB.IOT.Common.Win32;
+﻿using CefSharp.WinForms;
+using CefSharp;
+using ECOLAB.IOT.Common.Win32;
 using ECOLAB.IOT.Service;
 using ECOLAB.IOT.WinFormApp.ChildWinForm;
 using Markdig;
@@ -80,15 +82,32 @@ namespace ECOLAB.IOT.WinFormApp
             ShowNavigationMenu(button_Help_Instruction.Name);
             HideSubMenu();
         }
-
         private void button_SignOut_Click(object sender, EventArgs e)
         {
-            //Logout().ConfigureAwait(false);
+            if (activeForm is Instruction)
+            {
+                var win = activeForm as Instruction;
+                win.webview.CloseDevTools();
+                win.webview.GetBrowser().CloseBrowser(true);
+                if (win.webview != null && !win.webview.Disposing)
+                {
+                    win.webview.Dispose();
+                }
+            }
+            else if (activeForm is TroubleShooting)
+            {
+                var win = activeForm as TroubleShooting;
+                win.webview.CloseDevTools();
+                win.webview.GetBrowser().CloseBrowser(true);
+                if (win.webview != null && !win.webview.Disposing)
+                {
+                    win.webview.Dispose();
+                }
+            }
+            Cef.Shutdown();
             Application.Exit();
             Process.Start(Application.StartupPath + "\\Ecolink_SNPSK_tool.exe");
-            ShowNavigationMenu(button_Account_SignOut.Name);
-            HideSubMenu();
-           
+            Environment.Exit(0);
         }
 
         private async Task Logout()
@@ -205,6 +224,9 @@ namespace ECOLAB.IOT.WinFormApp
             this.Width = Convert.ToInt32(DWidth * 0.9);
             this.Height = Convert.ToInt32(DHeight * 0.9);
             this.timer1.Start();
+            CefSettings settings = new CefSettings();
+            // Initialize cef with the provided settings
+            Cef.Initialize(settings, true, browserProcessHandler: null);
         }
 
         private void button_SerialCOM_Burn_Click(object sender, EventArgs e)
@@ -243,35 +265,21 @@ namespace ECOLAB.IOT.WinFormApp
         }
         private void button_Help_Instruction_Click(object sender, EventArgs e)
         {
-            string path = @"Help/Instruction.md";
-            var pipeline = new MarkdownPipelineBuilder().UseAdvancedExtensions().Build();
-            string mdHtml = Markdown.ToHtml(File.ReadAllText(path), pipeline);
-            var document = Markdown.Parse(path);
-            //var TEST = Aspose.Html.Converters.Converter.ConvertMarkdown(path);
-
-            //// Invoke the ConvertHTML method to convert the HTML to PDF.
-            //Aspose.Html.Converters.Converter.ConvertHTML(TEST, new Aspose.Html.Saving.PdfSaveOptions(), "Help/output.pdf");
-
-            try
-            {
-                var webBrowser = new WebBrowser()
-                {
-                    Dock = DockStyle.Fill,
-                    DocumentText = mdHtml,
-
-                };
-                webBrowser.Document.Body.Style = "zoom:0.3";
-                panel_ChildForm.Controls.Remove(activeForm);
-                panel_ChildForm.Controls.Add(webBrowser);
-                panel_ChildForm.Tag = webBrowser;
-                //panel_ChildForm.Controls.Add(webBrowser);
-            }
-            catch (Exception ex)
-            { 
-            
-            }
-            
+            OpenChildForm(new Instruction());
+            ShowNavigationMenu(button_Help_Instruction.Name);
+            HideSubMenu();
         }
-        
+
+        private void button_Help_Troubleshooting_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new TroubleShooting());
+            ShowNavigationMenu(button_Help_Troubleshooting.Name);
+            HideSubMenu();
+        }
+
+        private void Frm_Main_FormClosing(object sender, FormClosingEventArgs e)
+        {
+           
+        }
     }
 }

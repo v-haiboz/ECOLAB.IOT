@@ -121,7 +121,7 @@
     <value>返回</value>
   </data>
   <data name="button_DMPAccountLogin.Text" xml:space="preserve">
-    <value>DMP 账号登录</value>
+    <value>内部账号登录</value>
   </data>
   <data name="button_ECOLABAcountLogin.Text" xml:space="preserve">
     <value>ECO 一键登录</value>

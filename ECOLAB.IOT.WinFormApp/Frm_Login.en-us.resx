@@ -180,7 +180,7 @@
     <value>Back</value>
   </data>
   <data name="button_DMPAccountLogin.Text" xml:space="preserve">
-    <value>DMP account login</value>
+    <value>Internal user login</value>
   </data>
   <data name="button_ECOLABAcountLogin.Text" xml:space="preserve">
     <value>ECOLAB One click Login</value>

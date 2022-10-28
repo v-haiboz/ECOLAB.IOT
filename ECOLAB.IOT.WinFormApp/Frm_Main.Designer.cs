@@ -135,6 +135,7 @@ namespace ECOLAB.IOT.WinFormApp
             this.button_Help_Troubleshooting.Image = global::ECOLAB.IOT.WinFormApp.Properties.Resources.help_troubleshooting_Main;
             this.button_Help_Troubleshooting.Name = "button_Help_Troubleshooting";
             this.button_Help_Troubleshooting.UseVisualStyleBackColor = false;
+            this.button_Help_Troubleshooting.Click += new System.EventHandler(this.button_Help_Troubleshooting_Click);
             // 
             // button_Help_Instruction
             // 
@@ -368,6 +369,7 @@ namespace ECOLAB.IOT.WinFormApp
             this.Controls.Add(this.panel_Header);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Frm_Main";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm_Main_FormClosing);
             this.Load += new System.EventHandler(this.F_Main_Load);
             this.panel_ChildForm.ResumeLayout(false);
             this.panel_ChildHeader.ResumeLayout(false);
@@ -410,10 +412,10 @@ namespace ECOLAB.IOT.WinFormApp
             this.button_Setting_Environment.Text = $"           {res.GetString("button_Setting_Environment")}";
             this.button_Setting.Text = $"           {res.GetString("button_Setting")}";
             this.button_SerialCOM_Burn.Text = $"           {res.GetString("button_SerialCOM_Burn")}";
-            this.button_Help_Troubleshooting.Text = $"           {res.GetString("button_SerialCOM_GateWay")}";
+            this.button_Help_Troubleshooting.Text = $"           {res.GetString("button_Help_Troubleshooting")}";
             this.button_SerialCOM.Text = $"           {res.GetString("button_SerialCOM")}";
             this.button_Account_SignOut.Text = $"           {res.GetString("button_Account_SignOut")}";
-            this.button_Help_Instruction.Text = $"           {res.GetString("button_Account_Profile")}";
+            this.button_Help_Instruction.Text = $"           {res.GetString("button_Help_Instruction")}";
             this.button_Account.Text = $"           {res.GetString("button_Account")}";
             this.button_Setting_Application.Text = $"           {res.GetString("button_Setting_Application")}";
         }
