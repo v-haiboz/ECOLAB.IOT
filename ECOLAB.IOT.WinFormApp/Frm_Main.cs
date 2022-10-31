@@ -1,9 +1,8 @@
-﻿using CefSharp.WinForms;
-using CefSharp;
+﻿using CefSharp;
+using CefSharp.WinForms;
 using ECOLAB.IOT.Common.Win32;
 using ECOLAB.IOT.Service;
 using ECOLAB.IOT.WinFormApp.ChildWinForm;
-using Markdig;
 using Microsoft.Identity.Client;
 using System.Diagnostics;
 using System.Globalization;

@@ -29,7 +29,6 @@
   <ItemGroup>
     <PackageReference Include="Azure.Identity" Version="1.7.0" />
     <PackageReference Include="CefSharp.WinForms.NETCore" Version="106.0.290" />
-    <PackageReference Include="Markdig" Version="0.30.4" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
     <PackageReference Include="Microsoft.VisualStudio.OLE.Interop" Version="17.3.32804.24" />
     <PackageReference Include="System.Runtime.WindowsRuntime" Version="4.7.0" />
