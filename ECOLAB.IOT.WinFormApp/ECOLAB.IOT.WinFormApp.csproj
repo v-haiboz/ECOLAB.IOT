@@ -28,7 +28,6 @@
 
   <ItemGroup>
     <PackageReference Include="Azure.Identity" Version="1.7.0" />
-    <PackageReference Include="CefSharp.WinForms.NETCore" Version="106.0.290" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
     <PackageReference Include="Microsoft.VisualStudio.OLE.Interop" Version="17.3.32804.24" />
     <PackageReference Include="System.Runtime.WindowsRuntime" Version="4.7.0" />
@@ -41,9 +40,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="ChildWinForm\TroubleShooting.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="Form_Login1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +68,96 @@
 		<ProjectCapability Include="ConfigurableFileNestingFeatureEnabled" />
 	</ItemGroup>
 	<ItemGroup>
+	  <None Update="Help\en-us\img\authentication.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
+	  <None Update="Help\en-us\img\ecolinkOneClickLogin.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
+	  <None Update="Help\en-us\img\env.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
+	  <None Update="Help\en-us\img\language.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
+	  <None Update="Help\en-us\img\localAccountLogin.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
+	  <None Update="Help\en-us\img\localAcountLogin_backup.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
+	  <None Update="Help\en-us\img\localAcountLogin_submit.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
+	  <None Update="Help\en-us\img\main_application_add.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
+	  <None Update="Help\en-us\img\main_application_delete.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
+	  <None Update="Help\en-us\img\main_application_enable.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
+	  <None Update="Help\en-us\img\main_application_modify.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
+	  <None Update="Help\en-us\img\main_burndown_burndown.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
+	  <None Update="Help\en-us\img\main_burndown_common.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
+	  <None Update="Help\en-us\img\main_burndown_comsetting.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
+	  <None Update="Help\en-us\img\main_burndown_file.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
+	  <None Update="Help\en-us\img\main_burndown_success.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
+	  <None Update="Help\en-us\img\main_env_delete.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
+	  <None Update="Help\en-us\img\main_env_modify.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
+	  <None Update="Help\en-us\img\main_env_save.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
+	  <None Update="Help\en-us\img\main_help_Instruction.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
+	  <None Update="Help\en-us\img\main_help_Troubleshooting.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
+	  <None Update="Help\en-us\img\main_help_troubleshooting1.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
+	  <None Update="Help\en-us\img\main_setting_add.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
+	  <None Update="Help\en-us\img\main_signout.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
+	  <None Update="Help\en-us\Instruction.html">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
+	  <None Update="Help\en-us\Instruction.md">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </None>
+	  <None Update="Help\en-us\Instruction.pdf">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
+	  <None Update="Help\en-us\Troubleshooting.html">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
+	  <None Update="Help\en-us\Troubleshooting.md">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </None>
+	  <None Update="Help\en-us\Troubleshooting.pdf">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
 	  <None Update="Help\img\authentication.png">
 	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </None>
@@ -235,7 +321,7 @@
 	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </None>
 	  <None Update="Help\zh-cn\Instruction.md">
-	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
 	  </None>
 	  <None Update="Help\zh-cn\Instruction.pdf">
 	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -244,7 +330,7 @@
 	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </None>
 	  <None Update="Help\zh-cn\Troubleshooting.md">
-	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
 	  </None>
 	  <None Update="Help\zh-cn\Troubleshooting.pdf">
 	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

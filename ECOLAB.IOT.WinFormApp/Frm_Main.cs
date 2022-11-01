@@ -1,6 +1,4 @@
-﻿using CefSharp;
-using CefSharp.WinForms;
-using ECOLAB.IOT.Common.Win32;
+﻿using ECOLAB.IOT.Common.Win32;
 using ECOLAB.IOT.Service;
 using ECOLAB.IOT.WinFormApp.ChildWinForm;
 using Microsoft.Identity.Client;
@@ -83,30 +81,8 @@ namespace ECOLAB.IOT.WinFormApp
         }
         private void button_SignOut_Click(object sender, EventArgs e)
         {
-            if (activeForm is Instruction)
-            {
-                var win = activeForm as Instruction;
-                win.webview.CloseDevTools();
-                win.webview.GetBrowser().CloseBrowser(true);
-                if (win.webview != null && !win.webview.Disposing)
-                {
-                    win.webview.Dispose();
-                }
-            }
-            else if (activeForm is TroubleShooting)
-            {
-                var win = activeForm as TroubleShooting;
-                win.webview.CloseDevTools();
-                win.webview.GetBrowser().CloseBrowser(true);
-                if (win.webview != null && !win.webview.Disposing)
-                {
-                    win.webview.Dispose();
-                }
-            }
-            Cef.Shutdown();
             Application.Exit();
             Process.Start(Application.StartupPath + "\\Ecolink_SNPSK_tool.exe");
-            Environment.Exit(0);
         }
 
         private async Task Logout()
@@ -223,9 +199,6 @@ namespace ECOLAB.IOT.WinFormApp
             this.Width = Convert.ToInt32(DWidth * 0.9);
             this.Height = Convert.ToInt32(DHeight * 0.9);
             this.timer1.Start();
-            CefSettings settings = new CefSettings();
-            // Initialize cef with the provided settings
-            Cef.Initialize(settings, true, browserProcessHandler: null);
         }
 
         private void button_SerialCOM_Burn_Click(object sender, EventArgs e)
@@ -264,16 +237,12 @@ namespace ECOLAB.IOT.WinFormApp
         }
         private void button_Help_Instruction_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Instruction());
-            ShowNavigationMenu(button_Help_Instruction.Name);
-            HideSubMenu();
+            
         }
 
         private void button_Help_Troubleshooting_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new TroubleShooting());
-            ShowNavigationMenu(button_Help_Troubleshooting.Name);
-            HideSubMenu();
+           
         }
 
         private void Frm_Main_FormClosing(object sender, FormClosingEventArgs e)

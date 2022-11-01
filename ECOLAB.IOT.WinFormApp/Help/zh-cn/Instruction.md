@@ -76,7 +76,7 @@
 >>>> <img src="/zh-cn/img/main_application_modify.png"/>
 >>>> * 启用。在烧制界面的，选择普通模式发送，选择启用映射前缀。
 >>>> <img src="/zh-cn/img/main_application_enable.png"/>
->>> + ADD, 如果使用ECOLink 一键登录,需要配置ADD链接（ADD链接有过期时间，普通用户只可以查看，超级管理员才可以修改）。
+>>> + AAD, 如果使用ECOLink 一键登录,需要配置AAD链接（AAD链接有过期时间，普通用户只可以查看，超级管理员才可以修改）。
 >>> <img src="/zh-cn/img/main_setting_add.png"/>
 >> - 帮助
 >>> + 使用说明
