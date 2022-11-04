@@ -371,6 +371,7 @@ namespace ECOLAB.IOT.WinFormApp
             this.Name = "Frm_Main";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm_Main_FormClosing);
             this.Load += new System.EventHandler(this.F_Main_Load);
+            this.Shown += new System.EventHandler(this.Frm_Main_Shown);
             this.panel_ChildForm.ResumeLayout(false);
             this.panel_ChildHeader.ResumeLayout(false);
             this.panel_ChildHeader.PerformLayout();
@@ -400,7 +401,7 @@ namespace ECOLAB.IOT.WinFormApp
             panel_SerialCOMSubMenu.Visible = false;
             panel_AccountSubMenu.Visible = false;
             panel_SettingSubMenu.Visible = false;
-            var services=ServiceCollectionExtension.GetCurrentServiceCollection();
+            var services = ServiceCollectionExtension.GetCurrentServiceCollection();
             services.Build();
             this.label_CurrentUser.Text = "Current User: " + CallerContext.SysAdmin.UserName;
             this.label_Environment.Text = $"{label_Environment.Text}  ({CallerContext.EnvironmentVariable.Name.ToString()})";

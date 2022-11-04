@@ -159,4 +159,13 @@
   <data name="label_Environment.Text" xml:space="preserve">
     <value>Menu</value>
   </data>
+  <data name="SecretExpire_Message1" xml:space="preserve">
+    <value>ClientSecret has {day} days to expire.</value>
+  </data>
+  <data name="SecretExpire_Message2" xml:space="preserve">
+    <value>ClientSecret  has expired for {day} days, Please log in with the Admin account, navigate to the menu -&gt;Settings -&gt;Environment, and update the page.</value>
+  </data>
+  <data name="SecretExpire_Message3" xml:space="preserve">
+    <value>{env} Enrivonment Tooltip</value>
+  </data>
 </root>

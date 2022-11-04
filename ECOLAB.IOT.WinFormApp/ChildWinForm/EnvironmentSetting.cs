@@ -29,6 +29,7 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
                 Name = item.Name,
                 ClientId = item.AppServiceOption.ClientId,
                 ClientSecret = !CallerContext.SysAdmin.IsSuper ? ReplaceChar(item.AppServiceOption.ClientSecret) : item.AppServiceOption.ClientSecret,
+                SecretExpireTime = item.AppServiceOption.SecretExpireTime,
                 TenantId = item.AppServiceOption.TenantId,
                 KeyValutUrl = item.AppServiceOption.KeyValutUrl,
                 //DeviceType = item.AppServiceOption.DeviceType,
@@ -54,6 +55,7 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             {
                 dataGridView_Environment.Rows[i].DefaultCellStyle.BackColor = SystemColors.Info;
             }
+            Clear();
         }
 
         private string ReplaceChar(string str, string patten = @".?", bool bl = true)
@@ -171,6 +173,7 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
                 {
                     ClientId = textBox_EnvironmentClientId.Text,
                     ClientSecret = textBox_EnvironmentClientSecret.Text,
+                    SecretExpireTime = dateTimePicker_ClientSecretExpireDate.Value.ToShortDateString(),
                     TenantId = textBox_EnvironmentTenantId.Text,
                     KeyValutUrl = textBox_EnvironmentKeyValutUrl.Text,
                     //DeviceType = textBox_EnvironmentDeviceType.Text,
@@ -186,12 +189,16 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             textBox_EnvironmentName.Text = "";
             textBox_EnvironmentClientId.Text = "";
             textBox_EnvironmentClientSecret.Text = "";
+            dateTimePicker_ClientSecretExpireDate.Format = DateTimePickerFormat.Custom;
+            dateTimePicker_ClientSecretExpireDate.CustomFormat = "   ";
+            dateTimePicker_ClientSecretExpireDate.Checked = false;
             textBox_EnvironmentTenantId.Text = "";
             textBox_EnvironmentKeyValutUrl.Text = "";
             textBox_EnvironmentDeviceType.Text = "";
             textBox_EnvironmentPlatformName.Text = "";
             textBox_EnvironmentDeviceRegisterUrl.Text = "";
             EnableValidateEvent();
+           
         }
 
         private void EnableValidateEvent()
@@ -204,6 +211,9 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
 
             textBox_EnvironmentClientSecret.KeyPress += new KeyPressEventHandler(textBox_EnvironmentClientSecret_KeyPress);
             textBox_EnvironmentClientSecret.TextChanged += new EventHandler(textBox_EnvironmentClientSecret_TextChanged);
+
+            dateTimePicker_ClientSecretExpireDate.ValueChanged += new EventHandler(dateTimePicker_ClientSecretExpireDate_ValueChanged);
+           
 
             textBox_EnvironmentTenantId.KeyPress += new KeyPressEventHandler(textBox_EnvironmentTenantId_KeyPress);
             textBox_EnvironmentTenantId.TextChanged += new EventHandler(textBox_EnvironmentTenantId_TextChanged);
@@ -232,6 +242,8 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             textBox_EnvironmentClientSecret.KeyPress -= new KeyPressEventHandler(textBox_EnvironmentClientSecret_KeyPress);
             textBox_EnvironmentClientSecret.TextChanged -= new EventHandler(textBox_EnvironmentClientSecret_TextChanged);
 
+            dateTimePicker_ClientSecretExpireDate.ValueChanged -= new EventHandler(dateTimePicker_ClientSecretExpireDate_ValueChanged);
+            label_ClientSecretExpireDate.Text = "";
             textBox_EnvironmentTenantId.KeyPress -= new KeyPressEventHandler(textBox_EnvironmentTenantId_KeyPress);
             textBox_EnvironmentTenantId.TextChanged -= new EventHandler(textBox_EnvironmentTenantId_TextChanged);
 
@@ -253,6 +265,7 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             return ValidateName()
                 & ValidateClientId()
                 & ValidateClientSecret()
+                //& ValidateExpireDate()
                 & ValidateTenantId()
                 & ValidateKeyValutUrl()
                 //& ValidateDeviceType()
@@ -281,6 +294,18 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             }
 
             label_Name.Text = "";
+            return true;
+        }
+
+        private bool ValidateExpireDate()
+        {
+
+            if (dateTimePicker_ClientSecretExpireDate.Value < DateTime.Now)
+            {
+                label_ClientSecretExpireDate.Text = "ExpireDate must be greater than current time.";
+                return false;
+            }
+            label_ClientSecretExpireDate.Text = "";
             return true;
         }
 
@@ -483,6 +508,8 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             textBox_EnvironmentName.Text = dataGridView_Environment["Name", e.RowIndex].Value.ToString();
             textBox_EnvironmentClientId.Text = dataGridView_Environment["ClientId", e.RowIndex].Value.ToString();
             textBox_EnvironmentClientSecret.Text = dataGridView_Environment["ClientSecret", e.RowIndex].Value.ToString();
+            dateTimePicker_ClientSecretExpireDate.Text = dataGridView_Environment["SecretExpireTime", e.RowIndex].Value?.ToString();
+           
             textBox_EnvironmentTenantId.Text = dataGridView_Environment["TenantId", e.RowIndex].Value.ToString();
 
             textBox_EnvironmentKeyValutUrl.Text = dataGridView_Environment["KeyValutUrl", e.RowIndex].Value.ToString();
@@ -495,6 +522,13 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
         private void button_Clear_Click(object sender, EventArgs e)
         {
             Clear();
+        }
+
+        private void dateTimePicker_ClientSecretExpireDate_ValueChanged(object sender, EventArgs e)
+        {
+            dateTimePicker_ClientSecretExpireDate.Format = DateTimePickerFormat.Custom;
+            dateTimePicker_ClientSecretExpireDate.CustomFormat = null;
+            ValidateExpireDate();
         }
     }
 }

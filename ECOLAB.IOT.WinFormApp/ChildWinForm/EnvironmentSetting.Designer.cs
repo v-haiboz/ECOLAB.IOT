@@ -33,11 +33,14 @@
             this.splitContainer_Environment = new System.Windows.Forms.SplitContainer();
             this.dataGridView_Environment = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dateTimePicker_ClientSecretExpireDate = new System.Windows.Forms.DateTimePicker();
             this.label_KeyValutUrl = new System.Windows.Forms.Label();
             this.label_TenantId = new System.Windows.Forms.Label();
+            this.label_ClientSecretExpireDate = new System.Windows.Forms.Label();
             this.label_ClientSecret = new System.Windows.Forms.Label();
             this.label_DeviceRegisterUrl = new System.Windows.Forms.Label();
             this.label_PlatformName = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.label_ClientId = new System.Windows.Forms.Label();
             this.label_DeviceType = new System.Windows.Forms.Label();
             this.label_Name = new System.Windows.Forms.Label();
@@ -45,6 +48,7 @@
             this.button_Add = new System.Windows.Forms.Button();
             this.textBox_EnvironmentDeviceRegisterUrl = new System.Windows.Forms.TextBox();
             this.textBox_EnvironmentClientSecret = new System.Windows.Forms.TextBox();
+            this.label_EnvironmentClientSecretExpireDate = new System.Windows.Forms.Label();
             this.label_EnvironmentDeviceRegisterUrl = new System.Windows.Forms.Label();
             this.label_EnvironmentClientSecret = new System.Windows.Forms.Label();
             this.textBox_EnvironmentKeyValutUrl = new System.Windows.Forms.TextBox();
@@ -105,11 +109,14 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.groupBox1.Controls.Add(this.dateTimePicker_ClientSecretExpireDate);
             this.groupBox1.Controls.Add(this.label_KeyValutUrl);
             this.groupBox1.Controls.Add(this.label_TenantId);
+            this.groupBox1.Controls.Add(this.label_ClientSecretExpireDate);
             this.groupBox1.Controls.Add(this.label_ClientSecret);
             this.groupBox1.Controls.Add(this.label_DeviceRegisterUrl);
             this.groupBox1.Controls.Add(this.label_PlatformName);
+            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label_ClientId);
             this.groupBox1.Controls.Add(this.label_DeviceType);
             this.groupBox1.Controls.Add(this.label_Name);
@@ -117,6 +124,7 @@
             this.groupBox1.Controls.Add(this.button_Add);
             this.groupBox1.Controls.Add(this.textBox_EnvironmentDeviceRegisterUrl);
             this.groupBox1.Controls.Add(this.textBox_EnvironmentClientSecret);
+            this.groupBox1.Controls.Add(this.label_EnvironmentClientSecretExpireDate);
             this.groupBox1.Controls.Add(this.label_EnvironmentDeviceRegisterUrl);
             this.groupBox1.Controls.Add(this.label_EnvironmentClientSecret);
             this.groupBox1.Controls.Add(this.textBox_EnvironmentKeyValutUrl);
@@ -135,6 +143,12 @@
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
             // 
+            // dateTimePicker_ClientSecretExpireDate
+            // 
+            resources.ApplyResources(this.dateTimePicker_ClientSecretExpireDate, "dateTimePicker_ClientSecretExpireDate");
+            this.dateTimePicker_ClientSecretExpireDate.Name = "dateTimePicker_ClientSecretExpireDate";
+            this.dateTimePicker_ClientSecretExpireDate.ValueChanged += new System.EventHandler(this.dateTimePicker_ClientSecretExpireDate_ValueChanged);
+            // 
             // label_KeyValutUrl
             // 
             resources.ApplyResources(this.label_KeyValutUrl, "label_KeyValutUrl");
@@ -146,6 +160,12 @@
             resources.ApplyResources(this.label_TenantId, "label_TenantId");
             this.label_TenantId.ForeColor = System.Drawing.Color.Red;
             this.label_TenantId.Name = "label_TenantId";
+            // 
+            // label_ClientSecretExpireDate
+            // 
+            resources.ApplyResources(this.label_ClientSecretExpireDate, "label_ClientSecretExpireDate");
+            this.label_ClientSecretExpireDate.ForeColor = System.Drawing.Color.Red;
+            this.label_ClientSecretExpireDate.Name = "label_ClientSecretExpireDate";
             // 
             // label_ClientSecret
             // 
@@ -164,6 +184,12 @@
             resources.ApplyResources(this.label_PlatformName, "label_PlatformName");
             this.label_PlatformName.ForeColor = System.Drawing.Color.Red;
             this.label_PlatformName.Name = "label_PlatformName";
+            // 
+            // label2
+            // 
+            resources.ApplyResources(this.label2, "label2");
+            this.label2.ForeColor = System.Drawing.Color.Red;
+            this.label2.Name = "label2";
             // 
             // label_ClientId
             // 
@@ -218,6 +244,11 @@
             this.textBox_EnvironmentClientSecret.Name = "textBox_EnvironmentClientSecret";
             this.textBox_EnvironmentClientSecret.TextChanged += new System.EventHandler(this.textBox_EnvironmentClientSecret_TextChanged);
             this.textBox_EnvironmentClientSecret.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_EnvironmentClientSecret_KeyPress);
+            // 
+            // label_EnvironmentClientSecretExpireDate
+            // 
+            resources.ApplyResources(this.label_EnvironmentClientSecretExpireDate, "label_EnvironmentClientSecretExpireDate");
+            this.label_EnvironmentClientSecretExpireDate.Name = "label_EnvironmentClientSecretExpireDate";
             // 
             // label_EnvironmentDeviceRegisterUrl
             // 
@@ -359,5 +390,9 @@
         private Label label_DeviceRegisterUrl;
         private Button button_Clear;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private DateTimePicker dateTimePicker_ClientSecretExpireDate;
+        private Label label_ClientSecretExpireDate;
+        private Label label2;
+        private Label label_EnvironmentClientSecretExpireDate;
     }
 }

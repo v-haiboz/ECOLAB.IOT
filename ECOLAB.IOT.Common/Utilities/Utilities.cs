@@ -179,5 +179,13 @@
 
             return StopBits.None;
         }
+
+        public static int DateDiff(DateTime dateStart, DateTime dateEnd)
+        {
+            DateTime start = Convert.ToDateTime(dateStart.ToShortDateString());
+            DateTime end = Convert.ToDateTime(dateEnd.ToShortDateString());
+            TimeSpan sp = end.Subtract(start);
+            return sp.Days;
+        }
     }
 }

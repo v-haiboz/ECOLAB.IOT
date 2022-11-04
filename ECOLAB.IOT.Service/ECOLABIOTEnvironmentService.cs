@@ -58,6 +58,7 @@
             var securityProvider = CallerContext.ECOLABIOTSecurityProvider;
             environmentVariable.AppServiceOption.ClientId = securityProvider.AESEncrypt(environmentVariable.AppServiceOption.ClientId);
             environmentVariable.AppServiceOption.ClientSecret = securityProvider.AESEncrypt(environmentVariable.AppServiceOption.ClientSecret);
+            environmentVariable.AppServiceOption.SecretExpireTime = securityProvider.AESEncrypt(environmentVariable.AppServiceOption.SecretExpireTime);
             environmentVariable.AppServiceOption.TenantId = securityProvider.AESEncrypt(environmentVariable.AppServiceOption.TenantId);
             environmentVariable.AppServiceOption.KeyValutUrl = securityProvider.AESEncrypt(environmentVariable.AppServiceOption.KeyValutUrl);
             environmentVariable.AppServiceOption.PlatformName = securityProvider.AESEncrypt(environmentVariable.AppServiceOption.PlatformName);
@@ -84,6 +85,7 @@
                 var securityProvider = CallerContext.ECOLABIOTSecurityProvider;
                 appServiceOption.ClientId = securityProvider.AESDecrypt(appServiceOption.ClientId);
                 appServiceOption.ClientSecret = securityProvider.AESDecrypt(appServiceOption.ClientSecret);
+                appServiceOption.SecretExpireTime = securityProvider.AESDecrypt(appServiceOption.SecretExpireTime);
                 appServiceOption.TenantId = securityProvider.AESDecrypt(appServiceOption.TenantId);
                 appServiceOption.KeyValutUrl = securityProvider.AESDecrypt(appServiceOption.KeyValutUrl);
                 appServiceOption.PlatformName = securityProvider.AESDecrypt(appServiceOption.PlatformName);

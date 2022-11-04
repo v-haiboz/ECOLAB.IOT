@@ -159,4 +159,13 @@
   <data name="label_Environment.Text" xml:space="preserve">
     <value>菜单</value>
   </data>
+  <data name="SecretExpire_Message1" xml:space="preserve">
+    <value>Secret 还有{day}天过期。</value>
+  </data>
+  <data name="SecretExpire_Message2" xml:space="preserve">
+    <value>Secret 已经过期了{day}天, 请用Admin 账号登录，导航到菜单-&gt;设置-&gt;环境页面更新.</value>
+  </data>
+  <data name="SecretExpire_Message3" xml:space="preserve">
+    <value>{env} 环境小提示</value>
+  </data>
 </root>

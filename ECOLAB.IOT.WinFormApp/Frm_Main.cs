@@ -1,9 +1,13 @@
-﻿using ECOLAB.IOT.Common.Win32;
+﻿using ECOLAB.IOT.Common.Utilities;
+using ECOLAB.IOT.Common.Win32;
 using ECOLAB.IOT.Service;
 using ECOLAB.IOT.WinFormApp.ChildWinForm;
+
 using Microsoft.Identity.Client;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Globalization;
+using static System.Windows.Forms.AxHost;
 
 namespace ECOLAB.IOT.WinFormApp
 {
@@ -41,7 +45,6 @@ namespace ECOLAB.IOT.WinFormApp
 
             if (result == DialogResult.OK)//login sucessful
             {
-                var aa = CallerContext.EnvironmentVariable;
                 //show main windows
                 Frm_Main obj = new Frm_Main();
                 Application.Run(obj);
@@ -81,11 +84,12 @@ namespace ECOLAB.IOT.WinFormApp
         }
         private void button_SignOut_Click(object sender, EventArgs e)
         {
+            var bl = Logout().Result;
             Application.Exit();
             Process.Start(Application.StartupPath + "\\Ecolink_SNPSK_tool.exe");
         }
 
-        private async Task Logout()
+        private async Task<bool> Logout()
         {
             var accounts = await CallerContext.PublicClientApplication.GetAccountsAsync().ConfigureAwait(false);
             if (accounts.Any())
@@ -99,6 +103,8 @@ namespace ECOLAB.IOT.WinFormApp
                     throw new Exception($"Error signing-out user: {ex.Message}");
                 }
             }
+
+            return await Task.FromResult(true);
         }
         #endregion
 
@@ -158,6 +164,7 @@ namespace ECOLAB.IOT.WinFormApp
 
         private void pictureBox_Close_Click(object sender, EventArgs e)
         {
+            var bl = Logout().Result;
             Application.Exit();
         }
 
@@ -169,7 +176,7 @@ namespace ECOLAB.IOT.WinFormApp
                 pictureBox_Max.Image = Properties.Resources.Max_Main;
                 this.WindowState = FormWindowState.Maximized;
             }
-            else if(this.WindowState == FormWindowState.Maximized)
+            else if (this.WindowState == FormWindowState.Maximized)
             {
                 pictureBox_Max.Image = Properties.Resources.Normal_Main;
                 this.WindowState = FormWindowState.Normal;
@@ -201,6 +208,25 @@ namespace ECOLAB.IOT.WinFormApp
             this.timer1.Start();
         }
 
+
+        private void ToolTip()
+        {
+            ComponentResourceManager res = new ComponentResourceManager(typeof(Frm_Main));
+            var dateString = CallerContext.AppServiceOptions.SecretExpireTime;
+            DateTime dt = Convert.ToDateTime(dateString);
+            var tooltip = res.GetString("SecretExpire_Message3").Replace("{day}", Utilities.DateDiff(dt, DateTime.Now).ToString()).Replace("{env}", CallerContext.EnvironmentVariable.Name);
+            if (dt.Date > DateTime.Now.Date)
+            {
+                var str = res.GetString("SecretExpire_Message1").Replace("{day}", Utilities.DateDiff(DateTime.Now,dt).ToString());
+               
+                MessageBox.Show(str, tooltip);
+            }
+            else
+            {
+                var str = res.GetString("SecretExpire_Message2").Replace("{day}", Utilities.DateDiff(dt, DateTime.Now).ToString());
+                MessageBox.Show(str, tooltip);
+            }
+        }
         private void button_SerialCOM_Burn_Click(object sender, EventArgs e)
         {
             OpenChildForm(new Burn());
@@ -237,17 +263,22 @@ namespace ECOLAB.IOT.WinFormApp
         }
         private void button_Help_Instruction_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void button_Help_Troubleshooting_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void Frm_Main_FormClosing(object sender, FormClosingEventArgs e)
         {
-           
+
+        }
+
+        private void Frm_Main_Shown(object sender, EventArgs e)
+        {
+            ToolTip();
         }
     }
 }

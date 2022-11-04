@@ -4,6 +4,8 @@
     {
         public string ClientId { get; set; } = "";
         public string ClientSecret { get; set; } = "";
+
+        public string SecretExpireTime { get; set; }
         public string TenantId { get; set; } = "";
         public string KeyValutUrl { get; set; } = "";
         //public string DeviceType { get; set; } = "";
