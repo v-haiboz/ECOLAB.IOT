@@ -265,7 +265,7 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             return ValidateName()
                 & ValidateClientId()
                 & ValidateClientSecret()
-                //& ValidateExpireDate()
+                & ValidateExpireDate()
                 & ValidateTenantId()
                 & ValidateKeyValutUrl()
                 //& ValidateDeviceType()

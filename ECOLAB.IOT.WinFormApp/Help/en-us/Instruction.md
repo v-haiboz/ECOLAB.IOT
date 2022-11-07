@@ -42,7 +42,7 @@
 >>>>>      ` `    For example: SHG121211223, The prefix is SHG, as shown in the figure.
 >>>>>        `    `
 >>>>>  "EnableValidateSN" checked，The SN number entered will be verified. If it is not selected, the SN number entered will be verified.
->>>>>      ` `  The rule is: the length is 12, the first three characters must be letters, 4-5 represents the year, 6-7 represents the month, 8-9 represents the day, and 10-12 represents three random numbers“
+>>>>>      ` `  The rule is: the length is 12, the first three characters must be letters, 4-5 represents the year, 6-7 represents the month, 8-9 represents the day, and 10-12 represents three random numbers.
 >>>>>    <img src="/img/main_burndown_common.png"/>
 >>>>>  - FileSendPattern，Send the NVRAM configuration file of Dragon Gateway to the gateway.
 >>>>>    <img src="/img/main_burndown_file.png"/>
