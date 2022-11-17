@@ -1,18 +1,15 @@
-﻿namespace ECOLAB.IOT.Transmit.FileTransmit.Xmodem
+﻿namespace ECOLAB.IOT.Transmit.FileTransmit
 {
     using System;
     using System.IO.Ports;
 
     public partial class XModem
     {
-        Crc16Ccitt Crc_o = new Crc16Ccitt(InitialCrcValue.Zeros);
         byte[] Sender_Packet = new byte[3];
         byte[] Sender_Data = new byte[1024];
         byte[] Sender_Crc = new byte[2];
         byte[] Sender_EOT = new byte[1];
         ushort Sender_Crc_us;
-
-        SerialPort SPort;
 
         byte Sender_Packet_Number = 0;
 
@@ -40,5 +37,6 @@
             this.path = path;
         }
 
+      
     }
 }

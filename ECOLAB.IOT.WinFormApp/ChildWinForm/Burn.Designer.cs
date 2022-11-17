@@ -34,6 +34,9 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Burn));
+            System.Text.ASCIIEncoding.ASCIIEncodingSealed asciiEncodingSealed2 = new System.Text.ASCIIEncoding.ASCIIEncodingSealed();
+            System.Text.DecoderReplacementFallback decoderReplacementFallback2 = new System.Text.DecoderReplacementFallback();
+            System.Text.EncoderReplacementFallback encoderReplacementFallback2 = new System.Text.EncoderReplacementFallback();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.groupBox_DeviceLog = new System.Windows.Forms.GroupBox();
             this.richTextBox_Output = new System.Windows.Forms.RichTextBox();
@@ -273,6 +276,9 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             this.serialPort.DataBits = 8;
             this.serialPort.DiscardNull = false;
             this.serialPort.DtrEnable = false;
+            asciiEncodingSealed2.DecoderFallback = decoderReplacementFallback2;
+            asciiEncodingSealed2.EncoderFallback = encoderReplacementFallback2;
+            this.serialPort.Encoding = asciiEncodingSealed2;
             this.serialPort.Handshake = System.IO.Ports.Handshake.None;
             this.serialPort.NewLine = "\n";
             this.serialPort.Parity = System.IO.Ports.Parity.None;

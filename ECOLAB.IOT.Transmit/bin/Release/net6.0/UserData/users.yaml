@@ -1,0 +1,11 @@
+users:
+- loginId: 0
+  userName: Admin
+  pwd: AjLuUJVchOh6nD4ifG9YT+hx57DzS7gZp33SM2hOmnk=
+  role: 0
+  isSuper: true
+- loginId: 1
+  userName: User
+  pwd: lsrjXOipsCRBeL8o5JZsLOG4OFcjqWprg4hYzdbKCh4=
+  role: 0
+  isSuper: false

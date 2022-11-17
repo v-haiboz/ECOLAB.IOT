@@ -230,7 +230,7 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
         {
             if (formFileSend.comboBox_TransportProtocol.Text == Enum.GetName(TransportProtocol.Xmodem))
             {
-                var xmodem = new YModem(serialPort, formFileSend.textBox_ChooseFile.Text);
+                var xmodem = new XModem(serialPort, formFileSend.textBox_ChooseFile.Text);
                 xmodem.OutPutEvent += new OutPutEventHandler(fileSend_OutPutEvent);
                 xmodem.SendResultEvent += new EventHandler(fileSend_SendCompletedEvent);
                 xmodem.Send();
@@ -243,6 +243,8 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
                 ymodem.Send();
             }
         }
+
+        
 
         private void fileSend_OutPutEvent(object sender, TrackerReceiveData e)
         {

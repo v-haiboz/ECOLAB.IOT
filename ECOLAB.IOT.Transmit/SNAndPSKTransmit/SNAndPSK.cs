@@ -186,10 +186,10 @@
                     serialPort.Open();
                 }
 
-                serialPort.WriteLine("SN=");
-                Thread.Sleep(500);
-                serialPort.WriteLine("PSK=");
-                Thread.Sleep(500);
+                //serialPort.WriteLine("SN=");
+                //Thread.Sleep(500);
+                //serialPort.WriteLine("PSK=");
+                //Thread.Sleep(500);
                 //string cache = serialPort.ReadExisting();
                 //Console.Write(cache);
                 serialPort.WriteLine("SN=" + sn);
@@ -221,8 +221,9 @@
                 string cache = serialPort.ReadExisting();
                 if (OutPutEvent != null)
                 {
-                    OutPutEvent(this, new TrackerReceiveData("======================================================================\r\n" +
-                    $"{cache}\r\n\r\n "));
+                    var show_Text = "======================================================================\r\n" +
+                    $"{cache}\r\n\r\n ";
+                    OutPutEvent(this, new TrackerReceiveData(show_Text));
                 }
 
                 if (!cache.Contains(sn) || !cache.Contains(psk))

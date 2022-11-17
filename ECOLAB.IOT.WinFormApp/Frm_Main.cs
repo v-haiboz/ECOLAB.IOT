@@ -215,16 +215,17 @@ namespace ECOLAB.IOT.WinFormApp
             var dateString = CallerContext.AppServiceOptions.SecretExpireTime;
             DateTime dt = Convert.ToDateTime(dateString);
             var tooltip = res.GetString("SecretExpire_Message3").Replace("{day}", Utilities.DateDiff(dt, DateTime.Now).ToString()).Replace("{env}", CallerContext.EnvironmentVariable.Name);
-            if (dt.Date > DateTime.Now.Date)
-            {
-                var str = res.GetString("SecretExpire_Message1").Replace("{day}", Utilities.DateDiff(DateTime.Now,dt).ToString());
-               
-                MessageBox.Show(str, tooltip);
-            }
-            else
+            
+            if(dt.Date < DateTime.Now.Date)
             {
                 var str = res.GetString("SecretExpire_Message2").Replace("{day}", Utilities.DateDiff(dt, DateTime.Now).ToString());
                 MessageBox.Show(str, tooltip);
+            }
+            else if (dt.Date < DateTime.Now.Date.AddDays(14))
+            {
+                var str = res.GetString("SecretExpire_Message1").Replace("{day}", Utilities.DateDiff(DateTime.Now, dt).ToString());
+
+                MessageBox.Show(str, tooltip, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
         private void button_SerialCOM_Burn_Click(object sender, EventArgs e)

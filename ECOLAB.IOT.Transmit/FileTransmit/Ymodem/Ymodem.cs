@@ -86,8 +86,7 @@
                     invertedPacketNumber = 255 - packetNumber;
 
                     /* calculate CRC */
-                    Crc16Ccitt crc16Ccitt = new Crc16Ccitt(InitialCrcValue.Zeros);
-                    CRC = crc16Ccitt.ComputeChecksumBytes(data);
+                   // CRC = Crc16Ccitt.CRC16_ccitt(data, 0, data.Length);
 
                     /* send the packet */
                     SendPacket(YModemMessageType.STX, packetNumber, invertedPacketNumber, data, dataSize, CRC, crcSize);
@@ -203,7 +202,7 @@
             }
 
             /* calculate CRC */
-            Crc16Ccitt crc16Ccitt = new Crc16Ccitt(InitialCrcValue.Zeros);
+            Crc16Ccitt crc16Ccitt = new Crc16Ccitt();
             CRC = crc16Ccitt.ComputeChecksumBytes(data);
 
             /* send the packet */
@@ -232,7 +231,7 @@
         private void SendClosingPacket(YModemMessageType STX, int packetNumber, int invertedPacketNumber, byte[] data, int dataSize, byte[] CRC, int crcSize)
         {
             /* calculate CRC */
-            Crc16Ccitt crc16Ccitt = new Crc16Ccitt(InitialCrcValue.Zeros);
+            Crc16Ccitt crc16Ccitt = new Crc16Ccitt();
             CRC = crc16Ccitt.ComputeChecksumBytes(data);
 
             /* send the packet */

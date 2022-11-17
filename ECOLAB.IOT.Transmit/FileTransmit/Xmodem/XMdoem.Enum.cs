@@ -1,4 +1,4 @@
-﻿namespace ECOLAB.IOT.Transmit.FileTransmit.Xmodem
+﻿namespace ECOLAB.IOT.Transmit.FileTransmit
 {
     using System;
     using System.IO.Ports;
