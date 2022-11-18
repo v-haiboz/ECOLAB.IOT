@@ -35,6 +35,7 @@
         {
             this.serialPort = serialPort;
             this.path = path;
+            Sender_EOT[0] = (byte)XModemMessageType.EOT;
         }
 
       

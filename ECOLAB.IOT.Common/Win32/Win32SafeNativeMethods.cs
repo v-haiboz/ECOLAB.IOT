@@ -17,5 +17,11 @@
 
         [DllImport("user32.dll", EntryPoint = "SetForegroundWindow")]
         public static extern int SetForegroundWindow(IntPtr hwnd);
+
+        [DllImport("User32.dll ", EntryPoint = "SetParent")]
+        public static extern IntPtr SetParent(IntPtr hWndChild, IntPtr hWndNewParent);
+
+  　　  [DllImport("user32.dll ", EntryPoint = "ShowWindow")]
+  　　  public static extern int ShowWindow(IntPtr hwnd, int nCmdShow);
     }
 }

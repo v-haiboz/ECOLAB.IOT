@@ -71,6 +71,22 @@
   <metadata name="richTextBox_Output.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="richTextBox_Output.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="richTextBox_Output.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 26</value>
+  </data>
+  <data name="richTextBox_Output.Size" type="System.Drawing.Size, System.Drawing">
+    <value>966, 502</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="richTextBox_Output.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="richTextBox_Output.Text" xml:space="preserve">
+    <value />
+  </data>
   <data name="&gt;&gt;richTextBox_Output.Name" xml:space="preserve">
     <value>richTextBox_Output</value>
   </data>
@@ -92,7 +108,6 @@
   <data name="groupBox_DeviceLog.Size" type="System.Drawing.Size, System.Drawing">
     <value>972, 531</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="groupBox_DeviceLog.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -190,159 +205,6 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;splitContainer1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <metadata name="richTextBox_Output.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="richTextBox_Output.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="richTextBox_Output.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 26</value>
-  </data>
-  <data name="richTextBox_Output.Size" type="System.Drawing.Size, System.Drawing">
-    <value>966, 502</value>
-  </data>
-  <data name="richTextBox_Output.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
-  <data name="richTextBox_Output.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;richTextBox_Output.Name" xml:space="preserve">
-    <value>richTextBox_Output</value>
-  </data>
-  <data name="&gt;&gt;richTextBox_Output.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;richTextBox_Output.Parent" xml:space="preserve">
-    <value>groupBox_DeviceLog</value>
-  </data>
-  <data name="&gt;&gt;richTextBox_Output.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;groupBox_SendSetting.Name" xml:space="preserve">
-    <value>groupBox_SendSetting</value>
-  </data>
-  <data name="&gt;&gt;groupBox_SendSetting.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox_SendSetting.Parent" xml:space="preserve">
-    <value>panel_Setting</value>
-  </data>
-  <data name="&gt;&gt;groupBox_SendSetting.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;groupBox_Configuration.Name" xml:space="preserve">
-    <value>groupBox_Configuration</value>
-  </data>
-  <data name="&gt;&gt;groupBox_Configuration.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox_Configuration.Parent" xml:space="preserve">
-    <value>panel_Setting</value>
-  </data>
-  <data name="&gt;&gt;groupBox_Configuration.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="panel_Setting.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <data name="panel_Setting.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="panel_Setting.Size" type="System.Drawing.Size, System.Drawing">
-    <value>417, 726</value>
-  </data>
-  <data name="panel_Setting.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;panel_Setting.Name" xml:space="preserve">
-    <value>panel_Setting</value>
-  </data>
-  <data name="&gt;&gt;panel_Setting.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel_Setting.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;panel_Setting.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;button_BurnDown.Name" xml:space="preserve">
-    <value>button_BurnDown</value>
-  </data>
-  <data name="&gt;&gt;button_BurnDown.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;button_BurnDown.Parent" xml:space="preserve">
-    <value>groupBox_SendSetting</value>
-  </data>
-  <data name="&gt;&gt;button_BurnDown.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;radioButton_FileSendPattern.Name" xml:space="preserve">
-    <value>radioButton_FileSendPattern</value>
-  </data>
-  <data name="&gt;&gt;radioButton_FileSendPattern.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radioButton_FileSendPattern.Parent" xml:space="preserve">
-    <value>groupBox_SendSetting</value>
-  </data>
-  <data name="&gt;&gt;radioButton_FileSendPattern.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;radioButton_QueueSendPattern.Name" xml:space="preserve">
-    <value>radioButton_QueueSendPattern</value>
-  </data>
-  <data name="&gt;&gt;radioButton_QueueSendPattern.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radioButton_QueueSendPattern.Parent" xml:space="preserve">
-    <value>groupBox_SendSetting</value>
-  </data>
-  <data name="&gt;&gt;radioButton_QueueSendPattern.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;radioButton_CommonSendPattern.Name" xml:space="preserve">
-    <value>radioButton_CommonSendPattern</value>
-  </data>
-  <data name="&gt;&gt;radioButton_CommonSendPattern.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radioButton_CommonSendPattern.Parent" xml:space="preserve">
-    <value>groupBox_SendSetting</value>
-  </data>
-  <data name="&gt;&gt;radioButton_CommonSendPattern.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="groupBox_SendSetting.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="groupBox_SendSetting.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 430</value>
-  </data>
-  <data name="groupBox_SendSetting.Size" type="System.Drawing.Size, System.Drawing">
-    <value>417, 296</value>
-  </data>
-  <data name="groupBox_SendSetting.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="groupBox_SendSetting.Text" xml:space="preserve">
-    <value>SendSetting</value>
-  </data>
-  <data name="&gt;&gt;groupBox_SendSetting.Name" xml:space="preserve">
-    <value>groupBox_SendSetting</value>
-  </data>
-  <data name="&gt;&gt;groupBox_SendSetting.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox_SendSetting.Parent" xml:space="preserve">
-    <value>panel_Setting</value>
-  </data>
-  <data name="&gt;&gt;groupBox_SendSetting.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="button_BurnDown.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
@@ -468,200 +330,32 @@
   <data name="&gt;&gt;radioButton_CommonSendPattern.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="&gt;&gt;button_Memory.Name" xml:space="preserve">
-    <value>button_Memory</value>
+  <data name="groupBox_SendSetting.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
   </data>
-  <data name="&gt;&gt;button_Memory.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="groupBox_SendSetting.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 430</value>
   </data>
-  <data name="&gt;&gt;button_Memory.Parent" xml:space="preserve">
-    <value>groupBox_Configuration</value>
+  <data name="groupBox_SendSetting.Size" type="System.Drawing.Size, System.Drawing">
+    <value>417, 296</value>
   </data>
-  <data name="&gt;&gt;button_Memory.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;pictureBox_Connection.Name" xml:space="preserve">
-    <value>pictureBox_Connection</value>
-  </data>
-  <data name="&gt;&gt;pictureBox_Connection.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pictureBox_Connection.Parent" xml:space="preserve">
-    <value>groupBox_Configuration</value>
-  </data>
-  <data name="&gt;&gt;pictureBox_Connection.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;button_Reset.Name" xml:space="preserve">
-    <value>button_Reset</value>
-  </data>
-  <data name="&gt;&gt;button_Reset.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;button_Reset.Parent" xml:space="preserve">
-    <value>groupBox_Configuration</value>
-  </data>
-  <data name="&gt;&gt;button_Reset.ZOrder" xml:space="preserve">
+  <data name="groupBox_SendSetting.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;comboBox_StopBit.Name" xml:space="preserve">
-    <value>comboBox_StopBit</value>
+  <data name="groupBox_SendSetting.Text" xml:space="preserve">
+    <value>SendSetting</value>
   </data>
-  <data name="&gt;&gt;comboBox_StopBit.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;groupBox_SendSetting.Name" xml:space="preserve">
+    <value>groupBox_SendSetting</value>
   </data>
-  <data name="&gt;&gt;comboBox_StopBit.Parent" xml:space="preserve">
-    <value>groupBox_Configuration</value>
-  </data>
-  <data name="&gt;&gt;comboBox_StopBit.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;label_StopBit.Name" xml:space="preserve">
-    <value>label_StopBit</value>
-  </data>
-  <data name="&gt;&gt;label_StopBit.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label_StopBit.Parent" xml:space="preserve">
-    <value>groupBox_Configuration</value>
-  </data>
-  <data name="&gt;&gt;label_StopBit.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;comboBox_DataBit.Name" xml:space="preserve">
-    <value>comboBox_DataBit</value>
-  </data>
-  <data name="&gt;&gt;comboBox_DataBit.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;comboBox_DataBit.Parent" xml:space="preserve">
-    <value>groupBox_Configuration</value>
-  </data>
-  <data name="&gt;&gt;comboBox_DataBit.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;label_DataBit.Name" xml:space="preserve">
-    <value>label_DataBit</value>
-  </data>
-  <data name="&gt;&gt;label_DataBit.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label_DataBit.Parent" xml:space="preserve">
-    <value>groupBox_Configuration</value>
-  </data>
-  <data name="&gt;&gt;label_DataBit.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;comboBox_ParityBit.Name" xml:space="preserve">
-    <value>comboBox_ParityBit</value>
-  </data>
-  <data name="&gt;&gt;comboBox_ParityBit.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;comboBox_ParityBit.Parent" xml:space="preserve">
-    <value>groupBox_Configuration</value>
-  </data>
-  <data name="&gt;&gt;comboBox_ParityBit.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;label_ParityBit.Name" xml:space="preserve">
-    <value>label_ParityBit</value>
-  </data>
-  <data name="&gt;&gt;label_ParityBit.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label_ParityBit.Parent" xml:space="preserve">
-    <value>groupBox_Configuration</value>
-  </data>
-  <data name="&gt;&gt;label_ParityBit.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;button_Connection.Name" xml:space="preserve">
-    <value>button_Connection</value>
-  </data>
-  <data name="&gt;&gt;button_Connection.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;button_Connection.Parent" xml:space="preserve">
-    <value>groupBox_Configuration</value>
-  </data>
-  <data name="&gt;&gt;button_Connection.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;comboBox_BaudRate.Name" xml:space="preserve">
-    <value>comboBox_BaudRate</value>
-  </data>
-  <data name="&gt;&gt;comboBox_BaudRate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;comboBox_BaudRate.Parent" xml:space="preserve">
-    <value>groupBox_Configuration</value>
-  </data>
-  <data name="&gt;&gt;comboBox_BaudRate.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;label_BaudRate.Name" xml:space="preserve">
-    <value>label_BaudRate</value>
-  </data>
-  <data name="&gt;&gt;label_BaudRate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label_BaudRate.Parent" xml:space="preserve">
-    <value>groupBox_Configuration</value>
-  </data>
-  <data name="&gt;&gt;label_BaudRate.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="&gt;&gt;comboBox_SerialPort.Name" xml:space="preserve">
-    <value>comboBox_SerialPort</value>
-  </data>
-  <data name="&gt;&gt;comboBox_SerialPort.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;comboBox_SerialPort.Parent" xml:space="preserve">
-    <value>groupBox_Configuration</value>
-  </data>
-  <data name="&gt;&gt;comboBox_SerialPort.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="&gt;&gt;label_SerialPort.Name" xml:space="preserve">
-    <value>label_SerialPort</value>
-  </data>
-  <data name="&gt;&gt;label_SerialPort.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label_SerialPort.Parent" xml:space="preserve">
-    <value>groupBox_Configuration</value>
-  </data>
-  <data name="&gt;&gt;label_SerialPort.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
-  <data name="groupBox_Configuration.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="groupBox_Configuration.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="groupBox_Configuration.Size" type="System.Drawing.Size, System.Drawing">
-    <value>417, 430</value>
-  </data>
-  <data name="groupBox_Configuration.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="groupBox_Configuration.Text" xml:space="preserve">
-    <value>COMSettings</value>
-  </data>
-  <data name="&gt;&gt;groupBox_Configuration.Name" xml:space="preserve">
-    <value>groupBox_Configuration</value>
-  </data>
-  <data name="&gt;&gt;groupBox_Configuration.Type" xml:space="preserve">
+  <data name="&gt;&gt;groupBox_SendSetting.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;groupBox_Configuration.Parent" xml:space="preserve">
+  <data name="&gt;&gt;groupBox_SendSetting.Parent" xml:space="preserve">
     <value>panel_Setting</value>
   </data>
-  <data name="&gt;&gt;groupBox_Configuration.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="&gt;&gt;groupBox_SendSetting.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="button_Memory.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1001,6 +695,57 @@
   </data>
   <data name="&gt;&gt;label_SerialPort.ZOrder" xml:space="preserve">
     <value>13</value>
+  </data>
+  <data name="groupBox_Configuration.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="groupBox_Configuration.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="groupBox_Configuration.Size" type="System.Drawing.Size, System.Drawing">
+    <value>417, 430</value>
+  </data>
+  <data name="groupBox_Configuration.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="groupBox_Configuration.Text" xml:space="preserve">
+    <value>COMSettings</value>
+  </data>
+  <data name="&gt;&gt;groupBox_Configuration.Name" xml:space="preserve">
+    <value>groupBox_Configuration</value>
+  </data>
+  <data name="&gt;&gt;groupBox_Configuration.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox_Configuration.Parent" xml:space="preserve">
+    <value>panel_Setting</value>
+  </data>
+  <data name="&gt;&gt;groupBox_Configuration.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="panel_Setting.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="panel_Setting.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="panel_Setting.Size" type="System.Drawing.Size, System.Drawing">
+    <value>417, 726</value>
+  </data>
+  <data name="panel_Setting.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;panel_Setting.Name" xml:space="preserve">
+    <value>panel_Setting</value>
+  </data>
+  <data name="&gt;&gt;panel_Setting.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel_Setting.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panel_Setting.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <metadata name="serialPort.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>

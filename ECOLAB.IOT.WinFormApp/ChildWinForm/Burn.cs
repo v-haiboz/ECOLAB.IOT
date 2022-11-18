@@ -20,11 +20,17 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
         {
             InitializeComponent();
         }
-
+        TextWriter _writer = null;
         private void Burn_Load(object sender, EventArgs e)
         {
             Init();
+            _writer = new TextBoxStreamWriter(richTextBox_Output);
+            Console.SetOut(_writer);
+
+            Console.WriteLine("Now redirecting output to the text box");
         }
+
+
 
         private void button_Reset_Click(object sender, EventArgs e)
         {

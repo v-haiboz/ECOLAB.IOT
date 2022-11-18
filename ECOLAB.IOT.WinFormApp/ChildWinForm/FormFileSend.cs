@@ -22,7 +22,7 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
         {
             var protacols = CallerContext.ECOLABIOTBurnSNAndPSKService.GetTransportProtocol();
             this.comboBox_TransportProtocol.Items.AddRange(protacols);
-            comboBox_TransportProtocol.SelectedItem = Enum.GetName(TransportProtocol.Ymodem);
+            comboBox_TransportProtocol.SelectedItem = Enum.GetName(TransportProtocol.Xmodem);
         }
 
         private void FormFileSend_Load(object sender, EventArgs e)
