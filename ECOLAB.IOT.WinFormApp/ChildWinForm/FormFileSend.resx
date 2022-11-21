@@ -84,7 +84,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label_ChooseFile.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="textBox_ChooseFile.Location" type="System.Drawing.Point, System.Drawing">
     <value>297, 95</value>
@@ -108,7 +108,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;textBox_ChooseFile.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="button_ChooseFile.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
@@ -136,7 +136,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;button_ChooseFile.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="comboBox_TransportProtocol.Location" type="System.Drawing.Point, System.Drawing">
     <value>297, 42</value>
@@ -157,7 +157,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;comboBox_TransportProtocol.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="label_TransportProtocol.Location" type="System.Drawing.Point, System.Drawing">
     <value>86, 45</value>
@@ -184,7 +184,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label_TransportProtocol.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="label_ChooseFile_Validate.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -208,6 +208,33 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label_ChooseFile_Validate.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="checkBox_isCRC.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBox_isCRC.Location" type="System.Drawing.Point, System.Drawing">
+    <value>516, 44</value>
+  </data>
+  <data name="checkBox_isCRC.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 28</value>
+  </data>
+  <data name="checkBox_isCRC.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="checkBox_isCRC.Text" xml:space="preserve">
+    <value>CRC</value>
+  </data>
+  <data name="&gt;&gt;checkBox_isCRC.Name" xml:space="preserve">
+    <value>checkBox_isCRC</value>
+  </data>
+  <data name="&gt;&gt;checkBox_isCRC.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBox_isCRC.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;checkBox_isCRC.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

@@ -6,8 +6,6 @@ using ECOLAB.IOT.Transmit.FileTransmit;
 using ECOLAB.IOT.Transmit.SNAndPSKSend;
 using System.ComponentModel;
 using System.IO.Ports;
-using System.Text;
-using YamlDotNet.Core.Tokens;
 using static ECOLAB.IOT.Transmit.ITransmitUart;
 
 namespace ECOLAB.IOT.WinFormApp.ChildWinForm
@@ -26,8 +24,6 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             Init();
             _writer = new TextBoxStreamWriter(richTextBox_Output);
             Console.SetOut(_writer);
-
-            Console.WriteLine("Now redirecting output to the text box");
         }
 
 
@@ -139,11 +135,6 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
 
         private async void button_BurnDown_Click(object sender, EventArgs e)
         {
-            //if (BurnDown_Validate())
-            //{
-            //    return;
-            //}
-
             await Travel();
         }
 
@@ -152,6 +143,10 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
         {
             try
             {
+                if (!CallerContext.ECOLABIOTLogSettingService.GetLogSetting().DeviceLogContinuity)
+                {
+                    richTextBox_Output.Clear();
+                }
                 //ChangeSendStatusToDisable();
                 if (CurrentContext.SendModeType == SendModeType.Normal)
                 {
@@ -168,9 +163,18 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             }
             finally
             {
+                Log();
                 //ChangeSendStatusToEnable();
             }
 
+        }
+
+        private void Log()
+        {
+            if (CallerContext.ECOLABIOTLogSettingService.GetLogSetting().Enable)
+            {
+                File.WriteAllText("Log",$"track_{CallerContext.SysAdmin.UserName}_{DateTime.Now.ToString()}");
+            }
         }
         #endregion
 
@@ -236,7 +240,7 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
         {
             if (formFileSend.comboBox_TransportProtocol.Text == Enum.GetName(TransportProtocol.Xmodem))
             {
-                var xmodem = new XModem(serialPort, formFileSend.textBox_ChooseFile.Text);
+                var xmodem = new XModem(serialPort, formFileSend.textBox_ChooseFile.Text,formFileSend.checkBox_isCRC.Checked);
                 xmodem.OutPutEvent += new OutPutEventHandler(fileSend_OutPutEvent);
                 xmodem.SendResultEvent += new EventHandler(fileSend_SendCompletedEvent);
                 xmodem.Send();

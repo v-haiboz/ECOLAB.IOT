@@ -34,7 +34,6 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Burn));
-            System.Text.ASCIIEncoding.ASCIIEncodingSealed asciiEncodingSealed1 = new System.Text.ASCIIEncoding.ASCIIEncodingSealed();
             System.Text.DecoderReplacementFallback decoderReplacementFallback1 = new System.Text.DecoderReplacementFallback();
             System.Text.EncoderReplacementFallback encoderReplacementFallback1 = new System.Text.EncoderReplacementFallback();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
@@ -279,9 +278,6 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             this.serialPort.DataBits = 8;
             this.serialPort.DiscardNull = false;
             this.serialPort.DtrEnable = false;
-            asciiEncodingSealed1.DecoderFallback = decoderReplacementFallback1;
-            asciiEncodingSealed1.EncoderFallback = encoderReplacementFallback1;
-            this.serialPort.Encoding = asciiEncodingSealed1;
             this.serialPort.Handshake = System.IO.Ports.Handshake.None;
             this.serialPort.NewLine = "\n";
             this.serialPort.Parity = System.IO.Ports.Parity.None;
@@ -582,7 +578,7 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             formFileSend.comboBox_TransportProtocol.Enabled = false;
             button_BurnDown.BackColor = SystemColors.AppWorkspace;
             button_BurnDown.Enabled = false;
-            this.richTextBox_Output.Text = "";
+            //this.richTextBox_Output.Text = "";
         }
         private void ChangeSendStatusToEnable()
         {

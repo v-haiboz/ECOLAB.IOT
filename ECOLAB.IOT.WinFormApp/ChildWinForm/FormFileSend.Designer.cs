@@ -35,6 +35,7 @@
             this.comboBox_TransportProtocol = new System.Windows.Forms.ComboBox();
             this.label_TransportProtocol = new System.Windows.Forms.Label();
             this.label_ChooseFile_Validate = new System.Windows.Forms.Label();
+            this.checkBox_isCRC = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label_ChooseFile
@@ -75,11 +76,18 @@
             this.label_ChooseFile_Validate.ForeColor = System.Drawing.Color.Red;
             this.label_ChooseFile_Validate.Name = "label_ChooseFile_Validate";
             // 
+            // checkBox_isCRC
+            // 
+            resources.ApplyResources(this.checkBox_isCRC, "checkBox_isCRC");
+            this.checkBox_isCRC.Name = "checkBox_isCRC";
+            this.checkBox_isCRC.UseVisualStyleBackColor = true;
+            // 
             // FormFileSend
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.Controls.Add(this.checkBox_isCRC);
             this.Controls.Add(this.label_ChooseFile_Validate);
             this.Controls.Add(this.label_TransportProtocol);
             this.Controls.Add(this.comboBox_TransportProtocol);
@@ -102,5 +110,6 @@
         public ComboBox comboBox_TransportProtocol;
         public Label label_TransportProtocol;
         public Label label_ChooseFile_Validate;
+        public CheckBox checkBox_isCRC;
     }
 }

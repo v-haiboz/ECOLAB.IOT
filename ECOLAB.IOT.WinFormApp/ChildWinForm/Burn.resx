@@ -310,13 +310,13 @@
     <value>103, 48</value>
   </data>
   <data name="radioButton_CommonSendPattern.Size" type="System.Drawing.Size, System.Drawing">
-    <value>218, 28</value>
+    <value>133, 28</value>
   </data>
   <data name="radioButton_CommonSendPattern.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="radioButton_CommonSendPattern.Text" xml:space="preserve">
-    <value>CommonSendPattern</value>
+    <value>SNPSKSend</value>
   </data>
   <data name="&gt;&gt;radioButton_CommonSendPattern.Name" xml:space="preserve">
     <value>radioButton_CommonSendPattern</value>

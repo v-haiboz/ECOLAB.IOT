@@ -2,7 +2,6 @@
 using ECOLAB.IOT.Common.Win32;
 using ECOLAB.IOT.Service;
 using ECOLAB.IOT.WinFormApp.ChildWinForm;
-
 using Microsoft.Identity.Client;
 using System.ComponentModel;
 using System.Diagnostics;
@@ -65,7 +64,10 @@ namespace ECOLAB.IOT.WinFormApp
             OpenChildForm(new Burn());
             ShowNavigationMenu(button_SerialCOM_Burn.Name);
             HideSubMenu();
+
         }
+
+
         private void timer1_Tick(object sender, EventArgs e)
         {
             label_DateTime.Text = $"{DateTime.Now.ToString()}";

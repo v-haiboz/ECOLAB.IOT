@@ -31,13 +31,13 @@
         public event EventHandler SendResultEvent;
         public event ITransmitUart.MessageBoxEventHandler MessageBoxEvent;
 
-        public XModem(SerialPort serialPort, string path)
+        private bool isCRC = false;
+        public XModem(SerialPort serialPort, string path,bool isCRC=false)
         {
             this.serialPort = serialPort;
             this.path = path;
             Sender_EOT[0] = (byte)XModemMessageType.EOT;
+            this.isCRC = isCRC;
         }
-
-      
     }
 }

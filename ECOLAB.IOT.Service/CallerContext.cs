@@ -22,7 +22,7 @@
         public static IECOLABIOTRegisterDeviceService ECOLABIOTRegisterDeviceService => Resolve<IECOLABIOTRegisterDeviceService>();
         public static IECOLABIOTDeviceTypeService ECOLABIOTDeviceTypeService => Resolve<IECOLABIOTDeviceTypeService>();
         public static IECOLABIOTADDSettingService ECOLABIOTADDSettingService => Resolve<IECOLABIOTADDSettingService>();
-
+        public static IECOLABIOTLogSettingService ECOLABIOTLogSettingService => Resolve<IECOLABIOTLogSettingService>();
 
 
         public static IECOLABIOTUserProvider ECOLABIOTUserProvider => Resolve<IECOLABIOTUserProvider>();
@@ -34,5 +34,6 @@
         public static IECOLABIOTSecurityProvider ECOLABIOTSecurityProvider => Resolve<IECOLABIOTSecurityProvider>();
         public static IECOLABIOTDeviceTypeProvider ECOLABIOTDeviceTypeProvider => Resolve<IECOLABIOTDeviceTypeProvider>();
         public static IECOLABIOTAADSettingProvider ECOLABIOTAADSettingProvider => Resolve<IECOLABIOTAADSettingProvider>();
+        public static IECOLABIOTLogSettingProvider ECOLABIOTLogSettingProvider => Resolve<IECOLABIOTLogSettingProvider>();
     }
 }
