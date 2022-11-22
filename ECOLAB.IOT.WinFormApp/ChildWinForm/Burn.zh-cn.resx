@@ -121,7 +121,7 @@
     <value>烧制</value>
   </data>
   <data name="button_Connection.Text" xml:space="preserve">
-    <value>链接</value>
+    <value>连接</value>
   </data>
   <data name="button_Connection_Disable" xml:space="preserve">
     <value>断开</value>
@@ -188,6 +188,9 @@
   </data>
   <data name="message_Travel_failed" xml:space="preserve">
     <value>控制板配置失败。。。</value>
+  </data>
+  <data name="message_Travel_failed1" xml:space="preserve">
+    <value>文件发送失败。。。</value>
   </data>
   <data name="radioButton_CommonSendPattern.Text" xml:space="preserve">
     <value>SN_PSK发送</value>

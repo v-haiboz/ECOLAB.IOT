@@ -227,7 +227,7 @@
     <value>Top</value>
   </data>
   <data name="panel_Help.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 486</value>
+    <value>0, 531</value>
   </data>
   <data name="panel_Help.Size" type="System.Drawing.Size, System.Drawing">
     <value>285, 91</value>
@@ -260,7 +260,7 @@
     <value>MiddleLeft</value>
   </data>
   <data name="button_Help.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 441</value>
+    <value>0, 486</value>
   </data>
   <data name="button_Help.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 10, 3, 10</value>
@@ -294,6 +294,51 @@
   </data>
   <data name="&gt;&gt;button_Help.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="button_Setting_DGWMode.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="button_Setting_DGWMode.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="button_Setting_DGWMode.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="button_Setting_DGWMode.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="button_Setting_DGWMode.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 138</value>
+  </data>
+  <data name="button_Setting_DGWMode.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 10, 3, 10</value>
+  </data>
+  <data name="button_Setting_DGWMode.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>45, 0, 0, 0</value>
+  </data>
+  <data name="button_Setting_DGWMode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>285, 44</value>
+  </data>
+  <data name="button_Setting_DGWMode.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="button_Setting_DGWMode.Text" xml:space="preserve">
+    <value>           DGW Mode</value>
+  </data>
+  <data name="button_Setting_DGWMode.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;button_Setting_DGWMode.Name" xml:space="preserve">
+    <value>button_Setting_DGWMode</value>
+  </data>
+  <data name="&gt;&gt;button_Setting_DGWMode.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_Setting_DGWMode.Parent" xml:space="preserve">
+    <value>panel_SettingSubMenu</value>
+  </data>
+  <data name="&gt;&gt;button_Setting_DGWMode.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="button_Setting_AAD.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -338,7 +383,7 @@
     <value>panel_SettingSubMenu</value>
   </data>
   <data name="&gt;&gt;button_Setting_AAD.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="button_Setting_Application.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -383,7 +428,7 @@
     <value>panel_SettingSubMenu</value>
   </data>
   <data name="&gt;&gt;button_Setting_Application.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="button_Setting_Environment.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -425,7 +470,7 @@
     <value>panel_SettingSubMenu</value>
   </data>
   <data name="&gt;&gt;button_Setting_Environment.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="panel_SettingSubMenu.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -434,7 +479,7 @@
     <value>0, 302</value>
   </data>
   <data name="panel_SettingSubMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>285, 139</value>
+    <value>285, 184</value>
   </data>
   <data name="panel_SettingSubMenu.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>

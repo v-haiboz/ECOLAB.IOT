@@ -408,8 +408,8 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             this.formNormal.Hide();
 
             this.formFileSend = new FormFileSend();
-            this.formFileSend.textBox_ChooseFile.KeyPress += new KeyPressEventHandler(this.textBox_ChooseFile_KeyPress);
-            this.formFileSend.textBox_ChooseFile.TextChanged += new EventHandler(this.textBox_ChooseFile_TextChanged);
+            //this.formFileSend.textBox_ChooseFile.KeyPress += new KeyPressEventHandler(this.textBox_ChooseFile_KeyPress);
+            this.formFileSend.comboBox_Version.SelectedIndexChanged += new EventHandler(this.textBox_ChooseVersion_TextChanged);
             this.formFileSend.Hide();
         }
 
@@ -501,19 +501,46 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
         {
             var bl = true;
 
-            if (string.IsNullOrEmpty(filePath))
+            //if (string.IsNullOrEmpty(filePath))
+            //{
+            //    formFileSend.label_ChooseFile_Validate.Text = "FilePath is Empty, pls input or choose file";
+            //    bl = false;
+            //}
+            //else if (!File.Exists(Path.GetFullPath(filePath)))
+            //{
+            //    formFileSend.label_ChooseFile_Validate.Text = $"FilePath format is incorrect, or the related file doesn't exist.";
+            //    bl = false;
+            //}
+            //else
+            //{
+            //    formFileSend.label_ChooseFile_Validate.Text = "";
+            //}
+
+            DisableOrEnableBurnDownButton();
+            return bl;
+        }
+
+        private bool FormFileSend_ValidateChooseFile(string filePath)
+        {
+            var bl = true;
+
+            //if (string.IsNullOrEmpty(filePath))
+            //{
+            //    formFileSend.label_ChooseFile_Validate.Text = "FilePath is Empty, pls input or choose file";
+            //    bl = false;
+            //}
+            //else if (!File.Exists(Path.GetFullPath(filePath)))
+            //{
+            //    formFileSend.label_ChooseFile_Validate.Text = $"FilePath format is incorrect, or the related file doesn't exist.";
+            //    bl = false;
+            //}
+            //else
+            //{
+            //    formFileSend.label_ChooseFile_Validate.Text = "";
+            //}
+            if (string.IsNullOrEmpty(filePath) || !File.Exists(filePath))
             {
-                formFileSend.label_ChooseFile_Validate.Text = "FilePath is Empty, pls input or choose file";
-                bl = false;
-            }
-            else if (!File.Exists(Path.GetFullPath(filePath)))
-            {
-                formFileSend.label_ChooseFile_Validate.Text = $"FilePath format is incorrect, or the related file doesn't exist.";
-                bl = false;
-            }
-            else
-            {
-                formFileSend.label_ChooseFile_Validate.Text = "";
+                return false;
             }
 
             DisableOrEnableBurnDownButton();
@@ -551,8 +578,8 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
                     && !string.IsNullOrEmpty(formNormal.textBox_SerialNumber.Text))
                     ||
                     (CurrentContext.SendModeType == SendModeType.File
-                    && string.IsNullOrEmpty(formFileSend.label_ChooseFile_Validate.Text)
-                    && !string.IsNullOrEmpty(formFileSend.textBox_ChooseFile.Text)
+                    && !string.IsNullOrEmpty(formFileSend.comboBox_ModeName.Text)
+                    && !string.IsNullOrEmpty(formFileSend.comboBox_Version.Text)
                     )
                    )
                )
@@ -574,7 +601,8 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             radioButton_CommonSendPattern.Enabled = false;
             radioButton_FileSendPattern.Enabled = false;
             formNormal.textBox_SerialNumber.Enabled = false;
-            formFileSend.textBox_ChooseFile.Enabled = false;
+            formFileSend.comboBox_Version.Enabled = false;
+            formFileSend.comboBox_ModeName.Enabled = false;
             formFileSend.comboBox_TransportProtocol.Enabled = false;
             button_BurnDown.BackColor = SystemColors.AppWorkspace;
             button_BurnDown.Enabled = false;
@@ -585,7 +613,8 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             radioButton_CommonSendPattern.Enabled = true;
             radioButton_FileSendPattern.Enabled = true;
             formNormal.textBox_SerialNumber.Enabled = true;
-            formFileSend.textBox_ChooseFile.Enabled = true;
+            formFileSend.comboBox_Version.Enabled = true;
+            formFileSend.comboBox_ModeName.Enabled = true;
             formFileSend.comboBox_TransportProtocol.Enabled = true;
             button_BurnDown.BackColor = Color.FromArgb(0, 192, 0);
             button_BurnDown.Enabled = true;

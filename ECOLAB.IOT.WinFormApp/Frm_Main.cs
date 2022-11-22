@@ -18,6 +18,7 @@ namespace ECOLAB.IOT.WinFormApp
         [STAThread]
         static void Main()
         {
+            Thread.Sleep(100);
             Process cur = Process.GetCurrentProcess();
             foreach (Process p in Process.GetProcesses())
             {
@@ -29,6 +30,7 @@ namespace ECOLAB.IOT.WinFormApp
                     return;
                 }
             }
+
 
             Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("en-us");
             // To customize application configuration such as set high DPI settings or default font,
@@ -68,13 +70,12 @@ namespace ECOLAB.IOT.WinFormApp
             OpenChildForm(new Burn());
             ShowNavigationMenu(button_SerialCOM_Burn.Name);
             HideSubMenu();
-
         }
 
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            label_DateTime.Text = $"{DateTime.Now.ToString()}";
+            label_DateTime.Text = $"{DateTime.Now}";
         }
 
         private void button_Account_Click(object sender, EventArgs e)
@@ -91,8 +92,8 @@ namespace ECOLAB.IOT.WinFormApp
         private void button_SignOut_Click(object sender, EventArgs e)
         {
             var bl = Logout().Result;
-            Application.Exit();
             Process.Start(Application.StartupPath + "\\Ecolink_SNPSK_tool.exe");
+            Process.GetCurrentProcess().Kill();
         }
 
         private async Task<bool> Logout()
@@ -174,18 +175,25 @@ namespace ECOLAB.IOT.WinFormApp
             Application.Exit();
         }
 
-
         private void pictureBox_Max_Click(object sender, EventArgs e)
         {
             if (this.WindowState == FormWindowState.Normal)
             {
+                this.FormBorderStyle = FormBorderStyle.None;
                 pictureBox_Max.Image = Properties.Resources.Max_Main;
                 this.WindowState = FormWindowState.Maximized;
+                this.MaximumSize = new Size(Screen.PrimaryScreen.WorkingArea.Width, Screen.PrimaryScreen.WorkingArea.Height);
             }
             else if (this.WindowState == FormWindowState.Maximized)
             {
                 pictureBox_Max.Image = Properties.Resources.Normal_Main;
+                //this.MaximumSize = new Size(0, 0);
                 this.WindowState = FormWindowState.Normal;
+                int DWidth = Convert.ToInt32(1280 * 0.85);
+                int DHeight = Convert.ToInt32(672 * 0.9);
+
+                this.Width = DWidth;
+                this.Height = DHeight;
             }
         }
 
@@ -207,28 +215,36 @@ namespace ECOLAB.IOT.WinFormApp
 
         private void F_Main_Load(object sender, EventArgs e)
         {
-            int DWidth = Screen.PrimaryScreen.WorkingArea.Width;
-            int DHeight = Screen.PrimaryScreen.WorkingArea.Height;
-            if (DWidth >= 1920)
-            {
-                this.Width = Convert.ToInt32(DWidth * 0.6);
-                this.Height = Convert.ToInt32(DHeight * 0.6);
-            }
-            else if (DWidth >= 1680)
-            {
-                this.Width = Convert.ToInt32(DWidth * 0.7);
-                this.Height = Convert.ToInt32(DHeight * 0.7);
-            }
-            else if (DWidth >= 1440)
-            {
-                this.Width = Convert.ToInt32(DWidth * 0.8);
-                this.Height = Convert.ToInt32(DHeight * 0.8);
-            }
-            else
-            {
-                this.Width = Convert.ToInt32(DWidth * 0.9);
-                this.Height = Convert.ToInt32(DHeight * 0.9);
-            }
+            int DWidth = Convert.ToInt32(1280 * 0.85);
+            int DHeight = Convert.ToInt32(672 * 0.9);
+
+            this.Width = DWidth;
+            this.Height = DHeight;
+            //int DWidth = Screen.PrimaryScreen.WorkingArea.Width;
+            //int DHeight = Screen.PrimaryScreen.WorkingArea.Height;
+
+            //this.Width = DWidth;
+            //this.Height = DHeight;
+            //if (DWidth >= 1920)
+            //{
+            //    this.Width = Convert.ToInt32(DWidth * 0.6);
+            //    this.Height = Convert.ToInt32(DHeight * 0.6);
+            //}
+            //else if (DWidth >= 1680)
+            //{
+            //    this.Width = Convert.ToInt32(DWidth * 0.7);
+            //    this.Height = Convert.ToInt32(DHeight * 0.7);
+            //}
+            //else if (DWidth >= 1440)
+            //{
+            //    this.Width = Convert.ToInt32(DWidth * 0.8);
+            //    this.Height = Convert.ToInt32(DHeight * 0.8);
+            //}
+            //else
+            //{
+            //    this.Width = Convert.ToInt32(DWidth * 0.9);
+            //    this.Height = Convert.ToInt32(DHeight * 0.9);
+            //}
            
             this.timer1.Start();
         }
@@ -305,6 +321,13 @@ namespace ECOLAB.IOT.WinFormApp
         private void Frm_Main_Shown(object sender, EventArgs e)
         {
             ToolTip();
+        }
+
+        private void button_Setting_DGWMode_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new DGWMode());
+            ShowNavigationMenu(button_Setting_DGWMode.Name);
+            HideSubMenu();
         }
     }
 }

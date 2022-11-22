@@ -81,6 +81,7 @@
             services.AddSingleton<IECOLABIOTDeviceTypeProvider, ECOLABIOTDeviceTypeProvider>();
             services.AddSingleton<IECOLABIOTAADSettingProvider, ECOLABIOTAADSettingProvider>();
             services.AddSingleton<IECOLABIOTLogSettingProvider, ECOLABIOTLogSettingProvider>();
+            services.AddSingleton<IECOLABIOTDGWModeProvider, ECOLABIOTDGWModeProvider>();
             return services;
         }
         private static ServiceCollection RegisterService(this ServiceCollection services)
@@ -94,6 +95,7 @@
             services.AddScoped<IECOLABIOTDeviceTypeService, ECOLABIOTDeviceTypeService>();
             services.AddScoped<IECOLABIOTADDSettingService, ECOLABIOTADDSettingService>();
             services.AddScoped<IECOLABIOTLogSettingService, ECOLABIOTLogSettingService>();
+            services.AddScoped<IECOLABIOTDGWModeService, ECOLABIOTDGWModeService>();
             return services;
         }
 

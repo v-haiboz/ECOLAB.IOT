@@ -1,11 +1,7 @@
 ﻿namespace ECOLAB.IOT.Transmit.FileTransmit
 {
-    using ECOLAB.IOT.Entity;
     using ECOLAB.IOT.Service;
     using System;
-    using System.Net.Sockets;
-    using System.Runtime.Intrinsics.Arm;
-    using System.Text;
 
     public partial class XModem : IFileTransmit
     {
@@ -86,7 +82,15 @@
             }
             catch (Exception ex)
             {
-                DeviceLog($"Transmit does not answering.{ex}");
+                if (ex.Message.Contains("The operation has timed out."))
+                {
+                    DeviceLog($"Transmit does not answering, The operation has timed out.");
+                }
+                else
+                {
+                    DeviceLog($"Transmit does not answering, {ex.Message}");
+                }
+                
                 throw new Exception("Transmit does not answering");
             }
             finally

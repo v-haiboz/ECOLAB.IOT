@@ -43,6 +43,7 @@ namespace ECOLAB.IOT.WinFormApp
             this.button_Help_Instruction = new System.Windows.Forms.Button();
             this.button_Help = new System.Windows.Forms.Button();
             this.panel_SettingSubMenu = new System.Windows.Forms.Panel();
+            this.button_Setting_DGWMode = new System.Windows.Forms.Button();
             this.button_Setting_AAD = new System.Windows.Forms.Button();
             this.button_Setting_Application = new System.Windows.Forms.Button();
             this.button_Setting_Environment = new System.Windows.Forms.Button();
@@ -161,11 +162,22 @@ namespace ECOLAB.IOT.WinFormApp
             // panel_SettingSubMenu
             // 
             this.panel_SettingSubMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.panel_SettingSubMenu.Controls.Add(this.button_Setting_DGWMode);
             this.panel_SettingSubMenu.Controls.Add(this.button_Setting_AAD);
             this.panel_SettingSubMenu.Controls.Add(this.button_Setting_Application);
             this.panel_SettingSubMenu.Controls.Add(this.button_Setting_Environment);
             resources.ApplyResources(this.panel_SettingSubMenu, "panel_SettingSubMenu");
             this.panel_SettingSubMenu.Name = "panel_SettingSubMenu";
+            // 
+            // button_Setting_DGWMode
+            // 
+            resources.ApplyResources(this.button_Setting_DGWMode, "button_Setting_DGWMode");
+            this.button_Setting_DGWMode.FlatAppearance.BorderSize = 0;
+            this.button_Setting_DGWMode.ForeColor = System.Drawing.Color.White;
+            this.button_Setting_DGWMode.Image = global::ECOLAB.IOT.WinFormApp.Properties.Resources.setting_DGWMode_Main;
+            this.button_Setting_DGWMode.Name = "button_Setting_DGWMode";
+            this.button_Setting_DGWMode.UseVisualStyleBackColor = true;
+            this.button_Setting_DGWMode.Click += new System.EventHandler(this.button_Setting_DGWMode_Click);
             // 
             // button_Setting_AAD
             // 
@@ -419,6 +431,7 @@ namespace ECOLAB.IOT.WinFormApp
             this.button_Help_Instruction.Text = $"           {res.GetString("button_Help_Instruction")}";
             this.button_Account.Text = $"           {res.GetString("button_Account")}";
             this.button_Setting_Application.Text = $"           {res.GetString("button_Setting_Application")}";
+            this.button_Setting_DGWMode.Text = $"           {res.GetString("button_Setting_DGWMode")}";
         }
         private void OpenChildForm(Form childForm)
         {
@@ -553,5 +566,6 @@ namespace ECOLAB.IOT.WinFormApp
         private Button button_Setting_Application;
         private Button button_Setting_AAD;
         private Panel panel_Help;
+        private Button button_Setting_DGWMode;
     }
 }

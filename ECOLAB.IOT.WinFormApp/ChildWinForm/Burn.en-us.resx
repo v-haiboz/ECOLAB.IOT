@@ -189,10 +189,13 @@
   <data name="message_Travel_failed" xml:space="preserve">
     <value>Control board configuration failed ...</value>
   </data>
+  <data name="message_Travel_failed1" xml:space="preserve">
+    <value>File Sending Failed ...</value>
+  </data>
   <data name="radioButton_CommonSendPattern.Text" xml:space="preserve">
-    <value>CommonSendPattern</value>
+    <value>SN_PSK Send</value>
   </data>
   <data name="radioButton_FileSendPattern.Text" xml:space="preserve">
-    <value>FileSendPattern</value>
+    <value>File Send</value>
   </data>
 </root>

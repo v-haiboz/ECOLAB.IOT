@@ -123,7 +123,13 @@
   <data name="label_ChooseFile.Text" xml:space="preserve">
     <value>选择文件：</value>
   </data>
+  <data name="label_ModeName.Text" xml:space="preserve">
+    <value>模式名字:</value>
+  </data>
   <data name="label_TransportProtocol.Text" xml:space="preserve">
     <value>传输协议：</value>
+  </data>
+  <data name="label_Version.Text" xml:space="preserve">
+    <value>版本:</value>
   </data>
 </root>

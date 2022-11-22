@@ -191,6 +191,7 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
 
         private void ApplicationSetting_Load(object sender, EventArgs e)
         {
+            this.splitContainer1.SplitterDistance = 290;
             AddDeleteButton();
             for (var i = 0; i < dataGridView1.Rows.Count; i++)
             {

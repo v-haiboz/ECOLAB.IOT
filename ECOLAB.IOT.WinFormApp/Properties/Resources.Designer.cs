@@ -413,6 +413,16 @@ namespace ECOLAB.IOT.WinFormApp.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap setting_DGWMode_Main {
+            get {
+                object obj = ResourceManager.GetObject("setting_DGWMode_Main", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap setting_environment_Main {
             get {
                 object obj = ResourceManager.GetObject("setting_environment_Main", resourceCulture);

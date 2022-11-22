@@ -124,12 +124,23 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
                 return;
             }
             var keyChar = e.KeyChar.ToString();
-            FormFileSend_ValidateFile(formFileSend.textBox_ChooseFile.Text + keyChar);
+            //FormFileSend_ValidateFile(formFileSend.textBox_ChooseFile.Text + keyChar);
         }
 
         private void textBox_ChooseFile_TextChanged(object sender, EventArgs e)
         {
-            FormFileSend_ValidateFile(formFileSend.textBox_ChooseFile.Text);
+            //FormFileSend_ValidateFile(formFileSend.textBox_ChooseFile.Text);
+        }
+
+        private void textBox_ChooseVersion_TextChanged(object sender, EventArgs e)
+        {
+            dynamic version = formFileSend.comboBox_Version.SelectedItem;
+            if (version != null)
+            {
+               var filePath = version.FilePath;
+               FormFileSend_ValidateChooseFile(filePath);
+            }
+            
         }
 
         private async void button_BurnDown_Click(object sender, EventArgs e)
@@ -140,32 +151,33 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
         #region Burn Down sn and psk to IOTHub
         private async Task Travel()
         {
-            try
+            if (!CallerContext.ECOLABIOTLogSettingService.GetLogSetting().DeviceLogContinuity)
             {
-                if (!CallerContext.ECOLABIOTLogSettingService.GetLogSetting().DeviceLogContinuity)
-                {
-                    richTextBox_Output.Clear();
-                }
-                //ChangeSendStatusToDisable();
-                if (CurrentContext.SendModeType == SendModeType.Normal)
+                richTextBox_Output.Clear();
+            }
+
+            if (CurrentContext.SendModeType == SendModeType.Normal)
+            {
+                try
                 {
                     await CommonSendPattern();
                 }
-                else if (CurrentContext.SendModeType == SendModeType.File)
+                catch(Exception ex)
+                {
+                    richTextBox_Output.AppendText($"\n\r {res.GetString("message_Travel_failed")}");
+                }
+            }
+            else if (CurrentContext.SendModeType == SendModeType.File)
+            {
+                try
                 {
                     SendFilePattern();
                 }
+                catch(Exception ex)
+                {
+                    richTextBox_Output.AppendText($"\n\r {res.GetString("message_Travel_failed1")}");
+                }
             }
-            catch (Exception ex)
-            {
-                richTextBox_Output.AppendText($"\n\r {res.GetString("message_Travel_failed")}");
-            }
-            finally
-            {
-               
-                //ChangeSendStatusToEnable();
-            }
-
         }
 
         
@@ -234,14 +246,15 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
         {
             if (formFileSend.comboBox_TransportProtocol.Text == Enum.GetName(TransportProtocol.Xmodem))
             {
-                var xmodem = new XModem(serialPort, formFileSend.textBox_ChooseFile.Text,formFileSend.checkBox_isCRC.Checked);
+                var version = formFileSend.comboBox_Version.SelectedItem as DGWModeConfig;
+                var xmodem = new XModem(serialPort, version?.FilePath, formFileSend.checkBox_isCRC.Checked);
                 xmodem.OutPutEvent += new OutPutEventHandler(fileSend_OutPutEvent);
                 xmodem.SendResultEvent += new EventHandler(fileSend_SendCompletedEvent);
                 xmodem.Send();
             }
             else if (formFileSend.comboBox_TransportProtocol.Text == Enum.GetName(TransportProtocol.Ymodem))
             {
-                var ymodem = new YModem(serialPort, formFileSend.textBox_ChooseFile.Text);
+                var ymodem = new YModem(serialPort, formFileSend.comboBox_ModeName.DisplayMember);
                 ymodem.OutPutEvent += new OutPutEventHandler(fileSend_OutPutEvent);
                 ymodem.SendResultEvent += new EventHandler(fileSend_SendCompletedEvent);
                 ymodem.Send();

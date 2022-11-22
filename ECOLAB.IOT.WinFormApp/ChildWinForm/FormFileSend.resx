@@ -57,93 +57,18 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="label_ChooseFile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>149, 99</value>
-  </data>
-  <data name="label_ChooseFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>112, 24</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="label_ChooseFile.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="label_ChooseFile.Text" xml:space="preserve">
-    <value>Choose File:</value>
-  </data>
-  <data name="label_ChooseFile.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="&gt;&gt;label_ChooseFile.Name" xml:space="preserve">
-    <value>label_ChooseFile</value>
-  </data>
-  <data name="&gt;&gt;label_ChooseFile.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label_ChooseFile.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;label_ChooseFile.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="textBox_ChooseFile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>297, 95</value>
-  </data>
-  <data name="textBox_ChooseFile.Multiline" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="textBox_ChooseFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>494, 30</value>
-  </data>
-  <data name="textBox_ChooseFile.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;textBox_ChooseFile.Name" xml:space="preserve">
-    <value>textBox_ChooseFile</value>
-  </data>
-  <data name="&gt;&gt;textBox_ChooseFile.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;textBox_ChooseFile.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;textBox_ChooseFile.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="button_ChooseFile.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+  <data name="comboBox_TransportProtocol.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
-  <data name="button_ChooseFile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>826, 93</value>
-  </data>
-  <data name="button_ChooseFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>145, 34</value>
-  </data>
-  <data name="button_ChooseFile.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="button_ChooseFile.Text" xml:space="preserve">
-    <value>Choose</value>
-  </data>
-  <data name="&gt;&gt;button_ChooseFile.Name" xml:space="preserve">
-    <value>button_ChooseFile</value>
-  </data>
-  <data name="&gt;&gt;button_ChooseFile.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;button_ChooseFile.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;button_ChooseFile.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="comboBox_TransportProtocol.Location" type="System.Drawing.Point, System.Drawing">
-    <value>297, 42</value>
+    <value>348, 41</value>
   </data>
   <data name="comboBox_TransportProtocol.Size" type="System.Drawing.Size, System.Drawing">
     <value>182, 32</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="comboBox_TransportProtocol.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
@@ -157,10 +82,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;comboBox_TransportProtocol.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>6</value>
   </data>
   <data name="label_TransportProtocol.Location" type="System.Drawing.Point, System.Drawing">
-    <value>86, 45</value>
+    <value>159, 44</value>
   </data>
   <data name="label_TransportProtocol.Size" type="System.Drawing.Size, System.Drawing">
     <value>174, 24</value>
@@ -184,40 +109,19 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label_TransportProtocol.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="label_ChooseFile_Validate.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label_ChooseFile_Validate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>297, 138</value>
-  </data>
-  <data name="label_ChooseFile_Validate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 24</value>
-  </data>
-  <data name="label_ChooseFile_Validate.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;label_ChooseFile_Validate.Name" xml:space="preserve">
-    <value>label_ChooseFile_Validate</value>
-  </data>
-  <data name="&gt;&gt;label_ChooseFile_Validate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label_ChooseFile_Validate.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;label_ChooseFile_Validate.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>5</value>
   </data>
   <data name="checkBox_isCRC.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="checkBox_isCRC.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
   <data name="checkBox_isCRC.Location" type="System.Drawing.Point, System.Drawing">
-    <value>516, 44</value>
+    <value>555, 43</value>
   </data>
   <data name="checkBox_isCRC.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 28</value>
+    <value>67, 28</value>
   </data>
   <data name="checkBox_isCRC.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -236,6 +140,114 @@
   </data>
   <data name="&gt;&gt;checkBox_isCRC.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="label_ModeName.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label_ModeName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>160, 91</value>
+  </data>
+  <data name="label_ModeName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>174, 24</value>
+  </data>
+  <data name="label_ModeName.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="label_ModeName.Text" xml:space="preserve">
+    <value>ModeName:</value>
+  </data>
+  <data name="label_ModeName.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;label_ModeName.Name" xml:space="preserve">
+    <value>label_ModeName</value>
+  </data>
+  <data name="&gt;&gt;label_ModeName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_ModeName.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label_ModeName.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="label_Version.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label_Version.Location" type="System.Drawing.Point, System.Drawing">
+    <value>536, 93</value>
+  </data>
+  <data name="label_Version.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 24</value>
+  </data>
+  <data name="label_Version.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="label_Version.Text" xml:space="preserve">
+    <value>Version:</value>
+  </data>
+  <data name="label_Version.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;label_Version.Name" xml:space="preserve">
+    <value>label_Version</value>
+  </data>
+  <data name="&gt;&gt;label_Version.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_Version.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label_Version.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="comboBox_ModeName.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="comboBox_ModeName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>348, 88</value>
+  </data>
+  <data name="comboBox_ModeName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>182, 32</value>
+  </data>
+  <data name="comboBox_ModeName.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;comboBox_ModeName.Name" xml:space="preserve">
+    <value>comboBox_ModeName</value>
+  </data>
+  <data name="&gt;&gt;comboBox_ModeName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBox_ModeName.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;comboBox_ModeName.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="comboBox_Version.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="comboBox_Version.Location" type="System.Drawing.Point, System.Drawing">
+    <value>642, 88</value>
+  </data>
+  <data name="comboBox_Version.Size" type="System.Drawing.Size, System.Drawing">
+    <value>182, 32</value>
+  </data>
+  <data name="comboBox_Version.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;comboBox_Version.Name" xml:space="preserve">
+    <value>comboBox_Version</value>
+  </data>
+  <data name="&gt;&gt;comboBox_Version.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBox_Version.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;comboBox_Version.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
