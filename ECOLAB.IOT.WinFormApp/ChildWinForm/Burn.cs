@@ -6,6 +6,7 @@ using ECOLAB.IOT.Transmit.FileTransmit;
 using ECOLAB.IOT.Transmit.SNAndPSKSend;
 using System.ComponentModel;
 using System.IO.Ports;
+using System.Text;
 using static ECOLAB.IOT.Transmit.ITransmitUart;
 
 namespace ECOLAB.IOT.WinFormApp.ChildWinForm
@@ -25,8 +26,6 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             _writer = new TextBoxStreamWriter(richTextBox_Output);
             Console.SetOut(_writer);
         }
-
-
 
         private void button_Reset_Click(object sender, EventArgs e)
         {
@@ -163,19 +162,13 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             }
             finally
             {
-                Log();
+               
                 //ChangeSendStatusToEnable();
             }
 
         }
 
-        private void Log()
-        {
-            if (CallerContext.ECOLABIOTLogSettingService.GetLogSetting().Enable)
-            {
-                File.WriteAllText("Log",$"track_{CallerContext.SysAdmin.UserName}_{DateTime.Now.ToString()}");
-            }
-        }
+        
         #endregion
 
         #region Send Pattern
@@ -202,6 +195,7 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
                 message = res.GetString(message);
             }
             richTextBox_Output.AppendText($"\n\r {message}");
+            Transmit.Utility.Track($"\n\r {message}", true);
         }
         private void snAndspkSend_MessageBoxEvent(object sender, TrackerMessageBox e)
         {
@@ -264,6 +258,7 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
                 message = res.GetString(message);
             }
             richTextBox_Output.AppendText($"\n\r {message}");
+            Transmit.Utility.Track($"\n\r {message}", true);
         }
         private void fileSend_SendCompletedEvent(object sender, EventArgs e)
         {

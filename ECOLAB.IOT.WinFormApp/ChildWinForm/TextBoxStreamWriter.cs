@@ -1,7 +1,10 @@
 ﻿
 namespace ECOLAB.IOT.WinFormApp.ChildWinForm
 {
+    using ECOLAB.IOT.Service;
+    using ECOLAB.IOT.Transmit;
     using System.Text;
+    using System.Windows.Forms;
 
     public class TextBoxStreamWriter: TextWriter
     {
@@ -15,8 +18,9 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
         public override void Write(char value)
         {
             base.Write(value);
-            _output.AppendText(value.ToString()); // When character data is written, append it to the text box.
+            _output.AppendText(value.ToString()); 
             _output.Refresh();
+            Utility.Track(value.ToString());
         }
 
         public override Encoding Encoding
