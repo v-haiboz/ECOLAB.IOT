@@ -31,19 +31,21 @@
             {
                 this.wait_c();
                 Sender_Data = b_reader.ReadBytes(128);
+                var data_Length = Sender_Data.Length;
                 var maxRetry = 6;
                 if (Sender_Data.Length != 128)
                 {
                     ConverTo128();
                 }
                 err = Send_Packet(Sender_Data, Sender_Packet_Number, 128);
+                ShowPercentage(Sender_Packet_Number, data_Length, length);
                 var retry = 1;
                 while (retry <= maxRetry)
                 {
                     if (err == 1)
                     {
                         Sender_Data = b_reader.ReadBytes(128);
-                        var data_Length = Sender_Data.Length;
+                        data_Length = Sender_Data.Length;
                         if (Sender_Data.Length == 0)
                         {
                             serialPort.Write(Sender_EOT, 0, 1);
@@ -58,12 +60,7 @@
                         Sender_Packet_Number++;
                         err = Send_Packet(Sender_Data, Sender_Packet_Number, 128);
 
-                        DeviceLog($"Packet_Number:{Sender_Packet_Number} ");
-                        var percentage = ((double)((Sender_Packet_Number - 1) * 128 + data_Length) / length) * 100;
-                        int tmp2 = (int)Math.Round(Convert.ToDouble(percentage));
-
-                        DeviceLog($"Send percentage:{tmp2}%,->Data Length:{data_Length}");
-
+                        ShowPercentage(Sender_Packet_Number, data_Length, length);
                         retry = 1;
                     }
                     else
@@ -78,9 +75,7 @@
                         }
 
                         err = Send_Packet(Sender_Data, Sender_Packet_Number, err);
-                        var percentage = ((double)((Sender_Packet_Number - 1) * 128 + Sender_Data.Length) / length) * 100;
-                        int tmp2 = (int)Math.Round(Convert.ToDouble(percentage));
-                        DeviceLog($"Send percentage:{tmp2}%,->Data Length:{Sender_Data.Length}");
+                        ShowPercentage(Sender_Packet_Number, data_Length,length);
                         if (retry == maxRetry)
                         {
                             DeviceLog($"End To Transmit, Send Failed, Packet_Number:{Sender_Packet_Number}");
@@ -92,7 +87,6 @@
             catch (Exception ex)
             {
                 DeviceLog($"Transmit does not answering.{ex}");
-                
                 throw new Exception("Transmit does not answering");
             }
             finally
@@ -105,7 +99,18 @@
                 }
             }
         }
+        private void ShowPercentage(int Sender_Packet_Number, int data_length, double total_length)
+        {
+            double percentage = 100;
 
+            if (data_length == 128)
+            {
+                percentage = ((double)(Sender_Packet_Number* 128) / total_length) * 100;
+            }
+            Console.WriteLine("{Sender_Packet_Number} -{ total_length}");
+            var tmp=Math.Floor(percentage * 100) / 100.00;
+            DeviceLog($"Send percentage:{tmp}%,->Data Length:{data_length}");
+        }
         private void ConverTo128()
         {
             byte[] full_stream = new byte[128];
