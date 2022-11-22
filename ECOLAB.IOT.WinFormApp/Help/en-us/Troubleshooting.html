@@ -265,19 +265,44 @@ pre[data-line] .line-highlight[data-end]:after {
 
 <hr>
 <ol>
-<li>Write failed, and the XShell tool displays timeout.
+<li>
+<p>The software cannot be started</p>
+<ul>
+<li>
+<p>Defender SmartScreen prevented an unrecognized app from starting.<br>
+<img src="img\issue1_troubleshotting.png"></p>
+<p>Solution steps:</p>
+<ol>
+<li>Click Properties<br>
+Right click the installer and click Properties.</li>
+<li>Click the small box<br>
+In the open window, find [Unlock] and click [Small Box] in the front</li>
+<li>Click OK to unlock the small box in front [Check] and click [OK]</li>
+</ol>
+</li>
+<li>
+<p>The software cannot be started Please ensure that the NET class library is installed on the computer, and the download address (advance to NET6.0): <a href="https://dotnet.microsoft.com/en-us/download/dotnet/6.0">https://dotnet.microsoft.com/en-us/download/dotnet/6.0</a>.<br>
+<img src="img\issue2_resolve_troubleshooting.png"></p>
+</li>
+</ul>
+</li>
+<li>
+<p>Write failed, and the XShell tool displays timeout.</p>
 <ul>
 <li>Please check the COM port of the computer link. It may be that the computer COM is not in good contact. Please replace the computer with a good COM. If not, please replace the computer.</li>
 <li>It is possible that the parameter selection is wrong, and the correct COM port and parameter should be selected in the software.<br>
-<img src="en-us\img\main_help_troubleshooting1.png"></li>
+<img src="img\main_help_troubleshooting1.png"></li>
 <li>If the writing is successful, and the XShell is restarted successfully with the command, but it cannot be found on the website (URL of the test environment <a href="https://ecolinkdmp-d.ecolab.com.cn/#/Device/dtuList">https://ecolinkdmp-d.ecolab.com.cn/#/Device/dtuList</a> &#xFF09;, please try hard restart directly (power off and restart the board).</li>
 </ul>
 </li>
-<li>If the writing is unsuccessful, please carefully check the writing steps. For example, if SN already exists in the board, the original SN number needs to be deleted. Whether it is necessary to restart the device.</li>
-<li>Write device, associated with software and hardware. If it fails, there may be problems in both aspects.
+<li>
+<p>If the writing is unsuccessful, please carefully check the writing steps. For example, if SN already exists in the board, the original SN number needs to be deleted. Whether it is necessary to restart the device.</p>
+</li>
+<li>
+<p>Write device, associated with software and hardware. If it fails, there may be problems in both aspects.</p>
 <ul>
 <li>For software, please contact the software designer: <a href="mailto:xudong.xu@ecolab.com">xudong.xu@ecolab.com</a></li>
-<li>For hardware (Device or Gateway), please contact the relevant designer: <a href="mailto:jian.zhang3@ecolab.com">jian.zhang3@ecolab.com</a><a href="mailto:;ying.zhang@ecolab.com">;ying.zhang@ecolab.com</a> Etc</li>
+<li>For hardware (Device or Gateway), please contact the relevant designer: <a href="mailto:jian.zhang3@ecolab.com">jian.zhang3@ecolab.com</a><a href="mailto:;ying.zhang@ecolab.com">;ying.zhang@ecolab.com</a><a href="mailto:;kai.chen@ecolab.com">;kai.chen@ecolab.com</a><a href="mailto:;yi.xiao@ecolab.com">;yi.xiao@ecolab.com</a> Etc</li>
 <li>For computer related problems, please contact IT: <a href="mailto:chinait@ecolab.com">chinait@ecolab.com</a></li>
 <li>For SNAndPSK firing process, please contact: <a href="mailto:peiguo.yuan@ecolab.com">peiguo.yuan@ecolab.com</a></li>
 </ul>

@@ -190,9 +190,9 @@
     <value>控制板配置失败。。。</value>
   </data>
   <data name="radioButton_CommonSendPattern.Text" xml:space="preserve">
-    <value>SNPSK发送</value>
+    <value>SN_PSK发送</value>
   </data>
   <data name="radioButton_FileSendPattern.Text" xml:space="preserve">
-    <value>文件发送模式</value>
+    <value>文件发送</value>
   </data>
 </root>

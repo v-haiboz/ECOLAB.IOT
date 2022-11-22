@@ -32,6 +32,10 @@
                 this.wait_c();
                 Sender_Data = b_reader.ReadBytes(128);
                 var maxRetry = 6;
+                if (Sender_Data.Length != 128)
+                {
+                    ConverTo128();
+                }
                 err = Send_Packet(Sender_Data, Sender_Packet_Number, 128);
                 var retry = 1;
                 while (retry <= maxRetry)
@@ -48,15 +52,7 @@
                         }
                         else if (Sender_Data.Length != 128)
                         {
-                            byte[] full_stream = new byte[128];
-                            byte[] zero_ary = new byte[128 - Sender_Data.Length];
-                            Array.Clear(zero_ary, 0, zero_ary.Length);
-
-
-                            Array.Copy(Sender_Data, 0, full_stream, 0, Sender_Data.Length);
-                            Array.Copy(zero_ary, 0, full_stream, Sender_Data.Length, zero_ary.Length);
-
-                            Sender_Data = full_stream;
+                            ConverTo128();
                         }
 
                         Sender_Packet_Number++;
@@ -108,6 +104,19 @@
                     SendResultEvent(false, null);
                 }
             }
+        }
+
+        private void ConverTo128()
+        {
+            byte[] full_stream = new byte[128];
+            byte[] zero_ary = new byte[128 - Sender_Data.Length];
+            Array.Clear(zero_ary, 0, zero_ary.Length);
+
+
+            Array.Copy(Sender_Data, 0, full_stream, 0, Sender_Data.Length);
+            Array.Copy(zero_ary, 0, full_stream, Sender_Data.Length, zero_ary.Length);
+
+            Sender_Data = full_stream;
         }
         private int Send_Packet(byte[] data, byte SPN, int Length)
         {

@@ -34,8 +34,8 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Burn));
-            System.Text.DecoderReplacementFallback decoderReplacementFallback1 = new System.Text.DecoderReplacementFallback();
-            System.Text.EncoderReplacementFallback encoderReplacementFallback1 = new System.Text.EncoderReplacementFallback();
+            System.Text.DecoderReplacementFallback decoderReplacementFallback3 = new System.Text.DecoderReplacementFallback();
+            System.Text.EncoderReplacementFallback encoderReplacementFallback3 = new System.Text.EncoderReplacementFallback();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.groupBox_DeviceLog = new System.Windows.Forms.GroupBox();
             this.richTextBox_Output = new System.Windows.Forms.RichTextBox();

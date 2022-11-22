@@ -209,8 +209,27 @@ namespace ECOLAB.IOT.WinFormApp
         {
             int DWidth = Screen.PrimaryScreen.WorkingArea.Width;
             int DHeight = Screen.PrimaryScreen.WorkingArea.Height;
-            this.Width = Convert.ToInt32(DWidth * 0.9);
-            this.Height = Convert.ToInt32(DHeight * 0.9);
+            if (DWidth >= 1920)
+            {
+                this.Width = Convert.ToInt32(DWidth * 0.6);
+                this.Height = Convert.ToInt32(DHeight * 0.6);
+            }
+            else if (DWidth >= 1680)
+            {
+                this.Width = Convert.ToInt32(DWidth * 0.7);
+                this.Height = Convert.ToInt32(DHeight * 0.7);
+            }
+            else if (DWidth >= 1440)
+            {
+                this.Width = Convert.ToInt32(DWidth * 0.8);
+                this.Height = Convert.ToInt32(DHeight * 0.8);
+            }
+            else
+            {
+                this.Width = Convert.ToInt32(DWidth * 0.9);
+                this.Height = Convert.ToInt32(DHeight * 0.9);
+            }
+           
             this.timer1.Start();
         }
 
