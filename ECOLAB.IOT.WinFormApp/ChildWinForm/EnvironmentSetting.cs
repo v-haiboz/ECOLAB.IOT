@@ -497,6 +497,11 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
 
         private void dataGridView_Environment_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex == -1)
+            {
+                return;
+            }
+
             if (!CallerContext.SysAdmin.IsSuper
                 && dataGridView_Environment != null
                 && dataGridView_Environment[0, e.RowIndex].Value.ToString() == "Product")

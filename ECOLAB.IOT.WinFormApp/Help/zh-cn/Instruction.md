@@ -44,12 +44,12 @@
 >>>>>  "启用验证SN"选中时，会对输入的SN号码进行验证。如果没有选中，则输入的SN号进行验证。
 >>>>>      ` `  规则为:长度为12，前三个字符必须为字母，4-5表示年份，6-7表示月份，8-9表示天，10-12为三位随机数"
 >>>>>    <img src="/img/main_burndown_common.png"/>
->>>>>  - 文件发送，发送Dragon Gateway的NVRAM配置文件到gateway上。
->>>>>    字段说明:
->>>>>    `传输协议: `  分为XModem, YModem 目前只支持XModem
->>>>>    `CRC:` ` ` ` `  传输中使用的校验规则。如果选中则启用CRC检验，否者使用默认的校验规则。
->>>>>    `模式名字:` 发送的模式类型。
->>>>>    `版本:` ` ` ` ` 对应模式下的版本号。
+>>>>>  - File Send: send the NVRAM configuration file of Dragon Gateway to the gateway.
+>>>>>    Field Description:
+>>>>>    `Transport:`  The software has two formats: XModem, YModem. Currently, only XModem is supported
+>>>>>    `CRC:` ` ` ` ` ` ` The verification rules used in the transmission. If it is selected, CRC inspection is enabled. Otherwise, the default verification rules are used.
+>>>>>    `Mode Name:` The type of mode to send.
+>>>>>    `Version:` ` ` The version number in the corresponding mode.
 >>>>>    <img src="/img/main_burndown_file.png"/>
 >>>> 3. 点击烧制按钮，等待返回结果，在接受区会显示成功和失败的结果。
 >>>>   <img src="/img/main_burndown_burndown.png"/>

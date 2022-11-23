@@ -29,6 +29,7 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             var protacols = CallerContext.ECOLABIOTBurnSNAndPSKService.GetTransportProtocol();
             this.comboBox_TransportProtocol.Items.AddRange(protacols);
             comboBox_TransportProtocol.SelectedItem = Enum.GetName(TransportProtocol.Xmodem);
+            comboBox_TransportProtocol.Enabled = false;
             dGWModeConfigs = CallerContext.ECOLABIOTDGWModeService.GetDGWMode();
             if (dGWModeConfigs == null || dGWModeConfigs.Count == 0)
             {

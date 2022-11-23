@@ -299,10 +299,13 @@ namespace ECOLAB.IOT.WinFormApp
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex == -1)
+            {
+                return;
+            }
             textBox_ModeName.Text = dataGridView1["ValueMember", e.RowIndex].Value.ToString();
             textBox_Version.Text = dataGridView1["Version", e.RowIndex].Value.ToString();
             textBox_ChooseFile.Text = dataGridView1["FilePath", e.RowIndex].Value.ToString();
-            
         }
     }
 }

@@ -280,6 +280,11 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex == -1)
+            {
+                return;
+            }
+
             if (dataGridView1 == null)
             {
                 MessageBox.Show($"{res.GetString("message_2")}");
