@@ -348,7 +348,7 @@ For example, if you enter AAA121212123, the target prefix set in &quot;Applicati
 <code></code>    For example: SHG121211223, The prefix is SHG, as shown in the figure.<br>
 <code></code><br>
 &quot;EnableValidateSN&quot; checked&#xFF0C;The SN number entered will be verified. If it is not selected, the SN number entered will be verified.<br>
-<code></code>  The rule is: the length is 12, the first three characters must be letters, 4-5 represents the year, 6-7 represents the month, 8-9 represents the day, and 10-12 represents three random numbers&#x201C;<br>
+<code></code>  The rule is: the length is 12, the first three characters must be letters, 4-5 represents the year, 6-7 represents the month, 8-9 represents the day, and 10-12 represents three random numbers.<br>
 <img src="img\main_burndown_common.png"></li>
 <li>FileSendPattern&#xFF0C;Send the NVRAM configuration file of Dragon Gateway to the gateway.<br>
 <img src="img\main_burndown_file.png"></li>
@@ -419,6 +419,37 @@ Parameter Description&#xFF1A;</li>
 <li>Troubleshooting<br>
 <img src="img\main_help_Troubleshooting.png"></li>
 </ul>
+</blockquote>
+</blockquote>
+</blockquote>
+<h2 class="mume-header" id="high-order-operation">High order operation</h2>
+
+<blockquote>
+<blockquote>
+<p>Logging enabled</p>
+<blockquote>
+<ol>
+<li>o enable the log file function, modify the enable in the configuration file logsetting, and a log will be output to the track.txt file.<br>
+enable: true enable<br>
+enable: false disable</li>
+</ol>
+<blockquote>
+<p><code>1.1 Configuration file &apos;logsetting&apos;</code><br>
+<img src="img\log_1.png"><br>
+<code>1.2 logsetting and track.txt path</code><br>
+<img src="img\log_2.png"></p>
+</blockquote>
+<ol start="2">
+<li>Receiving area under SerialCOM=&gt;Burn menu, modify the deviceLogContinuity in the configuration file logsetting to modify the output mode&#x3002;<br>
+deviceLogContinuity: true  The log will be continuously output to the receiving area.<br>
+deviceLogContinuity: false The current operation outputs the log to the receiving area.</li>
+</ol>
+<blockquote>
+<p><code>2.1 config file &apos;logsetting&apos;</code><br>
+<img src="img\Log_3.png"><br>
+<code>2.2 Receiving area under SerialCOM=&gt;Burn menu</code><br>
+<img src="img\log_4.png"></p>
+</blockquote>
 </blockquote>
 </blockquote>
 </blockquote>

@@ -154,7 +154,7 @@
     <value>5</value>
   </data>
   <data name="label_ModeName.Text" xml:space="preserve">
-    <value>ModeName:</value>
+    <value>Mode Name:</value>
   </data>
   <data name="label_ModeName.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>

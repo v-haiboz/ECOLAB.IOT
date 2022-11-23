@@ -104,7 +104,7 @@
             this.textBox_UserName.Location = new System.Drawing.Point(11, 51);
             this.textBox_UserName.Multiline = true;
             this.textBox_UserName.Name = "textBox_UserName";
-            this.textBox_UserName.PlaceholderText = "Admin";
+            this.textBox_UserName.PlaceholderText = "Username";
             this.textBox_UserName.Size = new System.Drawing.Size(312, 40);
             this.textBox_UserName.TabIndex = 6;
             this.textBox_UserName.Text = "User";

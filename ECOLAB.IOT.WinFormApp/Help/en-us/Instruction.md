@@ -82,3 +82,20 @@
 >>> <img src="/img/main_help_Instruction.png"/>  
 >>> + Troubleshooting
 >>> <img src="/img/main_help_Troubleshooting.png"/> 
+
+## High order operation
+>> Logging enabled
+>>> 1. o enable the log file function, modify the enable in the configuration file logsetting, and a log will be output to the track.txt file.
+>>>    enable: true enable
+>>>    enable: false disable
+>>>>  `1.1 Configuration file 'logsetting'`
+>>>>  <img src="/img/log_1.png"/> 
+>>>>  `1.2 logsetting and track.txt path`
+>>>>  <img src="/img/log_2.png"/> 
+>>> 2. Receiving area under SerialCOM=>Burn menu, modify the deviceLogContinuity in the configuration file logsetting to modify the output mode。
+>>>    deviceLogContinuity: true  The log will be continuously output to the receiving area.
+>>>    deviceLogContinuity: false The current operation outputs the log to the receiving area.
+>>>>  `2.1 config file 'logsetting'`
+>>>>  <img src="/img/Log_3.png"/> 
+>>>>  `2.2 Receiving area under SerialCOM=>Burn menu`
+>>>>  <img src="/img/log_4.png"/> 

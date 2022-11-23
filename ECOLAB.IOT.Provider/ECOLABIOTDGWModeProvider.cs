@@ -7,6 +7,7 @@
     using System;
     using System.Collections.Generic;
     using System.Text;
+    using static System.Net.Mime.MediaTypeNames;
 
     public interface IECOLABIOTDGWModeProvider
     {
@@ -21,6 +22,15 @@
     public class ECOLABIOTDGWModeProvider : IECOLABIOTDGWModeProvider
     {
         private static readonly string folderPath = "DGWModeConfig";
+
+        static ECOLABIOTDGWModeProvider()
+        {
+            if (!Directory.Exists(folderPath))
+            {
+                Directory.CreateDirectory(folderPath);
+            }
+        }
+
         public bool AddOrUpdateDGWMode(DGWModeConfig dGWMode)
         {
             if (dGWMode == null || string.IsNullOrEmpty(dGWMode.FilePath) || string.IsNullOrEmpty(dGWMode.ModeName) 
@@ -34,9 +44,15 @@
                 return false;
             }
 
+            
+            return MoveFile(dGWMode);
+        }
+
+        private bool MoveFile(DGWModeConfig dGWMode)
+        {
             if (!Directory.Exists(folderPath))
-            { 
-               Directory.CreateDirectory(folderPath);
+            {
+                Directory.CreateDirectory(folderPath);
             }
 
             var subDir = Path.Combine(folderPath, dGWMode.ModeName);
@@ -45,29 +61,25 @@
                 Directory.CreateDirectory(subDir);
             }
 
-            subDir = Path.Combine(folderPath, dGWMode.ModeName, dGWMode.Version);
+            subDir = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, folderPath, dGWMode.ModeName, dGWMode.Version);
             if (!Directory.Exists(subDir))
             {
                 Directory.CreateDirectory(subDir);
+            }
+
+            string fileName = Path.GetFileName(dGWMode.FilePath);
+            string targetPath = Path.Combine(subDir, fileName);
+
+            if (dGWMode.FilePath.ToLowerInvariant() == targetPath.ToLowerInvariant())
+            {
+                return false;
             }
 
             foreach (var item in Directory.GetFiles(subDir))
             {
                 File.Delete(item);
             }
-
-            return MoveFile(dGWMode);
-        }
-
-        private bool MoveFile(DGWModeConfig dGWMode)
-        {
-            string fileName = Path.GetFileName(dGWMode.FilePath);
-            string targetPath = Path.Combine(folderPath, dGWMode.ModeName, dGWMode.Version, fileName);
-
-            if (dGWMode.FilePath.ToLowerInvariant() == targetPath.ToLowerInvariant())
-            {
-                return false;
-            }
+            
             FileInfo file = new FileInfo(dGWMode.FilePath);
             if (file.Exists)
             {
@@ -114,8 +126,19 @@
             }
 
             File.Delete(dGWMode.FilePath);
+            var dirPath = Path.GetDirectoryName(dGWMode.FilePath);
+            if (Directory.Exists(dirPath))
+            {
+                Directory.Delete(dirPath);
+            }
 
+            DirectoryInfo path = new DirectoryInfo(string.Format(@"{0}..\..\", dirPath));
+            if (Directory.GetDirectories(path.FullName).Length <= 0)
+            {
+                Directory.Delete(path.FullName);
+            }
             return true;
         }
     }
 }
+

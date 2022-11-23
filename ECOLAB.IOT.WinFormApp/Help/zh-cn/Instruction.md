@@ -29,7 +29,7 @@
 >>>> 1. 配置串口参数，选择“链接”连接烧写设备端口.
 >>>>  <img src="/img/main_burndown_comsetting.png"/>
 >>>> 2. 在发送设置选择正确的发送模式，输入正确的SN号或选择对应的文件。
->>>>>  - 普通发送模式，写SN和PSK到设备上，具体规则看下图。
+>>>>>  - SN_PSK发送，写SN和PSK到设备上，具体规则看下图。
 >>>>>    Note:
 >>>>>    前缀的显示规则。
 >>>>>   `1`. "启用映射前缀" 选中
@@ -44,7 +44,12 @@
 >>>>>  "启用验证SN"选中时，会对输入的SN号码进行验证。如果没有选中，则输入的SN号进行验证。
 >>>>>      ` `  规则为:长度为12，前三个字符必须为字母，4-5表示年份，6-7表示月份，8-9表示天，10-12为三位随机数"
 >>>>>    <img src="/img/main_burndown_common.png"/>
->>>>>  - 文件发送模式，发送Dragon Gateway的NVRAM配置文件到gateway上。
+>>>>>  - 文件发送，发送Dragon Gateway的NVRAM配置文件到gateway上。
+>>>>>    字段说明:
+>>>>>    `传输协议: `  分为XModem, YModem 目前只支持XModem
+>>>>>    `CRC:` ` ` ` `  传输中使用的校验规则。如果选中则启用CRC检验，否者使用默认的校验规则。
+>>>>>    `模式名字:` 发送的模式类型。
+>>>>>    `版本:` ` ` ` ` 对应模式下的版本号。
 >>>>>    <img src="/img/main_burndown_file.png"/>
 >>>> 3. 点击烧制按钮，等待返回结果，在接受区会显示成功和失败的结果。
 >>>>   <img src="/img/main_burndown_burndown.png"/>
@@ -74,11 +79,39 @@
 >>>> * 修改，在表格头部，双击鼠标，对应的值会显示在左边的输入框，然后修改对应的值，点击保存即可
 >>>> <img src="/img/main_application_modify.png"/>
 >>>> * 启用。在烧制界面的，选择普通模式发送，选择启用映射前缀。
->>>> <img src="/zh-cn/img/main_application_enable.png"/>
+>>>> <img src="/img/main_application_enable.png"/>
 >>> + AAD, 如果使用ECOLink 一键登录,需要配置AAD链接（AAD链接有过期时间，普通用户只可以查看，超级管理员才可以修改）。
 >>> <img src="/img/main_setting_add.png"/>
+>>> + DGW模式, 发送文件类型配置。如果要发送文件，可以在这里配置。然后可以导航到串口=>烧制 菜单，选中文件发送，就可以选择对应的模式和版本发送到设备上。
+>>>> 参数说明:
+>>>>> `模式名字:` ` `自定义，一般代表那种设备上使用
+>>>>> `版本:`     ` ` ` ` ` `自定义，一般代表那种设备上使用
+>>>>> `选择文件:` ` `要烧制到设备上的文件
+>>>> * 添加，在下边输入框输入对应的值，选择保存。
+>>>> <img src="/img/main_dgwmode_save.png"/>
+>>>> * 删除，在表格的里，点击删除按钮。
+>>>> <img src="/img/main_dgwmode_delete.png"/>
+>>>> * 修改，在表格头部，双击鼠标，对应的值会显示在下边的输入框，然后修改对应的值，点击保存即可。
+>>>> <img src="img/main_dgwmode_modify.png"/>
 >> - 帮助
 >>> + 使用说明
 >>> <img src="/img/main_help_Instruction.png"/>  
 >>> + 故障排查
 >>> <img src="/img/main_help_Troubleshooting.png"/> 
+
+## 高阶操作
+>> 日志功能启用
+>>> 1. 日志文件功能的启用, 修改配置文件logsetting中的enable, 会有日志输出到track.txt文件中。
+>>>    enable: true 启用
+>>>    enable: false 停用
+>>>>  `1.1 配置文件logsetting`
+>>>>  <img src="/img/log_1.png"/> 
+>>>>  `1.2 logsetting 和 track.txt 的路径`
+>>>>  <img src="/img/log_2.png"/> 
+>>> 2. 串口=>烧制 菜单下的接收区。修改配置文件logsetting中的deviceLogContinuity,可以修改输出方式。
+>>>    deviceLogContinuity: true 会连续输出日志到接受区
+>>>    deviceLogContinuity: false 当前操作输出日志到接受区
+>>>>  `2.1 配置文件logsetting`
+>>>>  <img src="/img/Log_3.png"/> 
+>>>>  `2.2 串口=>烧制 下的接收区`
+>>>>  <img src="/img/log_4.png"/> 

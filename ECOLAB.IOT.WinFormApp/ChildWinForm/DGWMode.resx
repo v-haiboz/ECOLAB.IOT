@@ -358,10 +358,10 @@
     <value>NoControl</value>
   </data>
   <data name="label_ChooseFile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>127, 156</value>
+    <value>110, 156</value>
   </data>
   <data name="label_ChooseFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>112, 24</value>
+    <value>129, 37</value>
   </data>
   <data name="label_ChooseFile.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
