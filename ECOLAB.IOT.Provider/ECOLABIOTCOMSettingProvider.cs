@@ -28,7 +28,7 @@
             Parity = Parity.None,
             PortName = "COM3",
             StopBit = StopBits.One,
-            TransportProtocol= TransportProtocol.Ymodem
+            TransportProtocol= TransportProtocol.Xmodem1k
         };
 
         public COMSetting GetDefaultCOMSetting()

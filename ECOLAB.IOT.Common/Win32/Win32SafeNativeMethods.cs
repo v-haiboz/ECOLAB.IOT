@@ -23,5 +23,13 @@
 
   　　  [DllImport("user32.dll ", EntryPoint = "ShowWindow")]
   　　  public static extern int ShowWindow(IntPtr hwnd, int nCmdShow);
+
+        [DllImport("kernel32.dll", CharSet = CharSet.Auto)]
+        public static extern bool AllocConsole();
+
+
+        [DllImport("kernel32.dll", CharSet = CharSet.Auto)]
+        public static extern bool FreeConsole();
+
     }
 }

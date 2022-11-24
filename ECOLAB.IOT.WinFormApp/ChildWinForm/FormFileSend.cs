@@ -28,8 +28,8 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             comboBox_Version.Items.Clear();
             var protacols = CallerContext.ECOLABIOTBurnSNAndPSKService.GetTransportProtocol();
             this.comboBox_TransportProtocol.Items.AddRange(protacols);
-            comboBox_TransportProtocol.SelectedItem = Enum.GetName(TransportProtocol.Xmodem);
-            comboBox_TransportProtocol.Enabled = false;
+            comboBox_TransportProtocol.SelectedItem = Enum.GetName(TransportProtocol.Xmodem1k);
+            //comboBox_TransportProtocol.Enabled = false;
             dGWModeConfigs = CallerContext.ECOLABIOTDGWModeService.GetDGWMode();
             if (dGWModeConfigs == null || dGWModeConfigs.Count == 0)
             {

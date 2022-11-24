@@ -3,7 +3,7 @@
     using System;
     using System.IO.Ports;
 
-    public partial class XModem
+    public partial class Xmodem1k
     {
         byte[] Sender_Packet = new byte[3];
         byte[] Sender_Data = new byte[1024];
@@ -32,7 +32,7 @@
         public event ITransmitUart.MessageBoxEventHandler MessageBoxEvent;
 
         private bool isCRC = false;
-        public XModem(SerialPort serialPort, string path,bool isCRC=false)
+        public Xmodem1k(SerialPort serialPort, string path,bool isCRC=false)
         {
             this.serialPort = serialPort;
             this.path = path;

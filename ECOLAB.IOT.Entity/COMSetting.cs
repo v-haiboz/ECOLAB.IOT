@@ -43,12 +43,12 @@
         Eight = 8
     }
 
-    public enum TransportProtocol { 
+    public enum TransportProtocol {
         //ASCII,
         //Binary,
+        Xmodem1k,
         Xmodem,
-        //Xmodem1k=1024,
-        Ymodem,
+        //Ymodem,
        // Ymodem1k=128,
     }
 }

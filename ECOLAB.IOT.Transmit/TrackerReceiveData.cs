@@ -10,13 +10,15 @@
         private readonly DateTime receiveTime;
         private readonly int dataLen;
         private readonly bool transform = false;
+        private readonly bool isWriteLine = true;
 
-        public TrackerReceiveData(string receiveMessage, bool transform = false)
+        public TrackerReceiveData(string receiveMessage, bool transform = false, bool isWriteLine=true)
         {
             this.receiveMessage = receiveMessage;
             dataLen = receiveMessage.Length;
             receiveTime = DateTime.Now;
             this.transform = transform;
+            this.isWriteLine = isWriteLine;
         }
 
         public TrackerReceiveData(byte[] receiveData, bool transform = false)
@@ -33,6 +35,10 @@
             this.transform = transform;
         }
 
+        public bool IsWriteLine
+        {
+            get { return isWriteLine; }
+        }
         public bool TransForm
         {
             get { return transform; }

@@ -44,12 +44,12 @@
 >>>>>  "启用验证SN"选中时，会对输入的SN号码进行验证。如果没有选中，则输入的SN号进行验证。
 >>>>>      ` `  规则为:长度为12，前三个字符必须为字母，4-5表示年份，6-7表示月份，8-9表示天，10-12为三位随机数"
 >>>>>    <img src="/img/main_burndown_common.png"/>
->>>>>  - File Send: send the NVRAM configuration file of Dragon Gateway to the gateway.
->>>>>    Field Description:
->>>>>    `Transport:`  The software has two formats: XModem, YModem. Currently, only XModem is supported
->>>>>    `CRC:` ` ` ` ` ` ` The verification rules used in the transmission. If it is selected, CRC inspection is enabled. Otherwise, the default verification rules are used.
->>>>>    `Mode Name:` The type of mode to send.
->>>>>    `Version:` ` ` The version number in the corresponding mode.
+>>>>>  - 文件发送，发送Dragon Gateway的NVRAM配置文件到gateway上。
+>>>>>    字段说明:
+>>>>>    `输协议:`   分为XModem1k, XModem (目前最大支持1M大小的文件上传，XModem1k 传输相对比较快,一次发送1024 byte，XModem比较慢，一次发送128 byte)。
+>>>>>    `CRC:` ` ` ` ` ` ` 传输中使用的校验规则。如果选中则启用CRC检验，否者使用默认的校验规则。
+>>>>>    `Mode Name:` 发送的模式类型。
+>>>>>    `Version:` ` ` 对应模式下的版本号。
 >>>>>    <img src="/img/main_burndown_file.png"/>
 >>>> 3. 点击烧制按钮，等待返回结果，在接受区会显示成功和失败的结果。
 >>>>   <img src="/img/main_burndown_burndown.png"/>
@@ -85,7 +85,7 @@
 >>> + DGW模式, 发送文件类型配置。如果要发送文件，可以在这里配置。然后可以导航到串口=>烧制 菜单，选中文件发送，就可以选择对应的模式和版本发送到设备上。
 >>>> 参数说明:
 >>>>> `模式名字:` ` `自定义，一般代表那种设备上使用
->>>>> `版本:`     ` ` ` ` ` `自定义，一般代表那种设备上使用
+>>>>> `版本:`     ` ` ` ` ` `自定义，版本号
 >>>>> `选择文件:` ` `要烧制到设备上的文件
 >>>> * 添加，在下边输入框输入对应的值，选择保存。
 >>>> <img src="/img/main_dgwmode_save.png"/>

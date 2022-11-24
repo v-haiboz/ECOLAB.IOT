@@ -3,7 +3,7 @@
     using ECOLAB.IOT.Service;
     using System;
 
-    public partial class XModem : IFileTransmit
+    public partial class Xmodem1k : IFileTransmit
     {
         private static bool DeviceLogContinuity = CallerContext.ECOLABIOTLogSettingService.GetLogSetting().DeviceLogContinuity;
         public void Send()
@@ -27,26 +27,26 @@
             try
             {
                 this.wait_c();
-                Sender_Data = b_reader.ReadBytes(128);
+                Sender_Data = b_reader.ReadBytes(1024);
                 var data_Length = Sender_Data.Length;
                 var maxRetry = 6;
-                if (Sender_Data.Length != 128)
+                if (Sender_Data.Length != 1024)
                 {
-                    ConverTo128();
+                    ConverTo1024();
                 }
-                err = Send_Packet(Sender_Data, Sender_Packet_Number, 128);
+                err = Send_Packet(Sender_Data, Sender_Packet_Number, 1024);
                 ShowPercentage(data_Length, length);
                 var retry = 1;
                 while (retry <= maxRetry)
                 {
-                    if (Sender_Packet_Number>=255)
-                    {
-                        DeviceLog($"End To Transmit, Send Failed, The file is too large, Packet_Number:{Sender_Packet_Number}");
-                        break;
-                    }
+                    //if (Sender_Packet_Number>=255)
+                    //{
+                    //    DeviceLog($"End To Transmit, Send Failed, The file is too large, Packet_Number:{Sender_Packet_Number}");
+                    //    break;
+                    //}
                     if (err == 1)
                     {
-                        Sender_Data = b_reader.ReadBytes(128);
+                        Sender_Data = b_reader.ReadBytes(1024);
                         data_Length = Sender_Data.Length;
                         if (Sender_Data.Length == 0)
                         {
@@ -54,14 +54,14 @@
                             DeviceLog("End To Transmit,Send Successful.");
                             break;
                         }
-                        else if (Sender_Data.Length != 128)
+                        else if (Sender_Data.Length != 1024)
                         {
-                            ConverTo128();
+                            ConverTo1024();
                         }
 
                         Sender_Packet_Number++;
                         Sender_Packet_Number_Total++;
-                        err = Send_Packet(Sender_Data, Sender_Packet_Number, 128);
+                        err = Send_Packet(Sender_Data, Sender_Packet_Number, 1024);
 
                         ShowPercentage(data_Length, length);
                         retry = 1;
@@ -114,10 +114,10 @@
         private void ShowPercentage(int data_length, double total_length)
         {
             double percentage = 100;
-            
-            if (data_length == 128)
+
+            if (data_length == 1024)
             {
-                percentage = ((double)(Sender_Packet_Number_Total * 128) / total_length) * 100;
+                percentage = ((double)(Sender_Packet_Number_Total * 1024) / total_length) * 100;
             }
 #if DEBUG
             DeviceLog($"{Sender_Packet_Number_Total} -{ total_length}");
@@ -125,10 +125,10 @@
             var tmp=Math.Floor(percentage * 100) / 100.00;
             DeviceLog($"Send percentage:{tmp}%,->Data Length:{data_length}");
         }
-        private void ConverTo128()
+        private void ConverTo1024()
         {
-            byte[] full_stream = new byte[128];
-            byte[] zero_ary = new byte[128 - Sender_Data.Length];
+            byte[] full_stream = new byte[1024];
+            byte[] zero_ary = new byte[1024 - Sender_Data.Length];
             Array.Clear(zero_ary, 0, zero_ary.Length);
 
 
@@ -173,12 +173,12 @@
             Array.Copy(data, 0, temp, 3, Length);
 
             byte ccks = 0;
-            for (var i = 3; i < 128 + 3; ++i)
+            for (var i = 3; i < 1024 + 3; ++i)
             {
                 ccks += temp[i];
             }
 
-            temp[128 + 3] = ccks;
+            temp[1024 + 3] = ccks;
 #if DEBUG
             DeviceLog($"Check bit:{ccks}");
 #endif
@@ -271,12 +271,6 @@
 
         private void DeviceLog(string str, bool isWriteEmptyLine=true)
         {
-            //if (isWriteEmptyLine)
-            //{
-            //    Console.WriteLine();
-            //}
-            //Console.WriteLine(str);
-
             if (OutPutEvent != null)
             {
                 OutPutEvent(this, new TrackerReceiveData(str,isWriteLine: isWriteEmptyLine));

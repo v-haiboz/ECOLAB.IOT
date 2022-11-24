@@ -206,8 +206,14 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             {
                 message = res.GetString(message);
             }
-            richTextBox_Output.AppendText($"\n\r {message}");
-            Transmit.Utility.Track($"\n\r {message}", true);
+
+            if (e.IsWriteLine)
+            {
+                message = $"\n\r {message}";
+            }
+            
+            richTextBox_Output.AppendText($"{message}");
+            Utility.Track($"{message}", true);
         }
         private void snAndspkSend_MessageBoxEvent(object sender, TrackerMessageBox e)
         {
@@ -252,13 +258,21 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
                 xmodem.SendResultEvent += new EventHandler(fileSend_SendCompletedEvent);
                 xmodem.Send();
             }
-            else if (formFileSend.comboBox_TransportProtocol.Text == Enum.GetName(TransportProtocol.Ymodem))
+            else if (formFileSend.comboBox_TransportProtocol.Text == Enum.GetName(TransportProtocol.Xmodem1k))
             {
-                var ymodem = new YModem(serialPort, formFileSend.comboBox_ModeName.DisplayMember);
-                ymodem.OutPutEvent += new OutPutEventHandler(fileSend_OutPutEvent);
-                ymodem.SendResultEvent += new EventHandler(fileSend_SendCompletedEvent);
-                ymodem.Send();
+                var version = formFileSend.comboBox_Version.SelectedItem as DGWModeConfig;
+                var xmodem1k = new Xmodem1k(serialPort, version?.FilePath, formFileSend.checkBox_isCRC.Checked);
+                xmodem1k.OutPutEvent += new OutPutEventHandler(fileSend_OutPutEvent);
+                xmodem1k.SendResultEvent += new EventHandler(fileSend_SendCompletedEvent);
+                xmodem1k.Send();
             }
+            //else if (formFileSend.comboBox_TransportProtocol.Text == Enum.GetName(TransportProtocol.Ymodem))
+            //{
+            //    var ymodem = new YModem(serialPort, formFileSend.comboBox_ModeName.DisplayMember);
+            //    ymodem.OutPutEvent += new OutPutEventHandler(fileSend_OutPutEvent);
+            //    ymodem.SendResultEvent += new EventHandler(fileSend_SendCompletedEvent);
+            //    ymodem.Send();
+            //}
         }
 
         
@@ -270,8 +284,14 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             {
                 message = res.GetString(message);
             }
-            richTextBox_Output.AppendText($"\n\r {message}");
-            Transmit.Utility.Track($"\n\r {message}", true);
+
+            if (e.IsWriteLine)
+            {
+                message = $"\n\r {message}";
+            }
+
+            richTextBox_Output.AppendText($"{message}");
+            Utility.Track($"{message}", true);
         }
         private void fileSend_SendCompletedEvent(object sender, EventArgs e)
         {

@@ -66,7 +66,7 @@ namespace ECOLAB.IOT.WinFormApp
             Thread.CurrentThread.CurrentUICulture = CallerContext.currentCulture;
             InitializeComponent();
             CustomizeDesing();
-            SelectLanguate();
+            SelectLanguage();
             OpenChildForm(new Burn());
             ShowNavigationMenu(button_SerialCOM_Burn.Name);
             HideSubMenu();

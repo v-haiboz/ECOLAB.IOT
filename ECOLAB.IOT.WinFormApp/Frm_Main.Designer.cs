@@ -418,7 +418,7 @@ namespace ECOLAB.IOT.WinFormApp
             this.label_CurrentUser.Text = "Current User: " + CallerContext.SysAdmin.UserName;
             this.label_Environment.Text = $"{label_Environment.Text}  ({CallerContext.EnvironmentVariable.Name.ToString()})";
         }
-        private void SelectLanguate()
+        private void SelectLanguage()
         {
             ComponentResourceManager res = new ComponentResourceManager(typeof(Frm_Main));
             this.button_Help.Text = $"           {res.GetString("button_Help")}";

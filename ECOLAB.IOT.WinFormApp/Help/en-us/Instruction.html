@@ -351,6 +351,11 @@ For example, if you enter AAA121212123, the target prefix set in &quot;Applicati
 <code></code>  The rule is: the length is 12, the first three characters must be letters, 4-5 represents the year, 6-7 represents the month, 8-9 represents the day, and 10-12 represents three random numbers.<br>
 <img src="img\main_burndown_common.png"></li>
 <li>FileSendPattern&#xFF0C;Send the NVRAM configuration file of Dragon Gateway to the gateway.<br>
+Field Description:<br>
+<code>Transprot:</code>   It is divided into XModem1k and XModem (currently, the maximum file upload size is 1M. XModem1k is relatively fast, sending 1024 bytes at a time, and XModem is relatively slow, sending 128 bytes at a time).<br>
+<code>CRC:</code> <code></code> <code></code> <code></code> The verification rules used in the transmission. If it is selected, CRC inspection is enabled. Otherwise, the default verification rules are used.<br>
+<code>Mode Name:</code> The type of mode to send.<br>
+<code>Version:</code> <code></code> The version number in the corresponding mode.<br>
 <img src="img\main_burndown_file.png"></li>
 </ul>
 </blockquote>
@@ -407,7 +412,24 @@ Parameter Description&#xFF1A;</li>
 <ul>
 <li>AAD, If you use &quot;ECOLink One Click Login&quot;, you need to configure the AAD link (the AAD link has an expiration time, which can only be viewed by ordinary users and modified by super administrators).<br>
 <img src="img\main_setting_add.png"></li>
+<li>DGW mode, send file type configuration. If you want to send a file, you can configure it here. Then navigate to the Serial Port=&gt;Burning menu, select File Send, and then select the corresponding mode and version to send to the device.</li>
 </ul>
+<blockquote>
+<p>Parameter Description:</p>
+<blockquote>
+<p><code>Mode Name:</code> <code></code>Customized, which generally represents the type of device used.<br>
+<code>Version:</code> <code></code> <code></code> Custom, version number<br>
+<code>Choose File:</code> The file to be burned on the device.</p>
+</blockquote>
+<ul>
+<li>Add, enter the corresponding value in the lower input box, and select Save.<br>
+<img src="img\main_dgwmode_save.png"></li>
+<li>Delete. In the table, click Delete.<br>
+<img src="img\main_dgwmode_delete.png"></li>
+<li>Modify. Double click the mouse at the head of the form, and the corresponding value will be displayed in the lower input box. Then modify the corresponding value and click Save.<br>
+<img src="img/main_dgwmode_modify.png"></li>
+</ul>
+</blockquote>
 </blockquote>
 <ul>
 <li>Help</li>
