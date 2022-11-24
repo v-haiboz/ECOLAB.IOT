@@ -26,6 +26,7 @@
             try
             {
                 this.wait_c();
+                serialPort.ReadTimeout = 300*1000;
                 Sender_Data = b_reader.ReadBytes(128);
                 var data_Length = Sender_Data.Length;
                 var maxRetry = 6;
@@ -101,6 +102,7 @@
                 {
                     SendResultEvent(false, null);
                 }
+                serialPort.ReadTimeout = 10000;
             }
         }
         private void ShowPercentage(int Sender_Packet_Number, int data_length, double total_length)
@@ -111,7 +113,9 @@
             {
                 percentage = ((double)(Sender_Packet_Number* 128) / total_length) * 100;
             }
-            Console.WriteLine("{Sender_Packet_Number} -{ total_length}");
+#if DEBUG
+            DeviceLog($"{Sender_Packet_Number} -{ total_length}");
+#endif
             var tmp=Math.Floor(percentage * 100) / 100.00;
             DeviceLog($"Send percentage:{tmp}%,->Data Length:{data_length}");
         }
@@ -169,8 +173,9 @@
             }
 
             temp[128 + 3] = ccks;
+#if DEBUG
             DeviceLog($"Check bit:{ccks}");
-            
+#endif
             return temp;
         }
         private byte[] GeneratePackageByCRC(byte[] data, byte SPN, int Length)
@@ -194,7 +199,9 @@
             Sender_Crc[1] = (byte)(Sender_Crc_us & 0xFF);
             temp[3 + Length] = Sender_Crc[0];
             temp[3 + Length + 1] = Sender_Crc[1];
+#if DEBUG
             DeviceLog($"CRC Check bit:{Sender_Crc[0]}-{Sender_Crc[1]}");
+#endif
             return temp;
         }
         private void wait_c()
@@ -220,54 +227,37 @@
                         break;
                     }
                 }
-
             }
         }
+
         private int Wait_ACK_NAK(int Length)
         {
             int SPort_read;
             while (true)
             {
-
-                Console.WriteLine("Wait_ACK_NAK");
+#if DEBUG
+                DeviceLog("Wait_ACK_NAK");
+#endif
                 SPort_read = serialPort.ReadChar();
                 if (SPort_read == (byte)XModemMessageType.NAK)
                 {
-                    if (!DeviceLogContinuity)
-                    {
-                        Console.WriteLine("NAK");
-                    }
-                    else
-                    {
-                        OutPutEvent(this, new TrackerReceiveData("NAK"));
-                    }
-
+#if DEBUG
+                    DeviceLog("NAK");
+#endif
                     return Length;
                 }
                 else if (SPort_read == (byte)XModemMessageType.ACK)
                 {
-
-                    if (!DeviceLogContinuity)
-                    {
-                        Console.WriteLine("ACK");
-                    }
-                    else
-                    {
-                        OutPutEvent(this, new TrackerReceiveData("ACK"));
-                    }
-
+#if DEBUG
+                    Console.WriteLine("ACK");
+#endif
                     return 1;
                 }
                 else
                 {
-                    if (!DeviceLogContinuity)
-                    {
-                        Console.WriteLine(SPort_read.ToString());
-                    }
-                    else
-                    {
-                        OutPutEvent(this, new TrackerReceiveData(SPort_read.ToString()));
-                    }
+#if DEBUG
+                    DeviceLog(SPort_read.ToString());
+#endif
                 }
             }
 
@@ -280,18 +270,6 @@
                 Console.WriteLine();
             }
             Console.WriteLine(str);
-            //if (!DeviceLogContinuity)
-            //{
-            //    if (isWriteEmptyLine)
-            //    {
-            //        Console.WriteLine();
-            //    }
-            //    Console.WriteLine(str);
-            //}
-            //else if(OutPutEvent!=null)
-            //{
-            //    OutPutEvent(this, new TrackerReceiveData(str));
-            //}
         }
     }
 }
