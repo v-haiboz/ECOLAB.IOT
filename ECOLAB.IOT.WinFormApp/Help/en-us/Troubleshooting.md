@@ -30,7 +30,7 @@
 
 5. How to send the file unsuccessfully? Please check the file size. Currently, the board supports files below 1M.
 
-5. Write device, associated with software and hardware. If it fails, there may be problems in both aspects.
+6. Write device, associated with software and hardware. If it fails, there may be problems in both aspects.
    + For software, please contact the software designer: xudong.xu@ecolab.com
    + For hardware (Device or Gateway), please contact the relevant designer: jian.zhang3@ecolab.com;ying.zhang@ecolab.com;kai.chen@ecolab.com;yi.xiao@ecolab.com Etc
    + For computer related problems, please contact IT: chinait@ecolab.com
