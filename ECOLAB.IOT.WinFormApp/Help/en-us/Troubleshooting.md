@@ -15,15 +15,20 @@
    + The software cannot be started Please ensure that the NET class library is installed on the computer, and the download address (advance to NET6.0): https://dotnet.microsoft.com/en-us/download/dotnet/6.0.
    <img src="/img/issue2_resolve_troubleshooting.png"/>
 
-2. Write failed, and the XShell tool displays timeout.
+2. ECOLink One click Login，If an error is reported, please delete the following file (Ecolink_SNPSK_tool. dll. msalcache. bin3) and log in again.
+
+   Reason: When packaging, the software is still in use. For security reasons, the login information cannot be used anywhere else, so it should not be packaged. Please exit or close the software before packaging.
+   <img src="/img/issue_5.png"/>
+
+3. Write failed, and the XShell tool displays timeout.
    + Please check the COM port of the computer link. It may be that the computer COM is not in good contact. Please replace the computer with a good COM. If not, please replace the computer.
    + It is possible that the parameter selection is wrong, and the correct COM port and parameter should be selected in the software.
   <img src="/img/main_help_troubleshooting1.png"/>
    + If the writing is successful, and the XShell is restarted successfully with the command, but it cannot be found on the website (URL of the test environment https://ecolinkdmp-d.ecolab.com.cn/#/Device/dtuList ）, please try hard restart directly (power off and restart the board).
 
-3. If the writing is unsuccessful, please carefully check the writing steps. For example, if SN already exists in the board, the original SN number needs to be deleted. Whether it is necessary to restart the device.
+4. If the writing is unsuccessful, please carefully check the writing steps. For example, if SN already exists in the board, the original SN number needs to be deleted. Whether it is necessary to restart the device.
 
-4. How to send the file unsuccessfully? Please check the file size. Currently, the board supports files below 1M.
+5. How to send the file unsuccessfully? Please check the file size. Currently, the board supports files below 1M.
 
 5. Write device, associated with software and hardware. If it fails, there may be problems in both aspects.
    + For software, please contact the software designer: xudong.xu@ecolab.com

@@ -49,7 +49,6 @@ namespace ECOLAB.IOT.WinFormApp
 
             if (result == DialogResult.OK)//login sucessful
             {
-                Transmit.Utility.Track($"\n\r UserName:{CallerContext.SysAdmin.UserName} Login in.",true);
                 //show main windows
                 Frm_Main obj = new Frm_Main();
                 Application.Run(obj);
@@ -70,6 +69,7 @@ namespace ECOLAB.IOT.WinFormApp
             OpenChildForm(new Burn());
             ShowNavigationMenu(button_SerialCOM_Burn.Name);
             HideSubMenu();
+            Transmit.Utility.Track($"\n\r UserName:{CallerContext.SysAdmin.UserName} Login in.", true);
         }
 
 
@@ -104,6 +104,10 @@ namespace ECOLAB.IOT.WinFormApp
                 try
                 {
                     await CallerContext.PublicClientApplication.RemoveAsync(accounts.FirstOrDefault()).ConfigureAwait(false);
+                    if (File.Exists("Ecolink_SNPSK_tool.dll.msalcache.bin3"))
+                    {
+                        File.Delete("Ecolink_SNPSK_tool.dll.msalcache.bin3");
+                    }
                 }
                 catch (MsalException ex)
                 {
@@ -199,6 +203,7 @@ namespace ECOLAB.IOT.WinFormApp
 
         private void label_Exit_Click(object sender, EventArgs e)
         {
+            var bl = Logout().Result;
             Application.Exit();
         }
 
