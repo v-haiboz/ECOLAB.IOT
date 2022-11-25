@@ -25,7 +25,7 @@
 >>> + Sign out，Click the Sign out menu to exit the main interface and return to the login interface, where you can switch the login language, environment and account.
 >>>  <img src="/img/main_signout.png"/>
 >> - SerialCOM
->>> + Burn，Mainly used to write SN and PSK numbers。
+>>> + Burn，Mainly used to write SN and PSK numbers, send file.
 >>>> 1. Configure serial port parameters and select "Connection" to connect the port of the burning device.
 >>>>  <img src="/img/main_burndown_comsetting.png"/>
 >>>> 2. Select the correct transmission mode in the "SendSetting", enter the correct SN number or select the corresponding file.
