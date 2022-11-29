@@ -7,6 +7,7 @@ using ECOLAB.IOT.Transmit.SNAndPSKSend;
 using System.ComponentModel;
 using System.IO.Ports;
 using System.Text;
+using System.Xml.Linq;
 using static ECOLAB.IOT.Transmit.ITransmitUart;
 
 namespace ECOLAB.IOT.WinFormApp.ChildWinForm
@@ -256,6 +257,7 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
                 var xmodem = new XModem(serialPort, version?.FilePath, formFileSend.checkBox_isCRC.Checked);
                 xmodem.OutPutEvent += new OutPutEventHandler(fileSend_OutPutEvent);
                 xmodem.SendResultEvent += new EventHandler(fileSend_SendCompletedEvent);
+                xmodem.MessageBoxEvent += new MessageBoxEventHandler(snAndspkSend_MessageBoxEvent);
                 xmodem.Send();
             }
             else if (formFileSend.comboBox_TransportProtocol.Text == Enum.GetName(TransportProtocol.Xmodem1k))
@@ -264,6 +266,7 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
                 var xmodem1k = new Xmodem1k(serialPort, version?.FilePath, formFileSend.checkBox_isCRC.Checked);
                 xmodem1k.OutPutEvent += new OutPutEventHandler(fileSend_OutPutEvent);
                 xmodem1k.SendResultEvent += new EventHandler(fileSend_SendCompletedEvent);
+                xmodem1k.MessageBoxEvent += new MessageBoxEventHandler(snAndspkSend_MessageBoxEvent);
                 xmodem1k.Send();
             }
             //else if (formFileSend.comboBox_TransportProtocol.Text == Enum.GetName(TransportProtocol.Ymodem))

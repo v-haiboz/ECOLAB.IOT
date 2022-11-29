@@ -15,6 +15,15 @@
             FileStream fileStream = new FileStream(@path, FileMode.Open, FileAccess.Read);
             BinaryReader b_reader = new BinaryReader(fileStream);
             long length = fileStream.Length;
+            if (length >= 1024 * 1024)
+            {
+                MessageBoxEvent(null, new TrackerMessageBox("File size cannot exceed 1M", "ToolTip"));
+                if (SendResultEvent != null)
+                {
+                    SendResultEvent(false, null);
+                }
+                return;
+            }
             int err = 0;
             string Read_line;
             Sender_Packet_Number = 1;
