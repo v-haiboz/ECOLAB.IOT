@@ -80,10 +80,6 @@
 
                 if (!CheckDeviceConfig(sn, psk))
                 {
-                    if (OutPutEvent != null && TransForm != null)
-                    {
-                        OutPutEvent(this, new TrackerReceiveData($"\n\r {TransForm("message_CommonSendPattern_failed")}"));
-                    }
                     return;
                 }
 
@@ -96,7 +92,6 @@
                         var caption = TransForm("message");
                         MessageBoxEvent(this, new TrackerMessageBox(text, caption));
                     }
-
                 }
                 else
                 {
@@ -109,14 +104,14 @@
 
                 if (OutPutEvent != null && TransForm != null)
                 {
-                    OutPutEvent(this, new TrackerReceiveData($"\n\r {TransForm("message_CommonSendPattern_suceess1")}"));
+                    OutPutEvent(this, new TrackerReceiveData($"{TransForm("message_CommonSendPattern_suceess1")}"));
                 }
             }
             catch (Exception ex)
             {
                 if (OutPutEvent != null && TransForm != null)
                 {
-                    OutPutEvent(this, new TrackerReceiveData($"\n\r {TransForm("message_Travel_failed")}"));
+                    OutPutEvent(this, new TrackerReceiveData($"{TransForm("message_Travel_failed")}"));
                 }
             }
             finally
@@ -180,7 +175,6 @@
                     MessageBoxEvent(this, new TrackerMessageBox(text, caption, ReceviedMessageBoxButtons.OK));
                 }
 
-                Thread.Sleep(3000);
                 if (serialPort.IsOpen == false)
                 {
                     serialPort.Open();
@@ -193,9 +187,9 @@
                 //string cache = serialPort.ReadExisting();
                 //Console.Write(cache);
                 serialPort.WriteLine("SN=" + sn);
-                Thread.Sleep(2000);
+                //Thread.Sleep(2000);
                 serialPort.WriteLine("PSK=" + psk);
-                Thread.Sleep(4000);
+                //Thread.Sleep(4000);
                 return true;
             }
             catch (Exception ex)
@@ -219,17 +213,24 @@
             {
                 Thread.Sleep(2000);
                 string cache = serialPort.ReadExisting();
-                if (OutPutEvent != null)
-                {
-                    var show_Text = "======================================================================\r\n" +
-                    $"{cache}\r\n\r\n ";
-                    OutPutEvent(this, new TrackerReceiveData(show_Text));
-                }
 
                 if (!cache.Contains(sn) || !cache.Contains(psk))
                 {
+                    if (OutPutEvent != null && TransForm != null)
+                    {
+                        MessageBoxEvent(this, new TrackerMessageBox($"\n\r {TransForm("message_CommonSendPattern_failed")}", "Message", ReceviedMessageBoxButtons.OKCancel, ReceviedMessageBoxIcon.Error));
+                    }
                     return false;
                 }
+
+                if (OutPutEvent != null)
+                {
+                    var show_Text = "==================================================================\r\n" +
+                    $"SN={sn}\r"+
+                    $"PSK={psk}\r";
+                    OutPutEvent(this, new TrackerReceiveData(show_Text));
+                }
+
             }
             catch (Exception e)
             {
