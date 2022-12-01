@@ -222,12 +222,11 @@
                     }
                     return false;
                 }
-
-                if (OutPutEvent != null)
+                else if (OutPutEvent != null)
                 {
                     var show_Text = "==================================================================\r\n" +
-                    $"SN={sn}\r"+
-                    $"PSK={psk}\r";
+                    $" SN={sn}\r" +
+                    $" PSK={psk}\r";
                     OutPutEvent(this, new TrackerReceiveData(show_Text));
                 }
 

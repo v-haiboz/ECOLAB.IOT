@@ -6,8 +6,6 @@ using ECOLAB.IOT.Transmit.FileTransmit;
 using ECOLAB.IOT.Transmit.SNAndPSKSend;
 using System.ComponentModel;
 using System.IO.Ports;
-using System.Text;
-using System.Xml.Linq;
 using static ECOLAB.IOT.Transmit.ITransmitUart;
 
 namespace ECOLAB.IOT.WinFormApp.ChildWinForm

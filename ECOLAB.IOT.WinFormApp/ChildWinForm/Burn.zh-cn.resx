@@ -166,13 +166,13 @@
     <value>消息</value>
   </data>
   <data name="message_CommonSendPattern_failed" xml:space="preserve">
-    <value>控制板配置失败。。。</value>
+    <value>控制板配置失败.</value>
   </data>
   <data name="message_CommonSendPattern_suceess" xml:space="preserve">
     <value>控制板已成功注册到云。祝贺!</value>
   </data>
   <data name="message_CommonSendPattern_suceess1" xml:space="preserve">
-    <value>控制板配置成功。。。</value>
+    <value>控制板配置成功.</value>
   </data>
   <data name="message_SetSecret_1" xml:space="preserve">
     <value>此序列号的现有PSK，PSK=</value>
@@ -187,10 +187,10 @@
     <value>请注意！</value>
   </data>
   <data name="message_Travel_failed" xml:space="preserve">
-    <value>控制板配置失败。。。</value>
+    <value>控制板配置失败.</value>
   </data>
   <data name="message_Travel_failed1" xml:space="preserve">
-    <value>文件发送失败。。。</value>
+    <value>文件发送失败.</value>
   </data>
   <data name="radioButton_CommonSendPattern.Text" xml:space="preserve">
     <value>SN_PSK发送</value>
