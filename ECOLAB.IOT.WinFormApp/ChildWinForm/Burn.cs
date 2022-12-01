@@ -200,6 +200,7 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
         {
             return res.GetString(errormessageId);
         }
+
         private void snAndspkSend_OutPutEvent(object sender, TrackerReceiveData e)
         {
             var message = e.ReceiveMessage;
@@ -216,6 +217,7 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             richTextBox_Output.AppendText($"{message}");
             Utility.Track($"{message}", true);
         }
+
         private void snAndspkSend_MessageBoxEvent(object sender, TrackerMessageBox e)
         {
             var text = e.Text;
@@ -248,7 +250,6 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
         }
 
 
-
         private void SendFilePattern()
         {
             if (formFileSend.comboBox_TransportProtocol.Text == Enum.GetName(TransportProtocol.Xmodem))
@@ -277,7 +278,6 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             //    ymodem.Send();
             //}
         }
-
         
 
         private void fileSend_OutPutEvent(object sender, TrackerReceiveData e)
@@ -307,92 +307,6 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             {
                 ChangeSendStatusToEnable();
             }
-        }
-        #endregion
-
-        #region genereate psk, and then send to keyvalut.
-        private bool SetSecret(string key, string value, out string psk)
-        {
-            psk = "";
-            try
-            {
-                if (CallerContext.ECOLABIOTSecretService.ExistSecret(key))
-                {
-                    psk = CallerContext.ECOLABIOTSecretService.GetSecret(key);
-                    return true;
-                    //MessageBox.Show($"{res.GetString("message_SetSecret_1")}{key}");
-                    //return false;
-                }
-
-                psk = CallerContext.ECOLABIOTSecretService.SetSecret(key, value);
-                return true;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"{res.GetString("message_SetSecret_error")} {ex}");
-                return false;
-            }
-        }
-        #endregion
-        #region setup To IoTHub
-        private bool SetupToIoTHub(string sn, string psk)
-        {
-            try
-            {
-                MessageBoxButtons _btn = MessageBoxButtons.OK;
-                MessageBox.Show(this, res.GetString("message_SetupToIoTHub_1"),
-                                res.GetString("message_SetupToIoTHub_2"), _btn);
-                Thread.Sleep(3000);
-                if (serialPort.IsOpen == false)
-                {
-                    serialPort.Open();
-                }
-
-                serialPort.WriteLine("SN=");
-                Thread.Sleep(500);
-                serialPort.WriteLine("PSK=");
-                Thread.Sleep(500);
-                //string cache = serialPort.ReadExisting();
-                //Console.Write(cache);
-                serialPort.WriteLine("SN=" + sn);
-                Thread.Sleep(2000);
-                serialPort.WriteLine("PSK=" + psk);
-                Thread.Sleep(4000);
-                return true;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
-                return false;
-            }
-        }
-        #endregion
-
-        #region Check that IoTHub is set successfully
-        private bool CheckDeviceConfig(string sn, string psk)
-        {
-            serialPort.ReadTimeout = 9000;
-
-            try
-            {
-                Thread.Sleep(2000);
-                string cache = serialPort.ReadExisting();
-                richTextBox_Output.AppendText("======================================================================\r\n" +
-                    $"{cache}\r\n\r\n {richTextBox_Output.Text}");
-
-                if (!cache.Contains(sn) || !cache.Contains(psk))
-                {
-
-                    return false;
-                }
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.Message, "Message", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
-                return false;
-            }
-
-            return true;
         }
         #endregion
 

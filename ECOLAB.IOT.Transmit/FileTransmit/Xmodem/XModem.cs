@@ -43,8 +43,7 @@
                 {
                     ConverTo128();
                 }
-                err = Send_Packet(Sender_Data, Sender_Packet_Number, 128);
-                ShowPercentage(data_Length, length);
+                err = Send_Packet(Sender_Data, Sender_Packet_Number, 128, realLength: data_Length, totalLength: length);
                 var retry = 1;
                 while (retry <= maxRetry)
                 {
@@ -70,9 +69,7 @@
 
                         Sender_Packet_Number++;
                         Sender_Packet_Number_Total++;
-                        err = Send_Packet(Sender_Data, Sender_Packet_Number, 128);
-
-                        ShowPercentage(data_Length, length);
+                        err = Send_Packet(Sender_Data, Sender_Packet_Number, 128, realLength: data_Length, totalLength: length);
                         retry = 1;
                     }
                     else
@@ -86,8 +83,7 @@
                             DeviceLog($"Packet_Number:{Sender_Packet_Number}");
                         }
 
-                        err = Send_Packet(Sender_Data, Sender_Packet_Number, err);
-                        ShowPercentage(data_Length,length);
+                        err = Send_Packet(Sender_Data, Sender_Packet_Number, err, realLength: data_Length, totalLength: length);
                         if (retry == maxRetry)
                         {
                             DeviceLog($"End To Transmit, Send Failed, Packet_Number:{Sender_Packet_Number}");
@@ -146,22 +142,22 @@
 
             Sender_Data = full_stream;
         }
-        private int Send_Packet(byte[] data, byte SPN, int Length)
+        private int Send_Packet(byte[] data, byte SPN, int length, int realLength, long totalLength)
         {
             byte[] send_Data = null;
 
             if (!isCRC)
             {
-                send_Data = GeneratePackage(data, SPN, Length);
+                send_Data = GeneratePackage(data, SPN, length);
             }
             else
             {
-                send_Data = GeneratePackageByCRC(data, SPN, Length);
+                send_Data = GeneratePackageByCRC(data, SPN, length);
             }
 
             serialPort.Write(send_Data, 0, send_Data.Length);
-
-            return Wait_ACK_NAK(Length);
+            ShowPercentage(realLength, totalLength);
+            return Wait_ACK_NAK(length);
 
         }
 
@@ -280,12 +276,6 @@
 
         private void DeviceLog(string str, bool isWriteEmptyLine=true)
         {
-            //if (isWriteEmptyLine)
-            //{
-            //    Console.WriteLine();
-            //}
-            //Console.WriteLine(str);
-
             if (OutPutEvent != null)
             {
                 OutPutEvent(this, new TrackerReceiveData(str,isWriteLine: isWriteEmptyLine));
