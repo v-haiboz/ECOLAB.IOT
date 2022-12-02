@@ -83,7 +83,7 @@
                     return;
                 }
 
-                var result = RegisterDevice(sn,prefix).Result;
+                var result = RegisterDevice(sn, prefix).Result;
                 if (result.Status == Status.OK)
                 {
                     if (MessageBoxEvent != null && TransForm != null)
