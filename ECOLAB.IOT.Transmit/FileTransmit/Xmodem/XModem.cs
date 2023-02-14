@@ -59,7 +59,8 @@
                         if (Sender_Data.Length == 0)
                         {
                             serialPort.Write(Sender_EOT, 0, 1);
-                            DeviceLog("End To Transmit,Send Successful.");
+                            MessageBoxEvent(null, new TrackerMessageBox("End To Transmit,Send Successful,Please restart the device to check whether the configuration is effective", "ToolTip"));
+                            DeviceLog("End To Transmit,Send Successful,Please restart the device to check whether the configuration is effective.\r");
                             break;
                         }
                         else if (Sender_Data.Length != 128)
@@ -86,7 +87,8 @@
                         err = Send_Packet(Sender_Data, Sender_Packet_Number, err, realLength: data_Length, totalLength: length);
                         if (retry == maxRetry)
                         {
-                            DeviceLog($"End To Transmit, Send Failed, Packet_Number:{Sender_Packet_Number}");
+                            MessageBoxEvent(null, new TrackerMessageBox($"End To Transmit, Send Failed, Packet_Number:{Sender_Packet_Number}", "ToolTip"));
+                            DeviceLog($"End To Transmit, Send Failed, Packet_Number:{Sender_Packet_Number}\r");
                         }
                         retry++;
                     }
@@ -96,11 +98,13 @@
             {
                 if (ex.Message.Contains("The operation has timed out."))
                 {
-                    DeviceLog($"Transmit does not answering, The operation has timed out.");
+                    MessageBoxEvent(null, new TrackerMessageBox($"Transmit does not answering, The operation has timed out.", "ToolTip"));
+                    DeviceLog($"Transmit does not answering, The operation has timed out.\r");
                 }
                 else
                 {
-                    DeviceLog($"Transmit does not answering, {ex.Message}");
+                    MessageBoxEvent(null, new TrackerMessageBox($"Transmit does not answering", "ToolTip"));
+                    DeviceLog($"Transmit does not answering, {ex.Message}\r");
                 }
                 
                 throw new Exception("Transmit does not answering");

@@ -12,7 +12,8 @@
        };
 
         private const string hex_reg = @"[0-9a-fA-F]";
-        private const string stringOrNumber = @"^[a-zA-Z0-9]*$";  
+        private const string stringOrNumber = @"^[a-zA-Z0-9]*$";
+        private const string stringOrNumberOrOthers = @"^[a-zA-Z0-9._//-]*$";
         private const string url = @"^(https?|ftp|file|ws)://([\w-]+\.)+[\w-]+(/[\w- ./?%&=]*)?$";
 
         public static bool ValidateSN(string serial_num, out string message)
@@ -112,6 +113,11 @@
         public static bool IsStringOrNumber(string str)
         {
             return IsMatch(stringOrNumber, str);
+        }
+
+        public static bool IsStringOrNumberOrOthers(string str)
+        {
+            return IsMatch(stringOrNumberOrOthers, str);
         }
 
         /// <summary>

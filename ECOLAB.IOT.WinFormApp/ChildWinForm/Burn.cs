@@ -163,7 +163,7 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
                 }
                 catch(Exception ex)
                 {
-                    richTextBox_Output.AppendText($"\n\r {res.GetString("message_Travel_failed")}");
+                    richTextBox_Output.AppendText($"\n{res.GetString("message_Travel_failed")}\r");
                 }
             }
             else if (CurrentContext.SendModeType == SendModeType.File)
@@ -174,7 +174,7 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
                 }
                 catch(Exception ex)
                 {
-                    richTextBox_Output.AppendText($"\n\r {res.GetString("message_Travel_failed1")}");
+                    richTextBox_Output.AppendText($"\n{res.GetString("message_Travel_failed1")}\r");
                 }
             }
         }

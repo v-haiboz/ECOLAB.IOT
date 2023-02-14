@@ -162,9 +162,9 @@ namespace ECOLAB.IOT.WinFormApp
                 return false;
             }
 
-            if (!Utilities.IsStringOrNumber(textBox_ModeName.Text))
+            if (!Utilities.IsStringOrNumberOrOthers(textBox_ModeName.Text))
             {
-                label_ModeName_Validate.Text = "Mode Name can only contain letters and numbers.";
+                label_ModeName_Validate.Text = "Mode Name can only contain letters,numbers or(.、-、_)";
                 return false;
             }
 
@@ -180,9 +180,9 @@ namespace ECOLAB.IOT.WinFormApp
                 return false;
             }
 
-            if (!Utilities.IsStringOrNumber(textBox_Version.Text))
+            if (!Utilities.IsStringOrNumberOrOthers(textBox_Version.Text))
             {
-                label_Version_Validate.Text = "Version can only contain letters and numbers.";
+                label_Version_Validate.Text = "Version can only contain letters,numbers or(.、-、_)";
                 return false;
             }
 
