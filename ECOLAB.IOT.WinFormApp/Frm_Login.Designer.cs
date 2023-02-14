@@ -87,18 +87,18 @@
             // radioButton_Chinese
             // 
             resources.ApplyResources(this.radioButton_Chinese, "radioButton_Chinese");
+            this.radioButton_Chinese.Checked = true;
             this.radioButton_Chinese.FlatAppearance.BorderSize = 0;
             this.radioButton_Chinese.Name = "radioButton_Chinese";
+            this.radioButton_Chinese.TabStop = true;
             this.radioButton_Chinese.UseVisualStyleBackColor = true;
             this.radioButton_Chinese.CheckedChanged += new System.EventHandler(this.radioButton_Chinese_CheckedChanged);
             // 
             // radioButton_English
             // 
             resources.ApplyResources(this.radioButton_English, "radioButton_English");
-            this.radioButton_English.Checked = true;
             this.radioButton_English.FlatAppearance.BorderSize = 0;
             this.radioButton_English.Name = "radioButton_English";
-            this.radioButton_English.TabStop = true;
             this.radioButton_English.UseVisualStyleBackColor = true;
             this.radioButton_English.CheckedChanged += new System.EventHandler(this.radioButton_English_CheckedChanged);
             // 
