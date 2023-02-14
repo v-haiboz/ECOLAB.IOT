@@ -174,6 +174,9 @@
   <data name="message_CommonSendPattern_suceess1" xml:space="preserve">
     <value>Control board configuration succeed...</value>
   </data>
+  <data name="message_RegisterDevice_failed" xml:space="preserve">
+    <value>The dashboard registration to the cloud failed.</value>
+  </data>
   <data name="message_SetSecret_1" xml:space="preserve">
     <value>Existing PSK for this serial number, PSK =</value>
   </data>
@@ -185,6 +188,9 @@
   </data>
   <data name="message_SetupToIoTHub_2" xml:space="preserve">
     <value>Please note that!</value>
+  </data>
+  <data name="message_SNAndPsk_failed" xml:space="preserve">
+    <value>SN And PSK failed to write to the board.</value>
   </data>
   <data name="message_Travel_failed" xml:space="preserve">
     <value>Control board configuration failed ...</value>

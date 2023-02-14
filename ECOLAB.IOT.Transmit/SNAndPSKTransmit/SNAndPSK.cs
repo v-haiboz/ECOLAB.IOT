@@ -18,6 +18,7 @@
             this.TransForm = transform;
 
         }
+        const string splitText = "==================================================================\r\n";
         private string prefix;
         private string Prefix
         {
@@ -95,11 +96,23 @@
                 }
                 else
                 {
+                    if (OutPutEvent != null && TransForm != null)
+                    {
+                        OutPutEvent(this, new TrackerReceiveData($"{TransForm("message_RegisterDevice_failed")}"));
+                    }
+
                     if (MessageBoxEvent != null && TransForm != null)
                     {
+                        var text = TransForm("message_RegisterDevice_failed");
                         var caption = TransForm("message");
                         MessageBoxEvent(this, new TrackerMessageBox(result.Message, caption));
                     }
+
+                    if (OutPutEvent != null && TransForm != null)
+                    {
+                        OutPutEvent(this, new TrackerReceiveData($"{TransForm("message_CommonSendPattern_failed")}"));
+                    }
+                    return;
                 }
 
                 if (OutPutEvent != null && TransForm != null)
@@ -153,6 +166,11 @@
             }
             catch (Exception ex)
             {
+                if (OutPutEvent != null && TransForm != null)
+                {
+                    OutPutEvent(this, new TrackerReceiveData($"{splitText}{TransForm("message_SetSecret_error")}"));
+                }
+
                 if (MessageBoxEvent != null && TransForm != null)
                 {
                     var message = TransForm("message_SetSecret_error");
@@ -218,13 +236,18 @@
                 {
                     if (OutPutEvent != null && TransForm != null)
                     {
-                        MessageBoxEvent(this, new TrackerMessageBox($"\n\r {TransForm("message_CommonSendPattern_failed")}", "Message", ReceviedMessageBoxButtons.OKCancel, ReceviedMessageBoxIcon.Error));
+                        OutPutEvent(this, new TrackerReceiveData($"{splitText}{TransForm("message_SNAndPsk_failed")}"));
+                    }
+
+                    if (MessageBoxEvent != null && TransForm != null)
+                    {
+                        MessageBoxEvent(this, new TrackerMessageBox($"\n\r {TransForm("message_SNAndPsk_failed")}", "Message", ReceviedMessageBoxButtons.OKCancel, ReceviedMessageBoxIcon.Error));
                     }
                     return false;
                 }
                 else if (OutPutEvent != null)
                 {
-                    var show_Text = "==================================================================\r\n" +
+                    var show_Text = splitText +
                     $" SN={sn}\r" +
                     $" PSK={psk}\r";
                     OutPutEvent(this, new TrackerReceiveData(show_Text));

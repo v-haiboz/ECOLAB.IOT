@@ -136,6 +136,10 @@
             byte[] zero_ary = new byte[128 - Sender_Data.Length];
             Array.Clear(zero_ary, 0, zero_ary.Length);
 
+            for (var i = 0; i < 128 - Sender_Data.Length;i++)
+            {
+                zero_ary[i] = (byte)XModemMessageType.CTRLZ;
+            }
 
             Array.Copy(Sender_Data, 0, full_stream, 0, Sender_Data.Length);
             Array.Copy(zero_ary, 0, full_stream, Sender_Data.Length, zero_ary.Length);

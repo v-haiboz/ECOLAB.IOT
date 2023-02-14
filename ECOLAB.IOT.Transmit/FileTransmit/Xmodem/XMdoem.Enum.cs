@@ -12,6 +12,7 @@
         ETB = 0x17,
         ACK = 0x06,
         NAK = 0x15,
-        CAN = 0x18
+        CAN = 0x18,
+        CTRLZ = 0x1A
     }
 }
