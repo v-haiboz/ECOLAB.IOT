@@ -10,6 +10,8 @@
         public delegate void MessageBoxEventHandler(object sender, TrackerMessageBox e);
         public event MessageBoxEventHandler MessageBoxEvent;
         public event EventHandler SendResultEvent;
+        public delegate string Transforer(string strkey);
+        public event Transforer OutTransforer;
 
         void Send();
         //void Stop();

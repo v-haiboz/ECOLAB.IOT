@@ -30,7 +30,7 @@
         public event ITransmitUart.OutPutEventHandler OutPutEvent;
         public event EventHandler SendResultEvent;
         public event ITransmitUart.MessageBoxEventHandler MessageBoxEvent;
-
+        public event ITransmitUart.Transforer OutTransforer;
         private bool isCRC = false;
         public Xmodem1k(SerialPort serialPort, string path,bool isCRC=false)
         {

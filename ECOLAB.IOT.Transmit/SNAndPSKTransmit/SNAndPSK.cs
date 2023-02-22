@@ -51,6 +51,8 @@
         public event ITransmitUart.OutPutEventHandler OutPutEvent;
         public event EventHandler SendResultEvent;
         public event MessageBoxEventHandler MessageBoxEvent;
+        public event Transforer OutTransforer;
+
         public Func<string, string> TransForm;
 
         public string PSK
@@ -205,16 +207,16 @@
                 //string cache = serialPort.ReadExisting();
                 //Console.Write(cache);
                 serialPort.WriteLine("SN=" + sn);
-                //Thread.Sleep(2000);
+                Thread.Sleep(2000);
                 serialPort.WriteLine("PSK=" + psk);
-                //Thread.Sleep(4000);
+                Thread.Sleep(500);
                 return true;
             }
             catch (Exception ex)
             {
                 if (MessageBoxEvent != null && TransForm != null)
                 {
-                    MessageBoxEvent(this, new TrackerMessageBox(ex.Message, "Message", ReceviedMessageBoxButtons.OKCancel, ReceviedMessageBoxIcon.Error));
+                    MessageBoxEvent(this, new TrackerMessageBox(ex.Message, "Message", ReceviedMessageBoxButtons.OK, ReceviedMessageBoxIcon.Error));
                 }
 
                 return false;
@@ -241,7 +243,7 @@
 
                     if (MessageBoxEvent != null && TransForm != null)
                     {
-                        MessageBoxEvent(this, new TrackerMessageBox($"\n\r {TransForm("message_SNAndPsk_failed")}", "Message", ReceviedMessageBoxButtons.OKCancel, ReceviedMessageBoxIcon.Error));
+                        MessageBoxEvent(this, new TrackerMessageBox($"\n\r {TransForm("message_SNAndPsk_failed")}", "Message", ReceviedMessageBoxButtons.OK, ReceviedMessageBoxIcon.Error));
                     }
                     return false;
                 }
@@ -258,7 +260,7 @@
             {
                 if (MessageBoxEvent != null && TransForm != null)
                 {
-                    MessageBoxEvent(this, new TrackerMessageBox(e.Message, "Message", ReceviedMessageBoxButtons.OKCancel, ReceviedMessageBoxIcon.Error));
+                    MessageBoxEvent(this, new TrackerMessageBox(e.Message, "Message", ReceviedMessageBoxButtons.OK, ReceviedMessageBoxIcon.Error));
                 }
                 return false;
             }

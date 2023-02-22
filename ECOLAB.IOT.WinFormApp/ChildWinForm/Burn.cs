@@ -220,14 +220,22 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
         {
             var text = e.Text;
             var caption = e.Caption;
+            var boxIcon= MessageBoxIcon.Information;
+
+            if (e.MessageBoxIcon == ReceviedMessageBoxIcon.Error)
+            {
+                boxIcon = MessageBoxIcon.Error;
+            }
+
+
             if (e.MessageBoxButtons == ReceviedMessageBoxButtons.OK)
             {
                 MessageBoxButtons _btn = MessageBoxButtons.OK;
-                MessageBox.Show(this, text, caption, _btn);
+                MessageBox.Show(text, caption, _btn, boxIcon);
             }
             else if (e.MessageBoxButtons == ReceviedMessageBoxButtons.OKCancel)
             {
-                MessageBox.Show(text, caption, MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                MessageBox.Show(text, caption, MessageBoxButtons.OKCancel, boxIcon);
             }
             else
             {
@@ -257,6 +265,7 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
                 xmodem.OutPutEvent += new OutPutEventHandler(fileSend_OutPutEvent);
                 xmodem.SendResultEvent += new EventHandler(fileSend_SendCompletedEvent);
                 xmodem.MessageBoxEvent += new MessageBoxEventHandler(snAndspkSend_MessageBoxEvent);
+                xmodem.OutTransforer += new Transforer(Transfor);
                 xmodem.Send();
             }
             else if (formFileSend.comboBox_TransportProtocol.Text == Enum.GetName(TransportProtocol.Xmodem1k))
@@ -266,6 +275,7 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
                 xmodem1k.OutPutEvent += new OutPutEventHandler(fileSend_OutPutEvent);
                 xmodem1k.SendResultEvent += new EventHandler(fileSend_SendCompletedEvent);
                 xmodem1k.MessageBoxEvent += new MessageBoxEventHandler(snAndspkSend_MessageBoxEvent);
+                xmodem1k.OutTransforer += new Transforer(Transfor);
                 xmodem1k.Send();
             }
             //else if (formFileSend.comboBox_TransportProtocol.Text == Enum.GetName(TransportProtocol.Ymodem))
@@ -276,7 +286,16 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             //    ymodem.Send();
             //}
         }
-        
+
+        private string Transfor(string strkey)
+        {
+            if (string.IsNullOrEmpty(strkey))
+            {
+                return strkey;
+            }
+
+            return res?.GetString(strkey);
+        }
 
         private void fileSend_OutPutEvent(object sender, TrackerReceiveData e)
         {

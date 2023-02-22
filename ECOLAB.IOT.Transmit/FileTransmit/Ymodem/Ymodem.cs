@@ -7,7 +7,8 @@
 
     public partial class YModem : IFileTransmit
     {
-       
+        public event ITransmitUart.Transforer OutTransforer;
+
         public void Send()
         {
             if(SendResultEvent!=null)

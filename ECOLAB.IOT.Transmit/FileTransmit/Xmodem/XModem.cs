@@ -2,12 +2,21 @@
 {
     using ECOLAB.IOT.Service;
     using System;
+    using System.IO.Ports;
+    using System.Text;
 
     public partial class XModem : IFileTransmit
     {
         private static bool DeviceLogContinuity = CallerContext.ECOLABIOTLogSettingService.GetLogSetting().DeviceLogContinuity;
+
+        public event ITransmitUart.Transforer OutTransforer;
+
         public void Send()
         {
+            serialPort.DiscardOutBuffer();
+            serialPort.DiscardInBuffer();
+            serialPort.DiscardOutBuffer();
+            serialPort.DiscardInBuffer();
             if (SendResultEvent != null)
             {
                 SendResultEvent(true, null);
@@ -38,7 +47,7 @@
                 this.wait_c();
                 Sender_Data = b_reader.ReadBytes(128);
                 var data_Length = Sender_Data.Length;
-                var maxRetry = 6;
+                var maxRetry = 1;
                 if (Sender_Data.Length != 128)
                 {
                     ConverTo128();
@@ -59,8 +68,8 @@
                         if (Sender_Data.Length == 0)
                         {
                             serialPort.Write(Sender_EOT, 0, 1);
-                            MessageBoxEvent(null, new TrackerMessageBox("End To Transmit,Send Successful,Please restart the device to check whether the configuration is effective", "ToolTip"));
-                            DeviceLog("End To Transmit,Send Successful,Please restart the device to check whether the configuration is effective.\r");
+                            MessageBoxEvent(null, new TrackerMessageBox(OutTransforer("message_file_successful"), OutTransforer("message_file_tooltip"), messageBoxIcon: ReceviedMessageBoxIcon.Information));
+                            DeviceLog($"{OutTransforer("message_file_successful")}\r");
                             break;
                         }
                         else if (Sender_Data.Length != 128)
@@ -78,17 +87,20 @@
                         if (retry > 1)
                         {
                             DeviceLog($"{retry} Resend  Packet_Number:{Sender_Packet_Number}");
+                            err = Send_Packet(Sender_Data, Sender_Packet_Number, err, realLength: data_Length, totalLength: length);
                         }
                         else
                         {
                             DeviceLog($"Packet_Number:{Sender_Packet_Number}");
                         }
 
-                        err = Send_Packet(Sender_Data, Sender_Packet_Number, err, realLength: data_Length, totalLength: length);
                         if (retry == maxRetry)
                         {
-                            MessageBoxEvent(null, new TrackerMessageBox($"End To Transmit, Send Failed, Packet_Number:{Sender_Packet_Number}", "ToolTip"));
-                            DeviceLog($"End To Transmit, Send Failed, Packet_Number:{Sender_Packet_Number}\r");
+                            Abort();
+                            Thread.Sleep(3000);
+                            MessageBoxEvent(null, new TrackerMessageBox($"{OutTransforer("message_file_failed")}{Sender_Packet_Number}", OutTransforer("message_file_tooltip"), messageBoxIcon: ReceviedMessageBoxIcon.Error));
+                            DeviceLog($"{OutTransforer("message_file_failed")}{Sender_Packet_Number}\r");
+                            break;
                         }
                         retry++;
                     }
@@ -98,12 +110,12 @@
             {
                 if (ex.Message.Contains("The operation has timed out."))
                 {
-                    MessageBoxEvent(null, new TrackerMessageBox($"Transmit does not answering, The operation has timed out.", "ToolTip"));
+                    MessageBoxEvent(null, new TrackerMessageBox($"{OutTransforer("message_file_exception2")}", OutTransforer("message_file_tooltip"), messageBoxIcon: ReceviedMessageBoxIcon.Error));
                     DeviceLog($"Transmit does not answering, The operation has timed out.\r");
                 }
                 else
                 {
-                    MessageBoxEvent(null, new TrackerMessageBox($"Transmit does not answering", "ToolTip"));
+                    MessageBoxEvent(null, new TrackerMessageBox($"{OutTransforer("message_file_exception1")},{ex.Message}", OutTransforer("message_file_tooltip"), messageBoxIcon: ReceviedMessageBoxIcon.Error));
                     DeviceLog($"Transmit does not answering, {ex.Message}\r");
                 }
                 
@@ -225,11 +237,12 @@
         }
         private void wait_c()
         {
+            DeviceLog($"{OutTransforer("message_file_progress")}\r", false);
             char readchar;
             while (true)
             {
-                readchar = (char)serialPort.ReadChar();
-                DeviceLog(readchar.ToString(),false);
+                readchar=(char)serialPort.ReadChar();
+                DeviceLog(readchar.ToString(), false);
                 if (!isCRC)
                 {
                     if (readchar == (byte)XModemMessageType.NAK)
@@ -257,7 +270,7 @@
 #if DEBUG
                 DeviceLog("Wait_ACK_NAK");
 #endif
-                SPort_read = serialPort.ReadChar();
+                SPort_read = (char)serialPort.ReadChar();
                 if (SPort_read == (byte)XModemMessageType.NAK)
                 {
 #if DEBUG
@@ -288,6 +301,19 @@
             {
                 OutPutEvent(this, new TrackerReceiveData(str,isWriteLine: isWriteEmptyLine));
             }
+        }
+
+        private void Abort()
+        {
+            SendCAN();
+        }
+
+        private void SendCAN()
+        {
+            byte[] bytes = new byte[1] { (byte)XModemMessageType.CAN };
+            serialPort.Write(bytes, 0, bytes.Length);
+            serialPort.Write(bytes, 0, bytes.Length);
+            serialPort.Write(bytes, 0, bytes.Length);
         }
     }
 }

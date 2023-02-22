@@ -50,9 +50,11 @@ namespace ECOLAB.IOT.WinFormApp
         {
             comboBox_Env.Items.Clear();
             var items = CallerContext.ECOLABIOTEnvironmentService.GetEnvironmentVariables();
+            var product = items.Where(item=>item.Name== "Product").FirstOrDefault();
             comboBox_Env.DataSource = items;
             comboBox_Env.ValueMember = "FileName";
             comboBox_Env.DisplayMember = "Name";
+            comboBox_Env.SelectedValue= product?.FileName;
         }
 
 

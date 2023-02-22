@@ -52,6 +52,8 @@
             // checkBox_isCRC
             // 
             resources.ApplyResources(this.checkBox_isCRC, "checkBox_isCRC");
+            this.checkBox_isCRC.Checked = true;
+            this.checkBox_isCRC.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox_isCRC.Name = "checkBox_isCRC";
             this.checkBox_isCRC.UseVisualStyleBackColor = true;
             // 
