@@ -207,6 +207,9 @@
   <data name="message_SetupToIoTHub_2" xml:space="preserve">
     <value>请注意！</value>
   </data>
+  <data name="message_SetupToIoTHub_3" xml:space="preserve">
+    <value>SN写入板子时失败，请检查端口号是否正确。</value>
+  </data>
   <data name="message_SNAndPsk_failed" xml:space="preserve">
     <value>SN和PSK 写入到板子失败。</value>
   </data>

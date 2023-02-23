@@ -207,6 +207,9 @@
   <data name="message_SetupToIoTHub_2" xml:space="preserve">
     <value>Please note that!</value>
   </data>
+  <data name="message_SetupToIoTHub_3" xml:space="preserve">
+    <value>SN failed to write to the board. Please check whether the port number is correct.</value>
+  </data>
   <data name="message_SNAndPsk_failed" xml:space="preserve">
     <value>SN And PSK failed to write to the board.</value>
   </data>

@@ -200,12 +200,7 @@
                     serialPort.Open();
                 }
 
-                //serialPort.WriteLine("SN=");
-                //Thread.Sleep(500);
-                //serialPort.WriteLine("PSK=");
-                //Thread.Sleep(500);
-                //string cache = serialPort.ReadExisting();
-                //Console.Write(cache);
+                serialPort.WriteTimeout = 6000;
                 serialPort.WriteLine("SN=" + sn);
                 Thread.Sleep(2000);
                 serialPort.WriteLine("PSK=" + psk);
@@ -216,7 +211,7 @@
             {
                 if (MessageBoxEvent != null && TransForm != null)
                 {
-                    MessageBoxEvent(this, new TrackerMessageBox(ex.Message, "Message", ReceviedMessageBoxButtons.OK, ReceviedMessageBoxIcon.Error));
+                    MessageBoxEvent(this, new TrackerMessageBox(TransForm("message_SetupToIoTHub_3"), "Message", ReceviedMessageBoxButtons.OK, ReceviedMessageBoxIcon.Error));
                 }
 
                 return false;
