@@ -227,6 +227,18 @@ namespace ECOLAB.IOT.WinFormApp
             this.Height = DHeight;
           
             this.timer1.Start();
+            using (var modeChoose = new CustomMessageBox())
+            {
+                string hh = modeChoose.showMessage();
+                if (hh == "confirm")
+                {
+                    Console.WriteLine("点击了确定");
+                }
+                else if (hh == "cancel")
+                {
+                    Console.WriteLine("点击了取消或叉叉");
+                }
+            }
         }
 
 

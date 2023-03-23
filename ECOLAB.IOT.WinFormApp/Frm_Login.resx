@@ -181,7 +181,7 @@
     <value>427, 220</value>
   </data>
   <data name="comboBox_Env.Size" type="System.Drawing.Size, System.Drawing">
-    <value>328, 32</value>
+    <value>329, 32</value>
   </data>
   <data name="comboBox_Env.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>

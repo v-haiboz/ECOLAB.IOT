@@ -9,6 +9,7 @@
         public const int SC_MOVE = 0xF010;
         public const int HTCAPTION = 0x0002;
         public const int SC_RESTORE = 0xF120;
+        private const int WM_NCLBUTTONDOWN = 0XA1;   //.定义鼠標左鍵按下
 
         [DllImport("user32.dll")]
         public static extern bool ReleaseCapture();
@@ -30,6 +31,9 @@
 
         [DllImport("kernel32.dll", CharSet = CharSet.Auto)]
         public static extern bool FreeConsole();
+
+        [DllImport("user32.dll", EntryPoint = "SendMessageA")]
+        private static extern int SendMessage(int hwnd, int wMsg, int wParam, int lParam);
 
     }
 }
