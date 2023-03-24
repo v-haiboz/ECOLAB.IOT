@@ -153,6 +153,10 @@ namespace ECOLAB.IOT.WinFormApp
         private void button_Confirm_Click(object sender, EventArgs e)
         {
             customMessageBoxDialogResult = GetDialogResult(DialogResult.OK);
+            if (customMessageBoxDialogResult.DialogResult == DialogResult.Ignore)
+            {
+                return;
+            }
             this.Close();
         }
 
@@ -165,7 +169,8 @@ namespace ECOLAB.IOT.WinFormApp
                 {
                     return new CustomMessageBoxDialogResult()
                     {
-                        DialogResult = dialogResult
+                        ModeEnum = ModeEnum.DGWMode,
+                        DialogResult = DialogResult.Ignore
                     };
                 }
 
