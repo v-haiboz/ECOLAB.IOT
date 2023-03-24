@@ -29,69 +29,84 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormFileSend));
-            this.comboBox_TransportProtocol = new System.Windows.Forms.ComboBox();
-            this.label_TransportProtocol = new System.Windows.Forms.Label();
-            this.checkBox_isCRC = new System.Windows.Forms.CheckBox();
-            this.label_ModeName = new System.Windows.Forms.Label();
-            this.label_Version = new System.Windows.Forms.Label();
-            this.comboBox_ModeName = new System.Windows.Forms.ComboBox();
-            this.comboBox_Version = new System.Windows.Forms.ComboBox();
+            this.label_SNPrefix = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.linkLabel_ClearSerialNumber = new System.Windows.Forms.LinkLabel();
+            this.checkBox_EnableMappingPrefix = new System.Windows.Forms.CheckBox();
+            this.checkBox_ValidateSN = new System.Windows.Forms.CheckBox();
+            this.textBox_SerialNumber = new System.Windows.Forms.TextBox();
+            this.label_SerualNubmer_Validate = new System.Windows.Forms.Label();
+            this.label_SerialNumber = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // comboBox_TransportProtocol
+            // label_SNPrefix
             // 
-            resources.ApplyResources(this.comboBox_TransportProtocol, "comboBox_TransportProtocol");
-            this.comboBox_TransportProtocol.FormattingEnabled = true;
-            this.comboBox_TransportProtocol.Name = "comboBox_TransportProtocol";
+            this.label_SNPrefix.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.label_SNPrefix.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            resources.ApplyResources(this.label_SNPrefix, "label_SNPrefix");
+            this.label_SNPrefix.Name = "label_SNPrefix";
             // 
-            // label_TransportProtocol
+            // label1
             // 
-            resources.ApplyResources(this.label_TransportProtocol, "label_TransportProtocol");
-            this.label_TransportProtocol.Name = "label_TransportProtocol";
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.Name = "label1";
             // 
-            // checkBox_isCRC
+            // linkLabel_ClearSerialNumber
             // 
-            resources.ApplyResources(this.checkBox_isCRC, "checkBox_isCRC");
-            this.checkBox_isCRC.Checked = true;
-            this.checkBox_isCRC.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox_isCRC.Name = "checkBox_isCRC";
-            this.checkBox_isCRC.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.linkLabel_ClearSerialNumber, "linkLabel_ClearSerialNumber");
+            this.linkLabel_ClearSerialNumber.Name = "linkLabel_ClearSerialNumber";
+            this.linkLabel_ClearSerialNumber.TabStop = true;
+            this.linkLabel_ClearSerialNumber.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_ClearSerialNumber_LinkClicked);
             // 
-            // label_ModeName
+            // checkBox_EnableMappingPrefix
             // 
-            resources.ApplyResources(this.label_ModeName, "label_ModeName");
-            this.label_ModeName.Name = "label_ModeName";
+            resources.ApplyResources(this.checkBox_EnableMappingPrefix, "checkBox_EnableMappingPrefix");
+            this.checkBox_EnableMappingPrefix.Checked = true;
+            this.checkBox_EnableMappingPrefix.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox_EnableMappingPrefix.Name = "checkBox_EnableMappingPrefix";
+            this.checkBox_EnableMappingPrefix.UseVisualStyleBackColor = true;
             // 
-            // label_Version
+            // checkBox_ValidateSN
             // 
-            resources.ApplyResources(this.label_Version, "label_Version");
-            this.label_Version.Name = "label_Version";
+            resources.ApplyResources(this.checkBox_ValidateSN, "checkBox_ValidateSN");
+            this.checkBox_ValidateSN.Checked = true;
+            this.checkBox_ValidateSN.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox_ValidateSN.Name = "checkBox_ValidateSN";
+            this.checkBox_ValidateSN.UseVisualStyleBackColor = true;
             // 
-            // comboBox_ModeName
+            // textBox_SerialNumber
             // 
-            resources.ApplyResources(this.comboBox_ModeName, "comboBox_ModeName");
-            this.comboBox_ModeName.FormattingEnabled = true;
-            this.comboBox_ModeName.Name = "comboBox_ModeName";
-            this.comboBox_ModeName.SelectedIndexChanged += new System.EventHandler(this.comboBox_ModeName_SelectedIndexChanged);
+            this.textBox_SerialNumber.BackColor = System.Drawing.SystemColors.Window;
+            this.textBox_SerialNumber.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.textBox_SerialNumber, "textBox_SerialNumber");
+            this.textBox_SerialNumber.Name = "textBox_SerialNumber";
+            this.textBox_SerialNumber.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_SerialNumber_KeyDown);
+            this.textBox_SerialNumber.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBox_SerialNumber_KeyUp);
             // 
-            // comboBox_Version
+            // label_SerualNubmer_Validate
             // 
-            resources.ApplyResources(this.comboBox_Version, "comboBox_Version");
-            this.comboBox_Version.FormattingEnabled = true;
-            this.comboBox_Version.Name = "comboBox_Version";
+            resources.ApplyResources(this.label_SerualNubmer_Validate, "label_SerualNubmer_Validate");
+            this.label_SerualNubmer_Validate.ForeColor = System.Drawing.Color.Red;
+            this.label_SerualNubmer_Validate.Name = "label_SerualNubmer_Validate";
+            // 
+            // label_SerialNumber
+            // 
+            resources.ApplyResources(this.label_SerialNumber, "label_SerialNumber");
+            this.label_SerialNumber.Name = "label_SerialNumber";
             // 
             // FormFileSend
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.Controls.Add(this.checkBox_isCRC);
-            this.Controls.Add(this.label_Version);
-            this.Controls.Add(this.label_ModeName);
-            this.Controls.Add(this.comboBox_Version);
-            this.Controls.Add(this.comboBox_ModeName);
-            this.Controls.Add(this.label_TransportProtocol);
-            this.Controls.Add(this.comboBox_TransportProtocol);
+            this.Controls.Add(this.label_SNPrefix);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.linkLabel_ClearSerialNumber);
+            this.Controls.Add(this.checkBox_EnableMappingPrefix);
+            this.Controls.Add(this.checkBox_ValidateSN);
+            this.Controls.Add(this.textBox_SerialNumber);
+            this.Controls.Add(this.label_SerualNubmer_Validate);
+            this.Controls.Add(this.label_SerialNumber);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormFileSend";
             this.Load += new System.EventHandler(this.FormFileSend_Load);
@@ -101,12 +116,13 @@
         }
 
         #endregion
-        public ComboBox comboBox_TransportProtocol;
-        public Label label_TransportProtocol;
-        public CheckBox checkBox_isCRC;
-        public Label label_ModeName;
-        public Label label_Version;
-        public ComboBox comboBox_ModeName;
-        public ComboBox comboBox_Version;
+        public Label label_SNPrefix;
+        private Label label1;
+        public LinkLabel linkLabel_ClearSerialNumber;
+        public CheckBox checkBox_EnableMappingPrefix;
+        public CheckBox checkBox_ValidateSN;
+        public TextBox textBox_SerialNumber;
+        public Label label_SerualNubmer_Validate;
+        public Label label_SerialNumber;
     }
 }

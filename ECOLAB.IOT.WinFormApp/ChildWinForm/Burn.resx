@@ -247,13 +247,13 @@
     <value>103, 93</value>
   </data>
   <data name="radioButton_FileSendPattern.Size" type="System.Drawing.Size, System.Drawing">
-    <value>111, 28</value>
+    <value>134, 28</value>
   </data>
   <data name="radioButton_FileSendPattern.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
   <data name="radioButton_FileSendPattern.Text" xml:space="preserve">
-    <value>File Send</value>
+    <value>DGW Mode</value>
   </data>
   <data name="&gt;&gt;radioButton_FileSendPattern.Name" xml:space="preserve">
     <value>radioButton_FileSendPattern</value>
@@ -310,13 +310,13 @@
     <value>103, 48</value>
   </data>
   <data name="radioButton_CommonSendPattern.Size" type="System.Drawing.Size, System.Drawing">
-    <value>146, 28</value>
+    <value>181, 28</value>
   </data>
   <data name="radioButton_CommonSendPattern.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="radioButton_CommonSendPattern.Text" xml:space="preserve">
-    <value>SN_PSK Send</value>
+    <value>IOT Device Mode</value>
   </data>
   <data name="&gt;&gt;radioButton_CommonSendPattern.Name" xml:space="preserve">
     <value>radioButton_CommonSendPattern</value>

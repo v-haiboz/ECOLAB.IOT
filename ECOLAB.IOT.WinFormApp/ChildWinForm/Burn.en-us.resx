@@ -153,6 +153,9 @@
   <data name="label_DataBit.Text" xml:space="preserve">
     <value>Data Bit:</value>
   </data>
+  <data name="label_ModeName" xml:space="preserve">
+    <value>ModeName</value>
+  </data>
   <data name="label_ParityBit.Text" xml:space="preserve">
     <value>Parity Bit:</value>
   </data>
@@ -161,6 +164,12 @@
   </data>
   <data name="label_StopBit.Text" xml:space="preserve">
     <value>Stop Bit:</value>
+  </data>
+  <data name="label_TransportProtocol" xml:space="preserve">
+    <value>Protocol</value>
+  </data>
+  <data name="label_Version" xml:space="preserve">
+    <value>Version</value>
   </data>
   <data name="message" xml:space="preserve">
     <value>Message</value>
@@ -213,6 +222,9 @@
   <data name="message_SNAndPsk_failed" xml:space="preserve">
     <value>SN And PSK failed to write to the board.</value>
   </data>
+  <data name="message_SNAndPsk_failed_Timeout" xml:space="preserve">
+    <value>SN and PSK write to the board timeout.</value>
+  </data>
   <data name="message_Travel_failed" xml:space="preserve">
     <value>Control board configuration failed ...</value>
   </data>
@@ -220,9 +232,9 @@
     <value>File Sending Failed ...</value>
   </data>
   <data name="radioButton_CommonSendPattern.Text" xml:space="preserve">
-    <value>SN_PSK Send</value>
+    <value>IOT Device Mode</value>
   </data>
   <data name="radioButton_FileSendPattern.Text" xml:space="preserve">
-    <value>File Send</value>
+    <value>DGW Mode</value>
   </data>
 </root>

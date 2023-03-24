@@ -371,7 +371,8 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
 
                 return currentContext;
             }
-            set {
+            set
+            {
                 currentContext = value;
             }
         }
@@ -395,7 +396,23 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             BandDingStopBit();
             SetDefault();
             BuildChildFrom();
-            AddChildForm(formNormal);
+            SetSendAreaTitle();
+
+            if (customMessageBoxDialogResult.ModeEnum == ModeEnum.NormalMode)
+            {
+                radioButton_CommonSendPattern.Checked = true;
+                radioButton_FileSendPattern.Checked = false;
+                AddChildForm(formNormal);
+            }
+            else if (customMessageBoxDialogResult.ModeEnum == ModeEnum.DGWMode)
+            {
+                radioButton_CommonSendPattern.Checked = false;
+                radioButton_FileSendPattern.Checked = true;
+                AddChildForm(formFileSend);
+            }
+
+            radioButton_FileSendPattern.Enabled = false;
+            radioButton_CommonSendPattern.Enabled = false;
         }
 
         private void BuildChildFrom()
@@ -407,9 +424,11 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             this.formNormal.checkBox_EnableMappingPrefix.CheckedChanged += new EventHandler(this.checkBox_EnableMappingPrefix_Click);
             this.formNormal.Hide();
 
-            this.formFileSend = new FormFileSend();
-            //this.formFileSend.textBox_ChooseFile.KeyPress += new KeyPressEventHandler(this.textBox_ChooseFile_KeyPress);
-            this.formFileSend.comboBox_Version.SelectedIndexChanged += new EventHandler(this.textBox_ChooseVersion_TextChanged);
+            this.formFileSend = new FormFileSend(customMessageBoxDialogResult);
+            this.formFileSend.textBox_SerialNumber.KeyPress += new KeyPressEventHandler(this.formFileSend_textBox_SerialNumber_KeyPress);
+            this.formFileSend.textBox_SerialNumber.TextChanged += new EventHandler(this.formFileSend_textBox_SerialNumber_TextChanged);
+            this.formFileSend.checkBox_ValidateSN.CheckedChanged += new EventHandler(this.formFileSend_checkBox_ValidateSN_CheckedChanged);
+            this.formFileSend.checkBox_EnableMappingPrefix.CheckedChanged += new EventHandler(this.formFileSend_checkBox_EnableMappingPrefix_Click);
             this.formFileSend.Hide();
         }
 
@@ -449,9 +468,41 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             comboBox_DataBit.SelectedItem = ((int)setting.DataBit).ToString();
             comboBox_StopBit.SelectedItem = setting.StopBit.ToStopBitName();
         }
+
+        private void SetSendAreaTitle()
+        {
+            var groupBoxSendText = res.GetString("groupBox_Send.Text");
+            var modeType = res.GetString("radioButton_CommonSendPattern.Text");
+            this.groupBox_Send.Text = $"{groupBoxSendText}   {modeType}";
+            if (customMessageBoxDialogResult.ModeEnum == ModeEnum.DGWMode)
+            {
+                var transportProtocol = res.GetString("label_TransportProtocol");
+                var modeName = res.GetString("label_ModeName");
+                var version = res.GetString("label_Version");
+                modeType = res.GetString("radioButton_FileSendPattern.Text");
+                this.groupBox_Send.Text = $"{groupBoxSendText}   {modeType}    {transportProtocol} : {customMessageBoxDialogResult.TransportProtocol}  |  CRC : {customMessageBoxDialogResult.IsCRC}  |  {modeName} : {customMessageBoxDialogResult.DGWModeConfig.ModeName}  |  {version} : {customMessageBoxDialogResult.DGWModeConfig.Version}";
+            }
+        }
         #endregion
 
         #region FormNormal_Validate
+        private bool Form_ValidateSN(string sn)
+        {
+            var bl = true;
+            if (CurrentContext.SendModeType == SendModeType.Normal)
+            {
+                bl= FormNormal_ValidateSN(sn);
+                GeneratePrefix();
+            }
+            else if (CurrentContext.SendModeType == SendModeType.File)
+            {
+                bl= FormSendFile_ValidateSN(sn);
+            }
+           
+            DisableOrEnableBurnDownButton();
+            return bl;
+        }
+
         private bool FormNormal_ValidateSN(string sn)
         {
             var bl = true;
@@ -459,8 +510,9 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             {
                 formNormal.label_SerualNubmer_Validate.Text = "";
                 bl = true;
+
             }
-            else if (string.IsNullOrEmpty(sn))
+            else if ( string.IsNullOrEmpty(sn))
             {
                 formNormal.label_SerualNubmer_Validate.Text = "SN is Empty, pls input SN";
                 bl = false;
@@ -474,8 +526,34 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             {
                 formNormal.label_SerualNubmer_Validate.Text = "";
             }
-            GeneratePrefix();
-            DisableOrEnableBurnDownButton();
+
+            return bl;
+        }
+
+        private bool FormSendFile_ValidateSN(string sn)
+        {
+            var bl = true;
+            if (!formFileSend.checkBox_ValidateSN.Checked)
+            {
+                formFileSend.label_SerualNubmer_Validate.Text = "";
+                bl = true;
+
+            }
+            else if (string.IsNullOrEmpty(sn))
+            {
+                formFileSend.label_SerualNubmer_Validate.Text = "SN is Empty, pls input SN";
+                bl = false;
+            }
+            else if (!Utilities.ValidateSN(sn, out string message))
+            {
+                formFileSend.label_SerualNubmer_Validate.Text = $"SN format is incorrect.\r\n{message}";
+                bl = false;
+            }
+            else
+            {
+                formFileSend.label_SerualNubmer_Validate.Text = "";
+            }
+
             return bl;
         }
 
@@ -552,7 +630,7 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
         #region Burn Validate
         private bool BurnDown_Validate()
         {
-            if (FormNormal_ValidateSN(formNormal.textBox_SerialNumber.Text))
+            if (Form_ValidateSN(formNormal.textBox_SerialNumber.Text))
             {
                 return false;
             }
@@ -571,15 +649,18 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
         }
         private void DisableOrEnableBurnDownButton()
         {
-            if (CurrentContext.PortalState==PortalState.Open
+            if (CurrentContext.PortalState == PortalState.Open
                 && (
                     (CurrentContext.SendModeType == SendModeType.Normal
                     && string.IsNullOrEmpty(formNormal.label_SerualNubmer_Validate.Text)
                     && !string.IsNullOrEmpty(formNormal.textBox_SerialNumber.Text))
                     ||
                     (CurrentContext.SendModeType == SendModeType.File
-                    && !string.IsNullOrEmpty(formFileSend.comboBox_ModeName.Text)
-                    && !string.IsNullOrEmpty(formFileSend.comboBox_Version.Text)
+                    && string.IsNullOrEmpty(formFileSend.label_SerualNubmer_Validate.Text)
+                    && !string.IsNullOrEmpty(formFileSend.textBox_SerialNumber.Text)
+                    && (formFileSend.textBox_SerialNumber.Text.Length==12|| !formFileSend.checkBox_ValidateSN.Checked)
+                    && !string.IsNullOrEmpty(customMessageBoxDialogResult.DGWModeConfig.ModeName)
+                    && !string.IsNullOrEmpty(customMessageBoxDialogResult.DGWModeConfig.Version)
                     )
                    )
                )
@@ -593,29 +674,33 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
                 button_BurnDown.Enabled = false;
             }
 
-            //DisableOrEnableSendPattern();
         }
 
-        private void ChangeSendStatusToDisable()
+        private void ChangeSendStatusToDisable(KeyValuePair<bool, bool> keyValuePair)
         {
-            radioButton_CommonSendPattern.Enabled = false;
-            radioButton_FileSendPattern.Enabled = false;
-            formNormal.textBox_SerialNumber.Enabled = false;
-            formFileSend.comboBox_Version.Enabled = false;
-            formFileSend.comboBox_ModeName.Enabled = false;
-            formFileSend.comboBox_TransportProtocol.Enabled = false;
+            if (keyValuePair.Value)
+            {
+                formNormal.textBox_SerialNumber.Enabled = false;
+            }
+            else
+            {
+                formFileSend.textBox_SerialNumber.Enabled = false;
+            }
+        
             button_BurnDown.BackColor = SystemColors.AppWorkspace;
             button_BurnDown.Enabled = false;
-            //this.richTextBox_Output.Text = "";
         }
-        private void ChangeSendStatusToEnable()
+
+        private void ChangeSendStatusToEnable(KeyValuePair<bool, bool> keyValuePair)
         {
-            radioButton_CommonSendPattern.Enabled = true;
-            radioButton_FileSendPattern.Enabled = true;
-            formNormal.textBox_SerialNumber.Enabled = true;
-            formFileSend.comboBox_Version.Enabled = true;
-            formFileSend.comboBox_ModeName.Enabled = true;
-            formFileSend.comboBox_TransportProtocol.Enabled = true;
+            if (keyValuePair.Value)
+            {
+                formNormal.textBox_SerialNumber.Enabled = true;
+            }
+            else {
+                formFileSend.textBox_SerialNumber.Enabled = true;
+            }
+            
             button_BurnDown.BackColor = Color.FromArgb(0, 192, 0);
             button_BurnDown.Enabled = true;
         }

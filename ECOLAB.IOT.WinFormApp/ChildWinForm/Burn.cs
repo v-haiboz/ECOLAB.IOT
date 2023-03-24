@@ -14,9 +14,11 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
     {
         private COMSetting setting = CallerContext.ECOLABIOTBurnSNAndPSKService.GetDefaultCOMSetting();
         ComponentResourceManager res = new ComponentResourceManager(typeof(Burn));
-        public Burn()
+        private CustomMessageBoxDialogResult customMessageBoxDialogResult;
+        public Burn(CustomMessageBoxDialogResult customMessageBoxDialogResult)
         {
             InitializeComponent();
+            this.customMessageBoxDialogResult = customMessageBoxDialogResult;
         }
         TextWriter _writer = null;
         private void Burn_Load(object sender, EventArgs e)
@@ -90,6 +92,43 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             DisableOrEnableBurnDownButton();
         }
 
+        private void formFileSend_textBox_SerialNumber_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ((TextBox)sender).SelectionLength = 0;
+            if (e.KeyChar==8 && formFileSend.textBox_SerialNumber.Text == "DGW" && (formFileSend.textBox_SerialNumber.Text.Length <= 3|| formFileSend.textBox_SerialNumber.Text.Length- formFileSend.textBox_SerialNumber.SelectedText.Length<=3))
+            {
+                e.Handled = true;
+                return;
+            }
+
+            if ((e.KeyChar < '0' || e.KeyChar > '9') && e.KeyChar != 8) { 
+         
+                e.Handled = true;
+                return;
+            }
+
+            var keyChar = e.KeyChar.ToString();
+            if (e.KeyChar != 8)
+            {
+                Form_ValidateSN(formFileSend.textBox_SerialNumber.Text + keyChar);
+            }
+        }
+
+        private void formFileSend_textBox_SerialNumber_TextChanged(object sender, EventArgs e)
+        {
+            Form_ValidateSN(formFileSend.textBox_SerialNumber.Text);
+        }
+
+        private void formFileSend_checkBox_ValidateSN_CheckedChanged(object sender, EventArgs e)
+        {
+            Form_ValidateSN(formFileSend.textBox_SerialNumber.Text);
+        }
+
+        private void formFileSend_checkBox_EnableMappingPrefix_Click(object sender, EventArgs e)
+        {
+            Form_ValidateSN(formFileSend.textBox_SerialNumber.Text);
+        }
+
         private void textBox_SerialNumber_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 8)
@@ -98,48 +137,21 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
                 return;
             }
             var keyChar = e.KeyChar.ToString();
-            FormNormal_ValidateSN(formNormal.textBox_SerialNumber.Text + keyChar);
+            Form_ValidateSN(formNormal.textBox_SerialNumber.Text + keyChar);
         }
         private void textBox_SerialNumber_TextChanged(object sender, EventArgs e)
         {
-            FormNormal_ValidateSN(formNormal.textBox_SerialNumber.Text);
+            Form_ValidateSN(formNormal.textBox_SerialNumber.Text);
         }
 
         private void checkBox_ValidateSN_CheckedChanged(object sender, EventArgs e)
         {
-            FormNormal_ValidateSN(formNormal.textBox_SerialNumber.Text);
+            Form_ValidateSN(formNormal.textBox_SerialNumber.Text);
         }
 
         private void checkBox_EnableMappingPrefix_Click(object sender, EventArgs e)
         {
-            FormNormal_ValidateSN(formNormal.textBox_SerialNumber.Text);
-        }
-
-        private void textBox_ChooseFile_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == 8)
-            {
-                e.Handled = false;
-                return;
-            }
-            var keyChar = e.KeyChar.ToString();
-            //FormFileSend_ValidateFile(formFileSend.textBox_ChooseFile.Text + keyChar);
-        }
-
-        private void textBox_ChooseFile_TextChanged(object sender, EventArgs e)
-        {
-            //FormFileSend_ValidateFile(formFileSend.textBox_ChooseFile.Text);
-        }
-
-        private void textBox_ChooseVersion_TextChanged(object sender, EventArgs e)
-        {
-            dynamic version = formFileSend.comboBox_Version.SelectedItem;
-            if (version != null)
-            {
-               var filePath = version.FilePath;
-               FormFileSend_ValidateChooseFile(filePath);
-            }
-            
+            Form_ValidateSN(formNormal.textBox_SerialNumber.Text);
         }
 
         private async void button_BurnDown_Click(object sender, EventArgs e)
@@ -244,38 +256,50 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
         }
         private void snAndspkSend_SendCompletedEvent(object sender, EventArgs e)
         {
-            var bl = (bool)sender;
-            if (bl)
+            var keyValuePair= (KeyValuePair<bool,bool>)sender;
+            if (keyValuePair.Key)
             {
-                ChangeSendStatusToDisable();
+                ChangeSendStatusToDisable(keyValuePair);
             }
             else
             {
-                ChangeSendStatusToEnable();
+                ChangeSendStatusToEnable(keyValuePair);
             }
         }
 
 
         private void SendFilePattern()
         {
-            if (formFileSend.comboBox_TransportProtocol.Text == Enum.GetName(TransportProtocol.Xmodem))
+            var sn = formFileSend.textBox_SerialNumber.Text;
+            var snAndspk = new SNAndPSK(serialPort, sn, formNormal.label_SNPrefix.Text, TransForm);
+            snAndspk.OutPutEvent += new OutPutEventHandler(snAndspkSend_OutPutEvent);
+            snAndspk.SendResultEvent += new EventHandler(snAndspkSend_SendCompletedEvent);
+            snAndspk.MessageBoxEvent += new MessageBoxEventHandler(snAndspkSend_MessageBoxEvent);
+            var result=snAndspk.Send(false);
+            if (!result)
             {
-                var version = formFileSend.comboBox_Version.SelectedItem as DGWModeConfig;
-                var xmodem = new XModem(serialPort, version?.FilePath, formFileSend.checkBox_isCRC.Checked);
-                xmodem.OutPutEvent += new OutPutEventHandler(fileSend_OutPutEvent);
+                return;
+            }
+
+            Thread.Sleep(1000);
+
+
+            if (customMessageBoxDialogResult.TransportProtocol == Enum.GetName(TransportProtocol.Xmodem))
+            {
+                var xmodem = new XModem(serialPort, customMessageBoxDialogResult.DGWModeConfig.FilePath, customMessageBoxDialogResult.IsCRC);
+                xmodem.OutPutEvent += new IFileTransmit.OutPutEventHandler(fileSend_OutPutEvent);
                 xmodem.SendResultEvent += new EventHandler(fileSend_SendCompletedEvent);
-                xmodem.MessageBoxEvent += new MessageBoxEventHandler(snAndspkSend_MessageBoxEvent);
-                xmodem.OutTransforer += new Transforer(Transfor);
+                xmodem.MessageBoxEvent += new IFileTransmit.MessageBoxEventHandler(snAndspkSend_MessageBoxEvent);
+                xmodem.OutTransforer += new IFileTransmit.Transforer(Transfor);
                 xmodem.Send();
             }
-            else if (formFileSend.comboBox_TransportProtocol.Text == Enum.GetName(TransportProtocol.Xmodem1k))
+            else if (customMessageBoxDialogResult.TransportProtocol == Enum.GetName(TransportProtocol.Xmodem1k))
             {
-                var version = formFileSend.comboBox_Version.SelectedItem as DGWModeConfig;
-                var xmodem1k = new Xmodem1k(serialPort, version?.FilePath, formFileSend.checkBox_isCRC.Checked);
-                xmodem1k.OutPutEvent += new OutPutEventHandler(fileSend_OutPutEvent);
+                var xmodem1k = new Xmodem1k(serialPort, customMessageBoxDialogResult.DGWModeConfig.FilePath, customMessageBoxDialogResult.IsCRC);
+                xmodem1k.OutPutEvent += new IFileTransmit.OutPutEventHandler(fileSend_OutPutEvent);
                 xmodem1k.SendResultEvent += new EventHandler(fileSend_SendCompletedEvent);
-                xmodem1k.MessageBoxEvent += new MessageBoxEventHandler(snAndspkSend_MessageBoxEvent);
-                xmodem1k.OutTransforer += new Transforer(Transfor);
+                xmodem1k.MessageBoxEvent += new IFileTransmit.MessageBoxEventHandler(snAndspkSend_MessageBoxEvent);
+                xmodem1k.OutTransforer += new IFileTransmit.Transforer(Transfor);
                 xmodem1k.Send();
             }
             //else if (formFileSend.comboBox_TransportProtocol.Text == Enum.GetName(TransportProtocol.Ymodem))
@@ -313,16 +337,17 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             richTextBox_Output.AppendText($"{message}");
             Utility.Track($"{message}", true);
         }
+
         private void fileSend_SendCompletedEvent(object sender, EventArgs e)
         {
-            var bl = (bool)sender;
-            if (bl)
+            var keyValue = (KeyValuePair<bool,bool>)sender;
+            if (keyValue.Key)
             {
-                ChangeSendStatusToDisable();
+                ChangeSendStatusToDisable(keyValue);
             }
             else
             {
-                ChangeSendStatusToEnable();
+                ChangeSendStatusToEnable(keyValue);
             }
         }
         #endregion

@@ -4,7 +4,9 @@
     using ECOLAB.IOT.Entity;
     using ECOLAB.IOT.Service;
     using System;
+    using System.ComponentModel.DataAnnotations;
     using System.IO.Ports;
+    using System.Security.Policy;
     using System.Threading.Tasks;
     using static ECOLAB.IOT.Transmit.ITransmitUart;
 
@@ -66,24 +68,26 @@
                 psk = value;
             }
         }
-        public void Send()
+
+        public bool Send(bool isformNormal=true)
         {
-            SendResultEvent(true, null);
+            var bl = false;
+            SendResultEvent(KeyValuePair.Create(true, isformNormal), null);
             try
             {
                 if (!SetSecret($"{sn}PSK", Utilities.RandomGenerateString(), out string psk))
                 {
-                    return;
+                    return bl;
                 }
 
                 if (!SetupToIoTHub(sn, psk))
                 {
-                    return;
+                    return bl;
                 }
 
-                if (!CheckDeviceConfig(sn, psk))
+                if (!isformNormal && !CheckDeviceConfig(sn, psk))
                 {
-                    return;
+                    return bl;
                 }
 
                 var result = RegisterDevice(sn, prefix).Result;
@@ -114,13 +118,16 @@
                     {
                         OutPutEvent(this, new TrackerReceiveData($"{TransForm("message_CommonSendPattern_failed")}"));
                     }
-                    return;
+
+                    return bl;
                 }
 
                 if (OutPutEvent != null && TransForm != null)
                 {
                     OutPutEvent(this, new TrackerReceiveData($"{TransForm("message_CommonSendPattern_suceess1")}"));
                 }
+
+                return bl=true;
             }
             catch (Exception ex)
             {
@@ -128,10 +135,15 @@
                 {
                     OutPutEvent(this, new TrackerReceiveData($"{TransForm("message_Travel_failed")}"));
                 }
+
+                return false;
             }
             finally
             {
-                SendResultEvent(false, null);
+                if (isformNormal || !bl)
+                {
+                    SendResultEvent(KeyValuePair.Create(false, isformNormal), null);
+                }
             }
         }
 
@@ -229,11 +241,26 @@
                 Thread.Sleep(2000);
                 string cache = serialPort.ReadExisting();
 
+                if (string.IsNullOrEmpty(cache))
+                {
+                    if (OutPutEvent != null && TransForm != null)
+                    {
+                        OutPutEvent(this, new TrackerReceiveData($"{splitText}{TransForm("message_SNAndPsk_failed_Timeout")}"));
+                    }
+
+                    if (MessageBoxEvent != null && TransForm != null)
+                    {
+                        MessageBoxEvent(this, new TrackerMessageBox($"\n\r {TransForm("message_SNAndPsk_failed_Timeout")}", "Message", ReceviedMessageBoxButtons.OK, ReceviedMessageBoxIcon.Error));
+                    }
+
+                    return false;
+                }
+
                 if (!cache.Contains(sn) || !cache.Contains(psk))
                 {
                     if (OutPutEvent != null && TransForm != null)
                     {
-                        OutPutEvent(this, new TrackerReceiveData($"{splitText}{TransForm("message_SNAndPsk_failed")}"));
+                        OutPutEvent(this, new TrackerReceiveData($"{splitText}{TransForm("message_SNAndPsk_failed")} \n\r {cache}"));
                     }
 
                     if (MessageBoxEvent != null && TransForm != null)

@@ -28,121 +28,177 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomMessageBox));
             this.lblTitleContent = new System.Windows.Forms.Label();
-            this.normalMode = new System.Windows.Forms.RadioButton();
+            this.panel_Container = new System.Windows.Forms.Panel();
+            this.panel_Submit = new System.Windows.Forms.Panel();
+            this.button_Cancel = new System.Windows.Forms.Button();
+            this.button_Confirm = new System.Windows.Forms.Button();
+            this.panel_ChooseFile = new System.Windows.Forms.Panel();
+            this.checkBox_isCRC = new System.Windows.Forms.CheckBox();
+            this.label_TransportProtocol = new System.Windows.Forms.Label();
+            this.comboBox_TransportProtocol = new System.Windows.Forms.ComboBox();
+            this.label_Version = new System.Windows.Forms.Label();
+            this.label_ModeName = new System.Windows.Forms.Label();
+            this.comboBox_Version = new System.Windows.Forms.ComboBox();
+            this.comboBox_ModeName = new System.Windows.Forms.ComboBox();
+            this.panel_Mode = new System.Windows.Forms.Panel();
             this.dgwMode = new System.Windows.Forms.RadioButton();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel1.SuspendLayout();
+            this.normalMode = new System.Windows.Forms.RadioButton();
+            this.panel_Container.SuspendLayout();
+            this.panel_Submit.SuspendLayout();
+            this.panel_ChooseFile.SuspendLayout();
+            this.panel_Mode.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblTitleContent
             // 
             this.lblTitleContent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(117)))), ((int)(((byte)(151)))));
             this.lblTitleContent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblTitleContent.Dock = System.Windows.Forms.DockStyle.Top;
+            resources.ApplyResources(this.lblTitleContent, "lblTitleContent");
             this.lblTitleContent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblTitleContent.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblTitleContent.ForeColor = System.Drawing.Color.White;
-            this.lblTitleContent.Location = new System.Drawing.Point(0, 0);
+            this.lblTitleContent.ForeColor = System.Drawing.Color.Black;
             this.lblTitleContent.Name = "lblTitleContent";
-            this.lblTitleContent.Padding = new System.Windows.Forms.Padding(10, 10, 0, 0);
-            this.lblTitleContent.Size = new System.Drawing.Size(842, 49);
-            this.lblTitleContent.TabIndex = 0;
-            this.lblTitleContent.Text = "label1";
             this.lblTitleContent.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Control_MouseDown);
             this.lblTitleContent.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Control_MouseMove);
             // 
-            // normalMode
+            // panel_Container
             // 
-            this.normalMode.AutoSize = true;
-            this.normalMode.Checked = true;
-            this.normalMode.Location = new System.Drawing.Point(175, 62);
-            this.normalMode.Name = "normalMode";
-            this.normalMode.Size = new System.Drawing.Size(156, 28);
-            this.normalMode.TabIndex = 0;
-            this.normalMode.TabStop = true;
-            this.normalMode.Text = "Normal Mode";
-            this.normalMode.UseVisualStyleBackColor = true;
+            this.panel_Container.Controls.Add(this.panel_Submit);
+            this.panel_Container.Controls.Add(this.panel_ChooseFile);
+            this.panel_Container.Controls.Add(this.panel_Mode);
+            resources.ApplyResources(this.panel_Container, "panel_Container");
+            this.panel_Container.Name = "panel_Container";
+            // 
+            // panel_Submit
+            // 
+            this.panel_Submit.Controls.Add(this.button_Cancel);
+            this.panel_Submit.Controls.Add(this.button_Confirm);
+            resources.ApplyResources(this.panel_Submit, "panel_Submit");
+            this.panel_Submit.Name = "panel_Submit";
+            // 
+            // button_Cancel
+            // 
+            this.button_Cancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(117)))), ((int)(((byte)(151)))));
+            this.button_Cancel.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.button_Cancel, "button_Cancel");
+            this.button_Cancel.ForeColor = System.Drawing.Color.Black;
+            this.button_Cancel.Name = "button_Cancel";
+            this.button_Cancel.UseVisualStyleBackColor = false;
+            this.button_Cancel.Click += new System.EventHandler(this.button_Cancel_Click);
+            // 
+            // button_Confirm
+            // 
+            this.button_Confirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(117)))), ((int)(((byte)(151)))));
+            this.button_Confirm.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.button_Confirm, "button_Confirm");
+            this.button_Confirm.ForeColor = System.Drawing.Color.Black;
+            this.button_Confirm.Name = "button_Confirm";
+            this.button_Confirm.UseVisualStyleBackColor = false;
+            this.button_Confirm.Click += new System.EventHandler(this.button_Confirm_Click);
+            // 
+            // panel_ChooseFile
+            // 
+            this.panel_ChooseFile.Controls.Add(this.checkBox_isCRC);
+            this.panel_ChooseFile.Controls.Add(this.label_TransportProtocol);
+            this.panel_ChooseFile.Controls.Add(this.comboBox_TransportProtocol);
+            this.panel_ChooseFile.Controls.Add(this.label_Version);
+            this.panel_ChooseFile.Controls.Add(this.label_ModeName);
+            this.panel_ChooseFile.Controls.Add(this.comboBox_Version);
+            this.panel_ChooseFile.Controls.Add(this.comboBox_ModeName);
+            resources.ApplyResources(this.panel_ChooseFile, "panel_ChooseFile");
+            this.panel_ChooseFile.ForeColor = System.Drawing.Color.Black;
+            this.panel_ChooseFile.Name = "panel_ChooseFile";
+            // 
+            // checkBox_isCRC
+            // 
+            resources.ApplyResources(this.checkBox_isCRC, "checkBox_isCRC");
+            this.checkBox_isCRC.Checked = true;
+            this.checkBox_isCRC.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox_isCRC.ForeColor = System.Drawing.Color.Black;
+            this.checkBox_isCRC.Name = "checkBox_isCRC";
+            this.checkBox_isCRC.UseVisualStyleBackColor = true;
+            // 
+            // label_TransportProtocol
+            // 
+            this.label_TransportProtocol.ForeColor = System.Drawing.Color.Black;
+            resources.ApplyResources(this.label_TransportProtocol, "label_TransportProtocol");
+            this.label_TransportProtocol.Name = "label_TransportProtocol";
+            // 
+            // comboBox_TransportProtocol
+            // 
+            resources.ApplyResources(this.comboBox_TransportProtocol, "comboBox_TransportProtocol");
+            this.comboBox_TransportProtocol.FormattingEnabled = true;
+            this.comboBox_TransportProtocol.Name = "comboBox_TransportProtocol";
+            // 
+            // label_Version
+            // 
+            this.label_Version.ForeColor = System.Drawing.Color.Black;
+            resources.ApplyResources(this.label_Version, "label_Version");
+            this.label_Version.Name = "label_Version";
+            // 
+            // label_ModeName
+            // 
+            this.label_ModeName.ForeColor = System.Drawing.Color.Black;
+            resources.ApplyResources(this.label_ModeName, "label_ModeName");
+            this.label_ModeName.Name = "label_ModeName";
+            // 
+            // comboBox_Version
+            // 
+            resources.ApplyResources(this.comboBox_Version, "comboBox_Version");
+            this.comboBox_Version.FormattingEnabled = true;
+            this.comboBox_Version.Name = "comboBox_Version";
+            // 
+            // comboBox_ModeName
+            // 
+            resources.ApplyResources(this.comboBox_ModeName, "comboBox_ModeName");
+            this.comboBox_ModeName.FormattingEnabled = true;
+            this.comboBox_ModeName.Name = "comboBox_ModeName";
+            // 
+            // panel_Mode
+            // 
+            this.panel_Mode.Controls.Add(this.dgwMode);
+            this.panel_Mode.Controls.Add(this.normalMode);
+            resources.ApplyResources(this.panel_Mode, "panel_Mode");
+            this.panel_Mode.Name = "panel_Mode";
             // 
             // dgwMode
             // 
-            this.dgwMode.AutoSize = true;
-            this.dgwMode.Location = new System.Drawing.Point(442, 62);
+            resources.ApplyResources(this.dgwMode, "dgwMode");
+            this.dgwMode.ForeColor = System.Drawing.Color.Black;
             this.dgwMode.Name = "dgwMode";
-            this.dgwMode.Size = new System.Drawing.Size(131, 28);
-            this.dgwMode.TabIndex = 1;
             this.dgwMode.TabStop = true;
-            this.dgwMode.Text = "DGWMode";
             this.dgwMode.UseVisualStyleBackColor = true;
-            this.dgwMode.CheckedChanged += new System.EventHandler(this.dgwMode_CheckedChanged);
+            this.dgwMode.Click += new System.EventHandler(this.dgwMode_Click);
             // 
-            // button1
+            // normalMode
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(117)))), ((int)(((byte)(151)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(184, 401);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(128, 60);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "OK";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(117)))), ((int)(((byte)(151)))));
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(425, 401);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(128, 60);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Cancel";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.dgwMode);
-            this.panel1.Controls.Add(this.normalMode);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 49);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(842, 144);
-            this.panel1.TabIndex = 7;
-            // 
-            // panel2
-            // 
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 193);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(842, 175);
-            this.panel2.TabIndex = 8;
+            resources.ApplyResources(this.normalMode, "normalMode");
+            this.normalMode.Checked = true;
+            this.normalMode.ForeColor = System.Drawing.Color.Black;
+            this.normalMode.Name = "normalMode";
+            this.normalMode.TabStop = true;
+            this.normalMode.UseVisualStyleBackColor = true;
+            this.normalMode.Click += new System.EventHandler(this.normalMode_Click);
             // 
             // CustomMessageBox
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(842, 483);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.panel_Container);
             this.Controls.Add(this.lblTitleContent);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "CustomMessageBox";
-            this.Text = "CustomMessageBox";
             this.Load += new System.EventHandler(this.CustomMessageBox_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panel_Container.ResumeLayout(false);
+            this.panel_Submit.ResumeLayout(false);
+            this.panel_ChooseFile.ResumeLayout(false);
+            this.panel_ChooseFile.PerformLayout();
+            this.panel_Mode.ResumeLayout(false);
+            this.panel_Mode.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -150,11 +206,20 @@
         #endregion
 
         private Label lblTitleContent;
-        private RadioButton normalMode;
+        private Panel panel_Container;
+        private Panel panel_ChooseFile;
+        public Label label_Version;
+        public Label label_ModeName;
+        public ComboBox comboBox_Version;
+        public ComboBox comboBox_ModeName;
+        private Panel panel_Mode;
         private RadioButton dgwMode;
-        private Button button1;
-        private Button button2;
-        private Panel panel1;
-        private Panel panel2;
+        private RadioButton normalMode;
+        private Panel panel_Submit;
+        private Button button_Cancel;
+        private Button button_Confirm;
+        public CheckBox checkBox_isCRC;
+        public Label label_TransportProtocol;
+        public ComboBox comboBox_TransportProtocol;
     }
 }

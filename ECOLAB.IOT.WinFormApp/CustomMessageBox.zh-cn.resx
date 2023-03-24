@@ -117,16 +117,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="checkBox_EnableMappingPrefix.Text" xml:space="preserve">
-    <value>EnableMappingPrefix</value>
+  <data name="button_Cancel.Text" xml:space="preserve">
+    <value>退出</value>
   </data>
-  <data name="checkBox_ValidateSN.Text" xml:space="preserve">
-    <value>EnableValidateSN</value>
+  <data name="button_Confirm.Text" xml:space="preserve">
+    <value>确定</value>
   </data>
-  <data name="label_SerialNumber.Text" xml:space="preserve">
-    <value>Serial Number:</value>
+  <data name="dgwMode.Text" xml:space="preserve">
+    <value>DGW 模式</value>
   </data>
-  <data name="linkLabel_ClearSerialNumber.Text" xml:space="preserve">
-    <value>Clear</value>
+  <data name="label_ModeName.Text" xml:space="preserve">
+    <value>模式名称：</value>
+  </data>
+  <data name="label_TransportProtocol.Text" xml:space="preserve">
+    <value>传输协议：</value>
+  </data>
+  <data name="label_Version.Text" xml:space="preserve">
+    <value>版本：</value>
+  </data>
+  <data name="lblTitleContent.Text" xml:space="preserve">
+    <value>在下列模式中，请选择一种模式.</value>
+  </data>
+  <data name="normalMode.Text" xml:space="preserve">
+    <value>IOT 设备模式</value>
   </data>
 </root>

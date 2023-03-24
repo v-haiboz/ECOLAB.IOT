@@ -9,8 +9,6 @@
     {
         private static bool DeviceLogContinuity = CallerContext.ECOLABIOTLogSettingService.GetLogSetting().DeviceLogContinuity;
 
-        public event ITransmitUart.Transforer OutTransforer;
-
         public void Send()
         {
             serialPort.DiscardOutBuffer();
@@ -19,7 +17,7 @@
             serialPort.DiscardInBuffer();
             if (SendResultEvent != null)
             {
-                SendResultEvent(true, null);
+                SendResultEvent(KeyValuePair.Create(true,true), null);
             }
             FileStream fileStream = new FileStream(@path, FileMode.Open, FileAccess.Read);
             BinaryReader b_reader = new BinaryReader(fileStream);
@@ -127,7 +125,7 @@
                 fileStream.Dispose();
                 if (SendResultEvent != null)
                 {
-                    SendResultEvent(false, null);
+                    SendResultEvent(KeyValuePair.Create(false, true), null);
                 }
                 serialPort.ReadTimeout = 10000;
             }

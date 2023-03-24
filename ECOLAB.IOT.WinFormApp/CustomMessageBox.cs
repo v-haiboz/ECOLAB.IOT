@@ -1,13 +1,6 @@
-﻿using ECOLAB.IOT.WinFormApp.ChildWinForm;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using ECOLAB.IOT.Entity;
+using ECOLAB.IOT.Service;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace ECOLAB.IOT.WinFormApp
 {
@@ -44,60 +37,152 @@ namespace ECOLAB.IOT.WinFormApp
             }
         }
 
+        private List<DGWModeConfig> dGWModeConfigs = new List<DGWModeConfig>();
         public CustomMessageBox()
         {
+            Thread.CurrentThread.CurrentUICulture = CallerContext.currentCulture;
             InitializeComponent();
+            Init();
         }
 
-        public string GetFilePath()
+        public void Init()
         {
-            return "test";
+            comboBox_TransportProtocol.Items.Clear();
+            comboBox_ModeName.Items.Clear();
+            comboBox_Version.Items.Clear();
+            var protacols = CallerContext.ECOLABIOTBurnSNAndPSKService.GetTransportProtocol();
+            this.comboBox_TransportProtocol.Items.AddRange(protacols);
+            comboBox_TransportProtocol.SelectedItem = Enum.GetName(TransportProtocol.Xmodem1k);
+           // comboBox_TransportProtocol.Enabled = false;
+            dGWModeConfigs = CallerContext.ECOLABIOTDGWModeService.GetDGWMode();
+            if (dGWModeConfigs == null || dGWModeConfigs.Count == 0)
+            {
+                return;
+            }
+
+            var modeNames = dGWModeConfigs?.Select(item => item.ModeName).Distinct()?.ToArray();
+            if (modeNames == null && modeNames.Length == 0)
+            {
+                return;
+            }
+            comboBox_ModeName.Items.AddRange(modeNames);
+
+            if (comboBox_ModeName.Items.Count == 0)
+            {
+                return;
+            }
+
+            comboBox_ModeName.SelectedIndex = 0;
+            BandingVersion(comboBox_ModeName.Text);
+
         }
+
+        private void BandingVersion(string modeName)
+        {
+            comboBox_Version.Items.Clear();
+            var versions = dGWModeConfigs.Where(m => m.ModeName == modeName).ToArray();
+            comboBox_Version.DisplayMember = "Version";
+            comboBox_Version.ValueMember = "FilePath";
+            comboBox_Version.Items.AddRange(versions);
+            if (comboBox_Version.Items.Count >= 0)
+            {
+                comboBox_Version.SelectedIndex = 0;
+            }
+        }
+
+        private void ShowMode()
+        {
+            if (dgwMode.Checked)
+            {
+                if (!panel_ChooseFile.Visible)
+                {
+                    this.Size = new Size(this.Size.Width, this.Size.Height + panel_ChooseFile.Size.Height);
+                }
+                panel_ChooseFile.Visible = true;
+            }
+            else
+            {
+                if (panel_ChooseFile.Visible)
+                {
+                    this.Size = new Size(this.Size.Width, this.Size.Height - panel_ChooseFile.Size.Height);
+                }
+                panel_ChooseFile.Visible = false;
+            }
+        }
+
 
         private void CustomMessageBox_Load(object sender, EventArgs e)
         {
-            if (this._contentText.Trim() != "")
-            {
-                this.lblTitleContent.Text = this._titleText;
-            }
-        }
-        private Form activeForm = null;
-        private Form unActionedForm = null;
-        private FormFileSend formNormal = new FormFileSend();
-        private void AddChildForm(Form childForm)
-        {
-            if (activeForm != null)
-            {
-                unActionedForm = activeForm;
-                unActionedForm.Hide();
-            }
-            activeForm = childForm;
-            childForm.TopLevel = false;
-            childForm.FormBorderStyle = FormBorderStyle.None;
-            childForm.Dock = DockStyle.Fill;
-            panel2.Controls.Add(childForm);
-            panel2.Tag = childForm;
-            childForm.BringToFront();
-            childForm.Show();
+            //if (this._contentText.Trim() != "")
+            //{
+            //    this.lblTitleContent.Text = this._titleText;
+            //}
+
+            ShowMode();
         }
 
         private void dgwMode_CheckedChanged(object sender, EventArgs e)
         {
-            AddChildForm(formNormal);
+
         }
-        string theClickButton = "cancel";
-        private void button1_Click(object sender, EventArgs e)
+
+        CustomMessageBoxDialogResult customMessageBoxDialogResult = new CustomMessageBoxDialogResult();
+        public CustomMessageBoxDialogResult GetCustomMessageBoxDialogResult()
         {
-            theClickButton = "confirm";
+
+            this.ShowDialog();
+            return customMessageBoxDialogResult;
+        }
+
+        private void normalMode_Click(object sender, EventArgs e)
+        {
+            ShowMode();
+        }
+
+        private void dgwMode_Click(object sender, EventArgs e)
+        {
+            ShowMode();
+        }
+
+        private void button_Cancel_Click(object sender, EventArgs e)
+        {
+            customMessageBoxDialogResult = GetDialogResult(DialogResult.Cancel);
             this.Close();
         }
 
-        public string showMessage()
+        private void button_Confirm_Click(object sender, EventArgs e)
         {
+            customMessageBoxDialogResult = GetDialogResult(DialogResult.OK);
+            this.Close();
+        }
 
-            //ShowDialog相当于线程暂停 此处的话就需要close或者dispose以后才会 return theClickButton;
-            this.ShowDialog();
-            return theClickButton;
+        private CustomMessageBoxDialogResult GetDialogResult(DialogResult dialogResult)
+        {
+            if (dgwMode.Checked)
+            {
+                var dgwModeConfig = comboBox_Version.SelectedItem as DGWModeConfig;
+                if (dgwModeConfig == null || string.IsNullOrEmpty(dgwModeConfig.FilePath) || !File.Exists(dgwModeConfig.FilePath))
+                {
+                    return new CustomMessageBoxDialogResult()
+                    {
+                        DialogResult = dialogResult
+                    };
+                }
+
+                return new CustomMessageBoxDialogResult()
+                {
+                    DialogResult = dialogResult,
+                    ModeEnum = ModeEnum.DGWMode,
+                    DGWModeConfig = dgwModeConfig,
+                    TransportProtocol = comboBox_TransportProtocol.Text,
+                    IsCRC= checkBox_isCRC.Checked
+                };
+            }
+
+            return new CustomMessageBoxDialogResult()
+            {
+                DialogResult = dialogResult
+            };
         }
     }
 }

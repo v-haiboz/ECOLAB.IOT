@@ -1,16 +1,18 @@
-﻿
-
-namespace ECOLAB.IOT.Transmit
+﻿namespace ECOLAB.IOT.Transmit
 {
-    using ECOLAB.IOT.Entity;
     using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-    public interface IFileTransmit : ITransmitUart
+
+    public interface IFileTransmit 
     {
-        
+        public delegate void OutPutEventHandler(object sender, TrackerReceiveData e);
+        public event OutPutEventHandler OutPutEvent;
+        public delegate void MessageBoxEventHandler(object sender, TrackerMessageBox e);
+        public event MessageBoxEventHandler MessageBoxEvent;
+        public event EventHandler SendResultEvent;
+        public delegate string Transforer(string strkey);
+        public event Transforer OutTransforer;
+
+        public void Send();
     }
 
 }

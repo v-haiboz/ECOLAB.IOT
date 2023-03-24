@@ -27,9 +27,10 @@
         }
         private SerialPort serialPort = new SerialPort();
 
-        public event ITransmitUart.OutPutEventHandler OutPutEvent;
+        public event IFileTransmit.OutPutEventHandler OutPutEvent;
         public event EventHandler SendResultEvent;
-        public event ITransmitUart.MessageBoxEventHandler MessageBoxEvent;
+        public event IFileTransmit.MessageBoxEventHandler MessageBoxEvent;
+        public event IFileTransmit.Transforer OutTransforer;
 
         private bool isCRC = false;
         public XModem(SerialPort serialPort, string path,bool isCRC=false)

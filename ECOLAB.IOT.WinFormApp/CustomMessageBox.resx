@@ -57,4 +57,461 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="lblTitleContent.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="lblTitleContent.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 12pt, style=Bold</value>
+  </data>
+  <data name="lblTitleContent.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="lblTitleContent.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>10, 10, 0, 0</value>
+  </data>
+  <data name="lblTitleContent.Size" type="System.Drawing.Size, System.Drawing">
+    <value>743, 49</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="lblTitleContent.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblTitleContent.Text" xml:space="preserve">
+    <value>Please select an IOT device Mode or DGW Mode</value>
+  </data>
+  <data name="&gt;&gt;lblTitleContent.Name" xml:space="preserve">
+    <value>lblTitleContent</value>
+  </data>
+  <data name="&gt;&gt;lblTitleContent.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblTitleContent.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblTitleContent.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="button_Cancel.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="button_Cancel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>414, 33</value>
+  </data>
+  <data name="button_Cancel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>128, 60</value>
+  </data>
+  <data name="button_Cancel.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="button_Cancel.Text" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="&gt;&gt;button_Cancel.Name" xml:space="preserve">
+    <value>button_Cancel</value>
+  </data>
+  <data name="&gt;&gt;button_Cancel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_Cancel.Parent" xml:space="preserve">
+    <value>panel_Submit</value>
+  </data>
+  <data name="&gt;&gt;button_Cancel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="button_Confirm.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="button_Confirm.Location" type="System.Drawing.Point, System.Drawing">
+    <value>224, 33</value>
+  </data>
+  <data name="button_Confirm.Size" type="System.Drawing.Size, System.Drawing">
+    <value>128, 60</value>
+  </data>
+  <data name="button_Confirm.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="button_Confirm.Text" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="&gt;&gt;button_Confirm.Name" xml:space="preserve">
+    <value>button_Confirm</value>
+  </data>
+  <data name="&gt;&gt;button_Confirm.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_Confirm.Parent" xml:space="preserve">
+    <value>panel_Submit</value>
+  </data>
+  <data name="&gt;&gt;button_Confirm.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="panel_Submit.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="panel_Submit.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 340</value>
+  </data>
+  <data name="panel_Submit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>743, 156</value>
+  </data>
+  <data name="panel_Submit.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;panel_Submit.Name" xml:space="preserve">
+    <value>panel_Submit</value>
+  </data>
+  <data name="&gt;&gt;panel_Submit.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel_Submit.Parent" xml:space="preserve">
+    <value>panel_Container</value>
+  </data>
+  <data name="&gt;&gt;panel_Submit.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="checkBox_isCRC.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBox_isCRC.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="checkBox_isCRC.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="checkBox_isCRC.Location" type="System.Drawing.Point, System.Drawing">
+    <value>522, 30</value>
+  </data>
+  <data name="checkBox_isCRC.Size" type="System.Drawing.Size, System.Drawing">
+    <value>67, 28</value>
+  </data>
+  <data name="checkBox_isCRC.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="checkBox_isCRC.Text" xml:space="preserve">
+    <value>CRC</value>
+  </data>
+  <data name="&gt;&gt;checkBox_isCRC.Name" xml:space="preserve">
+    <value>checkBox_isCRC</value>
+  </data>
+  <data name="&gt;&gt;checkBox_isCRC.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBox_isCRC.Parent" xml:space="preserve">
+    <value>panel_ChooseFile</value>
+  </data>
+  <data name="&gt;&gt;checkBox_isCRC.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="label_TransportProtocol.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label_TransportProtocol.Location" type="System.Drawing.Point, System.Drawing">
+    <value>126, 31</value>
+  </data>
+  <data name="label_TransportProtocol.Size" type="System.Drawing.Size, System.Drawing">
+    <value>174, 24</value>
+  </data>
+  <data name="label_TransportProtocol.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="label_TransportProtocol.Text" xml:space="preserve">
+    <value>Transport Protocol:</value>
+  </data>
+  <data name="label_TransportProtocol.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;label_TransportProtocol.Name" xml:space="preserve">
+    <value>label_TransportProtocol</value>
+  </data>
+  <data name="&gt;&gt;label_TransportProtocol.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_TransportProtocol.Parent" xml:space="preserve">
+    <value>panel_ChooseFile</value>
+  </data>
+  <data name="&gt;&gt;label_TransportProtocol.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="comboBox_TransportProtocol.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="comboBox_TransportProtocol.Location" type="System.Drawing.Point, System.Drawing">
+    <value>315, 28</value>
+  </data>
+  <data name="comboBox_TransportProtocol.Size" type="System.Drawing.Size, System.Drawing">
+    <value>182, 32</value>
+  </data>
+  <data name="comboBox_TransportProtocol.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;comboBox_TransportProtocol.Name" xml:space="preserve">
+    <value>comboBox_TransportProtocol</value>
+  </data>
+  <data name="&gt;&gt;comboBox_TransportProtocol.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBox_TransportProtocol.Parent" xml:space="preserve">
+    <value>panel_ChooseFile</value>
+  </data>
+  <data name="&gt;&gt;comboBox_TransportProtocol.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="label_Version.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label_Version.Location" type="System.Drawing.Point, System.Drawing">
+    <value>203, 150</value>
+  </data>
+  <data name="label_Version.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 24</value>
+  </data>
+  <data name="label_Version.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="label_Version.Text" xml:space="preserve">
+    <value>Version:</value>
+  </data>
+  <data name="label_Version.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;label_Version.Name" xml:space="preserve">
+    <value>label_Version</value>
+  </data>
+  <data name="&gt;&gt;label_Version.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_Version.Parent" xml:space="preserve">
+    <value>panel_ChooseFile</value>
+  </data>
+  <data name="&gt;&gt;label_Version.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="label_ModeName.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label_ModeName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>122, 91</value>
+  </data>
+  <data name="label_ModeName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>174, 24</value>
+  </data>
+  <data name="label_ModeName.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="label_ModeName.Text" xml:space="preserve">
+    <value>Mode Name:</value>
+  </data>
+  <data name="label_ModeName.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;label_ModeName.Name" xml:space="preserve">
+    <value>label_ModeName</value>
+  </data>
+  <data name="&gt;&gt;label_ModeName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_ModeName.Parent" xml:space="preserve">
+    <value>panel_ChooseFile</value>
+  </data>
+  <data name="&gt;&gt;label_ModeName.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="comboBox_Version.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="comboBox_Version.Location" type="System.Drawing.Point, System.Drawing">
+    <value>314, 147</value>
+  </data>
+  <data name="comboBox_Version.Size" type="System.Drawing.Size, System.Drawing">
+    <value>182, 32</value>
+  </data>
+  <data name="comboBox_Version.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;comboBox_Version.Name" xml:space="preserve">
+    <value>comboBox_Version</value>
+  </data>
+  <data name="&gt;&gt;comboBox_Version.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBox_Version.Parent" xml:space="preserve">
+    <value>panel_ChooseFile</value>
+  </data>
+  <data name="&gt;&gt;comboBox_Version.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="comboBox_ModeName.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="comboBox_ModeName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>315, 88</value>
+  </data>
+  <data name="comboBox_ModeName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>182, 32</value>
+  </data>
+  <data name="comboBox_ModeName.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;comboBox_ModeName.Name" xml:space="preserve">
+    <value>comboBox_ModeName</value>
+  </data>
+  <data name="&gt;&gt;comboBox_ModeName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBox_ModeName.Parent" xml:space="preserve">
+    <value>panel_ChooseFile</value>
+  </data>
+  <data name="&gt;&gt;comboBox_ModeName.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="panel_ChooseFile.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="panel_ChooseFile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 102</value>
+  </data>
+  <data name="panel_ChooseFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>743, 238</value>
+  </data>
+  <data name="panel_ChooseFile.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;panel_ChooseFile.Name" xml:space="preserve">
+    <value>panel_ChooseFile</value>
+  </data>
+  <data name="&gt;&gt;panel_ChooseFile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel_ChooseFile.Parent" xml:space="preserve">
+    <value>panel_Container</value>
+  </data>
+  <data name="&gt;&gt;panel_ChooseFile.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="dgwMode.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="dgwMode.Location" type="System.Drawing.Point, System.Drawing">
+    <value>425, 39</value>
+  </data>
+  <data name="dgwMode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>131, 28</value>
+  </data>
+  <data name="dgwMode.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="dgwMode.Text" xml:space="preserve">
+    <value>DGWMode</value>
+  </data>
+  <data name="&gt;&gt;dgwMode.Name" xml:space="preserve">
+    <value>dgwMode</value>
+  </data>
+  <data name="&gt;&gt;dgwMode.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dgwMode.Parent" xml:space="preserve">
+    <value>panel_Mode</value>
+  </data>
+  <data name="&gt;&gt;dgwMode.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="normalMode.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="normalMode.Location" type="System.Drawing.Point, System.Drawing">
+    <value>224, 39</value>
+  </data>
+  <data name="normalMode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>183, 28</value>
+  </data>
+  <data name="normalMode.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="normalMode.Text" xml:space="preserve">
+    <value>IOT Device Mode</value>
+  </data>
+  <data name="&gt;&gt;normalMode.Name" xml:space="preserve">
+    <value>normalMode</value>
+  </data>
+  <data name="&gt;&gt;normalMode.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;normalMode.Parent" xml:space="preserve">
+    <value>panel_Mode</value>
+  </data>
+  <data name="&gt;&gt;normalMode.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="panel_Mode.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="panel_Mode.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="panel_Mode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>743, 102</value>
+  </data>
+  <data name="panel_Mode.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;panel_Mode.Name" xml:space="preserve">
+    <value>panel_Mode</value>
+  </data>
+  <data name="&gt;&gt;panel_Mode.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel_Mode.Parent" xml:space="preserve">
+    <value>panel_Container</value>
+  </data>
+  <data name="&gt;&gt;panel_Mode.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="panel_Container.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="panel_Container.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 49</value>
+  </data>
+  <data name="panel_Container.Size" type="System.Drawing.Size, System.Drawing">
+    <value>743, 496</value>
+  </data>
+  <data name="panel_Container.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;panel_Container.Name" xml:space="preserve">
+    <value>panel_Container</value>
+  </data>
+  <data name="&gt;&gt;panel_Container.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel_Container.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panel_Container.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>11, 24</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>743, 545</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>CustomMessageBox</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>CustomMessageBox</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

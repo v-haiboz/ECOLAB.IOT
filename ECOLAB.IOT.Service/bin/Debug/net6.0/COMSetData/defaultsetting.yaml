@@ -1,6 +1,0 @@
-portName: COM3
-baudRate: BR_115200
-dataBit: Eight
-parity: None
-stopBit: One
-transportProtocol: 0

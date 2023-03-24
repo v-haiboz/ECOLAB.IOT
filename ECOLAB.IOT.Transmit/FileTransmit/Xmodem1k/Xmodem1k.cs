@@ -16,7 +16,7 @@
             serialPort.DiscardInBuffer();
             if (SendResultEvent != null)
             {
-                SendResultEvent(true, null);
+                SendResultEvent(KeyValuePair.Create(false, true), null);
             }
             FileStream fileStream = new FileStream(@path, FileMode.Open, FileAccess.Read);
             BinaryReader b_reader = new BinaryReader(fileStream);
@@ -118,7 +118,7 @@
                 fileStream.Close();
                 fileStream.Dispose();
                 if (SendResultEvent != null)
-                    SendResultEvent(false, null);
+                    SendResultEvent(KeyValuePair.Create(false, true), null);
             }
             serialPort.ReadTimeout = 10000;
         }

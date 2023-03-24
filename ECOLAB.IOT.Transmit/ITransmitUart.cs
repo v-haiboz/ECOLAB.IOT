@@ -13,7 +13,7 @@
         public delegate string Transforer(string strkey);
         public event Transforer OutTransforer;
 
-        void Send();
+        public bool Send(bool isformNormal = true);
         //void Stop();
         //void Abort();
     }

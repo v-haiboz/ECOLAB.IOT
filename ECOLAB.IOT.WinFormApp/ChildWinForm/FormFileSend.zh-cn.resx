@@ -117,19 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="button_ChooseFile.Text" xml:space="preserve">
-    <value>选择</value>
+  <data name="checkBox_EnableMappingPrefix.Text" xml:space="preserve">
+    <value>启用映射前缀</value>
   </data>
-  <data name="label_ChooseFile.Text" xml:space="preserve">
-    <value>选择文件：</value>
+  <data name="checkBox_ValidateSN.Text" xml:space="preserve">
+    <value>启用验证SN</value>
   </data>
-  <data name="label_ModeName.Text" xml:space="preserve">
-    <value>模式名字:</value>
+  <data name="label_SerialNumber.Text" xml:space="preserve">
+    <value>SN号:</value>
   </data>
-  <data name="label_TransportProtocol.Text" xml:space="preserve">
-    <value>传输协议：</value>
-  </data>
-  <data name="label_Version.Text" xml:space="preserve">
-    <value>版本:</value>
+  <data name="linkLabel_ClearSerialNumber.Text" xml:space="preserve">
+    <value>清空</value>
   </data>
 </root>

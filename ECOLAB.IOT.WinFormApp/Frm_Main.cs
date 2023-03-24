@@ -6,10 +6,6 @@ using Microsoft.Identity.Client;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Globalization;
-using System.Text;
-using System.Windows.Forms;
-using YamlDotNet.Core.Tokens;
-using static System.Windows.Forms.AxHost;
 
 namespace ECOLAB.IOT.WinFormApp
 {
@@ -66,7 +62,8 @@ namespace ECOLAB.IOT.WinFormApp
             InitializeComponent();
             CustomizeDesing();
             SelectLanguage();
-            OpenChildForm(new Burn());
+            SetMode();
+            OpenChildForm(new Burn(customMessageBoxDialogResultGlobal));
             ShowNavigationMenu(button_SerialCOM_Burn.Name);
             HideSubMenu();
             Transmit.Utility.Track($"\n\r UserName:{CallerContext.SysAdmin.UserName} Login in.", true);
@@ -218,6 +215,7 @@ namespace ECOLAB.IOT.WinFormApp
 
         }
 
+
         private void F_Main_Load(object sender, EventArgs e)
         {
             int DWidth = Convert.ToInt32(1280 * 0.85);
@@ -225,22 +223,23 @@ namespace ECOLAB.IOT.WinFormApp
 
             this.Width = DWidth;
             this.Height = DHeight;
-          
+
             this.timer1.Start();
-            using (var modeChoose = new CustomMessageBox())
+            if (customMessageBoxDialogResultGlobal.DialogResult == DialogResult.Cancel)
             {
-                string hh = modeChoose.showMessage();
-                if (hh == "confirm")
-                {
-                    Console.WriteLine("点击了确定");
-                }
-                else if (hh == "cancel")
-                {
-                    Console.WriteLine("点击了取消或叉叉");
-                }
+                Application.Exit();
             }
         }
 
+        private CustomMessageBoxDialogResult customMessageBoxDialogResultGlobal = new CustomMessageBoxDialogResult();
+        private void SetMode()
+        {
+            using (var modeChoose = new CustomMessageBox())
+            {
+                var customMessageBoxDialogResult = modeChoose.GetCustomMessageBoxDialogResult();
+                customMessageBoxDialogResultGlobal=customMessageBoxDialogResult;
+            }
+        }
 
         private void ToolTip()
         {
@@ -263,7 +262,7 @@ namespace ECOLAB.IOT.WinFormApp
         }
         private void button_SerialCOM_Burn_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Burn());
+            OpenChildForm(new Burn(customMessageBoxDialogResultGlobal));
             ShowNavigationMenu(button_SerialCOM_Burn.Name);
             HideSubMenu();
         }
