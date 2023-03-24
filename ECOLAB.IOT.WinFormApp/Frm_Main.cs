@@ -225,7 +225,7 @@ namespace ECOLAB.IOT.WinFormApp
             this.Height = DHeight;
 
             this.timer1.Start();
-            if (customMessageBoxDialogResultGlobal.DialogResult == DialogResult.Cancel)
+            if (customMessageBoxDialogResultGlobal == null || customMessageBoxDialogResultGlobal.DialogResult == DialogResult.Cancel)
             {
                 Application.Exit();
             }

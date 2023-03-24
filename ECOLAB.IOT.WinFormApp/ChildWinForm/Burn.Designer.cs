@@ -480,7 +480,7 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
                 var modeName = res.GetString("label_ModeName");
                 var version = res.GetString("label_Version");
                 modeType = res.GetString("radioButton_FileSendPattern.Text");
-                this.groupBox_Send.Text = $"{groupBoxSendText}   {modeType}    {transportProtocol} : {customMessageBoxDialogResult.TransportProtocol}  |  CRC : {customMessageBoxDialogResult.IsCRC}  |  {modeName} : {customMessageBoxDialogResult.DGWModeConfig.ModeName}  |  {version} : {customMessageBoxDialogResult.DGWModeConfig.Version}";
+                this.groupBox_Send.Text = $"{groupBoxSendText}   {modeType}    {transportProtocol} : {customMessageBoxDialogResult?.TransportProtocol}  |  CRC : {customMessageBoxDialogResult?.IsCRC}  |  {modeName} : {customMessageBoxDialogResult?.DGWModeConfig?.ModeName}  |  {version} : {customMessageBoxDialogResult?.DGWModeConfig?.Version}";
             }
         }
         #endregion

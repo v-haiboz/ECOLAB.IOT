@@ -53,7 +53,7 @@ namespace ECOLAB.IOT.WinFormApp
             var protacols = CallerContext.ECOLABIOTBurnSNAndPSKService.GetTransportProtocol();
             this.comboBox_TransportProtocol.Items.AddRange(protacols);
             comboBox_TransportProtocol.SelectedItem = Enum.GetName(TransportProtocol.Xmodem1k);
-           // comboBox_TransportProtocol.Enabled = false;
+            // comboBox_TransportProtocol.Enabled = false;
             dGWModeConfigs = CallerContext.ECOLABIOTDGWModeService.GetDGWMode();
             if (dGWModeConfigs == null || dGWModeConfigs.Count == 0)
             {
@@ -170,7 +170,7 @@ namespace ECOLAB.IOT.WinFormApp
                     return new CustomMessageBoxDialogResult()
                     {
                         ModeEnum = ModeEnum.DGWMode,
-                        DialogResult = DialogResult.Ignore
+                        DialogResult = dialogResult== DialogResult.Cancel? DialogResult.Cancel: DialogResult.Ignore
                     };
                 }
 
@@ -180,7 +180,7 @@ namespace ECOLAB.IOT.WinFormApp
                     ModeEnum = ModeEnum.DGWMode,
                     DGWModeConfig = dgwModeConfig,
                     TransportProtocol = comboBox_TransportProtocol.Text,
-                    IsCRC= checkBox_isCRC.Checked
+                    IsCRC = checkBox_isCRC.Checked
                 };
             }
 
