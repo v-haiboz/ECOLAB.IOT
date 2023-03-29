@@ -232,9 +232,9 @@
     <value>File Sending Failed ...</value>
   </data>
   <data name="radioButton_CommonSendPattern.Text" xml:space="preserve">
-    <value>IOT Device Mode</value>
+    <value>IOT Gateway</value>
   </data>
   <data name="radioButton_FileSendPattern.Text" xml:space="preserve">
-    <value>DGW Mode</value>
+    <value>Router Version</value>
   </data>
 </root>

@@ -398,13 +398,13 @@
     <value>425, 39</value>
   </data>
   <data name="dgwMode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>131, 28</value>
+    <value>162, 28</value>
   </data>
   <data name="dgwMode.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="dgwMode.Text" xml:space="preserve">
-    <value>DGWMode</value>
+    <value>Router Version</value>
   </data>
   <data name="&gt;&gt;dgwMode.Name" xml:space="preserve">
     <value>dgwMode</value>
@@ -425,13 +425,13 @@
     <value>224, 39</value>
   </data>
   <data name="normalMode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 28</value>
+    <value>144, 28</value>
   </data>
   <data name="normalMode.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="normalMode.Text" xml:space="preserve">
-    <value>IOT Device Mode</value>
+    <value>IOT Gateway</value>
   </data>
   <data name="&gt;&gt;normalMode.Name" xml:space="preserve">
     <value>normalMode</value>

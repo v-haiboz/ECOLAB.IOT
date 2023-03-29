@@ -42,6 +42,7 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             this.groupBox_Send = new System.Windows.Forms.GroupBox();
             this.panel_Setting = new System.Windows.Forms.Panel();
             this.groupBox_SendSetting = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.button_BurnDown = new System.Windows.Forms.Button();
             this.radioButton_FileSendPattern = new System.Windows.Forms.RadioButton();
             this.radioButton_QueueSendPattern = new System.Windows.Forms.RadioButton();
@@ -120,6 +121,7 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             // groupBox_SendSetting
             // 
             this.groupBox_SendSetting.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.groupBox_SendSetting.Controls.Add(this.label1);
             this.groupBox_SendSetting.Controls.Add(this.button_BurnDown);
             this.groupBox_SendSetting.Controls.Add(this.radioButton_FileSendPattern);
             this.groupBox_SendSetting.Controls.Add(this.radioButton_QueueSendPattern);
@@ -127,6 +129,13 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             resources.ApplyResources(this.groupBox_SendSetting, "groupBox_SendSetting");
             this.groupBox_SendSetting.Name = "groupBox_SendSetting";
             this.groupBox_SendSetting.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.ForeColor = System.Drawing.Color.Yellow;
+            this.label1.Name = "label1";
             // 
             // button_BurnDown
             // 
@@ -402,12 +411,14 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             {
                 radioButton_CommonSendPattern.Checked = true;
                 radioButton_FileSendPattern.Checked = false;
+                this.label1.Text = radioButton_CommonSendPattern.Text;
                 AddChildForm(formNormal);
             }
             else if (customMessageBoxDialogResult.ModeEnum == ModeEnum.DGWMode)
             {
                 radioButton_CommonSendPattern.Checked = false;
                 radioButton_FileSendPattern.Checked = true;
+                this.label1.Text = radioButton_FileSendPattern.Text;
                 AddChildForm(formFileSend);
             }
 
@@ -755,5 +766,6 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
         private FormFileSend formFileSend;
         private SerialPort serialPort = null;
         private Button button_Memory;
+        private Label label1;
     }
 }

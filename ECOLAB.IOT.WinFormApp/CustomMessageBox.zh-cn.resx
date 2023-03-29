@@ -124,7 +124,7 @@
     <value>确定</value>
   </data>
   <data name="dgwMode.Text" xml:space="preserve">
-    <value>DGW 模式</value>
+    <value>路由器版本</value>
   </data>
   <data name="label_ModeName.Text" xml:space="preserve">
     <value>模式名称：</value>
@@ -139,6 +139,6 @@
     <value>在下列模式中，请选择一种模式.</value>
   </data>
   <data name="normalMode.Text" xml:space="preserve">
-    <value>IOT 设备模式</value>
+    <value>IOT网关</value>
   </data>
 </root>

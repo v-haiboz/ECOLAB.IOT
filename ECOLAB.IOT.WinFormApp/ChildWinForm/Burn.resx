@@ -207,6 +207,33 @@
   <data name="&gt;&gt;splitContainer1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 14pt, style=Bold</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>112, 94</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>217, 42</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>groupBox_SendSetting</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="button_BurnDown.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>None</value>
   </data>
@@ -235,7 +262,7 @@
     <value>groupBox_SendSetting</value>
   </data>
   <data name="&gt;&gt;button_BurnDown.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="radioButton_FileSendPattern.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -255,6 +282,9 @@
   <data name="radioButton_FileSendPattern.Text" xml:space="preserve">
     <value>DGW Mode</value>
   </data>
+  <data name="radioButton_FileSendPattern.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="&gt;&gt;radioButton_FileSendPattern.Name" xml:space="preserve">
     <value>radioButton_FileSendPattern</value>
   </data>
@@ -265,7 +295,7 @@
     <value>groupBox_SendSetting</value>
   </data>
   <data name="&gt;&gt;radioButton_FileSendPattern.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="radioButton_QueueSendPattern.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -298,7 +328,7 @@
     <value>groupBox_SendSetting</value>
   </data>
   <data name="&gt;&gt;radioButton_QueueSendPattern.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="radioButton_CommonSendPattern.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -318,6 +348,9 @@
   <data name="radioButton_CommonSendPattern.Text" xml:space="preserve">
     <value>IOT Device Mode</value>
   </data>
+  <data name="radioButton_CommonSendPattern.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="&gt;&gt;radioButton_CommonSendPattern.Name" xml:space="preserve">
     <value>radioButton_CommonSendPattern</value>
   </data>
@@ -328,7 +361,7 @@
     <value>groupBox_SendSetting</value>
   </data>
   <data name="&gt;&gt;radioButton_CommonSendPattern.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="groupBox_SendSetting.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
