@@ -124,7 +124,7 @@
     <value>OK</value>
   </data>
   <data name="dgwMode.Text" xml:space="preserve">
-    <value>Router Version</value>
+    <value>Dragon Gateway</value>
   </data>
   <data name="label_ModeName.Text" xml:space="preserve">
     <value>Mode Name:</value>
@@ -139,6 +139,6 @@
     <value>Please select one of the following modes.</value>
   </data>
   <data name="normalMode.Text" xml:space="preserve">
-    <value>IOT Gateway</value>
+    <value>IOT Device</value>
   </data>
 </root>

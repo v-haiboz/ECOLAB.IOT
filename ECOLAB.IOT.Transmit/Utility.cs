@@ -17,14 +17,15 @@ namespace ECOLAB.IOT.Transmit
 
         public static void Track(string messageInfo,bool isLogDateTime=false)
         {
+            var fileNameSuffix= DateTime.Now.ToString("yyyy-MM-dd");
             if (CallerContext.ECOLABIOTLogSettingService.GetLogSetting().Enable)
             {
                 if (isLogDateTime)
                 {
-                    messageInfo = $"{messageInfo}->{DateTime.Now}";
+                    messageInfo = $"{DateTime.Now}->{messageInfo}";
                 }
 
-                File.AppendAllText(@"Log/track.txt", $"{messageInfo}" , Encoding.UTF8);
+                File.AppendAllText(@$"Log/track_{fileNameSuffix}.txt", $"{messageInfo}" , Encoding.UTF8);
             }
         }
     }

@@ -132,8 +132,8 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             // 
             // label1
             // 
-            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             resources.ApplyResources(this.label1, "label1");
+            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.ForeColor = System.Drawing.Color.Yellow;
             this.label1.Name = "label1";
             // 

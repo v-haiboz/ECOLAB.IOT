@@ -232,9 +232,9 @@
     <value>文件发送失败.</value>
   </data>
   <data name="radioButton_CommonSendPattern.Text" xml:space="preserve">
-    <value>IOT网关</value>
+    <value>IOT设备</value>
   </data>
   <data name="radioButton_FileSendPattern.Text" xml:space="preserve">
-    <value>路由器版本</value>
+    <value>Dragon Gateway</value>
   </data>
 </root>
