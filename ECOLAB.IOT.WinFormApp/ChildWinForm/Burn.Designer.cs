@@ -665,6 +665,10 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
         private void EnableOrDisableSetting(bool bl = false)
         {
             comboBox_SerialPort.Enabled = bl;
+            if (checkBox_Modify.Checked)
+            {
+                bl = false;
+            }
             comboBox_BaudRate.Enabled = bl;
             comboBox_ParityBit.Enabled = bl;
             comboBox_DataBit.Enabled = bl;

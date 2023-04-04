@@ -85,7 +85,7 @@
                     return bl;
                 }
 
-                if (!isformNormal && !CheckDeviceConfig(sn, psk))
+                if (!CheckDeviceConfig(sn, psk))
                 {
                     return bl;
                 }

@@ -203,7 +203,7 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             snAndspk.OutPutEvent += new OutPutEventHandler(snAndspkSend_OutPutEvent);
             snAndspk.SendResultEvent += new EventHandler(snAndspkSend_SendCompletedEvent);
             snAndspk.MessageBoxEvent += new MessageBoxEventHandler(snAndspkSend_MessageBoxEvent);
-            snAndspk.Send(false);
+            snAndspk.Send(true);
         }
 
         public string TransForm(string errormessageId)
@@ -386,7 +386,8 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
 
         private void CheckBoxModifyCheckedChanged()
         {
-            if (checkBox_Modify.Checked)
+
+            if (!comboBox_SerialPort.Enabled)
             {
                 comboBox_BaudRate.Enabled = false;
                 comboBox_ParityBit.Enabled = false;
@@ -395,7 +396,7 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
                 button_Reset.Enabled = false;
                 button_Memory.Enabled = false;
             }
-            else
+            else if (!checkBox_Modify.Checked)
             {
                 comboBox_BaudRate.Enabled = true;
                 comboBox_ParityBit.Enabled = true;
@@ -403,6 +404,15 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
                 comboBox_StopBit.Enabled = true;
                 button_Reset.Enabled = true;
                 button_Memory.Enabled = true;
+            }
+            else
+            {
+                comboBox_BaudRate.Enabled = false;
+                comboBox_ParityBit.Enabled = false;
+                comboBox_DataBit.Enabled = false;
+                comboBox_StopBit.Enabled = false;
+                button_Reset.Enabled = false;
+                button_Memory.Enabled = false;
             }
         }
     }
