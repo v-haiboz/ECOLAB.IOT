@@ -135,6 +135,9 @@
   <data name="button_Reset.Text" xml:space="preserve">
     <value>Reset</value>
   </data>
+  <data name="checkBox_Modify.Text" xml:space="preserve">
+    <value>No Modify</value>
+  </data>
   <data name="groupBox_Configuration.Text" xml:space="preserve">
     <value>COMSetting</value>
   </data>

@@ -135,6 +135,9 @@
   <data name="button_Reset.Text" xml:space="preserve">
     <value>重置</value>
   </data>
+  <data name="checkBox_Modify.Text" xml:space="preserve">
+    <value>不修改</value>
+  </data>
   <data name="groupBox_Configuration.Text" xml:space="preserve">
     <value>COM设置</value>
   </data>

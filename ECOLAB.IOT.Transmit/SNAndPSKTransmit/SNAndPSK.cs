@@ -211,8 +211,8 @@
                 {
                     serialPort.Open();
                 }
-
-                serialPort.WriteTimeout = 6000;
+                Thread.Sleep(2000);
+                serialPort.WriteTimeout = 8000;
                 serialPort.WriteLine("SN=" + sn);
                 Thread.Sleep(2000);
                 serialPort.WriteLine("PSK=" + psk);

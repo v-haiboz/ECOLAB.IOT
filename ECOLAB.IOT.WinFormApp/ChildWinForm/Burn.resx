@@ -393,11 +393,38 @@
   <data name="&gt;&gt;groupBox_SendSetting.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="checkBox_Modify.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBox_Modify.Location" type="System.Drawing.Point, System.Drawing">
+    <value>174, 262</value>
+  </data>
+  <data name="checkBox_Modify.Size" type="System.Drawing.Size, System.Drawing">
+    <value>129, 28</value>
+  </data>
+  <data name="checkBox_Modify.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="checkBox_Modify.Text" xml:space="preserve">
+    <value>No Modify</value>
+  </data>
+  <data name="&gt;&gt;checkBox_Modify.Name" xml:space="preserve">
+    <value>checkBox_Modify</value>
+  </data>
+  <data name="&gt;&gt;checkBox_Modify.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBox_Modify.Parent" xml:space="preserve">
+    <value>groupBox_Configuration</value>
+  </data>
+  <data name="&gt;&gt;checkBox_Modify.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="button_Memory.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="button_Memory.Location" type="System.Drawing.Point, System.Drawing">
-    <value>73, 278</value>
+    <value>73, 292</value>
   </data>
   <data name="button_Memory.Size" type="System.Drawing.Size, System.Drawing">
     <value>134, 34</value>
@@ -418,7 +445,7 @@
     <value>groupBox_Configuration</value>
   </data>
   <data name="&gt;&gt;button_Memory.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="pictureBox_Connection.Location" type="System.Drawing.Point, System.Drawing">
     <value>73, 341</value>
@@ -439,10 +466,13 @@
     <value>groupBox_Configuration</value>
   </data>
   <data name="&gt;&gt;pictureBox_Connection.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
+  </data>
+  <data name="button_Reset.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="button_Reset.Location" type="System.Drawing.Point, System.Drawing">
-    <value>233, 278</value>
+    <value>233, 292</value>
   </data>
   <data name="button_Reset.Size" type="System.Drawing.Size, System.Drawing">
     <value>125, 34</value>
@@ -463,7 +493,7 @@
     <value>groupBox_Configuration</value>
   </data>
   <data name="&gt;&gt;button_Reset.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="comboBox_StopBit.Location" type="System.Drawing.Point, System.Drawing">
     <value>176, 225</value>
@@ -484,7 +514,7 @@
     <value>groupBox_Configuration</value>
   </data>
   <data name="&gt;&gt;comboBox_StopBit.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="label_StopBit.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 225</value>
@@ -511,7 +541,7 @@
     <value>groupBox_Configuration</value>
   </data>
   <data name="&gt;&gt;label_StopBit.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="comboBox_DataBit.Location" type="System.Drawing.Point, System.Drawing">
     <value>176, 181</value>
@@ -532,7 +562,7 @@
     <value>groupBox_Configuration</value>
   </data>
   <data name="&gt;&gt;comboBox_DataBit.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="label_DataBit.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 181</value>
@@ -559,7 +589,7 @@
     <value>groupBox_Configuration</value>
   </data>
   <data name="&gt;&gt;label_DataBit.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="comboBox_ParityBit.Location" type="System.Drawing.Point, System.Drawing">
     <value>176, 139</value>
@@ -580,7 +610,7 @@
     <value>groupBox_Configuration</value>
   </data>
   <data name="&gt;&gt;comboBox_ParityBit.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="label_ParityBit.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 139</value>
@@ -607,7 +637,7 @@
     <value>groupBox_Configuration</value>
   </data>
   <data name="&gt;&gt;label_ParityBit.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="button_Connection.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>None</value>
@@ -634,7 +664,7 @@
     <value>groupBox_Configuration</value>
   </data>
   <data name="&gt;&gt;button_Connection.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="comboBox_BaudRate.Location" type="System.Drawing.Point, System.Drawing">
     <value>176, 98</value>
@@ -655,7 +685,7 @@
     <value>groupBox_Configuration</value>
   </data>
   <data name="&gt;&gt;comboBox_BaudRate.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="label_BaudRate.Location" type="System.Drawing.Point, System.Drawing">
     <value>25, 98</value>
@@ -682,7 +712,7 @@
     <value>groupBox_Configuration</value>
   </data>
   <data name="&gt;&gt;label_BaudRate.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="comboBox_SerialPort.Location" type="System.Drawing.Point, System.Drawing">
     <value>176, 51</value>
@@ -703,7 +733,7 @@
     <value>groupBox_Configuration</value>
   </data>
   <data name="&gt;&gt;comboBox_SerialPort.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>13</value>
   </data>
   <data name="label_SerialPort.Location" type="System.Drawing.Point, System.Drawing">
     <value>25, 51</value>
@@ -730,7 +760,7 @@
     <value>groupBox_Configuration</value>
   </data>
   <data name="&gt;&gt;label_SerialPort.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>14</value>
   </data>
   <data name="groupBox_Configuration.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>

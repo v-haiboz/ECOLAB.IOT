@@ -48,6 +48,7 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             this.radioButton_QueueSendPattern = new System.Windows.Forms.RadioButton();
             this.radioButton_CommonSendPattern = new System.Windows.Forms.RadioButton();
             this.groupBox_Configuration = new System.Windows.Forms.GroupBox();
+            this.checkBox_Modify = new System.Windows.Forms.CheckBox();
             this.button_Memory = new System.Windows.Forms.Button();
             this.pictureBox_Connection = new System.Windows.Forms.PictureBox();
             this.button_Reset = new System.Windows.Forms.Button();
@@ -177,6 +178,7 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             // groupBox_Configuration
             // 
             this.groupBox_Configuration.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.groupBox_Configuration.Controls.Add(this.checkBox_Modify);
             this.groupBox_Configuration.Controls.Add(this.button_Memory);
             this.groupBox_Configuration.Controls.Add(this.pictureBox_Connection);
             this.groupBox_Configuration.Controls.Add(this.button_Reset);
@@ -194,6 +196,16 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             resources.ApplyResources(this.groupBox_Configuration, "groupBox_Configuration");
             this.groupBox_Configuration.Name = "groupBox_Configuration";
             this.groupBox_Configuration.TabStop = false;
+            // 
+            // checkBox_Modify
+            // 
+            resources.ApplyResources(this.checkBox_Modify, "checkBox_Modify");
+            this.checkBox_Modify.Checked = true;
+            this.checkBox_Modify.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox_Modify.Name = "checkBox_Modify";
+            this.checkBox_Modify.UseVisualStyleBackColor = true;
+            this.checkBox_Modify.CheckedChanged += new System.EventHandler(this.checkBox_Modify_CheckedChanged);
+            this.checkBox_Modify.Click += new System.EventHandler(this.checkBox_Modify_Click);
             // 
             // button_Memory
             // 
@@ -319,6 +331,7 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             this.groupBox_SendSetting.ResumeLayout(false);
             this.groupBox_SendSetting.PerformLayout();
             this.groupBox_Configuration.ResumeLayout(false);
+            this.groupBox_Configuration.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Connection)).EndInit();
             this.ResumeLayout(false);
 
@@ -406,6 +419,7 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             SetDefault();
             BuildChildFrom();
             SetSendAreaTitle();
+            CheckBoxModifyCheckedChanged();
 
             if (customMessageBoxDialogResult.ModeEnum == ModeEnum.NormalMode)
             {
@@ -767,5 +781,6 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
         private SerialPort serialPort = null;
         private Button button_Memory;
         private Label label1;
+        private CheckBox checkBox_Modify;
     }
 }

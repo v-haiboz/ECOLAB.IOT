@@ -203,7 +203,7 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             snAndspk.OutPutEvent += new OutPutEventHandler(snAndspkSend_OutPutEvent);
             snAndspk.SendResultEvent += new EventHandler(snAndspkSend_SendCompletedEvent);
             snAndspk.MessageBoxEvent += new MessageBoxEventHandler(snAndspkSend_MessageBoxEvent);
-            snAndspk.Send();
+            snAndspk.Send(false);
         }
 
         public string TransForm(string errormessageId)
@@ -372,6 +372,38 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             setting.StopBit = Utilities.MappingStopBit(comboBox_StopBit.Text);
             CallerContext.ECOLABIOTBurnSNAndPSKService.MemorySetting(setting);
             button_Memory.Enabled = true;
+        }
+
+        private void checkBox_Modify_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void checkBox_Modify_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckBoxModifyCheckedChanged();
+        }
+
+        private void CheckBoxModifyCheckedChanged()
+        {
+            if (checkBox_Modify.Checked)
+            {
+                comboBox_BaudRate.Enabled = false;
+                comboBox_ParityBit.Enabled = false;
+                comboBox_DataBit.Enabled = false;
+                comboBox_StopBit.Enabled = false;
+                button_Reset.Enabled = false;
+                button_Memory.Enabled = false;
+            }
+            else
+            {
+                comboBox_BaudRate.Enabled = true;
+                comboBox_ParityBit.Enabled = true;
+                comboBox_DataBit.Enabled = true;
+                comboBox_StopBit.Enabled = true;
+                button_Reset.Enabled = true;
+                button_Memory.Enabled = true;
+            }
         }
     }
 }
