@@ -11,14 +11,16 @@
         private readonly int dataLen;
         private readonly bool transform = false;
         private readonly bool isWriteLine = true;
+        private readonly string receiveMessageRelease = "";
 
-        public TrackerReceiveData(string receiveMessage, bool transform = false, bool isWriteLine=true)
+        public TrackerReceiveData(string receiveMessage, bool transform = false, bool isWriteLine=true, string receiveMessageRelease = "")
         {
             this.receiveMessage = receiveMessage;
             dataLen = receiveMessage.Length;
             receiveTime = DateTime.Now;
             this.transform = transform;
             this.isWriteLine = isWriteLine;
+            this.receiveMessageRelease = receiveMessageRelease;
         }
 
         public TrackerReceiveData(byte[] receiveData, bool transform = false)
@@ -42,6 +44,11 @@
         public bool TransForm
         {
             get { return transform; }
+        }
+
+        public string ReceiveMessageRelease
+        {
+            get { return receiveMessageRelease; }
         }
 
         public string ReceiveMessage

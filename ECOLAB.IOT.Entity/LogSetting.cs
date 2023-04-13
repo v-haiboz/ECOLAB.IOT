@@ -10,5 +10,8 @@
         //Login UserName
         [YamlMember(Alias = "deviceLogContinuity")]
         public bool DeviceLogContinuity { get; set; }
+
+        [YamlMember(Alias = "debug")]
+        public bool Debug { get; set; }
     }
 }

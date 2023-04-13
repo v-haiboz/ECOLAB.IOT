@@ -211,7 +211,7 @@
                 {
                     serialPort.Open();
                 }
-                Thread.Sleep(2000);
+                Thread.Sleep(3000);
                 serialPort.WriteTimeout = 8000;
                 serialPort.WriteLine("SN=" + sn);
                 Thread.Sleep(2000);
@@ -260,7 +260,7 @@
                 {
                     if (OutPutEvent != null && TransForm != null)
                     {
-                        OutPutEvent(this, new TrackerReceiveData($"{splitText}{TransForm("message_SNAndPsk_failed")} \n\r {cache}"));
+                        OutPutEvent(this, new TrackerReceiveData($"{splitText}{TransForm("message_SNAndPsk_failed")} \n\r {cache}", receiveMessageRelease: $"{splitText}{TransForm("message_SNAndPsk_failed")} \n\r"));
                     }
 
                     if (MessageBoxEvent != null && TransForm != null)
@@ -282,7 +282,7 @@
             {
                 if (MessageBoxEvent != null && TransForm != null)
                 {
-                    MessageBoxEvent(this, new TrackerMessageBox(e.Message, "Message", ReceviedMessageBoxButtons.OK, ReceviedMessageBoxIcon.Error));
+                    MessageBoxEvent(this, new TrackerMessageBox($"{TransForm("message_SNAndPsk_failed")} \n\r", "Message", ReceviedMessageBoxButtons.OK, ReceviedMessageBoxIcon.Error));
                 }
                 return false;
             }

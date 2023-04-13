@@ -6,6 +6,7 @@ using ECOLAB.IOT.Transmit.FileTransmit;
 using ECOLAB.IOT.Transmit.SNAndPSKSend;
 using System.ComponentModel;
 using System.IO.Ports;
+using System.Windows.Forms;
 using static ECOLAB.IOT.Transmit.ITransmitUart;
 
 namespace ECOLAB.IOT.WinFormApp.ChildWinForm
@@ -44,34 +45,37 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
         {
             try
             {
-                if (CurrentContext.PortalState == PortalState.Close)
-                {
-                    string portName = comboBox_SerialPort.Text;
-                    var buadRate = comboBox_BaudRate.Text.GetEnumValue<BaudRates>();
-                    Parity parity = comboBox_ParityBit.Text.ToEnum<Parity>();
-                    int dataBit = int.Parse(comboBox_DataBit.Text);
-                    StopBits stopBit = Utilities.MappingStopBit(comboBox_StopBit.Text);
+                string portName = comboBox_SerialPort.Text;
+                var buadRate = comboBox_BaudRate.Text.GetEnumValue<BaudRates>();
+                Parity parity = comboBox_ParityBit.Text.ToEnum<Parity>();
+                int dataBit = int.Parse(comboBox_DataBit.Text);
+                StopBits stopBit = Utilities.MappingStopBit(comboBox_StopBit.Text);
 
-                    serialPort = new SerialPort(portName, buadRate, parity, dataBit, stopBit);
-                    if (serialPort.IsOpen)
-                    {
-                        serialPort.Close();
-                    }
-                    serialPort.Open();
-                    //serialPort.DataReceived += onDataReceived;
-                    EnableOrDisableSetting();
-                    pictureBox_Connection.Image = Properties.Resources.connection_BurnSN3;
-                    button_Connection.BackColor = Color.DarkRed;
-                    button_Connection.Text = res.GetString("button_Connection_Disable");
-                }
-                else if (CurrentContext.PortalState == PortalState.Open)
+                serialPort = new SerialPort(portName, buadRate, parity, dataBit, stopBit);
+                if (serialPort.IsOpen)
                 {
                     serialPort.Close();
-                    EnableOrDisableSetting(true);
-                    pictureBox_Connection.Image = Properties.Resources.breakoff_BurnSN;
-                    button_Connection.BackColor = SystemColors.Highlight;
-                    button_Connection.Text = res.GetString("button_Connection_Enable");
                 }
+                serialPort.Open();
+                EnableOrDisableSetting();
+
+            }
+            catch (Exception errror)
+            {
+                MessageBox.Show(errror.Message);
+            }
+        }
+
+        private void Close()
+        {
+            try
+            {
+                if (serialPort.IsOpen)
+                {
+                    serialPort.Close();
+                }
+
+                EnableOrDisableSetting(true);
             }
             catch (Exception errror)
             {
@@ -95,14 +99,15 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
         private void formFileSend_textBox_SerialNumber_KeyPress(object sender, KeyPressEventArgs e)
         {
             ((TextBox)sender).SelectionLength = 0;
-            if (e.KeyChar==8 && formFileSend.textBox_SerialNumber.Text == "DGW" && (formFileSend.textBox_SerialNumber.Text.Length <= 3|| formFileSend.textBox_SerialNumber.Text.Length- formFileSend.textBox_SerialNumber.SelectedText.Length<=3))
+            if (e.KeyChar == 8 && formFileSend.textBox_SerialNumber.Text == "DGW" && (formFileSend.textBox_SerialNumber.Text.Length <= 3 || formFileSend.textBox_SerialNumber.Text.Length - formFileSend.textBox_SerialNumber.SelectedText.Length <= 3))
             {
                 e.Handled = true;
                 return;
             }
 
-            if ((e.KeyChar < '0' || e.KeyChar > '9') && e.KeyChar != 8) { 
-         
+            if ((e.KeyChar < '0' || e.KeyChar > '9') && e.KeyChar != 8)
+            {
+
                 e.Handled = true;
                 return;
             }
@@ -162,6 +167,7 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
         #region Burn Down sn and psk to IOTHub
         private async Task Travel()
         {
+            Open();
             if (!CallerContext.ECOLABIOTLogSettingService.GetLogSetting().DeviceLogContinuity)
             {
                 richTextBox_Output.Clear();
@@ -173,7 +179,7 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
                 {
                     await CommonSendPattern();
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     richTextBox_Output.AppendText($"\n{res.GetString("message_Travel_failed")}\r");
                 }
@@ -184,14 +190,16 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
                 {
                     SendFilePattern();
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     richTextBox_Output.AppendText($"\n{res.GetString("message_Travel_failed1")}\r");
                 }
             }
+
+            Close();
         }
 
-        
+
         #endregion
 
         #region Send Pattern
@@ -199,7 +207,7 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
         private async Task CommonSendPattern()
         {
             var sn = formNormal.textBox_SerialNumber.Text;
-            var snAndspk = new SNAndPSK(serialPort, sn,formNormal.label_SNPrefix.Text, TransForm);
+            var snAndspk = new SNAndPSK(serialPort, sn, formNormal.label_SNPrefix.Text, TransForm);
             snAndspk.OutPutEvent += new OutPutEventHandler(snAndspkSend_OutPutEvent);
             snAndspk.SendResultEvent += new EventHandler(snAndspkSend_SendCompletedEvent);
             snAndspk.MessageBoxEvent += new MessageBoxEventHandler(snAndspkSend_MessageBoxEvent);
@@ -214,6 +222,11 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
         private void snAndspkSend_OutPutEvent(object sender, TrackerReceiveData e)
         {
             var message = e.ReceiveMessage;
+            if (!CallerContext.ECOLABIOTLogSettingService.GetLogSetting().Debug && !string.IsNullOrEmpty(e.ReceiveMessageRelease))
+            {
+                message = e.ReceiveMessageRelease;
+            }
+
             if (e.TransForm)
             {
                 message = res.GetString(message);
@@ -223,16 +236,36 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             {
                 message = $"\n\r {message}";
             }
-            
+
             richTextBox_Output.AppendText($"{message}");
-            Utility.Track($"{message}", true);
+            if (CallerContext.ECOLABIOTLogSettingService.GetLogSetting().Debug)
+            {
+                Utility.Track($"{message}", true);
+            }
+            else
+            {
+                message = e.ReceiveMessage;
+                if (e.TransForm)
+                {
+                    message = res.GetString(message);
+                }
+
+                if (e.IsWriteLine)
+                {
+                    message = $"\n\r {message}";
+                }
+
+
+                Utility.Track($"{message}", true);
+            }
+               
         }
 
         private void snAndspkSend_MessageBoxEvent(object sender, TrackerMessageBox e)
         {
             var text = e.Text;
             var caption = e.Caption;
-            var boxIcon= MessageBoxIcon.Information;
+            var boxIcon = MessageBoxIcon.Information;
 
             if (e.MessageBoxIcon == ReceviedMessageBoxIcon.Error)
             {
@@ -256,7 +289,7 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
         }
         private void snAndspkSend_SendCompletedEvent(object sender, EventArgs e)
         {
-            var keyValuePair= (KeyValuePair<bool,bool>)sender;
+            var keyValuePair = (KeyValuePair<bool, bool>)sender;
             if (keyValuePair.Key)
             {
                 ChangeSendStatusToDisable(keyValuePair);
@@ -275,7 +308,7 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             snAndspk.OutPutEvent += new OutPutEventHandler(snAndspkSend_OutPutEvent);
             snAndspk.SendResultEvent += new EventHandler(snAndspkSend_SendCompletedEvent);
             snAndspk.MessageBoxEvent += new MessageBoxEventHandler(snAndspkSend_MessageBoxEvent);
-            var result=snAndspk.Send(false);
+            var result = snAndspk.Send(false);
             if (!result)
             {
                 return;
@@ -324,6 +357,11 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
         private void fileSend_OutPutEvent(object sender, TrackerReceiveData e)
         {
             var message = e.ReceiveMessage;
+            if (!CallerContext.ECOLABIOTLogSettingService.GetLogSetting().Debug)
+            {
+                message = e.ReceiveMessageRelease;
+            }
+            
             if (e.TransForm)
             {
                 message = res.GetString(message);
@@ -340,7 +378,7 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
 
         private void fileSend_SendCompletedEvent(object sender, EventArgs e)
         {
-            var keyValue = (KeyValuePair<bool,bool>)sender;
+            var keyValue = (KeyValuePair<bool, bool>)sender;
             if (keyValue.Key)
             {
                 ChangeSendStatusToDisable(keyValue);
@@ -376,44 +414,33 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
 
         private void checkBox_Modify_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void checkBox_Modify_CheckedChanged(object sender, EventArgs e)
         {
-            CheckBoxModifyCheckedChanged();
+            //CheckBoxModifyCheckedChanged();
         }
 
         private void CheckBoxModifyCheckedChanged()
         {
+            if (!CallerContext.SysAdmin.IsSuper)
+            {
+                comboBox_BaudRate.Enabled = false;
+                comboBox_ParityBit.Enabled = false;
+                comboBox_DataBit.Enabled = false;
+                comboBox_StopBit.Enabled = false;
+                button_Reset.Enabled = false;
+                button_Memory.Enabled = false;
+                button_Reset.Visible = false;
+                button_Memory.Visible = false;
+            }
+        }
 
-            if (!comboBox_SerialPort.Enabled)
-            {
-                comboBox_BaudRate.Enabled = false;
-                comboBox_ParityBit.Enabled = false;
-                comboBox_DataBit.Enabled = false;
-                comboBox_StopBit.Enabled = false;
-                button_Reset.Enabled = false;
-                button_Memory.Enabled = false;
-            }
-            else if (!checkBox_Modify.Checked)
-            {
-                comboBox_BaudRate.Enabled = true;
-                comboBox_ParityBit.Enabled = true;
-                comboBox_DataBit.Enabled = true;
-                comboBox_StopBit.Enabled = true;
-                button_Reset.Enabled = true;
-                button_Memory.Enabled = true;
-            }
-            else
-            {
-                comboBox_BaudRate.Enabled = false;
-                comboBox_ParityBit.Enabled = false;
-                comboBox_DataBit.Enabled = false;
-                comboBox_StopBit.Enabled = false;
-                button_Reset.Enabled = false;
-                button_Memory.Enabled = false;
-            }
+        protected override void WndProc(ref Message m)
+        {
+            base.WndProc(ref m);
+            BandDingSerialPort();
         }
     }
 }

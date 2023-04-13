@@ -48,9 +48,7 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             this.radioButton_QueueSendPattern = new System.Windows.Forms.RadioButton();
             this.radioButton_CommonSendPattern = new System.Windows.Forms.RadioButton();
             this.groupBox_Configuration = new System.Windows.Forms.GroupBox();
-            this.checkBox_Modify = new System.Windows.Forms.CheckBox();
             this.button_Memory = new System.Windows.Forms.Button();
-            this.pictureBox_Connection = new System.Windows.Forms.PictureBox();
             this.button_Reset = new System.Windows.Forms.Button();
             this.comboBox_StopBit = new System.Windows.Forms.ComboBox();
             this.label_StopBit = new System.Windows.Forms.Label();
@@ -58,7 +56,6 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             this.label_DataBit = new System.Windows.Forms.Label();
             this.comboBox_ParityBit = new System.Windows.Forms.ComboBox();
             this.label_ParityBit = new System.Windows.Forms.Label();
-            this.button_Connection = new System.Windows.Forms.Button();
             this.comboBox_BaudRate = new System.Windows.Forms.ComboBox();
             this.label_BaudRate = new System.Windows.Forms.Label();
             this.comboBox_SerialPort = new System.Windows.Forms.ComboBox();
@@ -72,7 +69,6 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             this.panel_Setting.SuspendLayout();
             this.groupBox_SendSetting.SuspendLayout();
             this.groupBox_Configuration.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Connection)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -178,9 +174,7 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             // groupBox_Configuration
             // 
             this.groupBox_Configuration.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.groupBox_Configuration.Controls.Add(this.checkBox_Modify);
             this.groupBox_Configuration.Controls.Add(this.button_Memory);
-            this.groupBox_Configuration.Controls.Add(this.pictureBox_Connection);
             this.groupBox_Configuration.Controls.Add(this.button_Reset);
             this.groupBox_Configuration.Controls.Add(this.comboBox_StopBit);
             this.groupBox_Configuration.Controls.Add(this.label_StopBit);
@@ -188,7 +182,6 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             this.groupBox_Configuration.Controls.Add(this.label_DataBit);
             this.groupBox_Configuration.Controls.Add(this.comboBox_ParityBit);
             this.groupBox_Configuration.Controls.Add(this.label_ParityBit);
-            this.groupBox_Configuration.Controls.Add(this.button_Connection);
             this.groupBox_Configuration.Controls.Add(this.comboBox_BaudRate);
             this.groupBox_Configuration.Controls.Add(this.label_BaudRate);
             this.groupBox_Configuration.Controls.Add(this.comboBox_SerialPort);
@@ -197,29 +190,12 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             this.groupBox_Configuration.Name = "groupBox_Configuration";
             this.groupBox_Configuration.TabStop = false;
             // 
-            // checkBox_Modify
-            // 
-            resources.ApplyResources(this.checkBox_Modify, "checkBox_Modify");
-            this.checkBox_Modify.Checked = true;
-            this.checkBox_Modify.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox_Modify.Name = "checkBox_Modify";
-            this.checkBox_Modify.UseVisualStyleBackColor = true;
-            this.checkBox_Modify.CheckedChanged += new System.EventHandler(this.checkBox_Modify_CheckedChanged);
-            this.checkBox_Modify.Click += new System.EventHandler(this.checkBox_Modify_Click);
-            // 
             // button_Memory
             // 
             resources.ApplyResources(this.button_Memory, "button_Memory");
             this.button_Memory.Name = "button_Memory";
             this.button_Memory.UseVisualStyleBackColor = true;
             this.button_Memory.Click += new System.EventHandler(this.button_Memory_Click);
-            // 
-            // pictureBox_Connection
-            // 
-            this.pictureBox_Connection.Image = global::ECOLAB.IOT.WinFormApp.Properties.Resources.breakoff_BurnSN;
-            resources.ApplyResources(this.pictureBox_Connection, "pictureBox_Connection");
-            this.pictureBox_Connection.Name = "pictureBox_Connection";
-            this.pictureBox_Connection.TabStop = false;
             // 
             // button_Reset
             // 
@@ -260,16 +236,6 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             // 
             resources.ApplyResources(this.label_ParityBit, "label_ParityBit");
             this.label_ParityBit.Name = "label_ParityBit";
-            // 
-            // button_Connection
-            // 
-            this.button_Connection.BackColor = System.Drawing.SystemColors.Highlight;
-            resources.ApplyResources(this.button_Connection, "button_Connection");
-            this.button_Connection.FlatAppearance.BorderSize = 0;
-            this.button_Connection.ForeColor = System.Drawing.Color.White;
-            this.button_Connection.Name = "button_Connection";
-            this.button_Connection.UseVisualStyleBackColor = false;
-            this.button_Connection.Click += new System.EventHandler(this.button_Connection_Click);
             // 
             // comboBox_BaudRate
             // 
@@ -331,8 +297,6 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             this.groupBox_SendSetting.ResumeLayout(false);
             this.groupBox_SendSetting.PerformLayout();
             this.groupBox_Configuration.ResumeLayout(false);
-            this.groupBox_Configuration.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Connection)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -459,6 +423,7 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
 
         private void BandDingSerialPort()
         {
+            this.comboBox_SerialPort.Items.Clear();
             var ports = CallerContext.ECOLABIOTBurnSNAndPSKService.GetPortNames();
             this.comboBox_SerialPort.Items.AddRange(ports);
         }
@@ -665,22 +630,22 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
         private void EnableOrDisableSetting(bool bl = false)
         {
             comboBox_SerialPort.Enabled = bl;
-            if (checkBox_Modify.Checked)
+            button_BurnDown.Enabled = bl;
+
+            if (CallerContext.SysAdmin.IsSuper)
             {
-                bl = false;
+                comboBox_BaudRate.Enabled = bl;
+                comboBox_ParityBit.Enabled = bl;
+                comboBox_DataBit.Enabled = bl;
+                comboBox_StopBit.Enabled = bl;
+                button_Reset.Enabled = bl;
+                button_Memory.Enabled = bl;
             }
-            comboBox_BaudRate.Enabled = bl;
-            comboBox_ParityBit.Enabled = bl;
-            comboBox_DataBit.Enabled = bl;
-            comboBox_StopBit.Enabled = bl;
-            button_Reset.Enabled = bl;
-            button_Memory.Enabled = bl;
         }
+
         private void DisableOrEnableBurnDownButton()
         {
-            if (CurrentContext.PortalState == PortalState.Open
-                && (
-                    (CurrentContext.SendModeType == SendModeType.Normal
+            if ((CurrentContext.SendModeType == SendModeType.Normal
                     && string.IsNullOrEmpty(formNormal.label_SerualNubmer_Validate.Text)
                     && !string.IsNullOrEmpty(formNormal.textBox_SerialNumber.Text))
                     ||
@@ -691,7 +656,6 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
                     && !string.IsNullOrEmpty(customMessageBoxDialogResult.DGWModeConfig.ModeName)
                     && !string.IsNullOrEmpty(customMessageBoxDialogResult.DGWModeConfig.Version)
                     )
-                   )
                )
             {
                 button_BurnDown.BackColor = Color.FromArgb(0, 192, 0);
@@ -761,7 +725,6 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
         private SplitContainer splitContainer1;
         private Panel panel_Setting;
         private GroupBox groupBox_Configuration;
-        private PictureBox pictureBox_Connection;
         private Button button_Reset;
         private ComboBox comboBox_StopBit;
         private Label label_StopBit;
@@ -769,7 +732,6 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
         private Label label_DataBit;
         private ComboBox comboBox_ParityBit;
         private Label label_ParityBit;
-        private Button button_Connection;
         private ComboBox comboBox_BaudRate;
         private Label label_BaudRate;
         private ComboBox comboBox_SerialPort;
@@ -785,6 +747,5 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
         private SerialPort serialPort = null;
         private Button button_Memory;
         private Label label1;
-        private CheckBox checkBox_Modify;
     }
 }
