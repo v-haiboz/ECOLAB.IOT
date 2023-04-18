@@ -250,7 +250,7 @@
                         var show_Text = splitText +
                            $" SN={sn}\r" +
                            $" PSK={psk}\r";
-                        OutPutEvent(this, new TrackerReceiveData($" SN={sn}\r $\" PSK=****** \r"));
+                        OutPutEvent(this, new TrackerReceiveData(show_Text));
                         return true;
                     }
 
