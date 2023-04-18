@@ -4,9 +4,7 @@
     using ECOLAB.IOT.Entity;
     using ECOLAB.IOT.Service;
     using System;
-    using System.ComponentModel.DataAnnotations;
     using System.IO.Ports;
-    using System.Security.Policy;
     using System.Threading.Tasks;
     using static ECOLAB.IOT.Transmit.ITransmitUart;
 
@@ -207,11 +205,14 @@
                     MessageBoxEvent(this, new TrackerMessageBox(text, caption, ReceviedMessageBoxButtons.OK));
                 }
 
+                Thread.Sleep(3000);
                 if (serialPort.IsOpen == false)
                 {
                     serialPort.Open();
                 }
-                Thread.Sleep(3000);
+
+                serialPort.DiscardOutBuffer();
+                serialPort.DiscardInBuffer();
                 serialPort.WriteTimeout = 8000;
                 serialPort.WriteLine("SN=" + sn);
                 Thread.Sleep(2000);
@@ -235,13 +236,28 @@
         private bool CheckDeviceConfig(string sn, string psk)
         {
             serialPort.ReadTimeout = 9000;
-
             try
             {
-                Thread.Sleep(2000);
-                string cache = serialPort.ReadExisting();
+                var i = 1;
+                var tempCache = string.Empty;
+                while (i < 5)
+                {
+                    Thread.Sleep(2000);
+                    string cache = serialPort.ReadExisting();
+                    tempCache = tempCache + cache;
+                    if (tempCache.Contains(sn) && tempCache.Contains(psk))
+                        {
+                        var show_Text = splitText +
+                           $" SN={sn}\r" +
+                           $" PSK={psk}\r";
+                        OutPutEvent(this, new TrackerReceiveData($" SN={sn}\r $\" PSK=****** \r"));
+                        return true;
+                    }
 
-                if (string.IsNullOrEmpty(cache))
+                    i++;
+                }
+
+                if (string.IsNullOrEmpty(tempCache))
                 {
                     if (OutPutEvent != null && TransForm != null)
                     {
@@ -256,11 +272,11 @@
                     return false;
                 }
 
-                if (!cache.Contains(sn) || !cache.Contains(psk))
+                if (!tempCache.Contains(sn) || !tempCache.Contains(psk))
                 {
                     if (OutPutEvent != null && TransForm != null)
                     {
-                        OutPutEvent(this, new TrackerReceiveData($"{splitText}{TransForm("message_SNAndPsk_failed")} \n\r {cache}", receiveMessageRelease: $"{splitText}{TransForm("message_SNAndPsk_failed")} \n\r"));
+                        OutPutEvent(this, new TrackerReceiveData($"{splitText}{TransForm("message_SNAndPsk_failed")} \n\r {tempCache}", receiveMessageRelease: $"{splitText}{TransForm("message_SNAndPsk_failed")} \n\r"));
                     }
 
                     if (MessageBoxEvent != null && TransForm != null)
@@ -289,6 +305,7 @@
 
             return true;
         }
+
         #endregion
     }
 }
