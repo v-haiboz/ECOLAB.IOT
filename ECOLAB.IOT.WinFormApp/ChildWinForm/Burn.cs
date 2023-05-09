@@ -359,7 +359,7 @@ namespace ECOLAB.IOT.WinFormApp.ChildWinForm
             var message = e.ReceiveMessage;
             if (!CallerContext.ECOLABIOTLogSettingService.GetLogSetting().Debug)
             {
-                message = e.ReceiveMessageRelease;
+                message = string.IsNullOrEmpty(e.ReceiveMessageRelease)? message : e.ReceiveMessageRelease;
             }
             
             if (e.TransForm)

@@ -118,7 +118,7 @@
                 fileStream.Close();
                 fileStream.Dispose();
                 if (SendResultEvent != null)
-                    SendResultEvent(KeyValuePair.Create(false, true), null);
+                    SendResultEvent(KeyValuePair.Create(false, false), null);
             }
             serialPort.ReadTimeout = 10000;
         }

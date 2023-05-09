@@ -16,8 +16,8 @@
             this.sn = sn;
             this.prefix = prefix;
             this.TransForm = transform;
-
         }
+
         const string splitText = "==================================================================\r\n";
         private string prefix;
         private string Prefix
@@ -91,7 +91,7 @@
                 var result = RegisterDevice(sn, prefix).Result;
                 if (result.Status == Status.OK)
                 {
-                    if (MessageBoxEvent != null && TransForm != null)
+                    if (isformNormal && MessageBoxEvent != null && TransForm != null)
                     {
                         var text = TransForm("message_CommonSendPattern_suceess");
                         var caption = TransForm("message");
@@ -105,7 +105,7 @@
                         OutPutEvent(this, new TrackerReceiveData($"{TransForm("message_RegisterDevice_failed")}"));
                     }
 
-                    if (MessageBoxEvent != null && TransForm != null)
+                    if (isformNormal && MessageBoxEvent != null && TransForm != null)
                     {
                         var text = TransForm("message_RegisterDevice_failed");
                         var caption = TransForm("message");

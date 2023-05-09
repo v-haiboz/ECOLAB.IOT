@@ -19,7 +19,7 @@
             catch (Exception ex)
             {
                 data.Status = Status.Fail;
-                data.Message = ex.Message;
+                data.Message = "Device registration failed, please check if the network is connected properly." + ex.Message;
             }
 
             return data;
