@@ -195,6 +195,12 @@
   <data name="message_file_failed" xml:space="preserve">
     <value>Configuration file transfer failed. Please click the "Burn" button to try again. Error Packet_Number:</value>
   </data>
+  <data name="message_file_failed1" xml:space="preserve">
+    <value>The uploaded file format is incorrect.</value>
+  </data>
+  <data name="message_file_failed2" xml:space="preserve">
+    <value>Configuration file upload failed.</value>
+  </data>
   <data name="message_file_progress" xml:space="preserve">
     <value>Transmission in progress...</value>
   </data>

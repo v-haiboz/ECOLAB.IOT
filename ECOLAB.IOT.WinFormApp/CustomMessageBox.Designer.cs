@@ -154,6 +154,7 @@
             resources.ApplyResources(this.comboBox_ModeName, "comboBox_ModeName");
             this.comboBox_ModeName.FormattingEnabled = true;
             this.comboBox_ModeName.Name = "comboBox_ModeName";
+            this.comboBox_ModeName.SelectedIndexChanged += new System.EventHandler(this.dgwMode_CheckedChanged);
             // 
             // panel_Mode
             // 

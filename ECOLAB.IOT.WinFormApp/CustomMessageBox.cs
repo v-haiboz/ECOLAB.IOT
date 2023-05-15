@@ -123,7 +123,10 @@ namespace ECOLAB.IOT.WinFormApp
 
         private void dgwMode_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (comboBox_ModeName.Items.Count >= 0)
+            {
+                BandingVersion(comboBox_ModeName.Text);
+            }
         }
 
         CustomMessageBoxDialogResult customMessageBoxDialogResult = new CustomMessageBoxDialogResult();

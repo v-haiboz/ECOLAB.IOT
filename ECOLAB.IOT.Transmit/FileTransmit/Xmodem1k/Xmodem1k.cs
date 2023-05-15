@@ -14,10 +14,10 @@
             serialPort.DiscardInBuffer();
             serialPort.DiscardOutBuffer();
             serialPort.DiscardInBuffer();
-            if (SendResultEvent != null)
-            {
-                SendResultEvent(KeyValuePair.Create(false, true), null);
-            }
+            //if (SendResultEvent != null)
+            //{
+            //    SendResultEvent(KeyValuePair.Create(false, true), null);
+            //}
             FileStream fileStream = new FileStream(@path, FileMode.Open, FileAccess.Read);
             BinaryReader b_reader = new BinaryReader(fileStream);
             long length = fileStream.Length;
@@ -60,8 +60,30 @@
                         if (Sender_Data.Length == 0)
                         {
                             serialPort.Write(Sender_EOT, 0, 1);
-                            MessageBoxEvent(null, new TrackerMessageBox(OutTransforer("message_file_successful"), OutTransforer("message_file_tooltip"),messageBoxIcon:ReceviedMessageBoxIcon.Information));
-                            DeviceLog($"{OutTransforer("message_file_successful")}\r");
+
+                            var bl = false;
+                            string cache = string.Empty;
+                            for (var i = 0; i < 7; i++)
+                            {
+                                Thread.Sleep(1000);
+                                cache = cache+serialPort.ReadExisting();
+                                if (cache.ToLower().Contains("error"))
+                                {
+                                    MessageBoxEvent(null, new TrackerMessageBox(OutTransforer("message_file_failed1"), OutTransforer("message_file_tooltip"), messageBoxIcon: ReceviedMessageBoxIcon.Information));
+                                    DeviceLog($"{OutTransforer("message_file_failed1")}\r");
+                                    return;
+                                }
+                                else if (cache.ToLower().Contains("ok"))
+                                {
+                                    MessageBoxEvent(null, new TrackerMessageBox(OutTransforer("message_file_successful"), OutTransforer("message_file_tooltip"), messageBoxIcon: ReceviedMessageBoxIcon.Information));
+                                    DeviceLog($"{OutTransforer("message_file_successful")}\r");
+                                    return;
+                                }
+                            }
+
+                            MessageBoxEvent(null, new TrackerMessageBox(OutTransforer("message_file_failed2"), OutTransforer("message_file_tooltip"), messageBoxIcon: ReceviedMessageBoxIcon.Information));
+                            DeviceLog($"{OutTransforer("message_file_failed2")}\r");
+
                             break;
                         }
                         else if (Sender_Data.Length != 1024)
@@ -121,6 +143,7 @@
                     SendResultEvent(KeyValuePair.Create(false, false), null);
             }
             serialPort.ReadTimeout = 10000;
+            serialPort.Close();
         }
 
         private void ShowPercentage(int data_length, double total_length)

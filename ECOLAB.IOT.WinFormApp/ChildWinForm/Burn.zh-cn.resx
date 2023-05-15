@@ -195,6 +195,12 @@
   <data name="message_file_failed" xml:space="preserve">
     <value>配置文件传输失败，请点击"烧制"按钮重试. 错误Packet_Number：</value>
   </data>
+  <data name="message_file_failed1" xml:space="preserve">
+    <value>上传的配置文件格式不对.</value>
+  </data>
+  <data name="message_file_failed2" xml:space="preserve">
+    <value>上传的配置文件失败.</value>
+  </data>
   <data name="message_file_progress" xml:space="preserve">
     <value>传输进行中...</value>
   </data>
